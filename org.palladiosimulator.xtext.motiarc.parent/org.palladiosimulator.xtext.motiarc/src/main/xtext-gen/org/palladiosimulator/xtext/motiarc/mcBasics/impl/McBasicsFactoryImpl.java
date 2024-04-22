@@ -17,7 +17,9 @@ import org.palladiosimulator.xtext.motiarc.mcBasics.Expression;
 import org.palladiosimulator.xtext.motiarc.mcBasics.ImportStatements;
 import org.palladiosimulator.xtext.motiarc.mcBasics.LiteralExpression;
 import org.palladiosimulator.xtext.motiarc.mcBasics.MCArrayType;
+import org.palladiosimulator.xtext.motiarc.mcBasics.MCCollectionType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.MCPrimitiveType;
+import org.palladiosimulator.xtext.motiarc.mcBasics.MCVoidType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.McBasicsFactory;
 import org.palladiosimulator.xtext.motiarc.mcBasics.McBasicsPackage;
 import org.palladiosimulator.xtext.motiarc.mcBasics.NameExpression;
@@ -81,6 +83,8 @@ public class McBasicsFactoryImpl extends EFactoryImpl implements McBasicsFactory
       case McBasicsPackage.PACKAGE: return createPackage();
       case McBasicsPackage.TYPE: return createType();
       case McBasicsPackage.MC_PRIMITIVE_TYPE: return createMCPrimitiveType();
+      case McBasicsPackage.MC_VOID_TYPE: return createMCVoidType();
+      case McBasicsPackage.MC_COLLECTION_TYPE: return createMCCollectionType();
       case McBasicsPackage.MC_ARRAY_TYPE: return createMCArrayType();
       case McBasicsPackage.EXPRESSION: return createExpression();
       case McBasicsPackage.LITERAL_EXPRESSION: return createLiteralExpression();
@@ -140,6 +144,30 @@ public class McBasicsFactoryImpl extends EFactoryImpl implements McBasicsFactory
   {
     MCPrimitiveTypeImpl mcPrimitiveType = new MCPrimitiveTypeImpl();
     return mcPrimitiveType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public MCVoidType createMCVoidType()
+  {
+    MCVoidTypeImpl mcVoidType = new MCVoidTypeImpl();
+    return mcVoidType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public MCCollectionType createMCCollectionType()
+  {
+    MCCollectionTypeImpl mcCollectionType = new MCCollectionTypeImpl();
+    return mcCollectionType;
   }
 
   /**

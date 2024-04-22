@@ -17,7 +17,9 @@ import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransi
 import org.palladiosimulator.xtext.motiarc.mcBasics.Argument;
 import org.palladiosimulator.xtext.motiarc.mcBasics.Arguments;
 import org.palladiosimulator.xtext.motiarc.mcBasics.ImportStatements;
+import org.palladiosimulator.xtext.motiarc.mcBasics.MCCollectionType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.MCPrimitiveType;
+import org.palladiosimulator.xtext.motiarc.mcBasics.MCVoidType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.McBasicsPackage;
 import org.palladiosimulator.xtext.motiarc.mcBasics.NameExpression;
 import org.palladiosimulator.xtext.motiarc.mcBasics.NumberLiteral;
@@ -47,8 +49,14 @@ public class MCBasicsSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case McBasicsPackage.IMPORT_STATEMENTS:
 				sequence_ImportStatements(context, (ImportStatements) semanticObject); 
 				return; 
+			case McBasicsPackage.MC_COLLECTION_TYPE:
+				sequence_MCCollectionType(context, (MCCollectionType) semanticObject); 
+				return; 
 			case McBasicsPackage.MC_PRIMITIVE_TYPE:
 				sequence_MCPrimitiveType(context, (MCPrimitiveType) semanticObject); 
+				return; 
+			case McBasicsPackage.MC_VOID_TYPE:
+				sequence_MCVoidType(context, (MCVoidType) semanticObject); 
 				return; 
 			case McBasicsPackage.NAME_EXPRESSION:
 				sequence_NameExpression(context, (NameExpression) semanticObject); 
@@ -121,6 +129,21 @@ public class MCBasicsSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     Type returns MCCollectionType
+	 *     MCCollectionType returns MCCollectionType
+	 *
+	 * Constraint:
+	 *     ((collection='Set' | collection='List' | collection='Map' | collection='Optional') innerType=Type)
+	 * </pre>
+	 */
+	protected void sequence_MCCollectionType(ISerializationContext context, MCCollectionType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     Type returns MCPrimitiveType
 	 *     MCPrimitiveType returns MCPrimitiveType
 	 *     MCArrayType returns MCPrimitiveType
@@ -134,12 +157,33 @@ public class MCBasicsSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *         type='long' | 
 	 *         type='char' | 
 	 *         type='float' | 
-	 *         type='double'
+	 *         type='double' | 
+	 *         type='String'
 	 *     )
 	 * </pre>
 	 */
 	protected void sequence_MCPrimitiveType(ISerializationContext context, MCPrimitiveType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     MCVoidType returns MCVoidType
+	 *
+	 * Constraint:
+	 *     type='void'
+	 * </pre>
+	 */
+	protected void sequence_MCVoidType(ISerializationContext context, MCVoidType semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, McBasicsPackage.Literals.MC_VOID_TYPE__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, McBasicsPackage.Literals.MC_VOID_TYPE__TYPE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMCVoidTypeAccess().getTypeVoidKeyword_0(), semanticObject.getType());
+		feeder.finish();
 	}
 	
 	
@@ -192,17 +236,11 @@ public class MCBasicsSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     Package returns Package
 	 *
 	 * Constraint:
-	 *     name=MCQUALIFIEDNAME
+	 *     (name=MCQUALIFIEDNAME | name=ID)
 	 * </pre>
 	 */
 	protected void sequence_Package(ISerializationContext context, org.palladiosimulator.xtext.motiarc.mcBasics.Package semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, McBasicsPackage.Literals.PACKAGE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, McBasicsPackage.Literals.PACKAGE__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getPackageAccess().getNameMCQUALIFIEDNAMETerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

@@ -16,7 +16,9 @@ import org.palladiosimulator.xtext.motiarc.mcBasics.Expression;
 import org.palladiosimulator.xtext.motiarc.mcBasics.ImportStatements;
 import org.palladiosimulator.xtext.motiarc.mcBasics.LiteralExpression;
 import org.palladiosimulator.xtext.motiarc.mcBasics.MCArrayType;
+import org.palladiosimulator.xtext.motiarc.mcBasics.MCCollectionType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.MCPrimitiveType;
+import org.palladiosimulator.xtext.motiarc.mcBasics.MCVoidType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.McBasicsPackage;
 import org.palladiosimulator.xtext.motiarc.mcBasics.NameExpression;
 import org.palladiosimulator.xtext.motiarc.mcBasics.NumberLiteral;
@@ -105,6 +107,16 @@ public class McBasicsAdapterFactory extends AdapterFactoryImpl
       public Adapter caseMCPrimitiveType(MCPrimitiveType object)
       {
         return createMCPrimitiveTypeAdapter();
+      }
+      @Override
+      public Adapter caseMCVoidType(MCVoidType object)
+      {
+        return createMCVoidTypeAdapter();
+      }
+      @Override
+      public Adapter caseMCCollectionType(MCCollectionType object)
+      {
+        return createMCCollectionTypeAdapter();
       }
       @Override
       public Adapter caseMCArrayType(MCArrayType object)
@@ -224,6 +236,36 @@ public class McBasicsAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createMCPrimitiveTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.palladiosimulator.xtext.motiarc.mcBasics.MCVoidType <em>MC Void Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.MCVoidType
+   * @generated
+   */
+  public Adapter createMCVoidTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.palladiosimulator.xtext.motiarc.mcBasics.MCCollectionType <em>MC Collection Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.MCCollectionType
+   * @generated
+   */
+  public Adapter createMCCollectionTypeAdapter()
   {
     return null;
   }

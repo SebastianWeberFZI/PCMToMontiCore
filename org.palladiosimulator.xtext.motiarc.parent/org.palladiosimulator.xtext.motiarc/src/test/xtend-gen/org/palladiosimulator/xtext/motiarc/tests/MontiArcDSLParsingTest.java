@@ -4,8 +4,12 @@
 package org.palladiosimulator.xtext.motiarc.tests;
 
 import com.google.inject.Inject;
+import com.google.inject.Provider;
+import java.io.FileInputStream;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.testing.InjectWith;
 import org.eclipse.xtext.testing.extensions.InjectionExtension;
@@ -24,21 +28,42 @@ public class MontiArcDSLParsingTest {
   @Inject
   private ParseHelper<MACompilationUnit> parseHelper;
 
+  @Inject
+  private Provider<ResourceSet> rsp;
+
   @Test
-  public void loadModel() {
+  public void parseLogger() {
     try {
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append("Hello Xtext!");
-      _builder.newLine();
-      final MACompilationUnit result = this.parseHelper.parse(_builder);
+      final ResourceSet rs = this.rsp.get();
+      FileInputStream _fileInputStream = new FileInputStream("src/test/resources/Logger.arc");
+      final MACompilationUnit result = this.parseHelper.parse(_fileInputStream, URI.createFileURI("src/test/resources/Logger.arc"), null, rs);
       Assertions.assertNotNull(result);
       final EList<Resource.Diagnostic> errors = result.eResource().getErrors();
       boolean _isEmpty = errors.isEmpty();
-      StringConcatenation _builder_1 = new StringConcatenation();
-      _builder_1.append("Unexpected errors: ");
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("Unexpected errors: ");
       String _join = IterableExtensions.join(errors, ", ");
-      _builder_1.append(_join);
-      Assertions.assertTrue(_isEmpty, _builder_1.toString());
+      _builder.append(_join);
+      Assertions.assertTrue(_isEmpty, _builder.toString());
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+
+  @Test
+  public void parseBumperBot() {
+    try {
+      final ResourceSet rs = this.rsp.get();
+      FileInputStream _fileInputStream = new FileInputStream("src/test/resources/BumperBot.arc");
+      final MACompilationUnit result = this.parseHelper.parse(_fileInputStream, URI.createFileURI("src/test/resources/BumperBot.arc"), null, rs);
+      Assertions.assertNotNull(result);
+      final EList<Resource.Diagnostic> errors = result.eResource().getErrors();
+      boolean _isEmpty = errors.isEmpty();
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("Unexpected errors: ");
+      String _join = IterableExtensions.join(errors, ", ");
+      _builder.append(_join);
+      Assertions.assertTrue(_isEmpty, _builder.toString());
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }

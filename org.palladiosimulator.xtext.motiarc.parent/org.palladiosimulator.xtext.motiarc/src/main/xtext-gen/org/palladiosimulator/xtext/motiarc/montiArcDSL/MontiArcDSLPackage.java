@@ -401,13 +401,22 @@ public interface MontiArcDSLPackage extends EPackage
   int PORT = 9;
 
   /**
+   * The feature id for the '<em><b>Sync</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PORT__SYNC = 0;
+
+  /**
    * The feature id for the '<em><b>In</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PORT__IN = 0;
+  int PORT__IN = 1;
 
   /**
    * The feature id for the '<em><b>Out</b></em>' attribute.
@@ -416,7 +425,7 @@ public interface MontiArcDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT__OUT = 1;
+  int PORT__OUT = 2;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -425,7 +434,7 @@ public interface MontiArcDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT__TYPE = 2;
+  int PORT__TYPE = 3;
 
   /**
    * The feature id for the '<em><b>Names</b></em>' attribute.
@@ -434,7 +443,7 @@ public interface MontiArcDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT__NAMES = 3;
+  int PORT__NAMES = 4;
 
   /**
    * The number of structural features of the '<em>Port</em>' class.
@@ -443,7 +452,7 @@ public interface MontiArcDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_FEATURE_COUNT = 4;
+  int PORT_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.NamesImpl <em>Names</em>}' class.
@@ -1022,6 +1031,17 @@ public interface MontiArcDSLPackage extends EPackage
   EClass getPort();
 
   /**
+   * Returns the meta object for the attribute '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Port#isSync <em>Sync</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Sync</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.Port#isSync()
+   * @see #getPort()
+   * @generated
+   */
+  EAttribute getPort_Sync();
+
+  /**
    * Returns the meta object for the attribute '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Port#isIn <em>In</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1577,6 +1597,14 @@ public interface MontiArcDSLPackage extends EPackage
      * @generated
      */
     EClass PORT = eINSTANCE.getPort();
+
+    /**
+     * The meta object literal for the '<em><b>Sync</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PORT__SYNC = eINSTANCE.getPort_Sync();
 
     /**
      * The meta object literal for the '<em><b>In</b></em>' attribute feature.

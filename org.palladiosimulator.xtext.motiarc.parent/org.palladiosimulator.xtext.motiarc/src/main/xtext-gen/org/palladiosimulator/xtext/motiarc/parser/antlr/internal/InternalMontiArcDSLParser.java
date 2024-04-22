@@ -21,35 +21,37 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_MCQUALIFIEDNAME", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'component'", "'{'", "'}'", "'extends'", "','", "'='", "';'", "'connect'", "'->'", "'port'", "'in'", "'out'", "'automaton'", "'state'", "'initial'", "'/'", "'['", "']'", "'import'", "'.'", "'*'", "'package'", "'boolean'", "'byte'", "'short'", "'int'", "'long'", "'char'", "'float'", "'double'", "'('", "')'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_SYNC", "RULE_MCQUALIFIEDNAME", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'component'", "'{'", "'}'", "'extends'", "','", "'='", "';'", "'connect'", "'->'", "'port'", "'in'", "'out'", "'automaton'", "'state'", "'initial'", "'/'", "'['", "']'", "'import'", "'.'", "'*'", "'package'", "'boolean'", "'byte'", "'short'", "'int'", "'long'", "'char'", "'float'", "'double'", "'String'", "'Set'", "'List'", "'Map'", "'Optional'", "'<'", "'>'", "'('", "')'"
     };
+    public static final int T__50=50;
     public static final int T__19=19;
     public static final int T__15=15;
     public static final int T__16=16;
     public static final int T__17=17;
     public static final int T__18=18;
-    public static final int T__12=12;
     public static final int T__13=13;
     public static final int T__14=14;
+    public static final int T__51=51;
     public static final int RULE_ID=4;
     public static final int T__26=26;
-    public static final int RULE_MCQUALIFIEDNAME=5;
+    public static final int RULE_MCQUALIFIEDNAME=6;
     public static final int T__27=27;
     public static final int T__28=28;
-    public static final int RULE_INT=6;
+    public static final int RULE_INT=7;
     public static final int T__29=29;
     public static final int T__22=22;
-    public static final int RULE_ML_COMMENT=8;
+    public static final int RULE_ML_COMMENT=9;
     public static final int T__23=23;
     public static final int T__24=24;
     public static final int T__25=25;
     public static final int T__20=20;
     public static final int T__21=21;
-    public static final int RULE_STRING=7;
-    public static final int RULE_SL_COMMENT=9;
+    public static final int RULE_STRING=8;
+    public static final int RULE_SL_COMMENT=10;
     public static final int T__37=37;
     public static final int T__38=38;
     public static final int T__39=39;
+    public static final int RULE_SYNC=5;
     public static final int T__33=33;
     public static final int T__34=34;
     public static final int T__35=35;
@@ -58,8 +60,14 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
     public static final int T__30=30;
     public static final int T__31=31;
     public static final int T__32=32;
-    public static final int RULE_WS=10;
-    public static final int RULE_ANY_OTHER=11;
+    public static final int RULE_WS=11;
+    public static final int RULE_ANY_OTHER=12;
+    public static final int T__48=48;
+    public static final int T__49=49;
+    public static final int T__44=44;
+    public static final int T__45=45;
+    public static final int T__46=46;
+    public static final int T__47=47;
     public static final int T__40=40;
     public static final int T__41=41;
     public static final int T__42=42;
@@ -199,7 +207,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==30) ) {
+                if ( (LA1_0==31) ) {
                     alt1=1;
                 }
 
@@ -355,7 +363,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
             // InternalMontiArcDSL.g:154:2: (otherlv_0= 'component' ( (lv_name_1_0= RULE_ID ) ) ( (lv_signature_2_0= ruleSignature ) ) otherlv_3= '{' ( (lv_arcElements_4_0= ruleArcElement ) )* otherlv_5= '}' )
             // InternalMontiArcDSL.g:155:3: otherlv_0= 'component' ( (lv_name_1_0= RULE_ID ) ) ( (lv_signature_2_0= ruleSignature ) ) otherlv_3= '{' ( (lv_arcElements_4_0= ruleArcElement ) )* otherlv_5= '}'
             {
-            otherlv_0=(Token)match(input,12,FOLLOW_4); 
+            otherlv_0=(Token)match(input,13,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getComponentAccess().getComponentKeyword_0());
             		
@@ -416,7 +424,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,13,FOLLOW_7); 
+            otherlv_3=(Token)match(input,14,FOLLOW_7); 
 
             			newLeafNode(otherlv_3, grammarAccess.getComponentAccess().getLeftCurlyBracketKeyword_3());
             		
@@ -426,7 +434,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
                 int alt2=2;
                 int LA2_0 = input.LA(1);
 
-                if ( (LA2_0==12||LA2_0==19||LA2_0==21||LA2_0==24||(LA2_0>=34 && LA2_0<=41)) ) {
+                if ( (LA2_0==13||LA2_0==20||LA2_0==22||LA2_0==25||(LA2_0>=35 && LA2_0<=47)) ) {
                     alt2=1;
                 }
 
@@ -469,7 +477,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_5=(Token)match(input,14,FOLLOW_2); 
+            otherlv_5=(Token)match(input,15,FOLLOW_2); 
 
             			newLeafNode(otherlv_5, grammarAccess.getComponentAccess().getRightCurlyBracketKeyword_5());
             		
@@ -567,7 +575,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
             int alt3=2;
             int LA3_0 = input.LA(1);
 
-            if ( ((LA3_0>=34 && LA3_0<=41)) ) {
+            if ( ((LA3_0>=35 && LA3_0<=47)) ) {
                 alt3=1;
             }
             switch (alt3) {
@@ -609,14 +617,14 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
             int alt4=2;
             int LA4_0 = input.LA(1);
 
-            if ( (LA4_0==15) ) {
+            if ( (LA4_0==16) ) {
                 alt4=1;
             }
             switch (alt4) {
                 case 1 :
                     // InternalMontiArcDSL.g:269:4: otherlv_2= 'extends' ( (lv_type_3_0= ruleType ) )
                     {
-                    otherlv_2=(Token)match(input,15,FOLLOW_9); 
+                    otherlv_2=(Token)match(input,16,FOLLOW_9); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getSignatureAccess().getExtendsKeyword_2_0());
                     			
@@ -773,7 +781,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
                 int alt5=2;
                 int LA5_0 = input.LA(1);
 
-                if ( (LA5_0==16) ) {
+                if ( (LA5_0==17) ) {
                     alt5=1;
                 }
 
@@ -782,7 +790,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // InternalMontiArcDSL.g:332:4: otherlv_1= ',' ( (lv_parameters_2_0= ruleParameter ) )
             	    {
-            	    otherlv_1=(Token)match(input,16,FOLLOW_9); 
+            	    otherlv_1=(Token)match(input,17,FOLLOW_9); 
 
             	    				newLeafNode(otherlv_1, grammarAccess.getParametersAccess().getCommaKeyword_1_0());
             	    			
@@ -967,14 +975,14 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
             int alt6=2;
             int LA6_0 = input.LA(1);
 
-            if ( (LA6_0==17) ) {
+            if ( (LA6_0==18) ) {
                 alt6=1;
             }
             switch (alt6) {
                 case 1 :
                     // InternalMontiArcDSL.g:413:4: otherlv_2= '=' ( (lv_expression_3_0= ruleExpression ) )
                     {
-                    otherlv_2=(Token)match(input,17,FOLLOW_12); 
+                    otherlv_2=(Token)match(input,18,FOLLOW_12); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getParameterAccess().getEqualsSignKeyword_2_0());
                     			
@@ -1101,11 +1109,11 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
             // InternalMontiArcDSL.g:455:2: (this_Component_0= ruleComponent | this_SubComponent_1= ruleSubComponent | this_Connector_2= ruleConnector | this_Ports_3= rulePorts | this_Variable_4= ruleVariable | this_Automaton_5= ruleAutomaton )
             int alt7=6;
             switch ( input.LA(1) ) {
-            case 12:
+            case 13:
                 {
                 int LA7_1 = input.LA(2);
 
-                if ( ((LA7_1>=34 && LA7_1<=41)) ) {
+                if ( ((LA7_1>=35 && LA7_1<=47)) ) {
                     alt7=2;
                 }
                 else if ( (LA7_1==RULE_ID) ) {
@@ -1119,17 +1127,16 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
                 }
                 }
                 break;
-            case 19:
+            case 20:
                 {
                 alt7=3;
                 }
                 break;
-            case 21:
+            case 22:
                 {
                 alt7=4;
                 }
                 break;
-            case 34:
             case 35:
             case 36:
             case 37:
@@ -1137,11 +1144,17 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
             case 39:
             case 40:
             case 41:
+            case 42:
+            case 43:
+            case 44:
+            case 45:
+            case 46:
+            case 47:
                 {
                 alt7=5;
                 }
                 break;
-            case 24:
+            case 25:
                 {
                 alt7=6;
                 }
@@ -1344,7 +1357,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
             // InternalMontiArcDSL.g:527:2: (otherlv_0= 'component' ( (lv_type_1_0= ruleType ) ) ( (lv_arguments_2_0= ruleArguments ) )? ( (lv_instances_3_0= ruleNames ) ) otherlv_4= ';' )
             // InternalMontiArcDSL.g:528:3: otherlv_0= 'component' ( (lv_type_1_0= ruleType ) ) ( (lv_arguments_2_0= ruleArguments ) )? ( (lv_instances_3_0= ruleNames ) ) otherlv_4= ';'
             {
-            otherlv_0=(Token)match(input,12,FOLLOW_9); 
+            otherlv_0=(Token)match(input,13,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getSubComponentAccess().getComponentKeyword_0());
             		
@@ -1383,7 +1396,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
             int alt8=2;
             int LA8_0 = input.LA(1);
 
-            if ( (LA8_0==42) ) {
+            if ( (LA8_0==50) ) {
                 alt8=1;
             }
             switch (alt8) {
@@ -1452,7 +1465,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,18,FOLLOW_2); 
+            otherlv_4=(Token)match(input,19,FOLLOW_2); 
 
             			newLeafNode(otherlv_4, grammarAccess.getSubComponentAccess().getSemicolonKeyword_4());
             		
@@ -1536,7 +1549,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
             // InternalMontiArcDSL.g:611:2: (otherlv_0= 'connect' ( (lv_source_1_0= RULE_ID ) ) otherlv_2= '->' ( (lv_targets_3_0= ruleNames ) ) otherlv_4= ';' )
             // InternalMontiArcDSL.g:612:3: otherlv_0= 'connect' ( (lv_source_1_0= RULE_ID ) ) otherlv_2= '->' ( (lv_targets_3_0= ruleNames ) ) otherlv_4= ';'
             {
-            otherlv_0=(Token)match(input,19,FOLLOW_4); 
+            otherlv_0=(Token)match(input,20,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getConnectorAccess().getConnectKeyword_0());
             		
@@ -1566,7 +1579,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,20,FOLLOW_13); 
+            otherlv_2=(Token)match(input,21,FOLLOW_13); 
 
             			newLeafNode(otherlv_2, grammarAccess.getConnectorAccess().getHyphenMinusGreaterThanSignKeyword_2());
             		
@@ -1601,7 +1614,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,18,FOLLOW_2); 
+            otherlv_4=(Token)match(input,19,FOLLOW_2); 
 
             			newLeafNode(otherlv_4, grammarAccess.getConnectorAccess().getSemicolonKeyword_4());
             		
@@ -1664,7 +1677,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePorts"
-    // InternalMontiArcDSL.g:672:1: rulePorts returns [EObject current=null] : (otherlv_0= 'port' ( (lv_ports_1_0= rulePort ) ) (otherlv_2= ',' ( (lv_ports_3_0= rulePort ) ) )+ otherlv_4= ';' ) ;
+    // InternalMontiArcDSL.g:672:1: rulePorts returns [EObject current=null] : (otherlv_0= 'port' ( (lv_ports_1_0= rulePort ) ) (otherlv_2= ',' ( (lv_ports_3_0= rulePort ) ) )* otherlv_4= ';' ) ;
     public final EObject rulePorts() throws RecognitionException {
         EObject current = null;
 
@@ -1680,13 +1693,13 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMontiArcDSL.g:678:2: ( (otherlv_0= 'port' ( (lv_ports_1_0= rulePort ) ) (otherlv_2= ',' ( (lv_ports_3_0= rulePort ) ) )+ otherlv_4= ';' ) )
-            // InternalMontiArcDSL.g:679:2: (otherlv_0= 'port' ( (lv_ports_1_0= rulePort ) ) (otherlv_2= ',' ( (lv_ports_3_0= rulePort ) ) )+ otherlv_4= ';' )
+            // InternalMontiArcDSL.g:678:2: ( (otherlv_0= 'port' ( (lv_ports_1_0= rulePort ) ) (otherlv_2= ',' ( (lv_ports_3_0= rulePort ) ) )* otherlv_4= ';' ) )
+            // InternalMontiArcDSL.g:679:2: (otherlv_0= 'port' ( (lv_ports_1_0= rulePort ) ) (otherlv_2= ',' ( (lv_ports_3_0= rulePort ) ) )* otherlv_4= ';' )
             {
-            // InternalMontiArcDSL.g:679:2: (otherlv_0= 'port' ( (lv_ports_1_0= rulePort ) ) (otherlv_2= ',' ( (lv_ports_3_0= rulePort ) ) )+ otherlv_4= ';' )
-            // InternalMontiArcDSL.g:680:3: otherlv_0= 'port' ( (lv_ports_1_0= rulePort ) ) (otherlv_2= ',' ( (lv_ports_3_0= rulePort ) ) )+ otherlv_4= ';'
+            // InternalMontiArcDSL.g:679:2: (otherlv_0= 'port' ( (lv_ports_1_0= rulePort ) ) (otherlv_2= ',' ( (lv_ports_3_0= rulePort ) ) )* otherlv_4= ';' )
+            // InternalMontiArcDSL.g:680:3: otherlv_0= 'port' ( (lv_ports_1_0= rulePort ) ) (otherlv_2= ',' ( (lv_ports_3_0= rulePort ) ) )* otherlv_4= ';'
             {
-            otherlv_0=(Token)match(input,21,FOLLOW_16); 
+            otherlv_0=(Token)match(input,22,FOLLOW_16); 
 
             			newLeafNode(otherlv_0, grammarAccess.getPortsAccess().getPortKeyword_0());
             		
@@ -1721,14 +1734,13 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalMontiArcDSL.g:703:3: (otherlv_2= ',' ( (lv_ports_3_0= rulePort ) ) )+
-            int cnt9=0;
+            // InternalMontiArcDSL.g:703:3: (otherlv_2= ',' ( (lv_ports_3_0= rulePort ) ) )*
             loop9:
             do {
                 int alt9=2;
                 int LA9_0 = input.LA(1);
 
-                if ( (LA9_0==16) ) {
+                if ( (LA9_0==17) ) {
                     alt9=1;
                 }
 
@@ -1737,7 +1749,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
             	case 1 :
             	    // InternalMontiArcDSL.g:704:4: otherlv_2= ',' ( (lv_ports_3_0= rulePort ) )
             	    {
-            	    otherlv_2=(Token)match(input,16,FOLLOW_16); 
+            	    otherlv_2=(Token)match(input,17,FOLLOW_16); 
 
             	    				newLeafNode(otherlv_2, grammarAccess.getPortsAccess().getCommaKeyword_2_0());
             	    			
@@ -1750,7 +1762,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
             	    						newCompositeNode(grammarAccess.getPortsAccess().getPortsPortParserRuleCall_2_1_0());
             	    					
-            	    pushFollow(FOLLOW_18);
+            	    pushFollow(FOLLOW_17);
             	    lv_ports_3_0=rulePort();
 
             	    state._fsp--;
@@ -1777,15 +1789,11 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    if ( cnt9 >= 1 ) break loop9;
-                        EarlyExitException eee =
-                            new EarlyExitException(9, input);
-                        throw eee;
+            	    break loop9;
                 }
-                cnt9++;
             } while (true);
 
-            otherlv_4=(Token)match(input,18,FOLLOW_2); 
+            otherlv_4=(Token)match(input,19,FOLLOW_2); 
 
             			newLeafNode(otherlv_4, grammarAccess.getPortsAccess().getSemicolonKeyword_3());
             		
@@ -1848,35 +1856,62 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePort"
-    // InternalMontiArcDSL.g:743:1: rulePort returns [EObject current=null] : ( ( ( (lv_in_0_0= 'in' ) ) | ( (lv_out_1_0= 'out' ) ) ) ( (lv_type_2_0= ruleType ) ) ( (lv_names_3_0= ruleNames ) )? ) ;
+    // InternalMontiArcDSL.g:743:1: rulePort returns [EObject current=null] : ( ( (lv_sync_0_0= RULE_SYNC ) ) ( ( (lv_in_1_0= 'in' ) ) | ( (lv_out_2_0= 'out' ) ) ) ( (lv_type_3_0= ruleType ) ) ( (lv_names_4_0= ruleNames ) )? ) ;
     public final EObject rulePort() throws RecognitionException {
         EObject current = null;
 
-        Token lv_in_0_0=null;
-        Token lv_out_1_0=null;
-        EObject lv_type_2_0 = null;
+        Token lv_sync_0_0=null;
+        Token lv_in_1_0=null;
+        Token lv_out_2_0=null;
+        EObject lv_type_3_0 = null;
 
-        EObject lv_names_3_0 = null;
+        EObject lv_names_4_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalMontiArcDSL.g:749:2: ( ( ( ( (lv_in_0_0= 'in' ) ) | ( (lv_out_1_0= 'out' ) ) ) ( (lv_type_2_0= ruleType ) ) ( (lv_names_3_0= ruleNames ) )? ) )
-            // InternalMontiArcDSL.g:750:2: ( ( ( (lv_in_0_0= 'in' ) ) | ( (lv_out_1_0= 'out' ) ) ) ( (lv_type_2_0= ruleType ) ) ( (lv_names_3_0= ruleNames ) )? )
+            // InternalMontiArcDSL.g:749:2: ( ( ( (lv_sync_0_0= RULE_SYNC ) ) ( ( (lv_in_1_0= 'in' ) ) | ( (lv_out_2_0= 'out' ) ) ) ( (lv_type_3_0= ruleType ) ) ( (lv_names_4_0= ruleNames ) )? ) )
+            // InternalMontiArcDSL.g:750:2: ( ( (lv_sync_0_0= RULE_SYNC ) ) ( ( (lv_in_1_0= 'in' ) ) | ( (lv_out_2_0= 'out' ) ) ) ( (lv_type_3_0= ruleType ) ) ( (lv_names_4_0= ruleNames ) )? )
             {
-            // InternalMontiArcDSL.g:750:2: ( ( ( (lv_in_0_0= 'in' ) ) | ( (lv_out_1_0= 'out' ) ) ) ( (lv_type_2_0= ruleType ) ) ( (lv_names_3_0= ruleNames ) )? )
-            // InternalMontiArcDSL.g:751:3: ( ( (lv_in_0_0= 'in' ) ) | ( (lv_out_1_0= 'out' ) ) ) ( (lv_type_2_0= ruleType ) ) ( (lv_names_3_0= ruleNames ) )?
+            // InternalMontiArcDSL.g:750:2: ( ( (lv_sync_0_0= RULE_SYNC ) ) ( ( (lv_in_1_0= 'in' ) ) | ( (lv_out_2_0= 'out' ) ) ) ( (lv_type_3_0= ruleType ) ) ( (lv_names_4_0= ruleNames ) )? )
+            // InternalMontiArcDSL.g:751:3: ( (lv_sync_0_0= RULE_SYNC ) ) ( ( (lv_in_1_0= 'in' ) ) | ( (lv_out_2_0= 'out' ) ) ) ( (lv_type_3_0= ruleType ) ) ( (lv_names_4_0= ruleNames ) )?
             {
-            // InternalMontiArcDSL.g:751:3: ( ( (lv_in_0_0= 'in' ) ) | ( (lv_out_1_0= 'out' ) ) )
+            // InternalMontiArcDSL.g:751:3: ( (lv_sync_0_0= RULE_SYNC ) )
+            // InternalMontiArcDSL.g:752:4: (lv_sync_0_0= RULE_SYNC )
+            {
+            // InternalMontiArcDSL.g:752:4: (lv_sync_0_0= RULE_SYNC )
+            // InternalMontiArcDSL.g:753:5: lv_sync_0_0= RULE_SYNC
+            {
+            lv_sync_0_0=(Token)match(input,RULE_SYNC,FOLLOW_18); 
+
+            					newLeafNode(lv_sync_0_0, grammarAccess.getPortAccess().getSyncSYNCTerminalRuleCall_0_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getPortRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"sync",
+            						lv_sync_0_0 != null,
+            						"org.palladiosimulator.xtext.motiarc.MontiArcDSL.SYNC");
+            				
+
+            }
+
+
+            }
+
+            // InternalMontiArcDSL.g:769:3: ( ( (lv_in_1_0= 'in' ) ) | ( (lv_out_2_0= 'out' ) ) )
             int alt10=2;
             int LA10_0 = input.LA(1);
 
-            if ( (LA10_0==22) ) {
+            if ( (LA10_0==23) ) {
                 alt10=1;
             }
-            else if ( (LA10_0==23) ) {
+            else if ( (LA10_0==24) ) {
                 alt10=2;
             }
             else {
@@ -1887,23 +1922,23 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalMontiArcDSL.g:752:4: ( (lv_in_0_0= 'in' ) )
+                    // InternalMontiArcDSL.g:770:4: ( (lv_in_1_0= 'in' ) )
                     {
-                    // InternalMontiArcDSL.g:752:4: ( (lv_in_0_0= 'in' ) )
-                    // InternalMontiArcDSL.g:753:5: (lv_in_0_0= 'in' )
+                    // InternalMontiArcDSL.g:770:4: ( (lv_in_1_0= 'in' ) )
+                    // InternalMontiArcDSL.g:771:5: (lv_in_1_0= 'in' )
                     {
-                    // InternalMontiArcDSL.g:753:5: (lv_in_0_0= 'in' )
-                    // InternalMontiArcDSL.g:754:6: lv_in_0_0= 'in'
+                    // InternalMontiArcDSL.g:771:5: (lv_in_1_0= 'in' )
+                    // InternalMontiArcDSL.g:772:6: lv_in_1_0= 'in'
                     {
-                    lv_in_0_0=(Token)match(input,22,FOLLOW_9); 
+                    lv_in_1_0=(Token)match(input,23,FOLLOW_9); 
 
-                    						newLeafNode(lv_in_0_0, grammarAccess.getPortAccess().getInInKeyword_0_0_0());
+                    						newLeafNode(lv_in_1_0, grammarAccess.getPortAccess().getInInKeyword_1_0_0());
                     					
 
                     						if (current==null) {
                     							current = createModelElement(grammarAccess.getPortRule());
                     						}
-                    						setWithLastConsumed(current, "in", lv_in_0_0 != null, "in");
+                    						setWithLastConsumed(current, "in", lv_in_1_0 != null, "in");
                     					
 
                     }
@@ -1915,23 +1950,23 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalMontiArcDSL.g:767:4: ( (lv_out_1_0= 'out' ) )
+                    // InternalMontiArcDSL.g:785:4: ( (lv_out_2_0= 'out' ) )
                     {
-                    // InternalMontiArcDSL.g:767:4: ( (lv_out_1_0= 'out' ) )
-                    // InternalMontiArcDSL.g:768:5: (lv_out_1_0= 'out' )
+                    // InternalMontiArcDSL.g:785:4: ( (lv_out_2_0= 'out' ) )
+                    // InternalMontiArcDSL.g:786:5: (lv_out_2_0= 'out' )
                     {
-                    // InternalMontiArcDSL.g:768:5: (lv_out_1_0= 'out' )
-                    // InternalMontiArcDSL.g:769:6: lv_out_1_0= 'out'
+                    // InternalMontiArcDSL.g:786:5: (lv_out_2_0= 'out' )
+                    // InternalMontiArcDSL.g:787:6: lv_out_2_0= 'out'
                     {
-                    lv_out_1_0=(Token)match(input,23,FOLLOW_9); 
+                    lv_out_2_0=(Token)match(input,24,FOLLOW_9); 
 
-                    						newLeafNode(lv_out_1_0, grammarAccess.getPortAccess().getOutOutKeyword_0_1_0());
+                    						newLeafNode(lv_out_2_0, grammarAccess.getPortAccess().getOutOutKeyword_1_1_0());
                     					
 
                     						if (current==null) {
                     							current = createModelElement(grammarAccess.getPortRule());
                     						}
-                    						setWithLastConsumed(current, "out", lv_out_1_0 != null, "out");
+                    						setWithLastConsumed(current, "out", lv_out_2_0 != null, "out");
                     					
 
                     }
@@ -1945,17 +1980,17 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalMontiArcDSL.g:782:3: ( (lv_type_2_0= ruleType ) )
-            // InternalMontiArcDSL.g:783:4: (lv_type_2_0= ruleType )
+            // InternalMontiArcDSL.g:800:3: ( (lv_type_3_0= ruleType ) )
+            // InternalMontiArcDSL.g:801:4: (lv_type_3_0= ruleType )
             {
-            // InternalMontiArcDSL.g:783:4: (lv_type_2_0= ruleType )
-            // InternalMontiArcDSL.g:784:5: lv_type_2_0= ruleType
+            // InternalMontiArcDSL.g:801:4: (lv_type_3_0= ruleType )
+            // InternalMontiArcDSL.g:802:5: lv_type_3_0= ruleType
             {
 
-            					newCompositeNode(grammarAccess.getPortAccess().getTypeTypeParserRuleCall_1_0());
+            					newCompositeNode(grammarAccess.getPortAccess().getTypeTypeParserRuleCall_2_0());
             				
             pushFollow(FOLLOW_19);
-            lv_type_2_0=ruleType();
+            lv_type_3_0=ruleType();
 
             state._fsp--;
 
@@ -1966,7 +2001,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"type",
-            						lv_type_2_0,
+            						lv_type_3_0,
             						"org.palladiosimulator.xtext.motiarc.MCBasics.Type");
             					afterParserOrEnumRuleCall();
             				
@@ -1976,7 +2011,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalMontiArcDSL.g:801:3: ( (lv_names_3_0= ruleNames ) )?
+            // InternalMontiArcDSL.g:819:3: ( (lv_names_4_0= ruleNames ) )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -1985,16 +2020,16 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
             }
             switch (alt11) {
                 case 1 :
-                    // InternalMontiArcDSL.g:802:4: (lv_names_3_0= ruleNames )
+                    // InternalMontiArcDSL.g:820:4: (lv_names_4_0= ruleNames )
                     {
-                    // InternalMontiArcDSL.g:802:4: (lv_names_3_0= ruleNames )
-                    // InternalMontiArcDSL.g:803:5: lv_names_3_0= ruleNames
+                    // InternalMontiArcDSL.g:820:4: (lv_names_4_0= ruleNames )
+                    // InternalMontiArcDSL.g:821:5: lv_names_4_0= ruleNames
                     {
 
-                    					newCompositeNode(grammarAccess.getPortAccess().getNamesNamesParserRuleCall_2_0());
+                    					newCompositeNode(grammarAccess.getPortAccess().getNamesNamesParserRuleCall_3_0());
                     				
                     pushFollow(FOLLOW_2);
-                    lv_names_3_0=ruleNames();
+                    lv_names_4_0=ruleNames();
 
                     state._fsp--;
 
@@ -2005,7 +2040,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
                     					set(
                     						current,
                     						"names",
-                    						lv_names_3_0 != null,
+                    						lv_names_4_0 != null,
                     						"org.palladiosimulator.xtext.motiarc.MontiArcDSL.Names");
                     					afterParserOrEnumRuleCall();
                     				
@@ -2041,7 +2076,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNames"
-    // InternalMontiArcDSL.g:824:1: entryRuleNames returns [EObject current=null] : iv_ruleNames= ruleNames EOF ;
+    // InternalMontiArcDSL.g:842:1: entryRuleNames returns [EObject current=null] : iv_ruleNames= ruleNames EOF ;
     public final EObject entryRuleNames() throws RecognitionException {
         EObject current = null;
 
@@ -2049,8 +2084,8 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMontiArcDSL.g:824:46: (iv_ruleNames= ruleNames EOF )
-            // InternalMontiArcDSL.g:825:2: iv_ruleNames= ruleNames EOF
+            // InternalMontiArcDSL.g:842:46: (iv_ruleNames= ruleNames EOF )
+            // InternalMontiArcDSL.g:843:2: iv_ruleNames= ruleNames EOF
             {
              newCompositeNode(grammarAccess.getNamesRule()); 
             pushFollow(FOLLOW_1);
@@ -2077,7 +2112,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNames"
-    // InternalMontiArcDSL.g:831:1: ruleNames returns [EObject current=null] : ( ( (lv_names_0_0= RULE_ID ) ) (otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) ) )* ) ;
+    // InternalMontiArcDSL.g:849:1: ruleNames returns [EObject current=null] : ( ( (lv_names_0_0= RULE_ID ) ) (otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) ) )* ) ;
     public final EObject ruleNames() throws RecognitionException {
         EObject current = null;
 
@@ -2089,17 +2124,17 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMontiArcDSL.g:837:2: ( ( ( (lv_names_0_0= RULE_ID ) ) (otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) ) )* ) )
-            // InternalMontiArcDSL.g:838:2: ( ( (lv_names_0_0= RULE_ID ) ) (otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) ) )* )
+            // InternalMontiArcDSL.g:855:2: ( ( ( (lv_names_0_0= RULE_ID ) ) (otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) ) )* ) )
+            // InternalMontiArcDSL.g:856:2: ( ( (lv_names_0_0= RULE_ID ) ) (otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) ) )* )
             {
-            // InternalMontiArcDSL.g:838:2: ( ( (lv_names_0_0= RULE_ID ) ) (otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) ) )* )
-            // InternalMontiArcDSL.g:839:3: ( (lv_names_0_0= RULE_ID ) ) (otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) ) )*
+            // InternalMontiArcDSL.g:856:2: ( ( (lv_names_0_0= RULE_ID ) ) (otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) ) )* )
+            // InternalMontiArcDSL.g:857:3: ( (lv_names_0_0= RULE_ID ) ) (otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) ) )*
             {
-            // InternalMontiArcDSL.g:839:3: ( (lv_names_0_0= RULE_ID ) )
-            // InternalMontiArcDSL.g:840:4: (lv_names_0_0= RULE_ID )
+            // InternalMontiArcDSL.g:857:3: ( (lv_names_0_0= RULE_ID ) )
+            // InternalMontiArcDSL.g:858:4: (lv_names_0_0= RULE_ID )
             {
-            // InternalMontiArcDSL.g:840:4: (lv_names_0_0= RULE_ID )
-            // InternalMontiArcDSL.g:841:5: lv_names_0_0= RULE_ID
+            // InternalMontiArcDSL.g:858:4: (lv_names_0_0= RULE_ID )
+            // InternalMontiArcDSL.g:859:5: lv_names_0_0= RULE_ID
             {
             lv_names_0_0=(Token)match(input,RULE_ID,FOLLOW_10); 
 
@@ -2121,13 +2156,13 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalMontiArcDSL.g:857:3: (otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) ) )*
+            // InternalMontiArcDSL.g:875:3: (otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) ) )*
             loop12:
             do {
                 int alt12=2;
                 int LA12_0 = input.LA(1);
 
-                if ( (LA12_0==16) ) {
+                if ( (LA12_0==17) ) {
                     int LA12_2 = input.LA(2);
 
                     if ( (LA12_2==RULE_ID) ) {
@@ -2140,17 +2175,17 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
                 switch (alt12) {
             	case 1 :
-            	    // InternalMontiArcDSL.g:858:4: otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) )
+            	    // InternalMontiArcDSL.g:876:4: otherlv_1= ',' ( (lv_names_2_0= RULE_ID ) )
             	    {
-            	    otherlv_1=(Token)match(input,16,FOLLOW_4); 
+            	    otherlv_1=(Token)match(input,17,FOLLOW_4); 
 
             	    				newLeafNode(otherlv_1, grammarAccess.getNamesAccess().getCommaKeyword_1_0());
             	    			
-            	    // InternalMontiArcDSL.g:862:4: ( (lv_names_2_0= RULE_ID ) )
-            	    // InternalMontiArcDSL.g:863:5: (lv_names_2_0= RULE_ID )
+            	    // InternalMontiArcDSL.g:880:4: ( (lv_names_2_0= RULE_ID ) )
+            	    // InternalMontiArcDSL.g:881:5: (lv_names_2_0= RULE_ID )
             	    {
-            	    // InternalMontiArcDSL.g:863:5: (lv_names_2_0= RULE_ID )
-            	    // InternalMontiArcDSL.g:864:6: lv_names_2_0= RULE_ID
+            	    // InternalMontiArcDSL.g:881:5: (lv_names_2_0= RULE_ID )
+            	    // InternalMontiArcDSL.g:882:6: lv_names_2_0= RULE_ID
             	    {
             	    lv_names_2_0=(Token)match(input,RULE_ID,FOLLOW_10); 
 
@@ -2204,7 +2239,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleVariable"
-    // InternalMontiArcDSL.g:885:1: entryRuleVariable returns [EObject current=null] : iv_ruleVariable= ruleVariable EOF ;
+    // InternalMontiArcDSL.g:903:1: entryRuleVariable returns [EObject current=null] : iv_ruleVariable= ruleVariable EOF ;
     public final EObject entryRuleVariable() throws RecognitionException {
         EObject current = null;
 
@@ -2212,8 +2247,8 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMontiArcDSL.g:885:49: (iv_ruleVariable= ruleVariable EOF )
-            // InternalMontiArcDSL.g:886:2: iv_ruleVariable= ruleVariable EOF
+            // InternalMontiArcDSL.g:903:49: (iv_ruleVariable= ruleVariable EOF )
+            // InternalMontiArcDSL.g:904:2: iv_ruleVariable= ruleVariable EOF
             {
              newCompositeNode(grammarAccess.getVariableRule()); 
             pushFollow(FOLLOW_1);
@@ -2240,7 +2275,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleVariable"
-    // InternalMontiArcDSL.g:892:1: ruleVariable returns [EObject current=null] : ( ( (lv_type_0_0= ruleType ) ) ( (lv_names_1_0= ruleNames ) )? otherlv_2= ';' ) ;
+    // InternalMontiArcDSL.g:910:1: ruleVariable returns [EObject current=null] : ( ( (lv_type_0_0= ruleType ) ) ( (lv_names_1_0= ruleNames ) )? otherlv_2= ';' ) ;
     public final EObject ruleVariable() throws RecognitionException {
         EObject current = null;
 
@@ -2254,17 +2289,17 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMontiArcDSL.g:898:2: ( ( ( (lv_type_0_0= ruleType ) ) ( (lv_names_1_0= ruleNames ) )? otherlv_2= ';' ) )
-            // InternalMontiArcDSL.g:899:2: ( ( (lv_type_0_0= ruleType ) ) ( (lv_names_1_0= ruleNames ) )? otherlv_2= ';' )
+            // InternalMontiArcDSL.g:916:2: ( ( ( (lv_type_0_0= ruleType ) ) ( (lv_names_1_0= ruleNames ) )? otherlv_2= ';' ) )
+            // InternalMontiArcDSL.g:917:2: ( ( (lv_type_0_0= ruleType ) ) ( (lv_names_1_0= ruleNames ) )? otherlv_2= ';' )
             {
-            // InternalMontiArcDSL.g:899:2: ( ( (lv_type_0_0= ruleType ) ) ( (lv_names_1_0= ruleNames ) )? otherlv_2= ';' )
-            // InternalMontiArcDSL.g:900:3: ( (lv_type_0_0= ruleType ) ) ( (lv_names_1_0= ruleNames ) )? otherlv_2= ';'
+            // InternalMontiArcDSL.g:917:2: ( ( (lv_type_0_0= ruleType ) ) ( (lv_names_1_0= ruleNames ) )? otherlv_2= ';' )
+            // InternalMontiArcDSL.g:918:3: ( (lv_type_0_0= ruleType ) ) ( (lv_names_1_0= ruleNames ) )? otherlv_2= ';'
             {
-            // InternalMontiArcDSL.g:900:3: ( (lv_type_0_0= ruleType ) )
-            // InternalMontiArcDSL.g:901:4: (lv_type_0_0= ruleType )
+            // InternalMontiArcDSL.g:918:3: ( (lv_type_0_0= ruleType ) )
+            // InternalMontiArcDSL.g:919:4: (lv_type_0_0= ruleType )
             {
-            // InternalMontiArcDSL.g:901:4: (lv_type_0_0= ruleType )
-            // InternalMontiArcDSL.g:902:5: lv_type_0_0= ruleType
+            // InternalMontiArcDSL.g:919:4: (lv_type_0_0= ruleType )
+            // InternalMontiArcDSL.g:920:5: lv_type_0_0= ruleType
             {
 
             					newCompositeNode(grammarAccess.getVariableAccess().getTypeTypeParserRuleCall_0_0());
@@ -2291,7 +2326,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalMontiArcDSL.g:919:3: ( (lv_names_1_0= ruleNames ) )?
+            // InternalMontiArcDSL.g:937:3: ( (lv_names_1_0= ruleNames ) )?
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -2300,10 +2335,10 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
             }
             switch (alt13) {
                 case 1 :
-                    // InternalMontiArcDSL.g:920:4: (lv_names_1_0= ruleNames )
+                    // InternalMontiArcDSL.g:938:4: (lv_names_1_0= ruleNames )
                     {
-                    // InternalMontiArcDSL.g:920:4: (lv_names_1_0= ruleNames )
-                    // InternalMontiArcDSL.g:921:5: lv_names_1_0= ruleNames
+                    // InternalMontiArcDSL.g:938:4: (lv_names_1_0= ruleNames )
+                    // InternalMontiArcDSL.g:939:5: lv_names_1_0= ruleNames
                     {
 
                     					newCompositeNode(grammarAccess.getVariableAccess().getNamesNamesParserRuleCall_1_0());
@@ -2333,7 +2368,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,18,FOLLOW_2); 
+            otherlv_2=(Token)match(input,19,FOLLOW_2); 
 
             			newLeafNode(otherlv_2, grammarAccess.getVariableAccess().getSemicolonKeyword_2());
             		
@@ -2360,7 +2395,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleAutomaton"
-    // InternalMontiArcDSL.g:946:1: entryRuleAutomaton returns [EObject current=null] : iv_ruleAutomaton= ruleAutomaton EOF ;
+    // InternalMontiArcDSL.g:964:1: entryRuleAutomaton returns [EObject current=null] : iv_ruleAutomaton= ruleAutomaton EOF ;
     public final EObject entryRuleAutomaton() throws RecognitionException {
         EObject current = null;
 
@@ -2368,8 +2403,8 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMontiArcDSL.g:946:50: (iv_ruleAutomaton= ruleAutomaton EOF )
-            // InternalMontiArcDSL.g:947:2: iv_ruleAutomaton= ruleAutomaton EOF
+            // InternalMontiArcDSL.g:964:50: (iv_ruleAutomaton= ruleAutomaton EOF )
+            // InternalMontiArcDSL.g:965:2: iv_ruleAutomaton= ruleAutomaton EOF
             {
              newCompositeNode(grammarAccess.getAutomatonRule()); 
             pushFollow(FOLLOW_1);
@@ -2396,7 +2431,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAutomaton"
-    // InternalMontiArcDSL.g:953:1: ruleAutomaton returns [EObject current=null] : ( () otherlv_1= 'automaton' ( (lv_name_2_0= RULE_ID ) )? otherlv_3= '{' ( ( (lv_states_4_0= ruleState ) ) | ( (lv_initialStates_5_0= ruleInitialState ) ) | ( (lv_transitions_6_0= ruleTransition ) ) )* otherlv_7= '}' ) ;
+    // InternalMontiArcDSL.g:971:1: ruleAutomaton returns [EObject current=null] : ( () otherlv_1= 'automaton' ( (lv_name_2_0= RULE_ID ) )? otherlv_3= '{' ( ( (lv_states_4_0= ruleState ) ) | ( (lv_initialStates_5_0= ruleInitialState ) ) | ( (lv_transitions_6_0= ruleTransition ) ) )* otherlv_7= '}' ) ;
     public final EObject ruleAutomaton() throws RecognitionException {
         EObject current = null;
 
@@ -2415,14 +2450,14 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMontiArcDSL.g:959:2: ( ( () otherlv_1= 'automaton' ( (lv_name_2_0= RULE_ID ) )? otherlv_3= '{' ( ( (lv_states_4_0= ruleState ) ) | ( (lv_initialStates_5_0= ruleInitialState ) ) | ( (lv_transitions_6_0= ruleTransition ) ) )* otherlv_7= '}' ) )
-            // InternalMontiArcDSL.g:960:2: ( () otherlv_1= 'automaton' ( (lv_name_2_0= RULE_ID ) )? otherlv_3= '{' ( ( (lv_states_4_0= ruleState ) ) | ( (lv_initialStates_5_0= ruleInitialState ) ) | ( (lv_transitions_6_0= ruleTransition ) ) )* otherlv_7= '}' )
+            // InternalMontiArcDSL.g:977:2: ( ( () otherlv_1= 'automaton' ( (lv_name_2_0= RULE_ID ) )? otherlv_3= '{' ( ( (lv_states_4_0= ruleState ) ) | ( (lv_initialStates_5_0= ruleInitialState ) ) | ( (lv_transitions_6_0= ruleTransition ) ) )* otherlv_7= '}' ) )
+            // InternalMontiArcDSL.g:978:2: ( () otherlv_1= 'automaton' ( (lv_name_2_0= RULE_ID ) )? otherlv_3= '{' ( ( (lv_states_4_0= ruleState ) ) | ( (lv_initialStates_5_0= ruleInitialState ) ) | ( (lv_transitions_6_0= ruleTransition ) ) )* otherlv_7= '}' )
             {
-            // InternalMontiArcDSL.g:960:2: ( () otherlv_1= 'automaton' ( (lv_name_2_0= RULE_ID ) )? otherlv_3= '{' ( ( (lv_states_4_0= ruleState ) ) | ( (lv_initialStates_5_0= ruleInitialState ) ) | ( (lv_transitions_6_0= ruleTransition ) ) )* otherlv_7= '}' )
-            // InternalMontiArcDSL.g:961:3: () otherlv_1= 'automaton' ( (lv_name_2_0= RULE_ID ) )? otherlv_3= '{' ( ( (lv_states_4_0= ruleState ) ) | ( (lv_initialStates_5_0= ruleInitialState ) ) | ( (lv_transitions_6_0= ruleTransition ) ) )* otherlv_7= '}'
+            // InternalMontiArcDSL.g:978:2: ( () otherlv_1= 'automaton' ( (lv_name_2_0= RULE_ID ) )? otherlv_3= '{' ( ( (lv_states_4_0= ruleState ) ) | ( (lv_initialStates_5_0= ruleInitialState ) ) | ( (lv_transitions_6_0= ruleTransition ) ) )* otherlv_7= '}' )
+            // InternalMontiArcDSL.g:979:3: () otherlv_1= 'automaton' ( (lv_name_2_0= RULE_ID ) )? otherlv_3= '{' ( ( (lv_states_4_0= ruleState ) ) | ( (lv_initialStates_5_0= ruleInitialState ) ) | ( (lv_transitions_6_0= ruleTransition ) ) )* otherlv_7= '}'
             {
-            // InternalMontiArcDSL.g:961:3: ()
-            // InternalMontiArcDSL.g:962:4: 
+            // InternalMontiArcDSL.g:979:3: ()
+            // InternalMontiArcDSL.g:980:4: 
             {
 
             				current = forceCreateModelElement(
@@ -2432,11 +2467,11 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,24,FOLLOW_21); 
+            otherlv_1=(Token)match(input,25,FOLLOW_21); 
 
             			newLeafNode(otherlv_1, grammarAccess.getAutomatonAccess().getAutomatonKeyword_1());
             		
-            // InternalMontiArcDSL.g:972:3: ( (lv_name_2_0= RULE_ID ) )?
+            // InternalMontiArcDSL.g:990:3: ( (lv_name_2_0= RULE_ID ) )?
             int alt14=2;
             int LA14_0 = input.LA(1);
 
@@ -2445,10 +2480,10 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
             }
             switch (alt14) {
                 case 1 :
-                    // InternalMontiArcDSL.g:973:4: (lv_name_2_0= RULE_ID )
+                    // InternalMontiArcDSL.g:991:4: (lv_name_2_0= RULE_ID )
                     {
-                    // InternalMontiArcDSL.g:973:4: (lv_name_2_0= RULE_ID )
-                    // InternalMontiArcDSL.g:974:5: lv_name_2_0= RULE_ID
+                    // InternalMontiArcDSL.g:991:4: (lv_name_2_0= RULE_ID )
+                    // InternalMontiArcDSL.g:992:5: lv_name_2_0= RULE_ID
                     {
                     lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_6); 
 
@@ -2473,21 +2508,21 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,13,FOLLOW_22); 
+            otherlv_3=(Token)match(input,14,FOLLOW_22); 
 
             			newLeafNode(otherlv_3, grammarAccess.getAutomatonAccess().getLeftCurlyBracketKeyword_3());
             		
-            // InternalMontiArcDSL.g:994:3: ( ( (lv_states_4_0= ruleState ) ) | ( (lv_initialStates_5_0= ruleInitialState ) ) | ( (lv_transitions_6_0= ruleTransition ) ) )*
+            // InternalMontiArcDSL.g:1012:3: ( ( (lv_states_4_0= ruleState ) ) | ( (lv_initialStates_5_0= ruleInitialState ) ) | ( (lv_transitions_6_0= ruleTransition ) ) )*
             loop15:
             do {
                 int alt15=4;
                 switch ( input.LA(1) ) {
-                case 25:
+                case 26:
                     {
                     alt15=1;
                     }
                     break;
-                case 26:
+                case 27:
                     {
                     alt15=2;
                     }
@@ -2502,13 +2537,13 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
                 switch (alt15) {
             	case 1 :
-            	    // InternalMontiArcDSL.g:995:4: ( (lv_states_4_0= ruleState ) )
+            	    // InternalMontiArcDSL.g:1013:4: ( (lv_states_4_0= ruleState ) )
             	    {
-            	    // InternalMontiArcDSL.g:995:4: ( (lv_states_4_0= ruleState ) )
-            	    // InternalMontiArcDSL.g:996:5: (lv_states_4_0= ruleState )
+            	    // InternalMontiArcDSL.g:1013:4: ( (lv_states_4_0= ruleState ) )
+            	    // InternalMontiArcDSL.g:1014:5: (lv_states_4_0= ruleState )
             	    {
-            	    // InternalMontiArcDSL.g:996:5: (lv_states_4_0= ruleState )
-            	    // InternalMontiArcDSL.g:997:6: lv_states_4_0= ruleState
+            	    // InternalMontiArcDSL.g:1014:5: (lv_states_4_0= ruleState )
+            	    // InternalMontiArcDSL.g:1015:6: lv_states_4_0= ruleState
             	    {
 
             	    						newCompositeNode(grammarAccess.getAutomatonAccess().getStatesStateParserRuleCall_4_0_0());
@@ -2539,13 +2574,13 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 2 :
-            	    // InternalMontiArcDSL.g:1015:4: ( (lv_initialStates_5_0= ruleInitialState ) )
+            	    // InternalMontiArcDSL.g:1033:4: ( (lv_initialStates_5_0= ruleInitialState ) )
             	    {
-            	    // InternalMontiArcDSL.g:1015:4: ( (lv_initialStates_5_0= ruleInitialState ) )
-            	    // InternalMontiArcDSL.g:1016:5: (lv_initialStates_5_0= ruleInitialState )
+            	    // InternalMontiArcDSL.g:1033:4: ( (lv_initialStates_5_0= ruleInitialState ) )
+            	    // InternalMontiArcDSL.g:1034:5: (lv_initialStates_5_0= ruleInitialState )
             	    {
-            	    // InternalMontiArcDSL.g:1016:5: (lv_initialStates_5_0= ruleInitialState )
-            	    // InternalMontiArcDSL.g:1017:6: lv_initialStates_5_0= ruleInitialState
+            	    // InternalMontiArcDSL.g:1034:5: (lv_initialStates_5_0= ruleInitialState )
+            	    // InternalMontiArcDSL.g:1035:6: lv_initialStates_5_0= ruleInitialState
             	    {
 
             	    						newCompositeNode(grammarAccess.getAutomatonAccess().getInitialStatesInitialStateParserRuleCall_4_1_0());
@@ -2576,13 +2611,13 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
             	    }
             	    break;
             	case 3 :
-            	    // InternalMontiArcDSL.g:1035:4: ( (lv_transitions_6_0= ruleTransition ) )
+            	    // InternalMontiArcDSL.g:1053:4: ( (lv_transitions_6_0= ruleTransition ) )
             	    {
-            	    // InternalMontiArcDSL.g:1035:4: ( (lv_transitions_6_0= ruleTransition ) )
-            	    // InternalMontiArcDSL.g:1036:5: (lv_transitions_6_0= ruleTransition )
+            	    // InternalMontiArcDSL.g:1053:4: ( (lv_transitions_6_0= ruleTransition ) )
+            	    // InternalMontiArcDSL.g:1054:5: (lv_transitions_6_0= ruleTransition )
             	    {
-            	    // InternalMontiArcDSL.g:1036:5: (lv_transitions_6_0= ruleTransition )
-            	    // InternalMontiArcDSL.g:1037:6: lv_transitions_6_0= ruleTransition
+            	    // InternalMontiArcDSL.g:1054:5: (lv_transitions_6_0= ruleTransition )
+            	    // InternalMontiArcDSL.g:1055:6: lv_transitions_6_0= ruleTransition
             	    {
 
             	    						newCompositeNode(grammarAccess.getAutomatonAccess().getTransitionsTransitionParserRuleCall_4_2_0());
@@ -2618,7 +2653,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_7=(Token)match(input,14,FOLLOW_2); 
+            otherlv_7=(Token)match(input,15,FOLLOW_2); 
 
             			newLeafNode(otherlv_7, grammarAccess.getAutomatonAccess().getRightCurlyBracketKeyword_5());
             		
@@ -2645,7 +2680,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleState"
-    // InternalMontiArcDSL.g:1063:1: entryRuleState returns [EObject current=null] : iv_ruleState= ruleState EOF ;
+    // InternalMontiArcDSL.g:1081:1: entryRuleState returns [EObject current=null] : iv_ruleState= ruleState EOF ;
     public final EObject entryRuleState() throws RecognitionException {
         EObject current = null;
 
@@ -2653,8 +2688,8 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMontiArcDSL.g:1063:46: (iv_ruleState= ruleState EOF )
-            // InternalMontiArcDSL.g:1064:2: iv_ruleState= ruleState EOF
+            // InternalMontiArcDSL.g:1081:46: (iv_ruleState= ruleState EOF )
+            // InternalMontiArcDSL.g:1082:2: iv_ruleState= ruleState EOF
             {
              newCompositeNode(grammarAccess.getStateRule()); 
             pushFollow(FOLLOW_1);
@@ -2681,7 +2716,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleState"
-    // InternalMontiArcDSL.g:1070:1: ruleState returns [EObject current=null] : (otherlv_0= 'state' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ';' ) ;
+    // InternalMontiArcDSL.g:1088:1: ruleState returns [EObject current=null] : (otherlv_0= 'state' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ';' ) ;
     public final EObject ruleState() throws RecognitionException {
         EObject current = null;
 
@@ -2693,21 +2728,21 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMontiArcDSL.g:1076:2: ( (otherlv_0= 'state' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ';' ) )
-            // InternalMontiArcDSL.g:1077:2: (otherlv_0= 'state' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ';' )
+            // InternalMontiArcDSL.g:1094:2: ( (otherlv_0= 'state' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ';' ) )
+            // InternalMontiArcDSL.g:1095:2: (otherlv_0= 'state' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ';' )
             {
-            // InternalMontiArcDSL.g:1077:2: (otherlv_0= 'state' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ';' )
-            // InternalMontiArcDSL.g:1078:3: otherlv_0= 'state' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ';'
+            // InternalMontiArcDSL.g:1095:2: (otherlv_0= 'state' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ';' )
+            // InternalMontiArcDSL.g:1096:3: otherlv_0= 'state' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= ';'
             {
-            otherlv_0=(Token)match(input,25,FOLLOW_4); 
+            otherlv_0=(Token)match(input,26,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getStateAccess().getStateKeyword_0());
             		
-            // InternalMontiArcDSL.g:1082:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalMontiArcDSL.g:1083:4: (lv_name_1_0= RULE_ID )
+            // InternalMontiArcDSL.g:1100:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalMontiArcDSL.g:1101:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalMontiArcDSL.g:1083:4: (lv_name_1_0= RULE_ID )
-            // InternalMontiArcDSL.g:1084:5: lv_name_1_0= RULE_ID
+            // InternalMontiArcDSL.g:1101:4: (lv_name_1_0= RULE_ID )
+            // InternalMontiArcDSL.g:1102:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_14); 
 
@@ -2729,7 +2764,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,18,FOLLOW_2); 
+            otherlv_2=(Token)match(input,19,FOLLOW_2); 
 
             			newLeafNode(otherlv_2, grammarAccess.getStateAccess().getSemicolonKeyword_2());
             		
@@ -2756,7 +2791,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleInitialState"
-    // InternalMontiArcDSL.g:1108:1: entryRuleInitialState returns [EObject current=null] : iv_ruleInitialState= ruleInitialState EOF ;
+    // InternalMontiArcDSL.g:1126:1: entryRuleInitialState returns [EObject current=null] : iv_ruleInitialState= ruleInitialState EOF ;
     public final EObject entryRuleInitialState() throws RecognitionException {
         EObject current = null;
 
@@ -2764,8 +2799,8 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMontiArcDSL.g:1108:53: (iv_ruleInitialState= ruleInitialState EOF )
-            // InternalMontiArcDSL.g:1109:2: iv_ruleInitialState= ruleInitialState EOF
+            // InternalMontiArcDSL.g:1126:53: (iv_ruleInitialState= ruleInitialState EOF )
+            // InternalMontiArcDSL.g:1127:2: iv_ruleInitialState= ruleInitialState EOF
             {
              newCompositeNode(grammarAccess.getInitialStateRule()); 
             pushFollow(FOLLOW_1);
@@ -2792,7 +2827,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInitialState"
-    // InternalMontiArcDSL.g:1115:1: ruleInitialState returns [EObject current=null] : (otherlv_0= 'initial' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= '/' ( (lv_block_3_0= ruleBlock ) ) )? otherlv_4= ';' ) ;
+    // InternalMontiArcDSL.g:1133:1: ruleInitialState returns [EObject current=null] : (otherlv_0= 'initial' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= '/' ( (lv_block_3_0= ruleBlock ) ) )? otherlv_4= ';' ) ;
     public final EObject ruleInitialState() throws RecognitionException {
         EObject current = null;
 
@@ -2807,21 +2842,21 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMontiArcDSL.g:1121:2: ( (otherlv_0= 'initial' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= '/' ( (lv_block_3_0= ruleBlock ) ) )? otherlv_4= ';' ) )
-            // InternalMontiArcDSL.g:1122:2: (otherlv_0= 'initial' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= '/' ( (lv_block_3_0= ruleBlock ) ) )? otherlv_4= ';' )
+            // InternalMontiArcDSL.g:1139:2: ( (otherlv_0= 'initial' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= '/' ( (lv_block_3_0= ruleBlock ) ) )? otherlv_4= ';' ) )
+            // InternalMontiArcDSL.g:1140:2: (otherlv_0= 'initial' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= '/' ( (lv_block_3_0= ruleBlock ) ) )? otherlv_4= ';' )
             {
-            // InternalMontiArcDSL.g:1122:2: (otherlv_0= 'initial' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= '/' ( (lv_block_3_0= ruleBlock ) ) )? otherlv_4= ';' )
-            // InternalMontiArcDSL.g:1123:3: otherlv_0= 'initial' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= '/' ( (lv_block_3_0= ruleBlock ) ) )? otherlv_4= ';'
+            // InternalMontiArcDSL.g:1140:2: (otherlv_0= 'initial' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= '/' ( (lv_block_3_0= ruleBlock ) ) )? otherlv_4= ';' )
+            // InternalMontiArcDSL.g:1141:3: otherlv_0= 'initial' ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= '/' ( (lv_block_3_0= ruleBlock ) ) )? otherlv_4= ';'
             {
-            otherlv_0=(Token)match(input,26,FOLLOW_4); 
+            otherlv_0=(Token)match(input,27,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getInitialStateAccess().getInitialKeyword_0());
             		
-            // InternalMontiArcDSL.g:1127:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalMontiArcDSL.g:1128:4: (lv_name_1_0= RULE_ID )
+            // InternalMontiArcDSL.g:1145:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalMontiArcDSL.g:1146:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalMontiArcDSL.g:1128:4: (lv_name_1_0= RULE_ID )
-            // InternalMontiArcDSL.g:1129:5: lv_name_1_0= RULE_ID
+            // InternalMontiArcDSL.g:1146:4: (lv_name_1_0= RULE_ID )
+            // InternalMontiArcDSL.g:1147:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_23); 
 
@@ -2843,26 +2878,26 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalMontiArcDSL.g:1145:3: (otherlv_2= '/' ( (lv_block_3_0= ruleBlock ) ) )?
+            // InternalMontiArcDSL.g:1163:3: (otherlv_2= '/' ( (lv_block_3_0= ruleBlock ) ) )?
             int alt16=2;
             int LA16_0 = input.LA(1);
 
-            if ( (LA16_0==27) ) {
+            if ( (LA16_0==28) ) {
                 alt16=1;
             }
             switch (alt16) {
                 case 1 :
-                    // InternalMontiArcDSL.g:1146:4: otherlv_2= '/' ( (lv_block_3_0= ruleBlock ) )
+                    // InternalMontiArcDSL.g:1164:4: otherlv_2= '/' ( (lv_block_3_0= ruleBlock ) )
                     {
-                    otherlv_2=(Token)match(input,27,FOLLOW_6); 
+                    otherlv_2=(Token)match(input,28,FOLLOW_6); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getInitialStateAccess().getSolidusKeyword_2_0());
                     			
-                    // InternalMontiArcDSL.g:1150:4: ( (lv_block_3_0= ruleBlock ) )
-                    // InternalMontiArcDSL.g:1151:5: (lv_block_3_0= ruleBlock )
+                    // InternalMontiArcDSL.g:1168:4: ( (lv_block_3_0= ruleBlock ) )
+                    // InternalMontiArcDSL.g:1169:5: (lv_block_3_0= ruleBlock )
                     {
-                    // InternalMontiArcDSL.g:1151:5: (lv_block_3_0= ruleBlock )
-                    // InternalMontiArcDSL.g:1152:6: lv_block_3_0= ruleBlock
+                    // InternalMontiArcDSL.g:1169:5: (lv_block_3_0= ruleBlock )
+                    // InternalMontiArcDSL.g:1170:6: lv_block_3_0= ruleBlock
                     {
 
                     						newCompositeNode(grammarAccess.getInitialStateAccess().getBlockBlockParserRuleCall_2_1_0());
@@ -2895,7 +2930,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,18,FOLLOW_2); 
+            otherlv_4=(Token)match(input,19,FOLLOW_2); 
 
             			newLeafNode(otherlv_4, grammarAccess.getInitialStateAccess().getSemicolonKeyword_3());
             		
@@ -2922,7 +2957,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleTransition"
-    // InternalMontiArcDSL.g:1178:1: entryRuleTransition returns [EObject current=null] : iv_ruleTransition= ruleTransition EOF ;
+    // InternalMontiArcDSL.g:1196:1: entryRuleTransition returns [EObject current=null] : iv_ruleTransition= ruleTransition EOF ;
     public final EObject entryRuleTransition() throws RecognitionException {
         EObject current = null;
 
@@ -2930,8 +2965,8 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMontiArcDSL.g:1178:51: (iv_ruleTransition= ruleTransition EOF )
-            // InternalMontiArcDSL.g:1179:2: iv_ruleTransition= ruleTransition EOF
+            // InternalMontiArcDSL.g:1196:51: (iv_ruleTransition= ruleTransition EOF )
+            // InternalMontiArcDSL.g:1197:2: iv_ruleTransition= ruleTransition EOF
             {
              newCompositeNode(grammarAccess.getTransitionRule()); 
             pushFollow(FOLLOW_1);
@@ -2958,7 +2993,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTransition"
-    // InternalMontiArcDSL.g:1185:1: ruleTransition returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '->' ( (otherlv_2= RULE_ID ) ) )? (otherlv_3= '[' ( (lv_expression_4_0= ruleExpression ) ) otherlv_5= ']' )? (otherlv_6= '/' ( (lv_reaction_7_0= ruleBlock ) ) )? otherlv_8= ';' ) ;
+    // InternalMontiArcDSL.g:1203:1: ruleTransition returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '->' ( (otherlv_2= RULE_ID ) ) )? (otherlv_3= '[' ( (lv_expression_4_0= ruleExpression ) ) otherlv_5= ']' )? (otherlv_6= '/' ( (lv_reaction_7_0= ruleBlock ) ) )? otherlv_8= ';' ) ;
     public final EObject ruleTransition() throws RecognitionException {
         EObject current = null;
 
@@ -2978,17 +3013,17 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMontiArcDSL.g:1191:2: ( ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '->' ( (otherlv_2= RULE_ID ) ) )? (otherlv_3= '[' ( (lv_expression_4_0= ruleExpression ) ) otherlv_5= ']' )? (otherlv_6= '/' ( (lv_reaction_7_0= ruleBlock ) ) )? otherlv_8= ';' ) )
-            // InternalMontiArcDSL.g:1192:2: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '->' ( (otherlv_2= RULE_ID ) ) )? (otherlv_3= '[' ( (lv_expression_4_0= ruleExpression ) ) otherlv_5= ']' )? (otherlv_6= '/' ( (lv_reaction_7_0= ruleBlock ) ) )? otherlv_8= ';' )
+            // InternalMontiArcDSL.g:1209:2: ( ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '->' ( (otherlv_2= RULE_ID ) ) )? (otherlv_3= '[' ( (lv_expression_4_0= ruleExpression ) ) otherlv_5= ']' )? (otherlv_6= '/' ( (lv_reaction_7_0= ruleBlock ) ) )? otherlv_8= ';' ) )
+            // InternalMontiArcDSL.g:1210:2: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '->' ( (otherlv_2= RULE_ID ) ) )? (otherlv_3= '[' ( (lv_expression_4_0= ruleExpression ) ) otherlv_5= ']' )? (otherlv_6= '/' ( (lv_reaction_7_0= ruleBlock ) ) )? otherlv_8= ';' )
             {
-            // InternalMontiArcDSL.g:1192:2: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '->' ( (otherlv_2= RULE_ID ) ) )? (otherlv_3= '[' ( (lv_expression_4_0= ruleExpression ) ) otherlv_5= ']' )? (otherlv_6= '/' ( (lv_reaction_7_0= ruleBlock ) ) )? otherlv_8= ';' )
-            // InternalMontiArcDSL.g:1193:3: ( (otherlv_0= RULE_ID ) ) (otherlv_1= '->' ( (otherlv_2= RULE_ID ) ) )? (otherlv_3= '[' ( (lv_expression_4_0= ruleExpression ) ) otherlv_5= ']' )? (otherlv_6= '/' ( (lv_reaction_7_0= ruleBlock ) ) )? otherlv_8= ';'
+            // InternalMontiArcDSL.g:1210:2: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '->' ( (otherlv_2= RULE_ID ) ) )? (otherlv_3= '[' ( (lv_expression_4_0= ruleExpression ) ) otherlv_5= ']' )? (otherlv_6= '/' ( (lv_reaction_7_0= ruleBlock ) ) )? otherlv_8= ';' )
+            // InternalMontiArcDSL.g:1211:3: ( (otherlv_0= RULE_ID ) ) (otherlv_1= '->' ( (otherlv_2= RULE_ID ) ) )? (otherlv_3= '[' ( (lv_expression_4_0= ruleExpression ) ) otherlv_5= ']' )? (otherlv_6= '/' ( (lv_reaction_7_0= ruleBlock ) ) )? otherlv_8= ';'
             {
-            // InternalMontiArcDSL.g:1193:3: ( (otherlv_0= RULE_ID ) )
-            // InternalMontiArcDSL.g:1194:4: (otherlv_0= RULE_ID )
+            // InternalMontiArcDSL.g:1211:3: ( (otherlv_0= RULE_ID ) )
+            // InternalMontiArcDSL.g:1212:4: (otherlv_0= RULE_ID )
             {
-            // InternalMontiArcDSL.g:1194:4: (otherlv_0= RULE_ID )
-            // InternalMontiArcDSL.g:1195:5: otherlv_0= RULE_ID
+            // InternalMontiArcDSL.g:1212:4: (otherlv_0= RULE_ID )
+            // InternalMontiArcDSL.g:1213:5: otherlv_0= RULE_ID
             {
 
             					if (current==null) {
@@ -3005,26 +3040,26 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalMontiArcDSL.g:1206:3: (otherlv_1= '->' ( (otherlv_2= RULE_ID ) ) )?
+            // InternalMontiArcDSL.g:1224:3: (otherlv_1= '->' ( (otherlv_2= RULE_ID ) ) )?
             int alt17=2;
             int LA17_0 = input.LA(1);
 
-            if ( (LA17_0==20) ) {
+            if ( (LA17_0==21) ) {
                 alt17=1;
             }
             switch (alt17) {
                 case 1 :
-                    // InternalMontiArcDSL.g:1207:4: otherlv_1= '->' ( (otherlv_2= RULE_ID ) )
+                    // InternalMontiArcDSL.g:1225:4: otherlv_1= '->' ( (otherlv_2= RULE_ID ) )
                     {
-                    otherlv_1=(Token)match(input,20,FOLLOW_4); 
+                    otherlv_1=(Token)match(input,21,FOLLOW_4); 
 
                     				newLeafNode(otherlv_1, grammarAccess.getTransitionAccess().getHyphenMinusGreaterThanSignKeyword_1_0());
                     			
-                    // InternalMontiArcDSL.g:1211:4: ( (otherlv_2= RULE_ID ) )
-                    // InternalMontiArcDSL.g:1212:5: (otherlv_2= RULE_ID )
+                    // InternalMontiArcDSL.g:1229:4: ( (otherlv_2= RULE_ID ) )
+                    // InternalMontiArcDSL.g:1230:5: (otherlv_2= RULE_ID )
                     {
-                    // InternalMontiArcDSL.g:1212:5: (otherlv_2= RULE_ID )
-                    // InternalMontiArcDSL.g:1213:6: otherlv_2= RULE_ID
+                    // InternalMontiArcDSL.g:1230:5: (otherlv_2= RULE_ID )
+                    // InternalMontiArcDSL.g:1231:6: otherlv_2= RULE_ID
                     {
 
                     						if (current==null) {
@@ -3047,26 +3082,26 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalMontiArcDSL.g:1225:3: (otherlv_3= '[' ( (lv_expression_4_0= ruleExpression ) ) otherlv_5= ']' )?
+            // InternalMontiArcDSL.g:1243:3: (otherlv_3= '[' ( (lv_expression_4_0= ruleExpression ) ) otherlv_5= ']' )?
             int alt18=2;
             int LA18_0 = input.LA(1);
 
-            if ( (LA18_0==28) ) {
+            if ( (LA18_0==29) ) {
                 alt18=1;
             }
             switch (alt18) {
                 case 1 :
-                    // InternalMontiArcDSL.g:1226:4: otherlv_3= '[' ( (lv_expression_4_0= ruleExpression ) ) otherlv_5= ']'
+                    // InternalMontiArcDSL.g:1244:4: otherlv_3= '[' ( (lv_expression_4_0= ruleExpression ) ) otherlv_5= ']'
                     {
-                    otherlv_3=(Token)match(input,28,FOLLOW_12); 
+                    otherlv_3=(Token)match(input,29,FOLLOW_12); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getTransitionAccess().getLeftSquareBracketKeyword_2_0());
                     			
-                    // InternalMontiArcDSL.g:1230:4: ( (lv_expression_4_0= ruleExpression ) )
-                    // InternalMontiArcDSL.g:1231:5: (lv_expression_4_0= ruleExpression )
+                    // InternalMontiArcDSL.g:1248:4: ( (lv_expression_4_0= ruleExpression ) )
+                    // InternalMontiArcDSL.g:1249:5: (lv_expression_4_0= ruleExpression )
                     {
-                    // InternalMontiArcDSL.g:1231:5: (lv_expression_4_0= ruleExpression )
-                    // InternalMontiArcDSL.g:1232:6: lv_expression_4_0= ruleExpression
+                    // InternalMontiArcDSL.g:1249:5: (lv_expression_4_0= ruleExpression )
+                    // InternalMontiArcDSL.g:1250:6: lv_expression_4_0= ruleExpression
                     {
 
                     						newCompositeNode(grammarAccess.getTransitionAccess().getExpressionExpressionParserRuleCall_2_1_0());
@@ -3093,7 +3128,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_5=(Token)match(input,29,FOLLOW_23); 
+                    otherlv_5=(Token)match(input,30,FOLLOW_23); 
 
                     				newLeafNode(otherlv_5, grammarAccess.getTransitionAccess().getRightSquareBracketKeyword_2_2());
                     			
@@ -3103,26 +3138,26 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalMontiArcDSL.g:1254:3: (otherlv_6= '/' ( (lv_reaction_7_0= ruleBlock ) ) )?
+            // InternalMontiArcDSL.g:1272:3: (otherlv_6= '/' ( (lv_reaction_7_0= ruleBlock ) ) )?
             int alt19=2;
             int LA19_0 = input.LA(1);
 
-            if ( (LA19_0==27) ) {
+            if ( (LA19_0==28) ) {
                 alt19=1;
             }
             switch (alt19) {
                 case 1 :
-                    // InternalMontiArcDSL.g:1255:4: otherlv_6= '/' ( (lv_reaction_7_0= ruleBlock ) )
+                    // InternalMontiArcDSL.g:1273:4: otherlv_6= '/' ( (lv_reaction_7_0= ruleBlock ) )
                     {
-                    otherlv_6=(Token)match(input,27,FOLLOW_6); 
+                    otherlv_6=(Token)match(input,28,FOLLOW_6); 
 
                     				newLeafNode(otherlv_6, grammarAccess.getTransitionAccess().getSolidusKeyword_3_0());
                     			
-                    // InternalMontiArcDSL.g:1259:4: ( (lv_reaction_7_0= ruleBlock ) )
-                    // InternalMontiArcDSL.g:1260:5: (lv_reaction_7_0= ruleBlock )
+                    // InternalMontiArcDSL.g:1277:4: ( (lv_reaction_7_0= ruleBlock ) )
+                    // InternalMontiArcDSL.g:1278:5: (lv_reaction_7_0= ruleBlock )
                     {
-                    // InternalMontiArcDSL.g:1260:5: (lv_reaction_7_0= ruleBlock )
-                    // InternalMontiArcDSL.g:1261:6: lv_reaction_7_0= ruleBlock
+                    // InternalMontiArcDSL.g:1278:5: (lv_reaction_7_0= ruleBlock )
+                    // InternalMontiArcDSL.g:1279:6: lv_reaction_7_0= ruleBlock
                     {
 
                     						newCompositeNode(grammarAccess.getTransitionAccess().getReactionBlockParserRuleCall_3_1_0());
@@ -3155,7 +3190,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_8=(Token)match(input,18,FOLLOW_2); 
+            otherlv_8=(Token)match(input,19,FOLLOW_2); 
 
             			newLeafNode(otherlv_8, grammarAccess.getTransitionAccess().getSemicolonKeyword_4());
             		
@@ -3182,7 +3217,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBlock"
-    // InternalMontiArcDSL.g:1287:1: entryRuleBlock returns [EObject current=null] : iv_ruleBlock= ruleBlock EOF ;
+    // InternalMontiArcDSL.g:1305:1: entryRuleBlock returns [EObject current=null] : iv_ruleBlock= ruleBlock EOF ;
     public final EObject entryRuleBlock() throws RecognitionException {
         EObject current = null;
 
@@ -3190,8 +3225,8 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMontiArcDSL.g:1287:46: (iv_ruleBlock= ruleBlock EOF )
-            // InternalMontiArcDSL.g:1288:2: iv_ruleBlock= ruleBlock EOF
+            // InternalMontiArcDSL.g:1305:46: (iv_ruleBlock= ruleBlock EOF )
+            // InternalMontiArcDSL.g:1306:2: iv_ruleBlock= ruleBlock EOF
             {
              newCompositeNode(grammarAccess.getBlockRule()); 
             pushFollow(FOLLOW_1);
@@ -3218,7 +3253,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBlock"
-    // InternalMontiArcDSL.g:1294:1: ruleBlock returns [EObject current=null] : (otherlv_0= '{' ( ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' )? ( (lv_expressions_3_0= ruleExpression ) ) (otherlv_4= ',' ( (lv_expressions_5_0= ruleExpression ) ) )* otherlv_6= '}' ) ;
+    // InternalMontiArcDSL.g:1312:1: ruleBlock returns [EObject current=null] : (otherlv_0= '{' ( ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' )? ( (lv_expressions_3_0= ruleExpression ) ) (otherlv_4= ',' ( (lv_expressions_5_0= ruleExpression ) ) )* otherlv_6= '}' ) ;
     public final EObject ruleBlock() throws RecognitionException {
         EObject current = null;
 
@@ -3236,36 +3271,36 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMontiArcDSL.g:1300:2: ( (otherlv_0= '{' ( ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' )? ( (lv_expressions_3_0= ruleExpression ) ) (otherlv_4= ',' ( (lv_expressions_5_0= ruleExpression ) ) )* otherlv_6= '}' ) )
-            // InternalMontiArcDSL.g:1301:2: (otherlv_0= '{' ( ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' )? ( (lv_expressions_3_0= ruleExpression ) ) (otherlv_4= ',' ( (lv_expressions_5_0= ruleExpression ) ) )* otherlv_6= '}' )
+            // InternalMontiArcDSL.g:1318:2: ( (otherlv_0= '{' ( ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' )? ( (lv_expressions_3_0= ruleExpression ) ) (otherlv_4= ',' ( (lv_expressions_5_0= ruleExpression ) ) )* otherlv_6= '}' ) )
+            // InternalMontiArcDSL.g:1319:2: (otherlv_0= '{' ( ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' )? ( (lv_expressions_3_0= ruleExpression ) ) (otherlv_4= ',' ( (lv_expressions_5_0= ruleExpression ) ) )* otherlv_6= '}' )
             {
-            // InternalMontiArcDSL.g:1301:2: (otherlv_0= '{' ( ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' )? ( (lv_expressions_3_0= ruleExpression ) ) (otherlv_4= ',' ( (lv_expressions_5_0= ruleExpression ) ) )* otherlv_6= '}' )
-            // InternalMontiArcDSL.g:1302:3: otherlv_0= '{' ( ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' )? ( (lv_expressions_3_0= ruleExpression ) ) (otherlv_4= ',' ( (lv_expressions_5_0= ruleExpression ) ) )* otherlv_6= '}'
+            // InternalMontiArcDSL.g:1319:2: (otherlv_0= '{' ( ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' )? ( (lv_expressions_3_0= ruleExpression ) ) (otherlv_4= ',' ( (lv_expressions_5_0= ruleExpression ) ) )* otherlv_6= '}' )
+            // InternalMontiArcDSL.g:1320:3: otherlv_0= '{' ( ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' )? ( (lv_expressions_3_0= ruleExpression ) ) (otherlv_4= ',' ( (lv_expressions_5_0= ruleExpression ) ) )* otherlv_6= '}'
             {
-            otherlv_0=(Token)match(input,13,FOLLOW_12); 
+            otherlv_0=(Token)match(input,14,FOLLOW_12); 
 
             			newLeafNode(otherlv_0, grammarAccess.getBlockAccess().getLeftCurlyBracketKeyword_0());
             		
-            // InternalMontiArcDSL.g:1306:3: ( ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' )?
+            // InternalMontiArcDSL.g:1324:3: ( ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '=' )?
             int alt20=2;
             int LA20_0 = input.LA(1);
 
             if ( (LA20_0==RULE_ID) ) {
                 int LA20_1 = input.LA(2);
 
-                if ( (LA20_1==17) ) {
+                if ( (LA20_1==18) ) {
                     alt20=1;
                 }
             }
             switch (alt20) {
                 case 1 :
-                    // InternalMontiArcDSL.g:1307:4: ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '='
+                    // InternalMontiArcDSL.g:1325:4: ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '='
                     {
-                    // InternalMontiArcDSL.g:1307:4: ( (lv_name_1_0= RULE_ID ) )
-                    // InternalMontiArcDSL.g:1308:5: (lv_name_1_0= RULE_ID )
+                    // InternalMontiArcDSL.g:1325:4: ( (lv_name_1_0= RULE_ID ) )
+                    // InternalMontiArcDSL.g:1326:5: (lv_name_1_0= RULE_ID )
                     {
-                    // InternalMontiArcDSL.g:1308:5: (lv_name_1_0= RULE_ID )
-                    // InternalMontiArcDSL.g:1309:6: lv_name_1_0= RULE_ID
+                    // InternalMontiArcDSL.g:1326:5: (lv_name_1_0= RULE_ID )
+                    // InternalMontiArcDSL.g:1327:6: lv_name_1_0= RULE_ID
                     {
                     lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_27); 
 
@@ -3287,7 +3322,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_2=(Token)match(input,17,FOLLOW_12); 
+                    otherlv_2=(Token)match(input,18,FOLLOW_12); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getBlockAccess().getEqualsSignKeyword_1_1());
                     			
@@ -3297,11 +3332,11 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalMontiArcDSL.g:1330:3: ( (lv_expressions_3_0= ruleExpression ) )
-            // InternalMontiArcDSL.g:1331:4: (lv_expressions_3_0= ruleExpression )
+            // InternalMontiArcDSL.g:1348:3: ( (lv_expressions_3_0= ruleExpression ) )
+            // InternalMontiArcDSL.g:1349:4: (lv_expressions_3_0= ruleExpression )
             {
-            // InternalMontiArcDSL.g:1331:4: (lv_expressions_3_0= ruleExpression )
-            // InternalMontiArcDSL.g:1332:5: lv_expressions_3_0= ruleExpression
+            // InternalMontiArcDSL.g:1349:4: (lv_expressions_3_0= ruleExpression )
+            // InternalMontiArcDSL.g:1350:5: lv_expressions_3_0= ruleExpression
             {
 
             					newCompositeNode(grammarAccess.getBlockAccess().getExpressionsExpressionParserRuleCall_2_0());
@@ -3328,30 +3363,30 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalMontiArcDSL.g:1349:3: (otherlv_4= ',' ( (lv_expressions_5_0= ruleExpression ) ) )*
+            // InternalMontiArcDSL.g:1367:3: (otherlv_4= ',' ( (lv_expressions_5_0= ruleExpression ) ) )*
             loop21:
             do {
                 int alt21=2;
                 int LA21_0 = input.LA(1);
 
-                if ( (LA21_0==16) ) {
+                if ( (LA21_0==17) ) {
                     alt21=1;
                 }
 
 
                 switch (alt21) {
             	case 1 :
-            	    // InternalMontiArcDSL.g:1350:4: otherlv_4= ',' ( (lv_expressions_5_0= ruleExpression ) )
+            	    // InternalMontiArcDSL.g:1368:4: otherlv_4= ',' ( (lv_expressions_5_0= ruleExpression ) )
             	    {
-            	    otherlv_4=(Token)match(input,16,FOLLOW_12); 
+            	    otherlv_4=(Token)match(input,17,FOLLOW_12); 
 
             	    				newLeafNode(otherlv_4, grammarAccess.getBlockAccess().getCommaKeyword_3_0());
             	    			
-            	    // InternalMontiArcDSL.g:1354:4: ( (lv_expressions_5_0= ruleExpression ) )
-            	    // InternalMontiArcDSL.g:1355:5: (lv_expressions_5_0= ruleExpression )
+            	    // InternalMontiArcDSL.g:1372:4: ( (lv_expressions_5_0= ruleExpression ) )
+            	    // InternalMontiArcDSL.g:1373:5: (lv_expressions_5_0= ruleExpression )
             	    {
-            	    // InternalMontiArcDSL.g:1355:5: (lv_expressions_5_0= ruleExpression )
-            	    // InternalMontiArcDSL.g:1356:6: lv_expressions_5_0= ruleExpression
+            	    // InternalMontiArcDSL.g:1373:5: (lv_expressions_5_0= ruleExpression )
+            	    // InternalMontiArcDSL.g:1374:6: lv_expressions_5_0= ruleExpression
             	    {
 
             	    						newCompositeNode(grammarAccess.getBlockAccess().getExpressionsExpressionParserRuleCall_3_1_0());
@@ -3387,7 +3422,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_6=(Token)match(input,14,FOLLOW_2); 
+            otherlv_6=(Token)match(input,15,FOLLOW_2); 
 
             			newLeafNode(otherlv_6, grammarAccess.getBlockAccess().getRightCurlyBracketKeyword_4());
             		
@@ -3414,7 +3449,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleImportStatements"
-    // InternalMontiArcDSL.g:1382:1: entryRuleImportStatements returns [EObject current=null] : iv_ruleImportStatements= ruleImportStatements EOF ;
+    // InternalMontiArcDSL.g:1400:1: entryRuleImportStatements returns [EObject current=null] : iv_ruleImportStatements= ruleImportStatements EOF ;
     public final EObject entryRuleImportStatements() throws RecognitionException {
         EObject current = null;
 
@@ -3422,8 +3457,8 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMontiArcDSL.g:1382:57: (iv_ruleImportStatements= ruleImportStatements EOF )
-            // InternalMontiArcDSL.g:1383:2: iv_ruleImportStatements= ruleImportStatements EOF
+            // InternalMontiArcDSL.g:1400:57: (iv_ruleImportStatements= ruleImportStatements EOF )
+            // InternalMontiArcDSL.g:1401:2: iv_ruleImportStatements= ruleImportStatements EOF
             {
              newCompositeNode(grammarAccess.getImportStatementsRule()); 
             pushFollow(FOLLOW_1);
@@ -3450,7 +3485,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleImportStatements"
-    // InternalMontiArcDSL.g:1389:1: ruleImportStatements returns [EObject current=null] : (otherlv_0= 'import' ( (lv_importUri_1_0= RULE_MCQUALIFIEDNAME ) ) (otherlv_2= '.' ( (lv_star_3_0= '*' ) ) )? otherlv_4= ';' ) ;
+    // InternalMontiArcDSL.g:1407:1: ruleImportStatements returns [EObject current=null] : (otherlv_0= 'import' ( (lv_importUri_1_0= RULE_MCQUALIFIEDNAME ) ) (otherlv_2= '.' ( (lv_star_3_0= '*' ) ) )? otherlv_4= ';' ) ;
     public final EObject ruleImportStatements() throws RecognitionException {
         EObject current = null;
 
@@ -3464,21 +3499,21 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMontiArcDSL.g:1395:2: ( (otherlv_0= 'import' ( (lv_importUri_1_0= RULE_MCQUALIFIEDNAME ) ) (otherlv_2= '.' ( (lv_star_3_0= '*' ) ) )? otherlv_4= ';' ) )
-            // InternalMontiArcDSL.g:1396:2: (otherlv_0= 'import' ( (lv_importUri_1_0= RULE_MCQUALIFIEDNAME ) ) (otherlv_2= '.' ( (lv_star_3_0= '*' ) ) )? otherlv_4= ';' )
+            // InternalMontiArcDSL.g:1413:2: ( (otherlv_0= 'import' ( (lv_importUri_1_0= RULE_MCQUALIFIEDNAME ) ) (otherlv_2= '.' ( (lv_star_3_0= '*' ) ) )? otherlv_4= ';' ) )
+            // InternalMontiArcDSL.g:1414:2: (otherlv_0= 'import' ( (lv_importUri_1_0= RULE_MCQUALIFIEDNAME ) ) (otherlv_2= '.' ( (lv_star_3_0= '*' ) ) )? otherlv_4= ';' )
             {
-            // InternalMontiArcDSL.g:1396:2: (otherlv_0= 'import' ( (lv_importUri_1_0= RULE_MCQUALIFIEDNAME ) ) (otherlv_2= '.' ( (lv_star_3_0= '*' ) ) )? otherlv_4= ';' )
-            // InternalMontiArcDSL.g:1397:3: otherlv_0= 'import' ( (lv_importUri_1_0= RULE_MCQUALIFIEDNAME ) ) (otherlv_2= '.' ( (lv_star_3_0= '*' ) ) )? otherlv_4= ';'
+            // InternalMontiArcDSL.g:1414:2: (otherlv_0= 'import' ( (lv_importUri_1_0= RULE_MCQUALIFIEDNAME ) ) (otherlv_2= '.' ( (lv_star_3_0= '*' ) ) )? otherlv_4= ';' )
+            // InternalMontiArcDSL.g:1415:3: otherlv_0= 'import' ( (lv_importUri_1_0= RULE_MCQUALIFIEDNAME ) ) (otherlv_2= '.' ( (lv_star_3_0= '*' ) ) )? otherlv_4= ';'
             {
-            otherlv_0=(Token)match(input,30,FOLLOW_29); 
+            otherlv_0=(Token)match(input,31,FOLLOW_29); 
 
             			newLeafNode(otherlv_0, grammarAccess.getImportStatementsAccess().getImportKeyword_0());
             		
-            // InternalMontiArcDSL.g:1401:3: ( (lv_importUri_1_0= RULE_MCQUALIFIEDNAME ) )
-            // InternalMontiArcDSL.g:1402:4: (lv_importUri_1_0= RULE_MCQUALIFIEDNAME )
+            // InternalMontiArcDSL.g:1419:3: ( (lv_importUri_1_0= RULE_MCQUALIFIEDNAME ) )
+            // InternalMontiArcDSL.g:1420:4: (lv_importUri_1_0= RULE_MCQUALIFIEDNAME )
             {
-            // InternalMontiArcDSL.g:1402:4: (lv_importUri_1_0= RULE_MCQUALIFIEDNAME )
-            // InternalMontiArcDSL.g:1403:5: lv_importUri_1_0= RULE_MCQUALIFIEDNAME
+            // InternalMontiArcDSL.g:1420:4: (lv_importUri_1_0= RULE_MCQUALIFIEDNAME )
+            // InternalMontiArcDSL.g:1421:5: lv_importUri_1_0= RULE_MCQUALIFIEDNAME
             {
             lv_importUri_1_0=(Token)match(input,RULE_MCQUALIFIEDNAME,FOLLOW_30); 
 
@@ -3500,28 +3535,28 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalMontiArcDSL.g:1419:3: (otherlv_2= '.' ( (lv_star_3_0= '*' ) ) )?
+            // InternalMontiArcDSL.g:1437:3: (otherlv_2= '.' ( (lv_star_3_0= '*' ) ) )?
             int alt22=2;
             int LA22_0 = input.LA(1);
 
-            if ( (LA22_0==31) ) {
+            if ( (LA22_0==32) ) {
                 alt22=1;
             }
             switch (alt22) {
                 case 1 :
-                    // InternalMontiArcDSL.g:1420:4: otherlv_2= '.' ( (lv_star_3_0= '*' ) )
+                    // InternalMontiArcDSL.g:1438:4: otherlv_2= '.' ( (lv_star_3_0= '*' ) )
                     {
-                    otherlv_2=(Token)match(input,31,FOLLOW_31); 
+                    otherlv_2=(Token)match(input,32,FOLLOW_31); 
 
                     				newLeafNode(otherlv_2, grammarAccess.getImportStatementsAccess().getFullStopKeyword_2_0());
                     			
-                    // InternalMontiArcDSL.g:1424:4: ( (lv_star_3_0= '*' ) )
-                    // InternalMontiArcDSL.g:1425:5: (lv_star_3_0= '*' )
+                    // InternalMontiArcDSL.g:1442:4: ( (lv_star_3_0= '*' ) )
+                    // InternalMontiArcDSL.g:1443:5: (lv_star_3_0= '*' )
                     {
-                    // InternalMontiArcDSL.g:1425:5: (lv_star_3_0= '*' )
-                    // InternalMontiArcDSL.g:1426:6: lv_star_3_0= '*'
+                    // InternalMontiArcDSL.g:1443:5: (lv_star_3_0= '*' )
+                    // InternalMontiArcDSL.g:1444:6: lv_star_3_0= '*'
                     {
-                    lv_star_3_0=(Token)match(input,32,FOLLOW_14); 
+                    lv_star_3_0=(Token)match(input,33,FOLLOW_14); 
 
                     						newLeafNode(lv_star_3_0, grammarAccess.getImportStatementsAccess().getStarAsteriskKeyword_2_1_0());
                     					
@@ -3543,7 +3578,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,18,FOLLOW_2); 
+            otherlv_4=(Token)match(input,19,FOLLOW_2); 
 
             			newLeafNode(otherlv_4, grammarAccess.getImportStatementsAccess().getSemicolonKeyword_3());
             		
@@ -3570,7 +3605,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRulePackage"
-    // InternalMontiArcDSL.g:1447:1: entryRulePackage returns [EObject current=null] : iv_rulePackage= rulePackage EOF ;
+    // InternalMontiArcDSL.g:1465:1: entryRulePackage returns [EObject current=null] : iv_rulePackage= rulePackage EOF ;
     public final EObject entryRulePackage() throws RecognitionException {
         EObject current = null;
 
@@ -3578,8 +3613,8 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMontiArcDSL.g:1447:48: (iv_rulePackage= rulePackage EOF )
-            // InternalMontiArcDSL.g:1448:2: iv_rulePackage= rulePackage EOF
+            // InternalMontiArcDSL.g:1465:48: (iv_rulePackage= rulePackage EOF )
+            // InternalMontiArcDSL.g:1466:2: iv_rulePackage= rulePackage EOF
             {
              newCompositeNode(grammarAccess.getPackageRule()); 
             pushFollow(FOLLOW_1);
@@ -3606,55 +3641,102 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePackage"
-    // InternalMontiArcDSL.g:1454:1: rulePackage returns [EObject current=null] : (otherlv_0= 'package' ( (lv_name_1_0= RULE_MCQUALIFIEDNAME ) ) otherlv_2= ';' ) ;
+    // InternalMontiArcDSL.g:1472:1: rulePackage returns [EObject current=null] : (otherlv_0= 'package' ( ( (lv_name_1_1= RULE_MCQUALIFIEDNAME | lv_name_1_2= RULE_ID ) ) ) otherlv_2= ';' ) ;
     public final EObject rulePackage() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token lv_name_1_0=null;
+        Token lv_name_1_1=null;
+        Token lv_name_1_2=null;
         Token otherlv_2=null;
 
 
         	enterRule();
 
         try {
-            // InternalMontiArcDSL.g:1460:2: ( (otherlv_0= 'package' ( (lv_name_1_0= RULE_MCQUALIFIEDNAME ) ) otherlv_2= ';' ) )
-            // InternalMontiArcDSL.g:1461:2: (otherlv_0= 'package' ( (lv_name_1_0= RULE_MCQUALIFIEDNAME ) ) otherlv_2= ';' )
+            // InternalMontiArcDSL.g:1478:2: ( (otherlv_0= 'package' ( ( (lv_name_1_1= RULE_MCQUALIFIEDNAME | lv_name_1_2= RULE_ID ) ) ) otherlv_2= ';' ) )
+            // InternalMontiArcDSL.g:1479:2: (otherlv_0= 'package' ( ( (lv_name_1_1= RULE_MCQUALIFIEDNAME | lv_name_1_2= RULE_ID ) ) ) otherlv_2= ';' )
             {
-            // InternalMontiArcDSL.g:1461:2: (otherlv_0= 'package' ( (lv_name_1_0= RULE_MCQUALIFIEDNAME ) ) otherlv_2= ';' )
-            // InternalMontiArcDSL.g:1462:3: otherlv_0= 'package' ( (lv_name_1_0= RULE_MCQUALIFIEDNAME ) ) otherlv_2= ';'
+            // InternalMontiArcDSL.g:1479:2: (otherlv_0= 'package' ( ( (lv_name_1_1= RULE_MCQUALIFIEDNAME | lv_name_1_2= RULE_ID ) ) ) otherlv_2= ';' )
+            // InternalMontiArcDSL.g:1480:3: otherlv_0= 'package' ( ( (lv_name_1_1= RULE_MCQUALIFIEDNAME | lv_name_1_2= RULE_ID ) ) ) otherlv_2= ';'
             {
-            otherlv_0=(Token)match(input,33,FOLLOW_29); 
+            otherlv_0=(Token)match(input,34,FOLLOW_32); 
 
             			newLeafNode(otherlv_0, grammarAccess.getPackageAccess().getPackageKeyword_0());
             		
-            // InternalMontiArcDSL.g:1466:3: ( (lv_name_1_0= RULE_MCQUALIFIEDNAME ) )
-            // InternalMontiArcDSL.g:1467:4: (lv_name_1_0= RULE_MCQUALIFIEDNAME )
+            // InternalMontiArcDSL.g:1484:3: ( ( (lv_name_1_1= RULE_MCQUALIFIEDNAME | lv_name_1_2= RULE_ID ) ) )
+            // InternalMontiArcDSL.g:1485:4: ( (lv_name_1_1= RULE_MCQUALIFIEDNAME | lv_name_1_2= RULE_ID ) )
             {
-            // InternalMontiArcDSL.g:1467:4: (lv_name_1_0= RULE_MCQUALIFIEDNAME )
-            // InternalMontiArcDSL.g:1468:5: lv_name_1_0= RULE_MCQUALIFIEDNAME
+            // InternalMontiArcDSL.g:1485:4: ( (lv_name_1_1= RULE_MCQUALIFIEDNAME | lv_name_1_2= RULE_ID ) )
+            // InternalMontiArcDSL.g:1486:5: (lv_name_1_1= RULE_MCQUALIFIEDNAME | lv_name_1_2= RULE_ID )
             {
-            lv_name_1_0=(Token)match(input,RULE_MCQUALIFIEDNAME,FOLLOW_14); 
+            // InternalMontiArcDSL.g:1486:5: (lv_name_1_1= RULE_MCQUALIFIEDNAME | lv_name_1_2= RULE_ID )
+            int alt23=2;
+            int LA23_0 = input.LA(1);
 
-            					newLeafNode(lv_name_1_0, grammarAccess.getPackageAccess().getNameMCQUALIFIEDNAMETerminalRuleCall_1_0());
-            				
+            if ( (LA23_0==RULE_MCQUALIFIEDNAME) ) {
+                alt23=1;
+            }
+            else if ( (LA23_0==RULE_ID) ) {
+                alt23=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 23, 0, input);
 
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getPackageRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"name",
-            						lv_name_1_0,
-            						"org.palladiosimulator.xtext.motiarc.MCBasics.MCQUALIFIEDNAME");
-            				
+                throw nvae;
+            }
+            switch (alt23) {
+                case 1 :
+                    // InternalMontiArcDSL.g:1487:6: lv_name_1_1= RULE_MCQUALIFIEDNAME
+                    {
+                    lv_name_1_1=(Token)match(input,RULE_MCQUALIFIEDNAME,FOLLOW_14); 
+
+                    						newLeafNode(lv_name_1_1, grammarAccess.getPackageAccess().getNameMCQUALIFIEDNAMETerminalRuleCall_1_0_0());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getPackageRule());
+                    						}
+                    						setWithLastConsumed(
+                    							current,
+                    							"name",
+                    							lv_name_1_1,
+                    							"org.palladiosimulator.xtext.motiarc.MCBasics.MCQUALIFIEDNAME");
+                    					
+
+                    }
+                    break;
+                case 2 :
+                    // InternalMontiArcDSL.g:1502:6: lv_name_1_2= RULE_ID
+                    {
+                    lv_name_1_2=(Token)match(input,RULE_ID,FOLLOW_14); 
+
+                    						newLeafNode(lv_name_1_2, grammarAccess.getPackageAccess().getNameIDTerminalRuleCall_1_0_1());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getPackageRule());
+                    						}
+                    						setWithLastConsumed(
+                    							current,
+                    							"name",
+                    							lv_name_1_2,
+                    							"org.eclipse.xtext.common.Terminals.ID");
+                    					
+
+                    }
+                    break;
 
             }
 
 
             }
 
-            otherlv_2=(Token)match(input,18,FOLLOW_2); 
+
+            }
+
+            otherlv_2=(Token)match(input,19,FOLLOW_2); 
 
             			newLeafNode(otherlv_2, grammarAccess.getPackageAccess().getSemicolonKeyword_2());
             		
@@ -3681,7 +3763,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleType"
-    // InternalMontiArcDSL.g:1492:1: entryRuleType returns [EObject current=null] : iv_ruleType= ruleType EOF ;
+    // InternalMontiArcDSL.g:1527:1: entryRuleType returns [EObject current=null] : iv_ruleType= ruleType EOF ;
     public final EObject entryRuleType() throws RecognitionException {
         EObject current = null;
 
@@ -3689,8 +3771,8 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMontiArcDSL.g:1492:45: (iv_ruleType= ruleType EOF )
-            // InternalMontiArcDSL.g:1493:2: iv_ruleType= ruleType EOF
+            // InternalMontiArcDSL.g:1527:45: (iv_ruleType= ruleType EOF )
+            // InternalMontiArcDSL.g:1528:2: iv_ruleType= ruleType EOF
             {
              newCompositeNode(grammarAccess.getTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -3717,7 +3799,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleType"
-    // InternalMontiArcDSL.g:1499:1: ruleType returns [EObject current=null] : (this_MCPrimitiveType_0= ruleMCPrimitiveType | this_MCArrayType_1= ruleMCArrayType ) ;
+    // InternalMontiArcDSL.g:1534:1: ruleType returns [EObject current=null] : (this_MCPrimitiveType_0= ruleMCPrimitiveType | this_MCArrayType_1= ruleMCArrayType | this_MCCollectionType_2= ruleMCCollectionType ) ;
     public final EObject ruleType() throws RecognitionException {
         EObject current = null;
 
@@ -3725,20 +3807,22 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
         EObject this_MCArrayType_1 = null;
 
+        EObject this_MCCollectionType_2 = null;
+
 
 
         	enterRule();
 
         try {
-            // InternalMontiArcDSL.g:1505:2: ( (this_MCPrimitiveType_0= ruleMCPrimitiveType | this_MCArrayType_1= ruleMCArrayType ) )
-            // InternalMontiArcDSL.g:1506:2: (this_MCPrimitiveType_0= ruleMCPrimitiveType | this_MCArrayType_1= ruleMCArrayType )
+            // InternalMontiArcDSL.g:1540:2: ( (this_MCPrimitiveType_0= ruleMCPrimitiveType | this_MCArrayType_1= ruleMCArrayType | this_MCCollectionType_2= ruleMCCollectionType ) )
+            // InternalMontiArcDSL.g:1541:2: (this_MCPrimitiveType_0= ruleMCPrimitiveType | this_MCArrayType_1= ruleMCArrayType | this_MCCollectionType_2= ruleMCCollectionType )
             {
-            // InternalMontiArcDSL.g:1506:2: (this_MCPrimitiveType_0= ruleMCPrimitiveType | this_MCArrayType_1= ruleMCArrayType )
-            int alt23=2;
-            alt23 = dfa23.predict(input);
-            switch (alt23) {
+            // InternalMontiArcDSL.g:1541:2: (this_MCPrimitiveType_0= ruleMCPrimitiveType | this_MCArrayType_1= ruleMCArrayType | this_MCCollectionType_2= ruleMCCollectionType )
+            int alt24=3;
+            alt24 = dfa24.predict(input);
+            switch (alt24) {
                 case 1 :
-                    // InternalMontiArcDSL.g:1507:3: this_MCPrimitiveType_0= ruleMCPrimitiveType
+                    // InternalMontiArcDSL.g:1542:3: this_MCPrimitiveType_0= ruleMCPrimitiveType
                     {
 
                     			newCompositeNode(grammarAccess.getTypeAccess().getMCPrimitiveTypeParserRuleCall_0());
@@ -3756,7 +3840,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalMontiArcDSL.g:1516:3: this_MCArrayType_1= ruleMCArrayType
+                    // InternalMontiArcDSL.g:1551:3: this_MCArrayType_1= ruleMCArrayType
                     {
 
                     			newCompositeNode(grammarAccess.getTypeAccess().getMCArrayTypeParserRuleCall_1());
@@ -3768,6 +3852,24 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
                     			current = this_MCArrayType_1;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 3 :
+                    // InternalMontiArcDSL.g:1560:3: this_MCCollectionType_2= ruleMCCollectionType
+                    {
+
+                    			newCompositeNode(grammarAccess.getTypeAccess().getMCCollectionTypeParserRuleCall_2());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_MCCollectionType_2=ruleMCCollectionType();
+
+                    state._fsp--;
+
+
+                    			current = this_MCCollectionType_2;
                     			afterParserOrEnumRuleCall();
                     		
 
@@ -3796,7 +3898,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleMCPrimitiveType"
-    // InternalMontiArcDSL.g:1528:1: entryRuleMCPrimitiveType returns [EObject current=null] : iv_ruleMCPrimitiveType= ruleMCPrimitiveType EOF ;
+    // InternalMontiArcDSL.g:1572:1: entryRuleMCPrimitiveType returns [EObject current=null] : iv_ruleMCPrimitiveType= ruleMCPrimitiveType EOF ;
     public final EObject entryRuleMCPrimitiveType() throws RecognitionException {
         EObject current = null;
 
@@ -3804,8 +3906,8 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMontiArcDSL.g:1528:56: (iv_ruleMCPrimitiveType= ruleMCPrimitiveType EOF )
-            // InternalMontiArcDSL.g:1529:2: iv_ruleMCPrimitiveType= ruleMCPrimitiveType EOF
+            // InternalMontiArcDSL.g:1572:56: (iv_ruleMCPrimitiveType= ruleMCPrimitiveType EOF )
+            // InternalMontiArcDSL.g:1573:2: iv_ruleMCPrimitiveType= ruleMCPrimitiveType EOF
             {
              newCompositeNode(grammarAccess.getMCPrimitiveTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -3832,7 +3934,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMCPrimitiveType"
-    // InternalMontiArcDSL.g:1535:1: ruleMCPrimitiveType returns [EObject current=null] : ( ( (lv_type_0_1= 'boolean' | lv_type_0_2= 'byte' | lv_type_0_3= 'short' | lv_type_0_4= 'int' | lv_type_0_5= 'long' | lv_type_0_6= 'char' | lv_type_0_7= 'float' | lv_type_0_8= 'double' ) ) ) ;
+    // InternalMontiArcDSL.g:1579:1: ruleMCPrimitiveType returns [EObject current=null] : ( ( (lv_type_0_1= 'boolean' | lv_type_0_2= 'byte' | lv_type_0_3= 'short' | lv_type_0_4= 'int' | lv_type_0_5= 'long' | lv_type_0_6= 'char' | lv_type_0_7= 'float' | lv_type_0_8= 'double' | lv_type_0_9= 'String' ) ) ) ;
     public final EObject ruleMCPrimitiveType() throws RecognitionException {
         EObject current = null;
 
@@ -3844,75 +3946,81 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
         Token lv_type_0_6=null;
         Token lv_type_0_7=null;
         Token lv_type_0_8=null;
+        Token lv_type_0_9=null;
 
 
         	enterRule();
 
         try {
-            // InternalMontiArcDSL.g:1541:2: ( ( ( (lv_type_0_1= 'boolean' | lv_type_0_2= 'byte' | lv_type_0_3= 'short' | lv_type_0_4= 'int' | lv_type_0_5= 'long' | lv_type_0_6= 'char' | lv_type_0_7= 'float' | lv_type_0_8= 'double' ) ) ) )
-            // InternalMontiArcDSL.g:1542:2: ( ( (lv_type_0_1= 'boolean' | lv_type_0_2= 'byte' | lv_type_0_3= 'short' | lv_type_0_4= 'int' | lv_type_0_5= 'long' | lv_type_0_6= 'char' | lv_type_0_7= 'float' | lv_type_0_8= 'double' ) ) )
+            // InternalMontiArcDSL.g:1585:2: ( ( ( (lv_type_0_1= 'boolean' | lv_type_0_2= 'byte' | lv_type_0_3= 'short' | lv_type_0_4= 'int' | lv_type_0_5= 'long' | lv_type_0_6= 'char' | lv_type_0_7= 'float' | lv_type_0_8= 'double' | lv_type_0_9= 'String' ) ) ) )
+            // InternalMontiArcDSL.g:1586:2: ( ( (lv_type_0_1= 'boolean' | lv_type_0_2= 'byte' | lv_type_0_3= 'short' | lv_type_0_4= 'int' | lv_type_0_5= 'long' | lv_type_0_6= 'char' | lv_type_0_7= 'float' | lv_type_0_8= 'double' | lv_type_0_9= 'String' ) ) )
             {
-            // InternalMontiArcDSL.g:1542:2: ( ( (lv_type_0_1= 'boolean' | lv_type_0_2= 'byte' | lv_type_0_3= 'short' | lv_type_0_4= 'int' | lv_type_0_5= 'long' | lv_type_0_6= 'char' | lv_type_0_7= 'float' | lv_type_0_8= 'double' ) ) )
-            // InternalMontiArcDSL.g:1543:3: ( (lv_type_0_1= 'boolean' | lv_type_0_2= 'byte' | lv_type_0_3= 'short' | lv_type_0_4= 'int' | lv_type_0_5= 'long' | lv_type_0_6= 'char' | lv_type_0_7= 'float' | lv_type_0_8= 'double' ) )
+            // InternalMontiArcDSL.g:1586:2: ( ( (lv_type_0_1= 'boolean' | lv_type_0_2= 'byte' | lv_type_0_3= 'short' | lv_type_0_4= 'int' | lv_type_0_5= 'long' | lv_type_0_6= 'char' | lv_type_0_7= 'float' | lv_type_0_8= 'double' | lv_type_0_9= 'String' ) ) )
+            // InternalMontiArcDSL.g:1587:3: ( (lv_type_0_1= 'boolean' | lv_type_0_2= 'byte' | lv_type_0_3= 'short' | lv_type_0_4= 'int' | lv_type_0_5= 'long' | lv_type_0_6= 'char' | lv_type_0_7= 'float' | lv_type_0_8= 'double' | lv_type_0_9= 'String' ) )
             {
-            // InternalMontiArcDSL.g:1543:3: ( (lv_type_0_1= 'boolean' | lv_type_0_2= 'byte' | lv_type_0_3= 'short' | lv_type_0_4= 'int' | lv_type_0_5= 'long' | lv_type_0_6= 'char' | lv_type_0_7= 'float' | lv_type_0_8= 'double' ) )
-            // InternalMontiArcDSL.g:1544:4: (lv_type_0_1= 'boolean' | lv_type_0_2= 'byte' | lv_type_0_3= 'short' | lv_type_0_4= 'int' | lv_type_0_5= 'long' | lv_type_0_6= 'char' | lv_type_0_7= 'float' | lv_type_0_8= 'double' )
+            // InternalMontiArcDSL.g:1587:3: ( (lv_type_0_1= 'boolean' | lv_type_0_2= 'byte' | lv_type_0_3= 'short' | lv_type_0_4= 'int' | lv_type_0_5= 'long' | lv_type_0_6= 'char' | lv_type_0_7= 'float' | lv_type_0_8= 'double' | lv_type_0_9= 'String' ) )
+            // InternalMontiArcDSL.g:1588:4: (lv_type_0_1= 'boolean' | lv_type_0_2= 'byte' | lv_type_0_3= 'short' | lv_type_0_4= 'int' | lv_type_0_5= 'long' | lv_type_0_6= 'char' | lv_type_0_7= 'float' | lv_type_0_8= 'double' | lv_type_0_9= 'String' )
             {
-            // InternalMontiArcDSL.g:1544:4: (lv_type_0_1= 'boolean' | lv_type_0_2= 'byte' | lv_type_0_3= 'short' | lv_type_0_4= 'int' | lv_type_0_5= 'long' | lv_type_0_6= 'char' | lv_type_0_7= 'float' | lv_type_0_8= 'double' )
-            int alt24=8;
+            // InternalMontiArcDSL.g:1588:4: (lv_type_0_1= 'boolean' | lv_type_0_2= 'byte' | lv_type_0_3= 'short' | lv_type_0_4= 'int' | lv_type_0_5= 'long' | lv_type_0_6= 'char' | lv_type_0_7= 'float' | lv_type_0_8= 'double' | lv_type_0_9= 'String' )
+            int alt25=9;
             switch ( input.LA(1) ) {
-            case 34:
-                {
-                alt24=1;
-                }
-                break;
             case 35:
                 {
-                alt24=2;
+                alt25=1;
                 }
                 break;
             case 36:
                 {
-                alt24=3;
+                alt25=2;
                 }
                 break;
             case 37:
                 {
-                alt24=4;
+                alt25=3;
                 }
                 break;
             case 38:
                 {
-                alt24=5;
+                alt25=4;
                 }
                 break;
             case 39:
                 {
-                alt24=6;
+                alt25=5;
                 }
                 break;
             case 40:
                 {
-                alt24=7;
+                alt25=6;
                 }
                 break;
             case 41:
                 {
-                alt24=8;
+                alt25=7;
+                }
+                break;
+            case 42:
+                {
+                alt25=8;
+                }
+                break;
+            case 43:
+                {
+                alt25=9;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 24, 0, input);
+                    new NoViableAltException("", 25, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt24) {
+            switch (alt25) {
                 case 1 :
-                    // InternalMontiArcDSL.g:1545:5: lv_type_0_1= 'boolean'
+                    // InternalMontiArcDSL.g:1589:5: lv_type_0_1= 'boolean'
                     {
-                    lv_type_0_1=(Token)match(input,34,FOLLOW_2); 
+                    lv_type_0_1=(Token)match(input,35,FOLLOW_2); 
 
                     					newLeafNode(lv_type_0_1, grammarAccess.getMCPrimitiveTypeAccess().getTypeBooleanKeyword_0_0());
                     				
@@ -3926,9 +4034,9 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalMontiArcDSL.g:1556:5: lv_type_0_2= 'byte'
+                    // InternalMontiArcDSL.g:1600:5: lv_type_0_2= 'byte'
                     {
-                    lv_type_0_2=(Token)match(input,35,FOLLOW_2); 
+                    lv_type_0_2=(Token)match(input,36,FOLLOW_2); 
 
                     					newLeafNode(lv_type_0_2, grammarAccess.getMCPrimitiveTypeAccess().getTypeByteKeyword_0_1());
                     				
@@ -3942,9 +4050,9 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalMontiArcDSL.g:1567:5: lv_type_0_3= 'short'
+                    // InternalMontiArcDSL.g:1611:5: lv_type_0_3= 'short'
                     {
-                    lv_type_0_3=(Token)match(input,36,FOLLOW_2); 
+                    lv_type_0_3=(Token)match(input,37,FOLLOW_2); 
 
                     					newLeafNode(lv_type_0_3, grammarAccess.getMCPrimitiveTypeAccess().getTypeShortKeyword_0_2());
                     				
@@ -3958,9 +4066,9 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalMontiArcDSL.g:1578:5: lv_type_0_4= 'int'
+                    // InternalMontiArcDSL.g:1622:5: lv_type_0_4= 'int'
                     {
-                    lv_type_0_4=(Token)match(input,37,FOLLOW_2); 
+                    lv_type_0_4=(Token)match(input,38,FOLLOW_2); 
 
                     					newLeafNode(lv_type_0_4, grammarAccess.getMCPrimitiveTypeAccess().getTypeIntKeyword_0_3());
                     				
@@ -3974,9 +4082,9 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalMontiArcDSL.g:1589:5: lv_type_0_5= 'long'
+                    // InternalMontiArcDSL.g:1633:5: lv_type_0_5= 'long'
                     {
-                    lv_type_0_5=(Token)match(input,38,FOLLOW_2); 
+                    lv_type_0_5=(Token)match(input,39,FOLLOW_2); 
 
                     					newLeafNode(lv_type_0_5, grammarAccess.getMCPrimitiveTypeAccess().getTypeLongKeyword_0_4());
                     				
@@ -3990,9 +4098,9 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalMontiArcDSL.g:1600:5: lv_type_0_6= 'char'
+                    // InternalMontiArcDSL.g:1644:5: lv_type_0_6= 'char'
                     {
-                    lv_type_0_6=(Token)match(input,39,FOLLOW_2); 
+                    lv_type_0_6=(Token)match(input,40,FOLLOW_2); 
 
                     					newLeafNode(lv_type_0_6, grammarAccess.getMCPrimitiveTypeAccess().getTypeCharKeyword_0_5());
                     				
@@ -4006,9 +4114,9 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalMontiArcDSL.g:1611:5: lv_type_0_7= 'float'
+                    // InternalMontiArcDSL.g:1655:5: lv_type_0_7= 'float'
                     {
-                    lv_type_0_7=(Token)match(input,40,FOLLOW_2); 
+                    lv_type_0_7=(Token)match(input,41,FOLLOW_2); 
 
                     					newLeafNode(lv_type_0_7, grammarAccess.getMCPrimitiveTypeAccess().getTypeFloatKeyword_0_6());
                     				
@@ -4022,9 +4130,9 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalMontiArcDSL.g:1622:5: lv_type_0_8= 'double'
+                    // InternalMontiArcDSL.g:1666:5: lv_type_0_8= 'double'
                     {
-                    lv_type_0_8=(Token)match(input,41,FOLLOW_2); 
+                    lv_type_0_8=(Token)match(input,42,FOLLOW_2); 
 
                     					newLeafNode(lv_type_0_8, grammarAccess.getMCPrimitiveTypeAccess().getTypeDoubleKeyword_0_7());
                     				
@@ -4033,6 +4141,22 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
                     						current = createModelElement(grammarAccess.getMCPrimitiveTypeRule());
                     					}
                     					setWithLastConsumed(current, "type", lv_type_0_8, null);
+                    				
+
+                    }
+                    break;
+                case 9 :
+                    // InternalMontiArcDSL.g:1677:5: lv_type_0_9= 'String'
+                    {
+                    lv_type_0_9=(Token)match(input,43,FOLLOW_2); 
+
+                    					newLeafNode(lv_type_0_9, grammarAccess.getMCPrimitiveTypeAccess().getTypeStringKeyword_0_8());
+                    				
+
+                    					if (current==null) {
+                    						current = createModelElement(grammarAccess.getMCPrimitiveTypeRule());
+                    					}
+                    					setWithLastConsumed(current, "type", lv_type_0_9, null);
                     				
 
                     }
@@ -4065,8 +4189,239 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleMCPrimitiveType"
 
 
+    // $ANTLR start "entryRuleMCCollectionType"
+    // InternalMontiArcDSL.g:1693:1: entryRuleMCCollectionType returns [EObject current=null] : iv_ruleMCCollectionType= ruleMCCollectionType EOF ;
+    public final EObject entryRuleMCCollectionType() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMCCollectionType = null;
+
+
+        try {
+            // InternalMontiArcDSL.g:1693:57: (iv_ruleMCCollectionType= ruleMCCollectionType EOF )
+            // InternalMontiArcDSL.g:1694:2: iv_ruleMCCollectionType= ruleMCCollectionType EOF
+            {
+             newCompositeNode(grammarAccess.getMCCollectionTypeRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleMCCollectionType=ruleMCCollectionType();
+
+            state._fsp--;
+
+             current =iv_ruleMCCollectionType; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMCCollectionType"
+
+
+    // $ANTLR start "ruleMCCollectionType"
+    // InternalMontiArcDSL.g:1700:1: ruleMCCollectionType returns [EObject current=null] : ( ( ( (lv_collection_0_1= 'Set' | lv_collection_0_2= 'List' | lv_collection_0_3= 'Map' | lv_collection_0_4= 'Optional' ) ) ) otherlv_1= '<' ( (lv_innerType_2_0= ruleType ) ) otherlv_3= '>' ) ;
+    public final EObject ruleMCCollectionType() throws RecognitionException {
+        EObject current = null;
+
+        Token lv_collection_0_1=null;
+        Token lv_collection_0_2=null;
+        Token lv_collection_0_3=null;
+        Token lv_collection_0_4=null;
+        Token otherlv_1=null;
+        Token otherlv_3=null;
+        EObject lv_innerType_2_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalMontiArcDSL.g:1706:2: ( ( ( ( (lv_collection_0_1= 'Set' | lv_collection_0_2= 'List' | lv_collection_0_3= 'Map' | lv_collection_0_4= 'Optional' ) ) ) otherlv_1= '<' ( (lv_innerType_2_0= ruleType ) ) otherlv_3= '>' ) )
+            // InternalMontiArcDSL.g:1707:2: ( ( ( (lv_collection_0_1= 'Set' | lv_collection_0_2= 'List' | lv_collection_0_3= 'Map' | lv_collection_0_4= 'Optional' ) ) ) otherlv_1= '<' ( (lv_innerType_2_0= ruleType ) ) otherlv_3= '>' )
+            {
+            // InternalMontiArcDSL.g:1707:2: ( ( ( (lv_collection_0_1= 'Set' | lv_collection_0_2= 'List' | lv_collection_0_3= 'Map' | lv_collection_0_4= 'Optional' ) ) ) otherlv_1= '<' ( (lv_innerType_2_0= ruleType ) ) otherlv_3= '>' )
+            // InternalMontiArcDSL.g:1708:3: ( ( (lv_collection_0_1= 'Set' | lv_collection_0_2= 'List' | lv_collection_0_3= 'Map' | lv_collection_0_4= 'Optional' ) ) ) otherlv_1= '<' ( (lv_innerType_2_0= ruleType ) ) otherlv_3= '>'
+            {
+            // InternalMontiArcDSL.g:1708:3: ( ( (lv_collection_0_1= 'Set' | lv_collection_0_2= 'List' | lv_collection_0_3= 'Map' | lv_collection_0_4= 'Optional' ) ) )
+            // InternalMontiArcDSL.g:1709:4: ( (lv_collection_0_1= 'Set' | lv_collection_0_2= 'List' | lv_collection_0_3= 'Map' | lv_collection_0_4= 'Optional' ) )
+            {
+            // InternalMontiArcDSL.g:1709:4: ( (lv_collection_0_1= 'Set' | lv_collection_0_2= 'List' | lv_collection_0_3= 'Map' | lv_collection_0_4= 'Optional' ) )
+            // InternalMontiArcDSL.g:1710:5: (lv_collection_0_1= 'Set' | lv_collection_0_2= 'List' | lv_collection_0_3= 'Map' | lv_collection_0_4= 'Optional' )
+            {
+            // InternalMontiArcDSL.g:1710:5: (lv_collection_0_1= 'Set' | lv_collection_0_2= 'List' | lv_collection_0_3= 'Map' | lv_collection_0_4= 'Optional' )
+            int alt26=4;
+            switch ( input.LA(1) ) {
+            case 44:
+                {
+                alt26=1;
+                }
+                break;
+            case 45:
+                {
+                alt26=2;
+                }
+                break;
+            case 46:
+                {
+                alt26=3;
+                }
+                break;
+            case 47:
+                {
+                alt26=4;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 26, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt26) {
+                case 1 :
+                    // InternalMontiArcDSL.g:1711:6: lv_collection_0_1= 'Set'
+                    {
+                    lv_collection_0_1=(Token)match(input,44,FOLLOW_33); 
+
+                    						newLeafNode(lv_collection_0_1, grammarAccess.getMCCollectionTypeAccess().getCollectionSetKeyword_0_0_0());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getMCCollectionTypeRule());
+                    						}
+                    						setWithLastConsumed(current, "collection", lv_collection_0_1, null);
+                    					
+
+                    }
+                    break;
+                case 2 :
+                    // InternalMontiArcDSL.g:1722:6: lv_collection_0_2= 'List'
+                    {
+                    lv_collection_0_2=(Token)match(input,45,FOLLOW_33); 
+
+                    						newLeafNode(lv_collection_0_2, grammarAccess.getMCCollectionTypeAccess().getCollectionListKeyword_0_0_1());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getMCCollectionTypeRule());
+                    						}
+                    						setWithLastConsumed(current, "collection", lv_collection_0_2, null);
+                    					
+
+                    }
+                    break;
+                case 3 :
+                    // InternalMontiArcDSL.g:1733:6: lv_collection_0_3= 'Map'
+                    {
+                    lv_collection_0_3=(Token)match(input,46,FOLLOW_33); 
+
+                    						newLeafNode(lv_collection_0_3, grammarAccess.getMCCollectionTypeAccess().getCollectionMapKeyword_0_0_2());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getMCCollectionTypeRule());
+                    						}
+                    						setWithLastConsumed(current, "collection", lv_collection_0_3, null);
+                    					
+
+                    }
+                    break;
+                case 4 :
+                    // InternalMontiArcDSL.g:1744:6: lv_collection_0_4= 'Optional'
+                    {
+                    lv_collection_0_4=(Token)match(input,47,FOLLOW_33); 
+
+                    						newLeafNode(lv_collection_0_4, grammarAccess.getMCCollectionTypeAccess().getCollectionOptionalKeyword_0_0_3());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getMCCollectionTypeRule());
+                    						}
+                    						setWithLastConsumed(current, "collection", lv_collection_0_4, null);
+                    					
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            }
+
+            otherlv_1=(Token)match(input,48,FOLLOW_9); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getMCCollectionTypeAccess().getLessThanSignKeyword_1());
+            		
+            // InternalMontiArcDSL.g:1761:3: ( (lv_innerType_2_0= ruleType ) )
+            // InternalMontiArcDSL.g:1762:4: (lv_innerType_2_0= ruleType )
+            {
+            // InternalMontiArcDSL.g:1762:4: (lv_innerType_2_0= ruleType )
+            // InternalMontiArcDSL.g:1763:5: lv_innerType_2_0= ruleType
+            {
+
+            					newCompositeNode(grammarAccess.getMCCollectionTypeAccess().getInnerTypeTypeParserRuleCall_2_0());
+            				
+            pushFollow(FOLLOW_34);
+            lv_innerType_2_0=ruleType();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getMCCollectionTypeRule());
+            					}
+            					set(
+            						current,
+            						"innerType",
+            						lv_innerType_2_0,
+            						"org.palladiosimulator.xtext.motiarc.MCBasics.Type");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            otherlv_3=(Token)match(input,49,FOLLOW_2); 
+
+            			newLeafNode(otherlv_3, grammarAccess.getMCCollectionTypeAccess().getGreaterThanSignKeyword_3());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMCCollectionType"
+
+
     // $ANTLR start "entryRuleMCArrayType"
-    // InternalMontiArcDSL.g:1638:1: entryRuleMCArrayType returns [EObject current=null] : iv_ruleMCArrayType= ruleMCArrayType EOF ;
+    // InternalMontiArcDSL.g:1788:1: entryRuleMCArrayType returns [EObject current=null] : iv_ruleMCArrayType= ruleMCArrayType EOF ;
     public final EObject entryRuleMCArrayType() throws RecognitionException {
         EObject current = null;
 
@@ -4074,8 +4429,8 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMontiArcDSL.g:1638:52: (iv_ruleMCArrayType= ruleMCArrayType EOF )
-            // InternalMontiArcDSL.g:1639:2: iv_ruleMCArrayType= ruleMCArrayType EOF
+            // InternalMontiArcDSL.g:1788:52: (iv_ruleMCArrayType= ruleMCArrayType EOF )
+            // InternalMontiArcDSL.g:1789:2: iv_ruleMCArrayType= ruleMCArrayType EOF
             {
              newCompositeNode(grammarAccess.getMCArrayTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -4102,7 +4457,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMCArrayType"
-    // InternalMontiArcDSL.g:1645:1: ruleMCArrayType returns [EObject current=null] : (this_MCPrimitiveType_0= ruleMCPrimitiveType otherlv_1= '[' otherlv_2= ']' ) ;
+    // InternalMontiArcDSL.g:1795:1: ruleMCArrayType returns [EObject current=null] : (this_MCPrimitiveType_0= ruleMCPrimitiveType otherlv_1= '[' otherlv_2= ']' ) ;
     public final EObject ruleMCArrayType() throws RecognitionException {
         EObject current = null;
 
@@ -4115,16 +4470,16 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMontiArcDSL.g:1651:2: ( (this_MCPrimitiveType_0= ruleMCPrimitiveType otherlv_1= '[' otherlv_2= ']' ) )
-            // InternalMontiArcDSL.g:1652:2: (this_MCPrimitiveType_0= ruleMCPrimitiveType otherlv_1= '[' otherlv_2= ']' )
+            // InternalMontiArcDSL.g:1801:2: ( (this_MCPrimitiveType_0= ruleMCPrimitiveType otherlv_1= '[' otherlv_2= ']' ) )
+            // InternalMontiArcDSL.g:1802:2: (this_MCPrimitiveType_0= ruleMCPrimitiveType otherlv_1= '[' otherlv_2= ']' )
             {
-            // InternalMontiArcDSL.g:1652:2: (this_MCPrimitiveType_0= ruleMCPrimitiveType otherlv_1= '[' otherlv_2= ']' )
-            // InternalMontiArcDSL.g:1653:3: this_MCPrimitiveType_0= ruleMCPrimitiveType otherlv_1= '[' otherlv_2= ']'
+            // InternalMontiArcDSL.g:1802:2: (this_MCPrimitiveType_0= ruleMCPrimitiveType otherlv_1= '[' otherlv_2= ']' )
+            // InternalMontiArcDSL.g:1803:3: this_MCPrimitiveType_0= ruleMCPrimitiveType otherlv_1= '[' otherlv_2= ']'
             {
 
             			newCompositeNode(grammarAccess.getMCArrayTypeAccess().getMCPrimitiveTypeParserRuleCall_0());
             		
-            pushFollow(FOLLOW_32);
+            pushFollow(FOLLOW_35);
             this_MCPrimitiveType_0=ruleMCPrimitiveType();
 
             state._fsp--;
@@ -4133,11 +4488,11 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
             			current = this_MCPrimitiveType_0;
             			afterParserOrEnumRuleCall();
             		
-            otherlv_1=(Token)match(input,28,FOLLOW_26); 
+            otherlv_1=(Token)match(input,29,FOLLOW_26); 
 
             			newLeafNode(otherlv_1, grammarAccess.getMCArrayTypeAccess().getLeftSquareBracketKeyword_1());
             		
-            otherlv_2=(Token)match(input,29,FOLLOW_2); 
+            otherlv_2=(Token)match(input,30,FOLLOW_2); 
 
             			newLeafNode(otherlv_2, grammarAccess.getMCArrayTypeAccess().getRightSquareBracketKeyword_2());
             		
@@ -4164,7 +4519,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleExpression"
-    // InternalMontiArcDSL.g:1673:1: entryRuleExpression returns [EObject current=null] : iv_ruleExpression= ruleExpression EOF ;
+    // InternalMontiArcDSL.g:1823:1: entryRuleExpression returns [EObject current=null] : iv_ruleExpression= ruleExpression EOF ;
     public final EObject entryRuleExpression() throws RecognitionException {
         EObject current = null;
 
@@ -4172,8 +4527,8 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMontiArcDSL.g:1673:51: (iv_ruleExpression= ruleExpression EOF )
-            // InternalMontiArcDSL.g:1674:2: iv_ruleExpression= ruleExpression EOF
+            // InternalMontiArcDSL.g:1823:51: (iv_ruleExpression= ruleExpression EOF )
+            // InternalMontiArcDSL.g:1824:2: iv_ruleExpression= ruleExpression EOF
             {
              newCompositeNode(grammarAccess.getExpressionRule()); 
             pushFollow(FOLLOW_1);
@@ -4200,7 +4555,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExpression"
-    // InternalMontiArcDSL.g:1680:1: ruleExpression returns [EObject current=null] : (this_NameExpression_0= ruleNameExpression | this_LiteralExpression_1= ruleLiteralExpression ) ;
+    // InternalMontiArcDSL.g:1830:1: ruleExpression returns [EObject current=null] : (this_NameExpression_0= ruleNameExpression | this_LiteralExpression_1= ruleLiteralExpression ) ;
     public final EObject ruleExpression() throws RecognitionException {
         EObject current = null;
 
@@ -4213,28 +4568,28 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMontiArcDSL.g:1686:2: ( (this_NameExpression_0= ruleNameExpression | this_LiteralExpression_1= ruleLiteralExpression ) )
-            // InternalMontiArcDSL.g:1687:2: (this_NameExpression_0= ruleNameExpression | this_LiteralExpression_1= ruleLiteralExpression )
+            // InternalMontiArcDSL.g:1836:2: ( (this_NameExpression_0= ruleNameExpression | this_LiteralExpression_1= ruleLiteralExpression ) )
+            // InternalMontiArcDSL.g:1837:2: (this_NameExpression_0= ruleNameExpression | this_LiteralExpression_1= ruleLiteralExpression )
             {
-            // InternalMontiArcDSL.g:1687:2: (this_NameExpression_0= ruleNameExpression | this_LiteralExpression_1= ruleLiteralExpression )
-            int alt25=2;
-            int LA25_0 = input.LA(1);
+            // InternalMontiArcDSL.g:1837:2: (this_NameExpression_0= ruleNameExpression | this_LiteralExpression_1= ruleLiteralExpression )
+            int alt27=2;
+            int LA27_0 = input.LA(1);
 
-            if ( (LA25_0==RULE_ID) ) {
-                alt25=1;
+            if ( (LA27_0==RULE_ID) ) {
+                alt27=1;
             }
-            else if ( ((LA25_0>=RULE_INT && LA25_0<=RULE_STRING)) ) {
-                alt25=2;
+            else if ( ((LA27_0>=RULE_INT && LA27_0<=RULE_STRING)) ) {
+                alt27=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 25, 0, input);
+                    new NoViableAltException("", 27, 0, input);
 
                 throw nvae;
             }
-            switch (alt25) {
+            switch (alt27) {
                 case 1 :
-                    // InternalMontiArcDSL.g:1688:3: this_NameExpression_0= ruleNameExpression
+                    // InternalMontiArcDSL.g:1838:3: this_NameExpression_0= ruleNameExpression
                     {
 
                     			newCompositeNode(grammarAccess.getExpressionAccess().getNameExpressionParserRuleCall_0());
@@ -4252,7 +4607,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalMontiArcDSL.g:1697:3: this_LiteralExpression_1= ruleLiteralExpression
+                    // InternalMontiArcDSL.g:1847:3: this_LiteralExpression_1= ruleLiteralExpression
                     {
 
                     			newCompositeNode(grammarAccess.getExpressionAccess().getLiteralExpressionParserRuleCall_1());
@@ -4292,7 +4647,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLiteralExpression"
-    // InternalMontiArcDSL.g:1709:1: entryRuleLiteralExpression returns [EObject current=null] : iv_ruleLiteralExpression= ruleLiteralExpression EOF ;
+    // InternalMontiArcDSL.g:1859:1: entryRuleLiteralExpression returns [EObject current=null] : iv_ruleLiteralExpression= ruleLiteralExpression EOF ;
     public final EObject entryRuleLiteralExpression() throws RecognitionException {
         EObject current = null;
 
@@ -4300,8 +4655,8 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMontiArcDSL.g:1709:58: (iv_ruleLiteralExpression= ruleLiteralExpression EOF )
-            // InternalMontiArcDSL.g:1710:2: iv_ruleLiteralExpression= ruleLiteralExpression EOF
+            // InternalMontiArcDSL.g:1859:58: (iv_ruleLiteralExpression= ruleLiteralExpression EOF )
+            // InternalMontiArcDSL.g:1860:2: iv_ruleLiteralExpression= ruleLiteralExpression EOF
             {
              newCompositeNode(grammarAccess.getLiteralExpressionRule()); 
             pushFollow(FOLLOW_1);
@@ -4328,7 +4683,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLiteralExpression"
-    // InternalMontiArcDSL.g:1716:1: ruleLiteralExpression returns [EObject current=null] : (this_NumberLiteral_0= ruleNumberLiteral | this_StringLiteral_1= ruleStringLiteral ) ;
+    // InternalMontiArcDSL.g:1866:1: ruleLiteralExpression returns [EObject current=null] : (this_NumberLiteral_0= ruleNumberLiteral | this_StringLiteral_1= ruleStringLiteral ) ;
     public final EObject ruleLiteralExpression() throws RecognitionException {
         EObject current = null;
 
@@ -4341,28 +4696,28 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMontiArcDSL.g:1722:2: ( (this_NumberLiteral_0= ruleNumberLiteral | this_StringLiteral_1= ruleStringLiteral ) )
-            // InternalMontiArcDSL.g:1723:2: (this_NumberLiteral_0= ruleNumberLiteral | this_StringLiteral_1= ruleStringLiteral )
+            // InternalMontiArcDSL.g:1872:2: ( (this_NumberLiteral_0= ruleNumberLiteral | this_StringLiteral_1= ruleStringLiteral ) )
+            // InternalMontiArcDSL.g:1873:2: (this_NumberLiteral_0= ruleNumberLiteral | this_StringLiteral_1= ruleStringLiteral )
             {
-            // InternalMontiArcDSL.g:1723:2: (this_NumberLiteral_0= ruleNumberLiteral | this_StringLiteral_1= ruleStringLiteral )
-            int alt26=2;
-            int LA26_0 = input.LA(1);
+            // InternalMontiArcDSL.g:1873:2: (this_NumberLiteral_0= ruleNumberLiteral | this_StringLiteral_1= ruleStringLiteral )
+            int alt28=2;
+            int LA28_0 = input.LA(1);
 
-            if ( (LA26_0==RULE_INT) ) {
-                alt26=1;
+            if ( (LA28_0==RULE_INT) ) {
+                alt28=1;
             }
-            else if ( (LA26_0==RULE_STRING) ) {
-                alt26=2;
+            else if ( (LA28_0==RULE_STRING) ) {
+                alt28=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 26, 0, input);
+                    new NoViableAltException("", 28, 0, input);
 
                 throw nvae;
             }
-            switch (alt26) {
+            switch (alt28) {
                 case 1 :
-                    // InternalMontiArcDSL.g:1724:3: this_NumberLiteral_0= ruleNumberLiteral
+                    // InternalMontiArcDSL.g:1874:3: this_NumberLiteral_0= ruleNumberLiteral
                     {
 
                     			newCompositeNode(grammarAccess.getLiteralExpressionAccess().getNumberLiteralParserRuleCall_0());
@@ -4380,7 +4735,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalMontiArcDSL.g:1733:3: this_StringLiteral_1= ruleStringLiteral
+                    // InternalMontiArcDSL.g:1883:3: this_StringLiteral_1= ruleStringLiteral
                     {
 
                     			newCompositeNode(grammarAccess.getLiteralExpressionAccess().getStringLiteralParserRuleCall_1());
@@ -4420,7 +4775,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNumberLiteral"
-    // InternalMontiArcDSL.g:1745:1: entryRuleNumberLiteral returns [EObject current=null] : iv_ruleNumberLiteral= ruleNumberLiteral EOF ;
+    // InternalMontiArcDSL.g:1895:1: entryRuleNumberLiteral returns [EObject current=null] : iv_ruleNumberLiteral= ruleNumberLiteral EOF ;
     public final EObject entryRuleNumberLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -4428,8 +4783,8 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMontiArcDSL.g:1745:54: (iv_ruleNumberLiteral= ruleNumberLiteral EOF )
-            // InternalMontiArcDSL.g:1746:2: iv_ruleNumberLiteral= ruleNumberLiteral EOF
+            // InternalMontiArcDSL.g:1895:54: (iv_ruleNumberLiteral= ruleNumberLiteral EOF )
+            // InternalMontiArcDSL.g:1896:2: iv_ruleNumberLiteral= ruleNumberLiteral EOF
             {
              newCompositeNode(grammarAccess.getNumberLiteralRule()); 
             pushFollow(FOLLOW_1);
@@ -4456,7 +4811,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNumberLiteral"
-    // InternalMontiArcDSL.g:1752:1: ruleNumberLiteral returns [EObject current=null] : ( (lv_literal_0_0= RULE_INT ) ) ;
+    // InternalMontiArcDSL.g:1902:1: ruleNumberLiteral returns [EObject current=null] : ( (lv_literal_0_0= RULE_INT ) ) ;
     public final EObject ruleNumberLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -4466,14 +4821,14 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMontiArcDSL.g:1758:2: ( ( (lv_literal_0_0= RULE_INT ) ) )
-            // InternalMontiArcDSL.g:1759:2: ( (lv_literal_0_0= RULE_INT ) )
+            // InternalMontiArcDSL.g:1908:2: ( ( (lv_literal_0_0= RULE_INT ) ) )
+            // InternalMontiArcDSL.g:1909:2: ( (lv_literal_0_0= RULE_INT ) )
             {
-            // InternalMontiArcDSL.g:1759:2: ( (lv_literal_0_0= RULE_INT ) )
-            // InternalMontiArcDSL.g:1760:3: (lv_literal_0_0= RULE_INT )
+            // InternalMontiArcDSL.g:1909:2: ( (lv_literal_0_0= RULE_INT ) )
+            // InternalMontiArcDSL.g:1910:3: (lv_literal_0_0= RULE_INT )
             {
-            // InternalMontiArcDSL.g:1760:3: (lv_literal_0_0= RULE_INT )
-            // InternalMontiArcDSL.g:1761:4: lv_literal_0_0= RULE_INT
+            // InternalMontiArcDSL.g:1910:3: (lv_literal_0_0= RULE_INT )
+            // InternalMontiArcDSL.g:1911:4: lv_literal_0_0= RULE_INT
             {
             lv_literal_0_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
@@ -4515,7 +4870,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStringLiteral"
-    // InternalMontiArcDSL.g:1780:1: entryRuleStringLiteral returns [EObject current=null] : iv_ruleStringLiteral= ruleStringLiteral EOF ;
+    // InternalMontiArcDSL.g:1930:1: entryRuleStringLiteral returns [EObject current=null] : iv_ruleStringLiteral= ruleStringLiteral EOF ;
     public final EObject entryRuleStringLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -4523,8 +4878,8 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMontiArcDSL.g:1780:54: (iv_ruleStringLiteral= ruleStringLiteral EOF )
-            // InternalMontiArcDSL.g:1781:2: iv_ruleStringLiteral= ruleStringLiteral EOF
+            // InternalMontiArcDSL.g:1930:54: (iv_ruleStringLiteral= ruleStringLiteral EOF )
+            // InternalMontiArcDSL.g:1931:2: iv_ruleStringLiteral= ruleStringLiteral EOF
             {
              newCompositeNode(grammarAccess.getStringLiteralRule()); 
             pushFollow(FOLLOW_1);
@@ -4551,7 +4906,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStringLiteral"
-    // InternalMontiArcDSL.g:1787:1: ruleStringLiteral returns [EObject current=null] : ( (lv_literal_0_0= RULE_STRING ) ) ;
+    // InternalMontiArcDSL.g:1937:1: ruleStringLiteral returns [EObject current=null] : ( (lv_literal_0_0= RULE_STRING ) ) ;
     public final EObject ruleStringLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -4561,14 +4916,14 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMontiArcDSL.g:1793:2: ( ( (lv_literal_0_0= RULE_STRING ) ) )
-            // InternalMontiArcDSL.g:1794:2: ( (lv_literal_0_0= RULE_STRING ) )
+            // InternalMontiArcDSL.g:1943:2: ( ( (lv_literal_0_0= RULE_STRING ) ) )
+            // InternalMontiArcDSL.g:1944:2: ( (lv_literal_0_0= RULE_STRING ) )
             {
-            // InternalMontiArcDSL.g:1794:2: ( (lv_literal_0_0= RULE_STRING ) )
-            // InternalMontiArcDSL.g:1795:3: (lv_literal_0_0= RULE_STRING )
+            // InternalMontiArcDSL.g:1944:2: ( (lv_literal_0_0= RULE_STRING ) )
+            // InternalMontiArcDSL.g:1945:3: (lv_literal_0_0= RULE_STRING )
             {
-            // InternalMontiArcDSL.g:1795:3: (lv_literal_0_0= RULE_STRING )
-            // InternalMontiArcDSL.g:1796:4: lv_literal_0_0= RULE_STRING
+            // InternalMontiArcDSL.g:1945:3: (lv_literal_0_0= RULE_STRING )
+            // InternalMontiArcDSL.g:1946:4: lv_literal_0_0= RULE_STRING
             {
             lv_literal_0_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -4610,7 +4965,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNameExpression"
-    // InternalMontiArcDSL.g:1815:1: entryRuleNameExpression returns [EObject current=null] : iv_ruleNameExpression= ruleNameExpression EOF ;
+    // InternalMontiArcDSL.g:1965:1: entryRuleNameExpression returns [EObject current=null] : iv_ruleNameExpression= ruleNameExpression EOF ;
     public final EObject entryRuleNameExpression() throws RecognitionException {
         EObject current = null;
 
@@ -4618,8 +4973,8 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMontiArcDSL.g:1815:55: (iv_ruleNameExpression= ruleNameExpression EOF )
-            // InternalMontiArcDSL.g:1816:2: iv_ruleNameExpression= ruleNameExpression EOF
+            // InternalMontiArcDSL.g:1965:55: (iv_ruleNameExpression= ruleNameExpression EOF )
+            // InternalMontiArcDSL.g:1966:2: iv_ruleNameExpression= ruleNameExpression EOF
             {
              newCompositeNode(grammarAccess.getNameExpressionRule()); 
             pushFollow(FOLLOW_1);
@@ -4646,7 +5001,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNameExpression"
-    // InternalMontiArcDSL.g:1822:1: ruleNameExpression returns [EObject current=null] : ( (lv_name_0_0= RULE_ID ) ) ;
+    // InternalMontiArcDSL.g:1972:1: ruleNameExpression returns [EObject current=null] : ( (lv_name_0_0= RULE_ID ) ) ;
     public final EObject ruleNameExpression() throws RecognitionException {
         EObject current = null;
 
@@ -4656,14 +5011,14 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMontiArcDSL.g:1828:2: ( ( (lv_name_0_0= RULE_ID ) ) )
-            // InternalMontiArcDSL.g:1829:2: ( (lv_name_0_0= RULE_ID ) )
+            // InternalMontiArcDSL.g:1978:2: ( ( (lv_name_0_0= RULE_ID ) ) )
+            // InternalMontiArcDSL.g:1979:2: ( (lv_name_0_0= RULE_ID ) )
             {
-            // InternalMontiArcDSL.g:1829:2: ( (lv_name_0_0= RULE_ID ) )
-            // InternalMontiArcDSL.g:1830:3: (lv_name_0_0= RULE_ID )
+            // InternalMontiArcDSL.g:1979:2: ( (lv_name_0_0= RULE_ID ) )
+            // InternalMontiArcDSL.g:1980:3: (lv_name_0_0= RULE_ID )
             {
-            // InternalMontiArcDSL.g:1830:3: (lv_name_0_0= RULE_ID )
-            // InternalMontiArcDSL.g:1831:4: lv_name_0_0= RULE_ID
+            // InternalMontiArcDSL.g:1980:3: (lv_name_0_0= RULE_ID )
+            // InternalMontiArcDSL.g:1981:4: lv_name_0_0= RULE_ID
             {
             lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -4705,7 +5060,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleArguments"
-    // InternalMontiArcDSL.g:1850:1: entryRuleArguments returns [EObject current=null] : iv_ruleArguments= ruleArguments EOF ;
+    // InternalMontiArcDSL.g:2000:1: entryRuleArguments returns [EObject current=null] : iv_ruleArguments= ruleArguments EOF ;
     public final EObject entryRuleArguments() throws RecognitionException {
         EObject current = null;
 
@@ -4713,8 +5068,8 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMontiArcDSL.g:1850:50: (iv_ruleArguments= ruleArguments EOF )
-            // InternalMontiArcDSL.g:1851:2: iv_ruleArguments= ruleArguments EOF
+            // InternalMontiArcDSL.g:2000:50: (iv_ruleArguments= ruleArguments EOF )
+            // InternalMontiArcDSL.g:2001:2: iv_ruleArguments= ruleArguments EOF
             {
              newCompositeNode(grammarAccess.getArgumentsRule()); 
             pushFollow(FOLLOW_1);
@@ -4741,7 +5096,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleArguments"
-    // InternalMontiArcDSL.g:1857:1: ruleArguments returns [EObject current=null] : (otherlv_0= '(' ( (lv_arguments_1_0= ruleArgument ) ) (otherlv_2= ',' ( (lv_arguments_3_0= ruleArgument ) ) )* otherlv_4= ')' ) ;
+    // InternalMontiArcDSL.g:2007:1: ruleArguments returns [EObject current=null] : (otherlv_0= '(' ( (lv_arguments_1_0= ruleArgument ) ) (otherlv_2= ',' ( (lv_arguments_3_0= ruleArgument ) ) )* otherlv_4= ')' ) ;
     public final EObject ruleArguments() throws RecognitionException {
         EObject current = null;
 
@@ -4757,26 +5112,26 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMontiArcDSL.g:1863:2: ( (otherlv_0= '(' ( (lv_arguments_1_0= ruleArgument ) ) (otherlv_2= ',' ( (lv_arguments_3_0= ruleArgument ) ) )* otherlv_4= ')' ) )
-            // InternalMontiArcDSL.g:1864:2: (otherlv_0= '(' ( (lv_arguments_1_0= ruleArgument ) ) (otherlv_2= ',' ( (lv_arguments_3_0= ruleArgument ) ) )* otherlv_4= ')' )
+            // InternalMontiArcDSL.g:2013:2: ( (otherlv_0= '(' ( (lv_arguments_1_0= ruleArgument ) ) (otherlv_2= ',' ( (lv_arguments_3_0= ruleArgument ) ) )* otherlv_4= ')' ) )
+            // InternalMontiArcDSL.g:2014:2: (otherlv_0= '(' ( (lv_arguments_1_0= ruleArgument ) ) (otherlv_2= ',' ( (lv_arguments_3_0= ruleArgument ) ) )* otherlv_4= ')' )
             {
-            // InternalMontiArcDSL.g:1864:2: (otherlv_0= '(' ( (lv_arguments_1_0= ruleArgument ) ) (otherlv_2= ',' ( (lv_arguments_3_0= ruleArgument ) ) )* otherlv_4= ')' )
-            // InternalMontiArcDSL.g:1865:3: otherlv_0= '(' ( (lv_arguments_1_0= ruleArgument ) ) (otherlv_2= ',' ( (lv_arguments_3_0= ruleArgument ) ) )* otherlv_4= ')'
+            // InternalMontiArcDSL.g:2014:2: (otherlv_0= '(' ( (lv_arguments_1_0= ruleArgument ) ) (otherlv_2= ',' ( (lv_arguments_3_0= ruleArgument ) ) )* otherlv_4= ')' )
+            // InternalMontiArcDSL.g:2015:3: otherlv_0= '(' ( (lv_arguments_1_0= ruleArgument ) ) (otherlv_2= ',' ( (lv_arguments_3_0= ruleArgument ) ) )* otherlv_4= ')'
             {
-            otherlv_0=(Token)match(input,42,FOLLOW_4); 
+            otherlv_0=(Token)match(input,50,FOLLOW_4); 
 
             			newLeafNode(otherlv_0, grammarAccess.getArgumentsAccess().getLeftParenthesisKeyword_0());
             		
-            // InternalMontiArcDSL.g:1869:3: ( (lv_arguments_1_0= ruleArgument ) )
-            // InternalMontiArcDSL.g:1870:4: (lv_arguments_1_0= ruleArgument )
+            // InternalMontiArcDSL.g:2019:3: ( (lv_arguments_1_0= ruleArgument ) )
+            // InternalMontiArcDSL.g:2020:4: (lv_arguments_1_0= ruleArgument )
             {
-            // InternalMontiArcDSL.g:1870:4: (lv_arguments_1_0= ruleArgument )
-            // InternalMontiArcDSL.g:1871:5: lv_arguments_1_0= ruleArgument
+            // InternalMontiArcDSL.g:2020:4: (lv_arguments_1_0= ruleArgument )
+            // InternalMontiArcDSL.g:2021:5: lv_arguments_1_0= ruleArgument
             {
 
             					newCompositeNode(grammarAccess.getArgumentsAccess().getArgumentsArgumentParserRuleCall_1_0());
             				
-            pushFollow(FOLLOW_33);
+            pushFollow(FOLLOW_36);
             lv_arguments_1_0=ruleArgument();
 
             state._fsp--;
@@ -4798,35 +5153,35 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalMontiArcDSL.g:1888:3: (otherlv_2= ',' ( (lv_arguments_3_0= ruleArgument ) ) )*
-            loop27:
+            // InternalMontiArcDSL.g:2038:3: (otherlv_2= ',' ( (lv_arguments_3_0= ruleArgument ) ) )*
+            loop29:
             do {
-                int alt27=2;
-                int LA27_0 = input.LA(1);
+                int alt29=2;
+                int LA29_0 = input.LA(1);
 
-                if ( (LA27_0==16) ) {
-                    alt27=1;
+                if ( (LA29_0==17) ) {
+                    alt29=1;
                 }
 
 
-                switch (alt27) {
+                switch (alt29) {
             	case 1 :
-            	    // InternalMontiArcDSL.g:1889:4: otherlv_2= ',' ( (lv_arguments_3_0= ruleArgument ) )
+            	    // InternalMontiArcDSL.g:2039:4: otherlv_2= ',' ( (lv_arguments_3_0= ruleArgument ) )
             	    {
-            	    otherlv_2=(Token)match(input,16,FOLLOW_4); 
+            	    otherlv_2=(Token)match(input,17,FOLLOW_4); 
 
             	    				newLeafNode(otherlv_2, grammarAccess.getArgumentsAccess().getCommaKeyword_2_0());
             	    			
-            	    // InternalMontiArcDSL.g:1893:4: ( (lv_arguments_3_0= ruleArgument ) )
-            	    // InternalMontiArcDSL.g:1894:5: (lv_arguments_3_0= ruleArgument )
+            	    // InternalMontiArcDSL.g:2043:4: ( (lv_arguments_3_0= ruleArgument ) )
+            	    // InternalMontiArcDSL.g:2044:5: (lv_arguments_3_0= ruleArgument )
             	    {
-            	    // InternalMontiArcDSL.g:1894:5: (lv_arguments_3_0= ruleArgument )
-            	    // InternalMontiArcDSL.g:1895:6: lv_arguments_3_0= ruleArgument
+            	    // InternalMontiArcDSL.g:2044:5: (lv_arguments_3_0= ruleArgument )
+            	    // InternalMontiArcDSL.g:2045:6: lv_arguments_3_0= ruleArgument
             	    {
 
             	    						newCompositeNode(grammarAccess.getArgumentsAccess().getArgumentsArgumentParserRuleCall_2_1_0());
             	    					
-            	    pushFollow(FOLLOW_33);
+            	    pushFollow(FOLLOW_36);
             	    lv_arguments_3_0=ruleArgument();
 
             	    state._fsp--;
@@ -4853,11 +5208,11 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
             	    break;
 
             	default :
-            	    break loop27;
+            	    break loop29;
                 }
             } while (true);
 
-            otherlv_4=(Token)match(input,43,FOLLOW_2); 
+            otherlv_4=(Token)match(input,51,FOLLOW_2); 
 
             			newLeafNode(otherlv_4, grammarAccess.getArgumentsAccess().getRightParenthesisKeyword_3());
             		
@@ -4884,7 +5239,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleArgument"
-    // InternalMontiArcDSL.g:1921:1: entryRuleArgument returns [EObject current=null] : iv_ruleArgument= ruleArgument EOF ;
+    // InternalMontiArcDSL.g:2071:1: entryRuleArgument returns [EObject current=null] : iv_ruleArgument= ruleArgument EOF ;
     public final EObject entryRuleArgument() throws RecognitionException {
         EObject current = null;
 
@@ -4892,8 +5247,8 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMontiArcDSL.g:1921:49: (iv_ruleArgument= ruleArgument EOF )
-            // InternalMontiArcDSL.g:1922:2: iv_ruleArgument= ruleArgument EOF
+            // InternalMontiArcDSL.g:2071:49: (iv_ruleArgument= ruleArgument EOF )
+            // InternalMontiArcDSL.g:2072:2: iv_ruleArgument= ruleArgument EOF
             {
              newCompositeNode(grammarAccess.getArgumentRule()); 
             pushFollow(FOLLOW_1);
@@ -4920,7 +5275,7 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleArgument"
-    // InternalMontiArcDSL.g:1928:1: ruleArgument returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) ( (lv_expression_1_0= ruleExpression ) ) ) ;
+    // InternalMontiArcDSL.g:2078:1: ruleArgument returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) ( (lv_expression_1_0= ruleExpression ) ) ) ;
     public final EObject ruleArgument() throws RecognitionException {
         EObject current = null;
 
@@ -4932,17 +5287,17 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMontiArcDSL.g:1934:2: ( ( ( (lv_name_0_0= RULE_ID ) ) ( (lv_expression_1_0= ruleExpression ) ) ) )
-            // InternalMontiArcDSL.g:1935:2: ( ( (lv_name_0_0= RULE_ID ) ) ( (lv_expression_1_0= ruleExpression ) ) )
+            // InternalMontiArcDSL.g:2084:2: ( ( ( (lv_name_0_0= RULE_ID ) ) ( (lv_expression_1_0= ruleExpression ) ) ) )
+            // InternalMontiArcDSL.g:2085:2: ( ( (lv_name_0_0= RULE_ID ) ) ( (lv_expression_1_0= ruleExpression ) ) )
             {
-            // InternalMontiArcDSL.g:1935:2: ( ( (lv_name_0_0= RULE_ID ) ) ( (lv_expression_1_0= ruleExpression ) ) )
-            // InternalMontiArcDSL.g:1936:3: ( (lv_name_0_0= RULE_ID ) ) ( (lv_expression_1_0= ruleExpression ) )
+            // InternalMontiArcDSL.g:2085:2: ( ( (lv_name_0_0= RULE_ID ) ) ( (lv_expression_1_0= ruleExpression ) ) )
+            // InternalMontiArcDSL.g:2086:3: ( (lv_name_0_0= RULE_ID ) ) ( (lv_expression_1_0= ruleExpression ) )
             {
-            // InternalMontiArcDSL.g:1936:3: ( (lv_name_0_0= RULE_ID ) )
-            // InternalMontiArcDSL.g:1937:4: (lv_name_0_0= RULE_ID )
+            // InternalMontiArcDSL.g:2086:3: ( (lv_name_0_0= RULE_ID ) )
+            // InternalMontiArcDSL.g:2087:4: (lv_name_0_0= RULE_ID )
             {
-            // InternalMontiArcDSL.g:1937:4: (lv_name_0_0= RULE_ID )
-            // InternalMontiArcDSL.g:1938:5: lv_name_0_0= RULE_ID
+            // InternalMontiArcDSL.g:2087:4: (lv_name_0_0= RULE_ID )
+            // InternalMontiArcDSL.g:2088:5: lv_name_0_0= RULE_ID
             {
             lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_12); 
 
@@ -4964,11 +5319,11 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalMontiArcDSL.g:1954:3: ( (lv_expression_1_0= ruleExpression ) )
-            // InternalMontiArcDSL.g:1955:4: (lv_expression_1_0= ruleExpression )
+            // InternalMontiArcDSL.g:2104:3: ( (lv_expression_1_0= ruleExpression ) )
+            // InternalMontiArcDSL.g:2105:4: (lv_expression_1_0= ruleExpression )
             {
-            // InternalMontiArcDSL.g:1955:4: (lv_expression_1_0= ruleExpression )
-            // InternalMontiArcDSL.g:1956:5: lv_expression_1_0= ruleExpression
+            // InternalMontiArcDSL.g:2105:4: (lv_expression_1_0= ruleExpression )
+            // InternalMontiArcDSL.g:2106:5: lv_expression_1_0= ruleExpression
             {
 
             					newCompositeNode(grammarAccess.getArgumentAccess().getExpressionExpressionParserRuleCall_1_0());
@@ -5019,23 +5374,25 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
     // Delegated rules
 
 
-    protected DFA23 dfa23 = new DFA23(this);
-    static final String dfa_1s = "\13\uffff";
-    static final String dfa_2s = "\1\uffff\10\12\2\uffff";
-    static final String dfa_3s = "\1\42\10\4\2\uffff";
-    static final String dfa_4s = "\1\51\10\52\2\uffff";
-    static final String dfa_5s = "\11\uffff\1\2\1\1";
-    static final String dfa_6s = "\13\uffff}>";
+    protected DFA24 dfa24 = new DFA24(this);
+    static final String dfa_1s = "\15\uffff";
+    static final String dfa_2s = "\1\uffff\11\13\3\uffff";
+    static final String dfa_3s = "\1\43\11\4\3\uffff";
+    static final String dfa_4s = "\1\57\11\62\3\uffff";
+    static final String dfa_5s = "\12\uffff\1\3\1\1\1\2";
+    static final String dfa_6s = "\15\uffff}>";
     static final String[] dfa_7s = {
-            "\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10",
-            "\1\12\10\uffff\1\12\2\uffff\1\12\1\uffff\1\12\11\uffff\1\11\15\uffff\1\12",
-            "\1\12\10\uffff\1\12\2\uffff\1\12\1\uffff\1\12\11\uffff\1\11\15\uffff\1\12",
-            "\1\12\10\uffff\1\12\2\uffff\1\12\1\uffff\1\12\11\uffff\1\11\15\uffff\1\12",
-            "\1\12\10\uffff\1\12\2\uffff\1\12\1\uffff\1\12\11\uffff\1\11\15\uffff\1\12",
-            "\1\12\10\uffff\1\12\2\uffff\1\12\1\uffff\1\12\11\uffff\1\11\15\uffff\1\12",
-            "\1\12\10\uffff\1\12\2\uffff\1\12\1\uffff\1\12\11\uffff\1\11\15\uffff\1\12",
-            "\1\12\10\uffff\1\12\2\uffff\1\12\1\uffff\1\12\11\uffff\1\11\15\uffff\1\12",
-            "\1\12\10\uffff\1\12\2\uffff\1\12\1\uffff\1\12\11\uffff\1\11\15\uffff\1\12",
+            "\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\4\12",
+            "\1\13\11\uffff\1\13\2\uffff\1\13\1\uffff\1\13\11\uffff\1\14\23\uffff\2\13",
+            "\1\13\11\uffff\1\13\2\uffff\1\13\1\uffff\1\13\11\uffff\1\14\23\uffff\2\13",
+            "\1\13\11\uffff\1\13\2\uffff\1\13\1\uffff\1\13\11\uffff\1\14\23\uffff\2\13",
+            "\1\13\11\uffff\1\13\2\uffff\1\13\1\uffff\1\13\11\uffff\1\14\23\uffff\2\13",
+            "\1\13\11\uffff\1\13\2\uffff\1\13\1\uffff\1\13\11\uffff\1\14\23\uffff\2\13",
+            "\1\13\11\uffff\1\13\2\uffff\1\13\1\uffff\1\13\11\uffff\1\14\23\uffff\2\13",
+            "\1\13\11\uffff\1\13\2\uffff\1\13\1\uffff\1\13\11\uffff\1\14\23\uffff\2\13",
+            "\1\13\11\uffff\1\13\2\uffff\1\13\1\uffff\1\13\11\uffff\1\14\23\uffff\2\13",
+            "\1\13\11\uffff\1\13\2\uffff\1\13\1\uffff\1\13\11\uffff\1\14\23\uffff\2\13",
+            "",
             "",
             ""
     };
@@ -5048,11 +5405,11 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
     static final short[] dfa_6 = DFA.unpackEncodedString(dfa_6s);
     static final short[][] dfa_7 = unpackEncodedStringArray(dfa_7s);
 
-    class DFA23 extends DFA {
+    class DFA24 extends DFA {
 
-        public DFA23(BaseRecognizer recognizer) {
+        public DFA24(BaseRecognizer recognizer) {
             this.recognizer = recognizer;
-            this.decisionNumber = 23;
+            this.decisionNumber = 24;
             this.eot = dfa_1;
             this.eof = dfa_2;
             this.min = dfa_3;
@@ -5062,43 +5419,46 @@ public class InternalMontiArcDSLParser extends AbstractInternalAntlrParser {
             this.transition = dfa_7;
         }
         public String getDescription() {
-            return "1506:2: (this_MCPrimitiveType_0= ruleMCPrimitiveType | this_MCArrayType_1= ruleMCArrayType )";
+            return "1541:2: (this_MCPrimitiveType_0= ruleMCPrimitiveType | this_MCArrayType_1= ruleMCArrayType | this_MCCollectionType_2= ruleMCCollectionType )";
         }
     }
  
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000040001000L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000080002000L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x000003FC0000A000L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x000003FC41285000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x000003FC00000000L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000010002L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000020002L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x00000000000000D0L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000040000000010L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000C00000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000000050000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000040000000012L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000040000040010L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000002010L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000006004010L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000008040000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000018140000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000018040000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000000014000L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000080040000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000080000010000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000FFF800014000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000FFF88250A000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000010002L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000FFF800000000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000020002L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000040002L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000190L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0004000000000010L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x00000000000A0000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000001800000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0004000000000012L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0004000000080010L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000004010L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x000000000C008010L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000010080000L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000030280000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000030080000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000000028000L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000100080000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000000000050L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0001000000000000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0008000000020000L});
 
 }

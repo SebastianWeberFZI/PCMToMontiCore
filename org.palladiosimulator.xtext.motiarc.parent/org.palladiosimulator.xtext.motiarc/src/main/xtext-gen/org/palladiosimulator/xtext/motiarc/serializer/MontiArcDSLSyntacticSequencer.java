@@ -28,6 +28,8 @@ public class MontiArcDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
 		if (ruleCall.getRule() == grammarAccess.getIDRule())
 			return getIDToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getSYNCRule())
+			return getSYNCToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
@@ -38,6 +40,17 @@ public class MontiArcDSLSyntacticSequencer extends AbstractSyntacticSequencer {
 		if (node != null)
 			return getTokenText(node);
 		return "";
+	}
+	
+	/**
+	 * terminal SYNC:
+	 * 	"<<sync>>"
+	 * ;
+	 */
+	protected String getSYNCToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "<<sync>>";
 	}
 	
 	@Override

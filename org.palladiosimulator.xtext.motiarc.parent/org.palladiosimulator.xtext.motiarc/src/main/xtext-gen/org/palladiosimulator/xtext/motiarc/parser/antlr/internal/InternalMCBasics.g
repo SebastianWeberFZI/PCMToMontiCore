@@ -125,6 +125,51 @@ ruleImportStatements returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleType
+entryRuleType returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getTypeRule()); }
+	iv_ruleType=ruleType
+	{ $current=$iv_ruleType.current; }
+	EOF;
+
+// Rule Type
+ruleType returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getTypeAccess().getMCPrimitiveTypeParserRuleCall_0());
+		}
+		this_MCPrimitiveType_0=ruleMCPrimitiveType
+		{
+			$current = $this_MCPrimitiveType_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getTypeAccess().getMCArrayTypeParserRuleCall_1());
+		}
+		this_MCArrayType_1=ruleMCArrayType
+		{
+			$current = $this_MCArrayType_1.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getTypeAccess().getMCCollectionTypeParserRuleCall_2());
+		}
+		this_MCCollectionType_2=ruleMCCollectionType
+		{
+			$current = $this_MCCollectionType_2.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
 // Entry rule entryRuleMCPrimitiveType
 entryRuleMCPrimitiveType returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getMCPrimitiveTypeRule()); }
@@ -230,8 +275,114 @@ ruleMCPrimitiveType returns [EObject current=null]
 					}
 					setWithLastConsumed($current, "type", lv_type_0_8, null);
 				}
+				    |
+				lv_type_0_9='String'
+				{
+					newLeafNode(lv_type_0_9, grammarAccess.getMCPrimitiveTypeAccess().getTypeStringKeyword_0_8());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getMCPrimitiveTypeRule());
+					}
+					setWithLastConsumed($current, "type", lv_type_0_9, null);
+				}
 			)
 		)
+	)
+;
+
+// Entry rule entryRuleMCCollectionType
+entryRuleMCCollectionType returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getMCCollectionTypeRule()); }
+	iv_ruleMCCollectionType=ruleMCCollectionType
+	{ $current=$iv_ruleMCCollectionType.current; }
+	EOF;
+
+// Rule MCCollectionType
+ruleMCCollectionType returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				(
+					lv_collection_0_1='Set'
+					{
+						newLeafNode(lv_collection_0_1, grammarAccess.getMCCollectionTypeAccess().getCollectionSetKeyword_0_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getMCCollectionTypeRule());
+						}
+						setWithLastConsumed($current, "collection", lv_collection_0_1, null);
+					}
+					    |
+					lv_collection_0_2='List'
+					{
+						newLeafNode(lv_collection_0_2, grammarAccess.getMCCollectionTypeAccess().getCollectionListKeyword_0_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getMCCollectionTypeRule());
+						}
+						setWithLastConsumed($current, "collection", lv_collection_0_2, null);
+					}
+					    |
+					lv_collection_0_3='Map'
+					{
+						newLeafNode(lv_collection_0_3, grammarAccess.getMCCollectionTypeAccess().getCollectionMapKeyword_0_0_2());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getMCCollectionTypeRule());
+						}
+						setWithLastConsumed($current, "collection", lv_collection_0_3, null);
+					}
+					    |
+					lv_collection_0_4='Optional'
+					{
+						newLeafNode(lv_collection_0_4, grammarAccess.getMCCollectionTypeAccess().getCollectionOptionalKeyword_0_0_3());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getMCCollectionTypeRule());
+						}
+						setWithLastConsumed($current, "collection", lv_collection_0_4, null);
+					}
+				)
+			)
+		)
+		otherlv_1='<'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getMCCollectionTypeAccess().getLessThanSignKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getMCCollectionTypeAccess().getInnerTypeTypeParserRuleCall_2_0());
+				}
+				lv_innerType_2_0=ruleType
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getMCCollectionTypeRule());
+					}
+					set(
+						$current,
+						"innerType",
+						lv_innerType_2_0,
+						"org.palladiosimulator.xtext.motiarc.MCBasics.Type");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_3='>'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getMCCollectionTypeAccess().getGreaterThanSignKeyword_3());
+		}
 	)
 ;
 

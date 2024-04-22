@@ -16,7 +16,9 @@ import org.palladiosimulator.xtext.motiarc.mcBasics.Expression;
 import org.palladiosimulator.xtext.motiarc.mcBasics.ImportStatements;
 import org.palladiosimulator.xtext.motiarc.mcBasics.LiteralExpression;
 import org.palladiosimulator.xtext.motiarc.mcBasics.MCArrayType;
+import org.palladiosimulator.xtext.motiarc.mcBasics.MCCollectionType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.MCPrimitiveType;
+import org.palladiosimulator.xtext.motiarc.mcBasics.MCVoidType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.McBasicsFactory;
 import org.palladiosimulator.xtext.motiarc.mcBasics.McBasicsPackage;
 import org.palladiosimulator.xtext.motiarc.mcBasics.NameExpression;
@@ -59,6 +61,20 @@ public class McBasicsPackageImpl extends EPackageImpl implements McBasicsPackage
    * @generated
    */
   private EClass mcPrimitiveTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass mcVoidTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass mcCollectionTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -273,6 +289,61 @@ public class McBasicsPackageImpl extends EPackageImpl implements McBasicsPackage
    * @generated
    */
   @Override
+  public EClass getMCVoidType()
+  {
+    return mcVoidTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getMCVoidType_Type()
+  {
+    return (EAttribute)mcVoidTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getMCCollectionType()
+  {
+    return mcCollectionTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getMCCollectionType_Collection()
+  {
+    return (EAttribute)mcCollectionTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getMCCollectionType_InnerType()
+  {
+    return (EReference)mcCollectionTypeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getMCArrayType()
   {
     return mcArrayTypeEClass;
@@ -464,6 +535,13 @@ public class McBasicsPackageImpl extends EPackageImpl implements McBasicsPackage
     mcPrimitiveTypeEClass = createEClass(MC_PRIMITIVE_TYPE);
     createEAttribute(mcPrimitiveTypeEClass, MC_PRIMITIVE_TYPE__TYPE);
 
+    mcVoidTypeEClass = createEClass(MC_VOID_TYPE);
+    createEAttribute(mcVoidTypeEClass, MC_VOID_TYPE__TYPE);
+
+    mcCollectionTypeEClass = createEClass(MC_COLLECTION_TYPE);
+    createEAttribute(mcCollectionTypeEClass, MC_COLLECTION_TYPE__COLLECTION);
+    createEReference(mcCollectionTypeEClass, MC_COLLECTION_TYPE__INNER_TYPE);
+
     mcArrayTypeEClass = createEClass(MC_ARRAY_TYPE);
 
     expressionEClass = createEClass(EXPRESSION);
@@ -518,6 +596,7 @@ public class McBasicsPackageImpl extends EPackageImpl implements McBasicsPackage
     // Add supertypes to classes
     mcPrimitiveTypeEClass.getESuperTypes().add(this.getType());
     mcPrimitiveTypeEClass.getESuperTypes().add(this.getMCArrayType());
+    mcCollectionTypeEClass.getESuperTypes().add(this.getType());
     mcArrayTypeEClass.getESuperTypes().add(this.getType());
     literalExpressionEClass.getESuperTypes().add(this.getExpression());
     numberLiteralEClass.getESuperTypes().add(this.getLiteralExpression());
@@ -536,6 +615,13 @@ public class McBasicsPackageImpl extends EPackageImpl implements McBasicsPackage
 
     initEClass(mcPrimitiveTypeEClass, MCPrimitiveType.class, "MCPrimitiveType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getMCPrimitiveType_Type(), ecorePackage.getEString(), "type", null, 0, 1, MCPrimitiveType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(mcVoidTypeEClass, MCVoidType.class, "MCVoidType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMCVoidType_Type(), ecorePackage.getEString(), "type", null, 0, 1, MCVoidType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(mcCollectionTypeEClass, MCCollectionType.class, "MCCollectionType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMCCollectionType_Collection(), ecorePackage.getEString(), "collection", null, 0, 1, MCCollectionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMCCollectionType_InnerType(), this.getType(), null, "innerType", null, 0, 1, MCCollectionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(mcArrayTypeEClass, MCArrayType.class, "MCArrayType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

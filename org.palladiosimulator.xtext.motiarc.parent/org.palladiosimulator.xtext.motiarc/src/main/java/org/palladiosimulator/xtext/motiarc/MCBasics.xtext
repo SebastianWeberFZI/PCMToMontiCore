@@ -9,18 +9,27 @@ ImportStatements:
 
 
 Package:
-	'package' name=MCQUALIFIEDNAME ';'
+	'package' name=(MCQUALIFIEDNAME | ID)';'
 ;
 
 Type:
-	MCPrimitiveType | MCArrayType
+	MCPrimitiveType | MCArrayType | MCCollectionType
 ;
 
 
 
 MCPrimitiveType:
      type = ( 'boolean' | 'byte' | 'short' | 'int' 
-                  | 'long' | 'char' |'float' | 'double' )
+                  | 'long' | 'char' |'float' | 'double' | 'String' )
+;
+
+
+MCVoidType:
+	type = 'void'
+;
+
+MCCollectionType:
+	collection = ('Set' | 'List' | 'Map' | 'Optional') '<' innerType=Type '>'
 ;
 
 MCArrayType:

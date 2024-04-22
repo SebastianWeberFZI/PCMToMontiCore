@@ -32,10 +32,12 @@ public class MontiArcDSLParser extends AbstractContentAssistParser {
 		
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, MontiArcDSLGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getArcElementAccess().getAlternatives(), "rule__ArcElement__Alternatives");
-			builder.put(grammarAccess.getPortAccess().getAlternatives_0(), "rule__Port__Alternatives_0");
+			builder.put(grammarAccess.getPortAccess().getAlternatives_1(), "rule__Port__Alternatives_1");
 			builder.put(grammarAccess.getAutomatonAccess().getAlternatives_4(), "rule__Automaton__Alternatives_4");
+			builder.put(grammarAccess.getPackageAccess().getNameAlternatives_1_0(), "rule__Package__NameAlternatives_1_0");
 			builder.put(grammarAccess.getTypeAccess().getAlternatives(), "rule__Type__Alternatives");
 			builder.put(grammarAccess.getMCPrimitiveTypeAccess().getTypeAlternatives_0(), "rule__MCPrimitiveType__TypeAlternatives_0");
+			builder.put(grammarAccess.getMCCollectionTypeAccess().getCollectionAlternatives_0_0(), "rule__MCCollectionType__CollectionAlternatives_0_0");
 			builder.put(grammarAccess.getExpressionAccess().getAlternatives(), "rule__Expression__Alternatives");
 			builder.put(grammarAccess.getLiteralExpressionAccess().getAlternatives(), "rule__LiteralExpression__Alternatives");
 			builder.put(grammarAccess.getMACompilationUnitAccess().getGroup(), "rule__MACompilationUnit__Group__0");
@@ -68,6 +70,7 @@ public class MontiArcDSLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getImportStatementsAccess().getGroup(), "rule__ImportStatements__Group__0");
 			builder.put(grammarAccess.getImportStatementsAccess().getGroup_2(), "rule__ImportStatements__Group_2__0");
 			builder.put(grammarAccess.getPackageAccess().getGroup(), "rule__Package__Group__0");
+			builder.put(grammarAccess.getMCCollectionTypeAccess().getGroup(), "rule__MCCollectionType__Group__0");
 			builder.put(grammarAccess.getMCArrayTypeAccess().getGroup(), "rule__MCArrayType__Group__0");
 			builder.put(grammarAccess.getArgumentsAccess().getGroup(), "rule__Arguments__Group__0");
 			builder.put(grammarAccess.getArgumentsAccess().getGroup_2(), "rule__Arguments__Group_2__0");
@@ -92,10 +95,11 @@ public class MontiArcDSLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getConnectorAccess().getTargetsAssignment_3(), "rule__Connector__TargetsAssignment_3");
 			builder.put(grammarAccess.getPortsAccess().getPortsAssignment_1(), "rule__Ports__PortsAssignment_1");
 			builder.put(grammarAccess.getPortsAccess().getPortsAssignment_2_1(), "rule__Ports__PortsAssignment_2_1");
-			builder.put(grammarAccess.getPortAccess().getInAssignment_0_0(), "rule__Port__InAssignment_0_0");
-			builder.put(grammarAccess.getPortAccess().getOutAssignment_0_1(), "rule__Port__OutAssignment_0_1");
-			builder.put(grammarAccess.getPortAccess().getTypeAssignment_1(), "rule__Port__TypeAssignment_1");
-			builder.put(grammarAccess.getPortAccess().getNamesAssignment_2(), "rule__Port__NamesAssignment_2");
+			builder.put(grammarAccess.getPortAccess().getSyncAssignment_0(), "rule__Port__SyncAssignment_0");
+			builder.put(grammarAccess.getPortAccess().getInAssignment_1_0(), "rule__Port__InAssignment_1_0");
+			builder.put(grammarAccess.getPortAccess().getOutAssignment_1_1(), "rule__Port__OutAssignment_1_1");
+			builder.put(grammarAccess.getPortAccess().getTypeAssignment_2(), "rule__Port__TypeAssignment_2");
+			builder.put(grammarAccess.getPortAccess().getNamesAssignment_3(), "rule__Port__NamesAssignment_3");
 			builder.put(grammarAccess.getNamesAccess().getNamesAssignment_0(), "rule__Names__NamesAssignment_0");
 			builder.put(grammarAccess.getNamesAccess().getNamesAssignment_1_1(), "rule__Names__NamesAssignment_1_1");
 			builder.put(grammarAccess.getVariableAccess().getTypeAssignment_0(), "rule__Variable__TypeAssignment_0");
@@ -118,6 +122,9 @@ public class MontiArcDSLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getImportStatementsAccess().getStarAssignment_2_1(), "rule__ImportStatements__StarAssignment_2_1");
 			builder.put(grammarAccess.getPackageAccess().getNameAssignment_1(), "rule__Package__NameAssignment_1");
 			builder.put(grammarAccess.getMCPrimitiveTypeAccess().getTypeAssignment(), "rule__MCPrimitiveType__TypeAssignment");
+			builder.put(grammarAccess.getMCVoidTypeAccess().getTypeAssignment(), "rule__MCVoidType__TypeAssignment");
+			builder.put(grammarAccess.getMCCollectionTypeAccess().getCollectionAssignment_0(), "rule__MCCollectionType__CollectionAssignment_0");
+			builder.put(grammarAccess.getMCCollectionTypeAccess().getInnerTypeAssignment_2(), "rule__MCCollectionType__InnerTypeAssignment_2");
 			builder.put(grammarAccess.getNumberLiteralAccess().getLiteralAssignment(), "rule__NumberLiteral__LiteralAssignment");
 			builder.put(grammarAccess.getStringLiteralAccess().getLiteralAssignment(), "rule__StringLiteral__LiteralAssignment");
 			builder.put(grammarAccess.getNameExpressionAccess().getNameAssignment(), "rule__NameExpression__NameAssignment");

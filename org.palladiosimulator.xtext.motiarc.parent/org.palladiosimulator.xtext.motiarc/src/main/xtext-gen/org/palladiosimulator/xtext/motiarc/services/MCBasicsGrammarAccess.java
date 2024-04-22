@@ -71,25 +71,33 @@ public class MCBasicsGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cPackageKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameMCQUALIFIEDNAMETerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Alternatives cNameAlternatives_1_0 = (Alternatives)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cNameMCQUALIFIEDNAMETerminalRuleCall_1_0_0 = (RuleCall)cNameAlternatives_1_0.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_1_0_1 = (RuleCall)cNameAlternatives_1_0.eContents().get(1);
 		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//Package:
-		//    'package' name=MCQUALIFIEDNAME ';'
+		//    'package' name=(MCQUALIFIEDNAME | ID)';'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'package' name=MCQUALIFIEDNAME ';'
+		//'package' name=(MCQUALIFIEDNAME | ID)';'
 		public Group getGroup() { return cGroup; }
 		
 		//'package'
 		public Keyword getPackageKeyword_0() { return cPackageKeyword_0; }
 		
-		//name=MCQUALIFIEDNAME
+		//name=(MCQUALIFIEDNAME | ID)
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 		
+		//(MCQUALIFIEDNAME | ID)
+		public Alternatives getNameAlternatives_1_0() { return cNameAlternatives_1_0; }
+		
 		//MCQUALIFIEDNAME
-		public RuleCall getNameMCQUALIFIEDNAMETerminalRuleCall_1_0() { return cNameMCQUALIFIEDNAMETerminalRuleCall_1_0; }
+		public RuleCall getNameMCQUALIFIEDNAMETerminalRuleCall_1_0_0() { return cNameMCQUALIFIEDNAMETerminalRuleCall_1_0_0; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0_1() { return cNameIDTerminalRuleCall_1_0_1; }
 		
 		//';'
 		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
@@ -99,13 +107,14 @@ public class MCBasicsGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cMCPrimitiveTypeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cMCArrayTypeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cMCCollectionTypeParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//Type:
-		//    MCPrimitiveType | MCArrayType
+		//    MCPrimitiveType | MCArrayType | MCCollectionType
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//MCPrimitiveType | MCArrayType
+		//MCPrimitiveType | MCArrayType | MCCollectionType
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//MCPrimitiveType
@@ -113,6 +122,9 @@ public class MCBasicsGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		
 		//MCArrayType
 		public RuleCall getMCArrayTypeParserRuleCall_1() { return cMCArrayTypeParserRuleCall_1; }
+		
+		//MCCollectionType
+		public RuleCall getMCCollectionTypeParserRuleCall_2() { return cMCCollectionTypeParserRuleCall_2; }
 	}
 	public class MCPrimitiveTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.xtext.motiarc.MCBasics.MCPrimitiveType");
@@ -126,19 +138,20 @@ public class MCBasicsGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		private final Keyword cTypeCharKeyword_0_5 = (Keyword)cTypeAlternatives_0.eContents().get(5);
 		private final Keyword cTypeFloatKeyword_0_6 = (Keyword)cTypeAlternatives_0.eContents().get(6);
 		private final Keyword cTypeDoubleKeyword_0_7 = (Keyword)cTypeAlternatives_0.eContents().get(7);
+		private final Keyword cTypeStringKeyword_0_8 = (Keyword)cTypeAlternatives_0.eContents().get(8);
 		
 		//MCPrimitiveType:
 		//     type = ( 'boolean' | 'byte' | 'short' | 'int'
-		//                  | 'long' | 'char' |'float' | 'double' )
+		//                  | 'long' | 'char' |'float' | 'double' | 'String' )
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//type = ( 'boolean' | 'byte' | 'short' | 'int'
-		//             | 'long' | 'char' |'float' | 'double' )
+		//             | 'long' | 'char' |'float' | 'double' | 'String' )
 		public Assignment getTypeAssignment() { return cTypeAssignment; }
 		
 		//( 'boolean' | 'byte' | 'short' | 'int'
-		//                 | 'long' | 'char' |'float' | 'double' )
+		//                 | 'long' | 'char' |'float' | 'double' | 'String' )
 		public Alternatives getTypeAlternatives_0() { return cTypeAlternatives_0; }
 		
 		//'boolean'
@@ -164,6 +177,77 @@ public class MCBasicsGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		
 		//'double'
 		public Keyword getTypeDoubleKeyword_0_7() { return cTypeDoubleKeyword_0_7; }
+		
+		//'String'
+		public Keyword getTypeStringKeyword_0_8() { return cTypeStringKeyword_0_8; }
+	}
+	public class MCVoidTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.xtext.motiarc.MCBasics.MCVoidType");
+		private final Assignment cTypeAssignment = (Assignment)rule.eContents().get(1);
+		private final Keyword cTypeVoidKeyword_0 = (Keyword)cTypeAssignment.eContents().get(0);
+		
+		//MCVoidType:
+		//    type = 'void'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//type = 'void'
+		public Assignment getTypeAssignment() { return cTypeAssignment; }
+		
+		//'void'
+		public Keyword getTypeVoidKeyword_0() { return cTypeVoidKeyword_0; }
+	}
+	public class MCCollectionTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.xtext.motiarc.MCBasics.MCCollectionType");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cCollectionAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Alternatives cCollectionAlternatives_0_0 = (Alternatives)cCollectionAssignment_0.eContents().get(0);
+		private final Keyword cCollectionSetKeyword_0_0_0 = (Keyword)cCollectionAlternatives_0_0.eContents().get(0);
+		private final Keyword cCollectionListKeyword_0_0_1 = (Keyword)cCollectionAlternatives_0_0.eContents().get(1);
+		private final Keyword cCollectionMapKeyword_0_0_2 = (Keyword)cCollectionAlternatives_0_0.eContents().get(2);
+		private final Keyword cCollectionOptionalKeyword_0_0_3 = (Keyword)cCollectionAlternatives_0_0.eContents().get(3);
+		private final Keyword cLessThanSignKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cInnerTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cInnerTypeTypeParserRuleCall_2_0 = (RuleCall)cInnerTypeAssignment_2.eContents().get(0);
+		private final Keyword cGreaterThanSignKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//MCCollectionType:
+		//    collection = ('Set' | 'List' | 'Map' | 'Optional') '<' innerType=Type '>'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//collection = ('Set' | 'List' | 'Map' | 'Optional') '<' innerType=Type '>'
+		public Group getGroup() { return cGroup; }
+		
+		//collection = ('Set' | 'List' | 'Map' | 'Optional')
+		public Assignment getCollectionAssignment_0() { return cCollectionAssignment_0; }
+		
+		//('Set' | 'List' | 'Map' | 'Optional')
+		public Alternatives getCollectionAlternatives_0_0() { return cCollectionAlternatives_0_0; }
+		
+		//'Set'
+		public Keyword getCollectionSetKeyword_0_0_0() { return cCollectionSetKeyword_0_0_0; }
+		
+		//'List'
+		public Keyword getCollectionListKeyword_0_0_1() { return cCollectionListKeyword_0_0_1; }
+		
+		//'Map'
+		public Keyword getCollectionMapKeyword_0_0_2() { return cCollectionMapKeyword_0_0_2; }
+		
+		//'Optional'
+		public Keyword getCollectionOptionalKeyword_0_0_3() { return cCollectionOptionalKeyword_0_0_3; }
+		
+		//'<'
+		public Keyword getLessThanSignKeyword_1() { return cLessThanSignKeyword_1; }
+		
+		//innerType=Type
+		public Assignment getInnerTypeAssignment_2() { return cInnerTypeAssignment_2; }
+		
+		//Type
+		public RuleCall getInnerTypeTypeParserRuleCall_2_0() { return cInnerTypeTypeParserRuleCall_2_0; }
+		
+		//'>'
+		public Keyword getGreaterThanSignKeyword_3() { return cGreaterThanSignKeyword_3; }
 	}
 	public class MCArrayTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.xtext.motiarc.MCBasics.MCArrayType");
@@ -355,6 +439,8 @@ public class MCBasicsGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	private final PackageElements pPackage;
 	private final TypeElements pType;
 	private final MCPrimitiveTypeElements pMCPrimitiveType;
+	private final MCVoidTypeElements pMCVoidType;
+	private final MCCollectionTypeElements pMCCollectionType;
 	private final MCArrayTypeElements pMCArrayType;
 	private final ExpressionElements pExpression;
 	private final LiteralExpressionElements pLiteralExpression;
@@ -378,6 +464,8 @@ public class MCBasicsGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		this.pPackage = new PackageElements();
 		this.pType = new TypeElements();
 		this.pMCPrimitiveType = new MCPrimitiveTypeElements();
+		this.pMCVoidType = new MCVoidTypeElements();
+		this.pMCCollectionType = new MCCollectionTypeElements();
 		this.pMCArrayType = new MCArrayTypeElements();
 		this.pExpression = new ExpressionElements();
 		this.pLiteralExpression = new LiteralExpressionElements();
@@ -428,7 +516,7 @@ public class MCBasicsGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	}
 	
 	//Package:
-	//    'package' name=MCQUALIFIEDNAME ';'
+	//    'package' name=(MCQUALIFIEDNAME | ID)';'
 	//;
 	public PackageElements getPackageAccess() {
 		return pPackage;
@@ -439,7 +527,7 @@ public class MCBasicsGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	}
 	
 	//Type:
-	//    MCPrimitiveType | MCArrayType
+	//    MCPrimitiveType | MCArrayType | MCCollectionType
 	//;
 	public TypeElements getTypeAccess() {
 		return pType;
@@ -451,7 +539,7 @@ public class MCBasicsGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	
 	//MCPrimitiveType:
 	//     type = ( 'boolean' | 'byte' | 'short' | 'int'
-	//                  | 'long' | 'char' |'float' | 'double' )
+	//                  | 'long' | 'char' |'float' | 'double' | 'String' )
 	//;
 	public MCPrimitiveTypeElements getMCPrimitiveTypeAccess() {
 		return pMCPrimitiveType;
@@ -459,6 +547,28 @@ public class MCBasicsGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	
 	public ParserRule getMCPrimitiveTypeRule() {
 		return getMCPrimitiveTypeAccess().getRule();
+	}
+	
+	//MCVoidType:
+	//    type = 'void'
+	//;
+	public MCVoidTypeElements getMCVoidTypeAccess() {
+		return pMCVoidType;
+	}
+	
+	public ParserRule getMCVoidTypeRule() {
+		return getMCVoidTypeAccess().getRule();
+	}
+	
+	//MCCollectionType:
+	//    collection = ('Set' | 'List' | 'Map' | 'Optional') '<' innerType=Type '>'
+	//;
+	public MCCollectionTypeElements getMCCollectionTypeAccess() {
+		return pMCCollectionType;
+	}
+	
+	public ParserRule getMCCollectionTypeRule() {
+		return getMCCollectionTypeAccess().getRule();
 	}
 	
 	//MCArrayType:

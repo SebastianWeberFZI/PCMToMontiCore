@@ -25,6 +25,7 @@ import org.palladiosimulator.xtext.motiarc.montiArcDSL.Port;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.PortImpl#isSync <em>Sync</em>}</li>
  *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.PortImpl#isIn <em>In</em>}</li>
  *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.PortImpl#isOut <em>Out</em>}</li>
  *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.PortImpl#getType <em>Type</em>}</li>
@@ -35,6 +36,26 @@ import org.palladiosimulator.xtext.motiarc.montiArcDSL.Port;
  */
 public class PortImpl extends MinimalEObjectImpl.Container implements Port
 {
+  /**
+   * The default value of the '{@link #isSync() <em>Sync</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isSync()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean SYNC_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isSync() <em>Sync</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isSync()
+   * @generated
+   * @ordered
+   */
+  protected boolean sync = SYNC_EDEFAULT;
+
   /**
    * The default value of the '{@link #isIn() <em>In</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -124,6 +145,31 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port
   protected EClass eStaticClass()
   {
     return MontiArcDSLPackage.Literals.PORT;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isSync()
+  {
+    return sync;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setSync(boolean newSync)
+  {
+    boolean oldSync = sync;
+    sync = newSync;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MontiArcDSLPackage.PORT__SYNC, oldSync, sync));
   }
 
   /**
@@ -277,6 +323,8 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port
   {
     switch (featureID)
     {
+      case MontiArcDSLPackage.PORT__SYNC:
+        return isSync();
       case MontiArcDSLPackage.PORT__IN:
         return isIn();
       case MontiArcDSLPackage.PORT__OUT:
@@ -299,6 +347,9 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port
   {
     switch (featureID)
     {
+      case MontiArcDSLPackage.PORT__SYNC:
+        setSync((Boolean)newValue);
+        return;
       case MontiArcDSLPackage.PORT__IN:
         setIn((Boolean)newValue);
         return;
@@ -325,6 +376,9 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port
   {
     switch (featureID)
     {
+      case MontiArcDSLPackage.PORT__SYNC:
+        setSync(SYNC_EDEFAULT);
+        return;
       case MontiArcDSLPackage.PORT__IN:
         setIn(IN_EDEFAULT);
         return;
@@ -351,6 +405,8 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port
   {
     switch (featureID)
     {
+      case MontiArcDSLPackage.PORT__SYNC:
+        return sync != SYNC_EDEFAULT;
       case MontiArcDSLPackage.PORT__IN:
         return in != IN_EDEFAULT;
       case MontiArcDSLPackage.PORT__OUT:
@@ -374,7 +430,9 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (in: ");
+    result.append(" (sync: ");
+    result.append(sync);
+    result.append(", in: ");
     result.append(in);
     result.append(", out: ");
     result.append(out);

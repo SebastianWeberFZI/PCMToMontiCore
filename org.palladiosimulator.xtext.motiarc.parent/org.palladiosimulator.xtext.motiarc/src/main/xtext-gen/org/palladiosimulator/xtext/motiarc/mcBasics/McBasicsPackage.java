@@ -170,6 +170,71 @@ public interface McBasicsPackage extends EPackage
   int MC_PRIMITIVE_TYPE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link org.palladiosimulator.xtext.motiarc.mcBasics.impl.MCVoidTypeImpl <em>MC Void Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.MCVoidTypeImpl
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getMCVoidType()
+   * @generated
+   */
+  int MC_VOID_TYPE = 4;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MC_VOID_TYPE__TYPE = 0;
+
+  /**
+   * The number of structural features of the '<em>MC Void Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MC_VOID_TYPE_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.palladiosimulator.xtext.motiarc.mcBasics.impl.MCCollectionTypeImpl <em>MC Collection Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.MCCollectionTypeImpl
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getMCCollectionType()
+   * @generated
+   */
+  int MC_COLLECTION_TYPE = 5;
+
+  /**
+   * The feature id for the '<em><b>Collection</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MC_COLLECTION_TYPE__COLLECTION = TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Inner Type</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MC_COLLECTION_TYPE__INNER_TYPE = TYPE_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>MC Collection Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MC_COLLECTION_TYPE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 2;
+
+  /**
    * The meta object id for the '{@link org.palladiosimulator.xtext.motiarc.mcBasics.impl.MCArrayTypeImpl <em>MC Array Type</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -177,7 +242,7 @@ public interface McBasicsPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getMCArrayType()
    * @generated
    */
-  int MC_ARRAY_TYPE = 4;
+  int MC_ARRAY_TYPE = 6;
 
   /**
    * The number of structural features of the '<em>MC Array Type</em>' class.
@@ -196,7 +261,7 @@ public interface McBasicsPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getExpression()
    * @generated
    */
-  int EXPRESSION = 5;
+  int EXPRESSION = 7;
 
   /**
    * The number of structural features of the '<em>Expression</em>' class.
@@ -215,7 +280,7 @@ public interface McBasicsPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getLiteralExpression()
    * @generated
    */
-  int LITERAL_EXPRESSION = 6;
+  int LITERAL_EXPRESSION = 8;
 
   /**
    * The number of structural features of the '<em>Literal Expression</em>' class.
@@ -234,7 +299,7 @@ public interface McBasicsPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getNumberLiteral()
    * @generated
    */
-  int NUMBER_LITERAL = 7;
+  int NUMBER_LITERAL = 9;
 
   /**
    * The feature id for the '<em><b>Literal</b></em>' attribute.
@@ -262,7 +327,7 @@ public interface McBasicsPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getStringLiteral()
    * @generated
    */
-  int STRING_LITERAL = 8;
+  int STRING_LITERAL = 10;
 
   /**
    * The feature id for the '<em><b>Literal</b></em>' attribute.
@@ -290,7 +355,7 @@ public interface McBasicsPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getNameExpression()
    * @generated
    */
-  int NAME_EXPRESSION = 9;
+  int NAME_EXPRESSION = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -318,7 +383,7 @@ public interface McBasicsPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getArguments()
    * @generated
    */
-  int ARGUMENTS = 10;
+  int ARGUMENTS = 12;
 
   /**
    * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
@@ -346,7 +411,7 @@ public interface McBasicsPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getArgument()
    * @generated
    */
-  int ARGUMENT = 11;
+  int ARGUMENT = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -459,6 +524,59 @@ public interface McBasicsPackage extends EPackage
    * @generated
    */
   EAttribute getMCPrimitiveType_Type();
+
+  /**
+   * Returns the meta object for class '{@link org.palladiosimulator.xtext.motiarc.mcBasics.MCVoidType <em>MC Void Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>MC Void Type</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.MCVoidType
+   * @generated
+   */
+  EClass getMCVoidType();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.palladiosimulator.xtext.motiarc.mcBasics.MCVoidType#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.MCVoidType#getType()
+   * @see #getMCVoidType()
+   * @generated
+   */
+  EAttribute getMCVoidType_Type();
+
+  /**
+   * Returns the meta object for class '{@link org.palladiosimulator.xtext.motiarc.mcBasics.MCCollectionType <em>MC Collection Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>MC Collection Type</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.MCCollectionType
+   * @generated
+   */
+  EClass getMCCollectionType();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.palladiosimulator.xtext.motiarc.mcBasics.MCCollectionType#getCollection <em>Collection</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Collection</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.MCCollectionType#getCollection()
+   * @see #getMCCollectionType()
+   * @generated
+   */
+  EAttribute getMCCollectionType_Collection();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.palladiosimulator.xtext.motiarc.mcBasics.MCCollectionType#getInnerType <em>Inner Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Inner Type</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.MCCollectionType#getInnerType()
+   * @see #getMCCollectionType()
+   * @generated
+   */
+  EReference getMCCollectionType_InnerType();
 
   /**
    * Returns the meta object for class '{@link org.palladiosimulator.xtext.motiarc.mcBasics.MCArrayType <em>MC Array Type</em>}'.
@@ -700,6 +818,50 @@ public interface McBasicsPackage extends EPackage
      * @generated
      */
     EAttribute MC_PRIMITIVE_TYPE__TYPE = eINSTANCE.getMCPrimitiveType_Type();
+
+    /**
+     * The meta object literal for the '{@link org.palladiosimulator.xtext.motiarc.mcBasics.impl.MCVoidTypeImpl <em>MC Void Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.MCVoidTypeImpl
+     * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getMCVoidType()
+     * @generated
+     */
+    EClass MC_VOID_TYPE = eINSTANCE.getMCVoidType();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MC_VOID_TYPE__TYPE = eINSTANCE.getMCVoidType_Type();
+
+    /**
+     * The meta object literal for the '{@link org.palladiosimulator.xtext.motiarc.mcBasics.impl.MCCollectionTypeImpl <em>MC Collection Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.MCCollectionTypeImpl
+     * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getMCCollectionType()
+     * @generated
+     */
+    EClass MC_COLLECTION_TYPE = eINSTANCE.getMCCollectionType();
+
+    /**
+     * The meta object literal for the '<em><b>Collection</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MC_COLLECTION_TYPE__COLLECTION = eINSTANCE.getMCCollectionType_Collection();
+
+    /**
+     * The meta object literal for the '<em><b>Inner Type</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MC_COLLECTION_TYPE__INNER_TYPE = eINSTANCE.getMCCollectionType_InnerType();
 
     /**
      * The meta object literal for the '{@link org.palladiosimulator.xtext.motiarc.mcBasics.impl.MCArrayTypeImpl <em>MC Array Type</em>}' class.

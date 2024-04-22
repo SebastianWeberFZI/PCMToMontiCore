@@ -11,6 +11,10 @@ import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.^extension.ExtendWith
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.MACompilationUnit
+import java.io.FileInputStream
+import com.google.inject.Provider
+import org.eclipse.emf.ecore.resource.ResourceSet
+import org.eclipse.emf.common.util.URI
 
 @ExtendWith(InjectionExtension)
 @InjectWith(MontiArcDSLInjectorProvider)
@@ -18,13 +22,34 @@ class MontiArcDSLParsingTest {
 	@Inject
 	ParseHelper<MACompilationUnit> parseHelper
 	
+	@Inject
+	Provider<ResourceSet> rsp
+	
+		
 	@Test
-	def void loadModel() {
-		val result = parseHelper.parse('''
-			Hello Xtext!
-		''')
+	def void parseLogger() {
+		val rs = rsp.get
+		// better use a file uri, but your question lacks context
+		//val r = rs.getResource(URI.createFileURI("Logger.arc"), true)
+		val result = parseHelper.parse(new FileInputStream("src/test/resources/Logger.arc"), URI.createFileURI("src/test/resources/Logger.arc"),null, rs)
 		Assertions.assertNotNull(result)
 		val errors = result.eResource.errors
 		Assertions.assertTrue(errors.isEmpty, '''Unexpected errors: «errors.join(", ")»''')
+		
+		
+	}
+	
+	
+	@Test
+	def void parseBumperBot() {
+		val rs = rsp.get
+		// better use a file uri, but your question lacks context
+		//val r = rs.getResource(URI.createFileURI("Logger.arc"), true)
+		val result = parseHelper.parse(new FileInputStream("src/test/resources/BumperBot.arc"), URI.createFileURI("src/test/resources/BumperBot.arc"),null, rs)
+		Assertions.assertNotNull(result)
+		val errors = result.eResource.errors
+		Assertions.assertTrue(errors.isEmpty, '''Unexpected errors: «errors.join(", ")»''')
+		
+		
 	}
 }

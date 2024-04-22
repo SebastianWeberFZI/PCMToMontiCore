@@ -17,6 +17,13 @@
     <genClasses ecoreClass="MCBasics.ecore#//MCPrimitiveType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MCBasics.ecore#//MCPrimitiveType/type"/>
     </genClasses>
+    <genClasses ecoreClass="MCBasics.ecore#//MCVoidType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MCBasics.ecore#//MCVoidType/type"/>
+    </genClasses>
+    <genClasses ecoreClass="MCBasics.ecore#//MCCollectionType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MCBasics.ecore#//MCCollectionType/collection"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MCBasics.ecore#//MCCollectionType/innerType"/>
+    </genClasses>
     <genClasses ecoreClass="MCBasics.ecore#//MCArrayType"/>
     <genClasses ecoreClass="MCBasics.ecore#//Expression"/>
     <genClasses ecoreClass="MCBasics.ecore#//LiteralExpression"/>

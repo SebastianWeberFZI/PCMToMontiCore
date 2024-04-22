@@ -77,7 +77,8 @@ public class MontiArcDSLGrammarAccess extends AbstractElementFinder.AbstractGram
 		//// Component Head
 		//Component:
 		//    "component" name=ID signature=Signature
-		//    "{" arcElements+=ArcElement* "}";
+		//    "{" arcElements+=ArcElement* "}"
+		//;
 		@Override public ParserRule getRule() { return rule; }
 		
 		//"component" name=ID signature=Signature
@@ -359,10 +360,10 @@ public class MontiArcDSLGrammarAccess extends AbstractElementFinder.AbstractGram
 		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//Ports:
-		//    "port" ports+=Port ("," ports+=Port)+ ";";
+		//    "port" ports+=Port ("," ports+=Port)* ";";
 		@Override public ParserRule getRule() { return rule; }
 		
-		//"port" ports+=Port ("," ports+=Port)+ ";"
+		//"port" ports+=Port ("," ports+=Port)* ";"
 		public Group getGroup() { return cGroup; }
 		
 		//"port"
@@ -374,7 +375,7 @@ public class MontiArcDSLGrammarAccess extends AbstractElementFinder.AbstractGram
 		//Port
 		public RuleCall getPortsPortParserRuleCall_1_0() { return cPortsPortParserRuleCall_1_0; }
 		
-		//("," ports+=Port)+
+		//("," ports+=Port)*
 		public Group getGroup_2() { return cGroup_2; }
 		
 		//","
@@ -392,49 +393,57 @@ public class MontiArcDSLGrammarAccess extends AbstractElementFinder.AbstractGram
 	public class PortElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.xtext.motiarc.MontiArcDSL.Port");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Alternatives cAlternatives_0 = (Alternatives)cGroup.eContents().get(0);
-		private final Assignment cInAssignment_0_0 = (Assignment)cAlternatives_0.eContents().get(0);
-		private final Keyword cInInKeyword_0_0_0 = (Keyword)cInAssignment_0_0.eContents().get(0);
-		private final Assignment cOutAssignment_0_1 = (Assignment)cAlternatives_0.eContents().get(1);
-		private final Keyword cOutOutKeyword_0_1_0 = (Keyword)cOutAssignment_0_1.eContents().get(0);
-		private final Assignment cTypeAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cTypeTypeParserRuleCall_1_0 = (RuleCall)cTypeAssignment_1.eContents().get(0);
-		private final Assignment cNamesAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNamesNamesParserRuleCall_2_0 = (RuleCall)cNamesAssignment_2.eContents().get(0);
+		private final Assignment cSyncAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cSyncSYNCTerminalRuleCall_0_0 = (RuleCall)cSyncAssignment_0.eContents().get(0);
+		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
+		private final Assignment cInAssignment_1_0 = (Assignment)cAlternatives_1.eContents().get(0);
+		private final Keyword cInInKeyword_1_0_0 = (Keyword)cInAssignment_1_0.eContents().get(0);
+		private final Assignment cOutAssignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
+		private final Keyword cOutOutKeyword_1_1_0 = (Keyword)cOutAssignment_1_1.eContents().get(0);
+		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTypeTypeParserRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
+		private final Assignment cNamesAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cNamesNamesParserRuleCall_3_0 = (RuleCall)cNamesAssignment_3.eContents().get(0);
 		
 		//Port:
-		//    (in?="in" | out?="out") type=Type names?=Names?;
+		//    (sync?=SYNC)(in?="in" | out?="out") type=Type names?=Names? ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(in?="in" | out?="out") type=Type names?=Names?
+		//(sync?=SYNC)(in?="in" | out?="out") type=Type names?=Names?
 		public Group getGroup() { return cGroup; }
 		
+		//(sync?=SYNC)
+		public Assignment getSyncAssignment_0() { return cSyncAssignment_0; }
+		
+		//SYNC
+		public RuleCall getSyncSYNCTerminalRuleCall_0_0() { return cSyncSYNCTerminalRuleCall_0_0; }
+		
 		//(in?="in" | out?="out")
-		public Alternatives getAlternatives_0() { return cAlternatives_0; }
+		public Alternatives getAlternatives_1() { return cAlternatives_1; }
 		
 		//in?="in"
-		public Assignment getInAssignment_0_0() { return cInAssignment_0_0; }
+		public Assignment getInAssignment_1_0() { return cInAssignment_1_0; }
 		
 		//"in"
-		public Keyword getInInKeyword_0_0_0() { return cInInKeyword_0_0_0; }
+		public Keyword getInInKeyword_1_0_0() { return cInInKeyword_1_0_0; }
 		
 		//out?="out"
-		public Assignment getOutAssignment_0_1() { return cOutAssignment_0_1; }
+		public Assignment getOutAssignment_1_1() { return cOutAssignment_1_1; }
 		
 		//"out"
-		public Keyword getOutOutKeyword_0_1_0() { return cOutOutKeyword_0_1_0; }
+		public Keyword getOutOutKeyword_1_1_0() { return cOutOutKeyword_1_1_0; }
 		
 		//type=Type
-		public Assignment getTypeAssignment_1() { return cTypeAssignment_1; }
+		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
 		
 		//Type
-		public RuleCall getTypeTypeParserRuleCall_1_0() { return cTypeTypeParserRuleCall_1_0; }
+		public RuleCall getTypeTypeParserRuleCall_2_0() { return cTypeTypeParserRuleCall_2_0; }
 		
 		//names?=Names?
-		public Assignment getNamesAssignment_2() { return cNamesAssignment_2; }
+		public Assignment getNamesAssignment_3() { return cNamesAssignment_3; }
 		
 		//Names
-		public RuleCall getNamesNamesParserRuleCall_2_0() { return cNamesNamesParserRuleCall_2_0; }
+		public RuleCall getNamesNamesParserRuleCall_3_0() { return cNamesNamesParserRuleCall_3_0; }
 	}
 	public class NamesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.xtext.motiarc.MontiArcDSL.Names");
@@ -804,6 +813,7 @@ public class MontiArcDSLGrammarAccess extends AbstractElementFinder.AbstractGram
 	private final InitialStateElements pInitialState;
 	private final TransitionElements pTransition;
 	private final BlockElements pBlock;
+	private final TerminalRule tSYNC;
 	
 	private final Grammar grammar;
 	
@@ -835,6 +845,7 @@ public class MontiArcDSLGrammarAccess extends AbstractElementFinder.AbstractGram
 		this.pInitialState = new InitialStateElements();
 		this.pTransition = new TransitionElements();
 		this.pBlock = new BlockElements();
+		this.tSYNC = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.xtext.motiarc.MontiArcDSL.SYNC");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -882,7 +893,8 @@ public class MontiArcDSLGrammarAccess extends AbstractElementFinder.AbstractGram
 	//// Component Head
 	//Component:
 	//    "component" name=ID signature=Signature
-	//    "{" arcElements+=ArcElement* "}";
+	//    "{" arcElements+=ArcElement* "}"
+	//;
 	public ComponentElements getComponentAccess() {
 		return pComponent;
 	}
@@ -953,7 +965,7 @@ public class MontiArcDSLGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//Ports:
-	//    "port" ports+=Port ("," ports+=Port)+ ";";
+	//    "port" ports+=Port ("," ports+=Port)* ";";
 	public PortsElements getPortsAccess() {
 		return pPorts;
 	}
@@ -963,7 +975,7 @@ public class MontiArcDSLGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//Port:
-	//    (in?="in" | out?="out") type=Type names?=Names?;
+	//    (sync?=SYNC)(in?="in" | out?="out") type=Type names?=Names? ;
 	public PortElements getPortAccess() {
 		return pPort;
 	}
@@ -1046,6 +1058,13 @@ public class MontiArcDSLGrammarAccess extends AbstractElementFinder.AbstractGram
 		return getBlockAccess().getRule();
 	}
 	
+	//terminal SYNC:
+	//    "<<sync>>"
+	//;
+	public TerminalRule getSYNCRule() {
+		return tSYNC;
+	}
+	
 	//ImportStatements:
 	//    'import' importUri=MCQUALIFIEDNAME ('.' star='*')? ";"
 	//;
@@ -1058,7 +1077,7 @@ public class MontiArcDSLGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//Package:
-	//    'package' name=MCQUALIFIEDNAME ';'
+	//    'package' name=(MCQUALIFIEDNAME | ID)';'
 	//;
 	public MCBasicsGrammarAccess.PackageElements getPackageAccess() {
 		return gaMCBasics.getPackageAccess();
@@ -1069,7 +1088,7 @@ public class MontiArcDSLGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//Type:
-	//    MCPrimitiveType | MCArrayType
+	//    MCPrimitiveType | MCArrayType | MCCollectionType
 	//;
 	public MCBasicsGrammarAccess.TypeElements getTypeAccess() {
 		return gaMCBasics.getTypeAccess();
@@ -1081,7 +1100,7 @@ public class MontiArcDSLGrammarAccess extends AbstractElementFinder.AbstractGram
 	
 	//MCPrimitiveType:
 	//     type = ( 'boolean' | 'byte' | 'short' | 'int'
-	//                  | 'long' | 'char' |'float' | 'double' )
+	//                  | 'long' | 'char' |'float' | 'double' | 'String' )
 	//;
 	public MCBasicsGrammarAccess.MCPrimitiveTypeElements getMCPrimitiveTypeAccess() {
 		return gaMCBasics.getMCPrimitiveTypeAccess();
@@ -1089,6 +1108,28 @@ public class MontiArcDSLGrammarAccess extends AbstractElementFinder.AbstractGram
 	
 	public ParserRule getMCPrimitiveTypeRule() {
 		return getMCPrimitiveTypeAccess().getRule();
+	}
+	
+	//MCVoidType:
+	//    type = 'void'
+	//;
+	public MCBasicsGrammarAccess.MCVoidTypeElements getMCVoidTypeAccess() {
+		return gaMCBasics.getMCVoidTypeAccess();
+	}
+	
+	public ParserRule getMCVoidTypeRule() {
+		return getMCVoidTypeAccess().getRule();
+	}
+	
+	//MCCollectionType:
+	//    collection = ('Set' | 'List' | 'Map' | 'Optional') '<' innerType=Type '>'
+	//;
+	public MCBasicsGrammarAccess.MCCollectionTypeElements getMCCollectionTypeAccess() {
+		return gaMCBasics.getMCCollectionTypeAccess();
+	}
+	
+	public ParserRule getMCCollectionTypeRule() {
+		return getMCCollectionTypeAccess().getRule();
 	}
 	
 	//MCArrayType:

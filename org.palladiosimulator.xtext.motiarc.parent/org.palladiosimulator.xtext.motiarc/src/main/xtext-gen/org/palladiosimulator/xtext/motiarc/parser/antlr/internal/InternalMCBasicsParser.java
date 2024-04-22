@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_MCQUALIFIEDNAME", "RULE_INT", "RULE_STRING", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'import'", "'.'", "'*'", "';'", "'boolean'", "'byte'", "'short'", "'int'", "'long'", "'char'", "'float'", "'double'", "'['", "']'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_MCQUALIFIEDNAME", "RULE_INT", "RULE_STRING", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'import'", "'.'", "'*'", "';'", "'boolean'", "'byte'", "'short'", "'int'", "'long'", "'char'", "'float'", "'double'", "'String'", "'Set'", "'List'", "'Map'", "'Optional'", "'<'", "'>'", "'['", "']'"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=9;
@@ -34,11 +34,18 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
     public static final int RULE_ID=7;
     public static final int RULE_WS=10;
     public static final int RULE_ANY_OTHER=11;
+    public static final int T__26=26;
     public static final int RULE_MCQUALIFIEDNAME=4;
+    public static final int T__27=27;
+    public static final int T__28=28;
     public static final int RULE_INT=5;
+    public static final int T__29=29;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=8;
     public static final int T__23=23;
@@ -242,8 +249,143 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleImportStatements"
 
 
+    // $ANTLR start "entryRuleType"
+    // InternalMCBasics.g:129:1: entryRuleType returns [EObject current=null] : iv_ruleType= ruleType EOF ;
+    public final EObject entryRuleType() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleType = null;
+
+
+        try {
+            // InternalMCBasics.g:129:45: (iv_ruleType= ruleType EOF )
+            // InternalMCBasics.g:130:2: iv_ruleType= ruleType EOF
+            {
+             newCompositeNode(grammarAccess.getTypeRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleType=ruleType();
+
+            state._fsp--;
+
+             current =iv_ruleType; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleType"
+
+
+    // $ANTLR start "ruleType"
+    // InternalMCBasics.g:136:1: ruleType returns [EObject current=null] : (this_MCPrimitiveType_0= ruleMCPrimitiveType | this_MCArrayType_1= ruleMCArrayType | this_MCCollectionType_2= ruleMCCollectionType ) ;
+    public final EObject ruleType() throws RecognitionException {
+        EObject current = null;
+
+        EObject this_MCPrimitiveType_0 = null;
+
+        EObject this_MCArrayType_1 = null;
+
+        EObject this_MCCollectionType_2 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalMCBasics.g:142:2: ( (this_MCPrimitiveType_0= ruleMCPrimitiveType | this_MCArrayType_1= ruleMCArrayType | this_MCCollectionType_2= ruleMCCollectionType ) )
+            // InternalMCBasics.g:143:2: (this_MCPrimitiveType_0= ruleMCPrimitiveType | this_MCArrayType_1= ruleMCArrayType | this_MCCollectionType_2= ruleMCCollectionType )
+            {
+            // InternalMCBasics.g:143:2: (this_MCPrimitiveType_0= ruleMCPrimitiveType | this_MCArrayType_1= ruleMCArrayType | this_MCCollectionType_2= ruleMCCollectionType )
+            int alt2=3;
+            alt2 = dfa2.predict(input);
+            switch (alt2) {
+                case 1 :
+                    // InternalMCBasics.g:144:3: this_MCPrimitiveType_0= ruleMCPrimitiveType
+                    {
+
+                    			newCompositeNode(grammarAccess.getTypeAccess().getMCPrimitiveTypeParserRuleCall_0());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_MCPrimitiveType_0=ruleMCPrimitiveType();
+
+                    state._fsp--;
+
+
+                    			current = this_MCPrimitiveType_0;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 2 :
+                    // InternalMCBasics.g:153:3: this_MCArrayType_1= ruleMCArrayType
+                    {
+
+                    			newCompositeNode(grammarAccess.getTypeAccess().getMCArrayTypeParserRuleCall_1());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_MCArrayType_1=ruleMCArrayType();
+
+                    state._fsp--;
+
+
+                    			current = this_MCArrayType_1;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 3 :
+                    // InternalMCBasics.g:162:3: this_MCCollectionType_2= ruleMCCollectionType
+                    {
+
+                    			newCompositeNode(grammarAccess.getTypeAccess().getMCCollectionTypeParserRuleCall_2());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_MCCollectionType_2=ruleMCCollectionType();
+
+                    state._fsp--;
+
+
+                    			current = this_MCCollectionType_2;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleType"
+
+
     // $ANTLR start "entryRuleMCPrimitiveType"
-    // InternalMCBasics.g:129:1: entryRuleMCPrimitiveType returns [EObject current=null] : iv_ruleMCPrimitiveType= ruleMCPrimitiveType EOF ;
+    // InternalMCBasics.g:174:1: entryRuleMCPrimitiveType returns [EObject current=null] : iv_ruleMCPrimitiveType= ruleMCPrimitiveType EOF ;
     public final EObject entryRuleMCPrimitiveType() throws RecognitionException {
         EObject current = null;
 
@@ -251,8 +393,8 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMCBasics.g:129:56: (iv_ruleMCPrimitiveType= ruleMCPrimitiveType EOF )
-            // InternalMCBasics.g:130:2: iv_ruleMCPrimitiveType= ruleMCPrimitiveType EOF
+            // InternalMCBasics.g:174:56: (iv_ruleMCPrimitiveType= ruleMCPrimitiveType EOF )
+            // InternalMCBasics.g:175:2: iv_ruleMCPrimitiveType= ruleMCPrimitiveType EOF
             {
              newCompositeNode(grammarAccess.getMCPrimitiveTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -279,7 +421,7 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMCPrimitiveType"
-    // InternalMCBasics.g:136:1: ruleMCPrimitiveType returns [EObject current=null] : ( ( (lv_type_0_1= 'boolean' | lv_type_0_2= 'byte' | lv_type_0_3= 'short' | lv_type_0_4= 'int' | lv_type_0_5= 'long' | lv_type_0_6= 'char' | lv_type_0_7= 'float' | lv_type_0_8= 'double' ) ) ) ;
+    // InternalMCBasics.g:181:1: ruleMCPrimitiveType returns [EObject current=null] : ( ( (lv_type_0_1= 'boolean' | lv_type_0_2= 'byte' | lv_type_0_3= 'short' | lv_type_0_4= 'int' | lv_type_0_5= 'long' | lv_type_0_6= 'char' | lv_type_0_7= 'float' | lv_type_0_8= 'double' | lv_type_0_9= 'String' ) ) ) ;
     public final EObject ruleMCPrimitiveType() throws RecognitionException {
         EObject current = null;
 
@@ -291,73 +433,79 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
         Token lv_type_0_6=null;
         Token lv_type_0_7=null;
         Token lv_type_0_8=null;
+        Token lv_type_0_9=null;
 
 
         	enterRule();
 
         try {
-            // InternalMCBasics.g:142:2: ( ( ( (lv_type_0_1= 'boolean' | lv_type_0_2= 'byte' | lv_type_0_3= 'short' | lv_type_0_4= 'int' | lv_type_0_5= 'long' | lv_type_0_6= 'char' | lv_type_0_7= 'float' | lv_type_0_8= 'double' ) ) ) )
-            // InternalMCBasics.g:143:2: ( ( (lv_type_0_1= 'boolean' | lv_type_0_2= 'byte' | lv_type_0_3= 'short' | lv_type_0_4= 'int' | lv_type_0_5= 'long' | lv_type_0_6= 'char' | lv_type_0_7= 'float' | lv_type_0_8= 'double' ) ) )
+            // InternalMCBasics.g:187:2: ( ( ( (lv_type_0_1= 'boolean' | lv_type_0_2= 'byte' | lv_type_0_3= 'short' | lv_type_0_4= 'int' | lv_type_0_5= 'long' | lv_type_0_6= 'char' | lv_type_0_7= 'float' | lv_type_0_8= 'double' | lv_type_0_9= 'String' ) ) ) )
+            // InternalMCBasics.g:188:2: ( ( (lv_type_0_1= 'boolean' | lv_type_0_2= 'byte' | lv_type_0_3= 'short' | lv_type_0_4= 'int' | lv_type_0_5= 'long' | lv_type_0_6= 'char' | lv_type_0_7= 'float' | lv_type_0_8= 'double' | lv_type_0_9= 'String' ) ) )
             {
-            // InternalMCBasics.g:143:2: ( ( (lv_type_0_1= 'boolean' | lv_type_0_2= 'byte' | lv_type_0_3= 'short' | lv_type_0_4= 'int' | lv_type_0_5= 'long' | lv_type_0_6= 'char' | lv_type_0_7= 'float' | lv_type_0_8= 'double' ) ) )
-            // InternalMCBasics.g:144:3: ( (lv_type_0_1= 'boolean' | lv_type_0_2= 'byte' | lv_type_0_3= 'short' | lv_type_0_4= 'int' | lv_type_0_5= 'long' | lv_type_0_6= 'char' | lv_type_0_7= 'float' | lv_type_0_8= 'double' ) )
+            // InternalMCBasics.g:188:2: ( ( (lv_type_0_1= 'boolean' | lv_type_0_2= 'byte' | lv_type_0_3= 'short' | lv_type_0_4= 'int' | lv_type_0_5= 'long' | lv_type_0_6= 'char' | lv_type_0_7= 'float' | lv_type_0_8= 'double' | lv_type_0_9= 'String' ) ) )
+            // InternalMCBasics.g:189:3: ( (lv_type_0_1= 'boolean' | lv_type_0_2= 'byte' | lv_type_0_3= 'short' | lv_type_0_4= 'int' | lv_type_0_5= 'long' | lv_type_0_6= 'char' | lv_type_0_7= 'float' | lv_type_0_8= 'double' | lv_type_0_9= 'String' ) )
             {
-            // InternalMCBasics.g:144:3: ( (lv_type_0_1= 'boolean' | lv_type_0_2= 'byte' | lv_type_0_3= 'short' | lv_type_0_4= 'int' | lv_type_0_5= 'long' | lv_type_0_6= 'char' | lv_type_0_7= 'float' | lv_type_0_8= 'double' ) )
-            // InternalMCBasics.g:145:4: (lv_type_0_1= 'boolean' | lv_type_0_2= 'byte' | lv_type_0_3= 'short' | lv_type_0_4= 'int' | lv_type_0_5= 'long' | lv_type_0_6= 'char' | lv_type_0_7= 'float' | lv_type_0_8= 'double' )
+            // InternalMCBasics.g:189:3: ( (lv_type_0_1= 'boolean' | lv_type_0_2= 'byte' | lv_type_0_3= 'short' | lv_type_0_4= 'int' | lv_type_0_5= 'long' | lv_type_0_6= 'char' | lv_type_0_7= 'float' | lv_type_0_8= 'double' | lv_type_0_9= 'String' ) )
+            // InternalMCBasics.g:190:4: (lv_type_0_1= 'boolean' | lv_type_0_2= 'byte' | lv_type_0_3= 'short' | lv_type_0_4= 'int' | lv_type_0_5= 'long' | lv_type_0_6= 'char' | lv_type_0_7= 'float' | lv_type_0_8= 'double' | lv_type_0_9= 'String' )
             {
-            // InternalMCBasics.g:145:4: (lv_type_0_1= 'boolean' | lv_type_0_2= 'byte' | lv_type_0_3= 'short' | lv_type_0_4= 'int' | lv_type_0_5= 'long' | lv_type_0_6= 'char' | lv_type_0_7= 'float' | lv_type_0_8= 'double' )
-            int alt2=8;
+            // InternalMCBasics.g:190:4: (lv_type_0_1= 'boolean' | lv_type_0_2= 'byte' | lv_type_0_3= 'short' | lv_type_0_4= 'int' | lv_type_0_5= 'long' | lv_type_0_6= 'char' | lv_type_0_7= 'float' | lv_type_0_8= 'double' | lv_type_0_9= 'String' )
+            int alt3=9;
             switch ( input.LA(1) ) {
             case 16:
                 {
-                alt2=1;
+                alt3=1;
                 }
                 break;
             case 17:
                 {
-                alt2=2;
+                alt3=2;
                 }
                 break;
             case 18:
                 {
-                alt2=3;
+                alt3=3;
                 }
                 break;
             case 19:
                 {
-                alt2=4;
+                alt3=4;
                 }
                 break;
             case 20:
                 {
-                alt2=5;
+                alt3=5;
                 }
                 break;
             case 21:
                 {
-                alt2=6;
+                alt3=6;
                 }
                 break;
             case 22:
                 {
-                alt2=7;
+                alt3=7;
                 }
                 break;
             case 23:
                 {
-                alt2=8;
+                alt3=8;
+                }
+                break;
+            case 24:
+                {
+                alt3=9;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 2, 0, input);
+                    new NoViableAltException("", 3, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt2) {
+            switch (alt3) {
                 case 1 :
-                    // InternalMCBasics.g:146:5: lv_type_0_1= 'boolean'
+                    // InternalMCBasics.g:191:5: lv_type_0_1= 'boolean'
                     {
                     lv_type_0_1=(Token)match(input,16,FOLLOW_2); 
 
@@ -373,7 +521,7 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalMCBasics.g:157:5: lv_type_0_2= 'byte'
+                    // InternalMCBasics.g:202:5: lv_type_0_2= 'byte'
                     {
                     lv_type_0_2=(Token)match(input,17,FOLLOW_2); 
 
@@ -389,7 +537,7 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalMCBasics.g:168:5: lv_type_0_3= 'short'
+                    // InternalMCBasics.g:213:5: lv_type_0_3= 'short'
                     {
                     lv_type_0_3=(Token)match(input,18,FOLLOW_2); 
 
@@ -405,7 +553,7 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalMCBasics.g:179:5: lv_type_0_4= 'int'
+                    // InternalMCBasics.g:224:5: lv_type_0_4= 'int'
                     {
                     lv_type_0_4=(Token)match(input,19,FOLLOW_2); 
 
@@ -421,7 +569,7 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalMCBasics.g:190:5: lv_type_0_5= 'long'
+                    // InternalMCBasics.g:235:5: lv_type_0_5= 'long'
                     {
                     lv_type_0_5=(Token)match(input,20,FOLLOW_2); 
 
@@ -437,7 +585,7 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalMCBasics.g:201:5: lv_type_0_6= 'char'
+                    // InternalMCBasics.g:246:5: lv_type_0_6= 'char'
                     {
                     lv_type_0_6=(Token)match(input,21,FOLLOW_2); 
 
@@ -453,7 +601,7 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 7 :
-                    // InternalMCBasics.g:212:5: lv_type_0_7= 'float'
+                    // InternalMCBasics.g:257:5: lv_type_0_7= 'float'
                     {
                     lv_type_0_7=(Token)match(input,22,FOLLOW_2); 
 
@@ -469,7 +617,7 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 8 :
-                    // InternalMCBasics.g:223:5: lv_type_0_8= 'double'
+                    // InternalMCBasics.g:268:5: lv_type_0_8= 'double'
                     {
                     lv_type_0_8=(Token)match(input,23,FOLLOW_2); 
 
@@ -480,6 +628,22 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
                     						current = createModelElement(grammarAccess.getMCPrimitiveTypeRule());
                     					}
                     					setWithLastConsumed(current, "type", lv_type_0_8, null);
+                    				
+
+                    }
+                    break;
+                case 9 :
+                    // InternalMCBasics.g:279:5: lv_type_0_9= 'String'
+                    {
+                    lv_type_0_9=(Token)match(input,24,FOLLOW_2); 
+
+                    					newLeafNode(lv_type_0_9, grammarAccess.getMCPrimitiveTypeAccess().getTypeStringKeyword_0_8());
+                    				
+
+                    					if (current==null) {
+                    						current = createModelElement(grammarAccess.getMCPrimitiveTypeRule());
+                    					}
+                    					setWithLastConsumed(current, "type", lv_type_0_9, null);
                     				
 
                     }
@@ -512,8 +676,239 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleMCPrimitiveType"
 
 
+    // $ANTLR start "entryRuleMCCollectionType"
+    // InternalMCBasics.g:295:1: entryRuleMCCollectionType returns [EObject current=null] : iv_ruleMCCollectionType= ruleMCCollectionType EOF ;
+    public final EObject entryRuleMCCollectionType() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleMCCollectionType = null;
+
+
+        try {
+            // InternalMCBasics.g:295:57: (iv_ruleMCCollectionType= ruleMCCollectionType EOF )
+            // InternalMCBasics.g:296:2: iv_ruleMCCollectionType= ruleMCCollectionType EOF
+            {
+             newCompositeNode(grammarAccess.getMCCollectionTypeRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleMCCollectionType=ruleMCCollectionType();
+
+            state._fsp--;
+
+             current =iv_ruleMCCollectionType; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleMCCollectionType"
+
+
+    // $ANTLR start "ruleMCCollectionType"
+    // InternalMCBasics.g:302:1: ruleMCCollectionType returns [EObject current=null] : ( ( ( (lv_collection_0_1= 'Set' | lv_collection_0_2= 'List' | lv_collection_0_3= 'Map' | lv_collection_0_4= 'Optional' ) ) ) otherlv_1= '<' ( (lv_innerType_2_0= ruleType ) ) otherlv_3= '>' ) ;
+    public final EObject ruleMCCollectionType() throws RecognitionException {
+        EObject current = null;
+
+        Token lv_collection_0_1=null;
+        Token lv_collection_0_2=null;
+        Token lv_collection_0_3=null;
+        Token lv_collection_0_4=null;
+        Token otherlv_1=null;
+        Token otherlv_3=null;
+        EObject lv_innerType_2_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalMCBasics.g:308:2: ( ( ( ( (lv_collection_0_1= 'Set' | lv_collection_0_2= 'List' | lv_collection_0_3= 'Map' | lv_collection_0_4= 'Optional' ) ) ) otherlv_1= '<' ( (lv_innerType_2_0= ruleType ) ) otherlv_3= '>' ) )
+            // InternalMCBasics.g:309:2: ( ( ( (lv_collection_0_1= 'Set' | lv_collection_0_2= 'List' | lv_collection_0_3= 'Map' | lv_collection_0_4= 'Optional' ) ) ) otherlv_1= '<' ( (lv_innerType_2_0= ruleType ) ) otherlv_3= '>' )
+            {
+            // InternalMCBasics.g:309:2: ( ( ( (lv_collection_0_1= 'Set' | lv_collection_0_2= 'List' | lv_collection_0_3= 'Map' | lv_collection_0_4= 'Optional' ) ) ) otherlv_1= '<' ( (lv_innerType_2_0= ruleType ) ) otherlv_3= '>' )
+            // InternalMCBasics.g:310:3: ( ( (lv_collection_0_1= 'Set' | lv_collection_0_2= 'List' | lv_collection_0_3= 'Map' | lv_collection_0_4= 'Optional' ) ) ) otherlv_1= '<' ( (lv_innerType_2_0= ruleType ) ) otherlv_3= '>'
+            {
+            // InternalMCBasics.g:310:3: ( ( (lv_collection_0_1= 'Set' | lv_collection_0_2= 'List' | lv_collection_0_3= 'Map' | lv_collection_0_4= 'Optional' ) ) )
+            // InternalMCBasics.g:311:4: ( (lv_collection_0_1= 'Set' | lv_collection_0_2= 'List' | lv_collection_0_3= 'Map' | lv_collection_0_4= 'Optional' ) )
+            {
+            // InternalMCBasics.g:311:4: ( (lv_collection_0_1= 'Set' | lv_collection_0_2= 'List' | lv_collection_0_3= 'Map' | lv_collection_0_4= 'Optional' ) )
+            // InternalMCBasics.g:312:5: (lv_collection_0_1= 'Set' | lv_collection_0_2= 'List' | lv_collection_0_3= 'Map' | lv_collection_0_4= 'Optional' )
+            {
+            // InternalMCBasics.g:312:5: (lv_collection_0_1= 'Set' | lv_collection_0_2= 'List' | lv_collection_0_3= 'Map' | lv_collection_0_4= 'Optional' )
+            int alt4=4;
+            switch ( input.LA(1) ) {
+            case 25:
+                {
+                alt4=1;
+                }
+                break;
+            case 26:
+                {
+                alt4=2;
+                }
+                break;
+            case 27:
+                {
+                alt4=3;
+                }
+                break;
+            case 28:
+                {
+                alt4=4;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 4, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt4) {
+                case 1 :
+                    // InternalMCBasics.g:313:6: lv_collection_0_1= 'Set'
+                    {
+                    lv_collection_0_1=(Token)match(input,25,FOLLOW_7); 
+
+                    						newLeafNode(lv_collection_0_1, grammarAccess.getMCCollectionTypeAccess().getCollectionSetKeyword_0_0_0());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getMCCollectionTypeRule());
+                    						}
+                    						setWithLastConsumed(current, "collection", lv_collection_0_1, null);
+                    					
+
+                    }
+                    break;
+                case 2 :
+                    // InternalMCBasics.g:324:6: lv_collection_0_2= 'List'
+                    {
+                    lv_collection_0_2=(Token)match(input,26,FOLLOW_7); 
+
+                    						newLeafNode(lv_collection_0_2, grammarAccess.getMCCollectionTypeAccess().getCollectionListKeyword_0_0_1());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getMCCollectionTypeRule());
+                    						}
+                    						setWithLastConsumed(current, "collection", lv_collection_0_2, null);
+                    					
+
+                    }
+                    break;
+                case 3 :
+                    // InternalMCBasics.g:335:6: lv_collection_0_3= 'Map'
+                    {
+                    lv_collection_0_3=(Token)match(input,27,FOLLOW_7); 
+
+                    						newLeafNode(lv_collection_0_3, grammarAccess.getMCCollectionTypeAccess().getCollectionMapKeyword_0_0_2());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getMCCollectionTypeRule());
+                    						}
+                    						setWithLastConsumed(current, "collection", lv_collection_0_3, null);
+                    					
+
+                    }
+                    break;
+                case 4 :
+                    // InternalMCBasics.g:346:6: lv_collection_0_4= 'Optional'
+                    {
+                    lv_collection_0_4=(Token)match(input,28,FOLLOW_7); 
+
+                    						newLeafNode(lv_collection_0_4, grammarAccess.getMCCollectionTypeAccess().getCollectionOptionalKeyword_0_0_3());
+                    					
+
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getMCCollectionTypeRule());
+                    						}
+                    						setWithLastConsumed(current, "collection", lv_collection_0_4, null);
+                    					
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            }
+
+            otherlv_1=(Token)match(input,29,FOLLOW_8); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getMCCollectionTypeAccess().getLessThanSignKeyword_1());
+            		
+            // InternalMCBasics.g:363:3: ( (lv_innerType_2_0= ruleType ) )
+            // InternalMCBasics.g:364:4: (lv_innerType_2_0= ruleType )
+            {
+            // InternalMCBasics.g:364:4: (lv_innerType_2_0= ruleType )
+            // InternalMCBasics.g:365:5: lv_innerType_2_0= ruleType
+            {
+
+            					newCompositeNode(grammarAccess.getMCCollectionTypeAccess().getInnerTypeTypeParserRuleCall_2_0());
+            				
+            pushFollow(FOLLOW_9);
+            lv_innerType_2_0=ruleType();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getMCCollectionTypeRule());
+            					}
+            					set(
+            						current,
+            						"innerType",
+            						lv_innerType_2_0,
+            						"org.palladiosimulator.xtext.motiarc.MCBasics.Type");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            otherlv_3=(Token)match(input,30,FOLLOW_2); 
+
+            			newLeafNode(otherlv_3, grammarAccess.getMCCollectionTypeAccess().getGreaterThanSignKeyword_3());
+            		
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleMCCollectionType"
+
+
     // $ANTLR start "entryRuleMCArrayType"
-    // InternalMCBasics.g:239:1: entryRuleMCArrayType returns [EObject current=null] : iv_ruleMCArrayType= ruleMCArrayType EOF ;
+    // InternalMCBasics.g:390:1: entryRuleMCArrayType returns [EObject current=null] : iv_ruleMCArrayType= ruleMCArrayType EOF ;
     public final EObject entryRuleMCArrayType() throws RecognitionException {
         EObject current = null;
 
@@ -521,8 +916,8 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMCBasics.g:239:52: (iv_ruleMCArrayType= ruleMCArrayType EOF )
-            // InternalMCBasics.g:240:2: iv_ruleMCArrayType= ruleMCArrayType EOF
+            // InternalMCBasics.g:390:52: (iv_ruleMCArrayType= ruleMCArrayType EOF )
+            // InternalMCBasics.g:391:2: iv_ruleMCArrayType= ruleMCArrayType EOF
             {
              newCompositeNode(grammarAccess.getMCArrayTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -549,7 +944,7 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleMCArrayType"
-    // InternalMCBasics.g:246:1: ruleMCArrayType returns [EObject current=null] : (this_MCPrimitiveType_0= ruleMCPrimitiveType otherlv_1= '[' otherlv_2= ']' ) ;
+    // InternalMCBasics.g:397:1: ruleMCArrayType returns [EObject current=null] : (this_MCPrimitiveType_0= ruleMCPrimitiveType otherlv_1= '[' otherlv_2= ']' ) ;
     public final EObject ruleMCArrayType() throws RecognitionException {
         EObject current = null;
 
@@ -562,16 +957,16 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMCBasics.g:252:2: ( (this_MCPrimitiveType_0= ruleMCPrimitiveType otherlv_1= '[' otherlv_2= ']' ) )
-            // InternalMCBasics.g:253:2: (this_MCPrimitiveType_0= ruleMCPrimitiveType otherlv_1= '[' otherlv_2= ']' )
+            // InternalMCBasics.g:403:2: ( (this_MCPrimitiveType_0= ruleMCPrimitiveType otherlv_1= '[' otherlv_2= ']' ) )
+            // InternalMCBasics.g:404:2: (this_MCPrimitiveType_0= ruleMCPrimitiveType otherlv_1= '[' otherlv_2= ']' )
             {
-            // InternalMCBasics.g:253:2: (this_MCPrimitiveType_0= ruleMCPrimitiveType otherlv_1= '[' otherlv_2= ']' )
-            // InternalMCBasics.g:254:3: this_MCPrimitiveType_0= ruleMCPrimitiveType otherlv_1= '[' otherlv_2= ']'
+            // InternalMCBasics.g:404:2: (this_MCPrimitiveType_0= ruleMCPrimitiveType otherlv_1= '[' otherlv_2= ']' )
+            // InternalMCBasics.g:405:3: this_MCPrimitiveType_0= ruleMCPrimitiveType otherlv_1= '[' otherlv_2= ']'
             {
 
             			newCompositeNode(grammarAccess.getMCArrayTypeAccess().getMCPrimitiveTypeParserRuleCall_0());
             		
-            pushFollow(FOLLOW_7);
+            pushFollow(FOLLOW_10);
             this_MCPrimitiveType_0=ruleMCPrimitiveType();
 
             state._fsp--;
@@ -580,11 +975,11 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
             			current = this_MCPrimitiveType_0;
             			afterParserOrEnumRuleCall();
             		
-            otherlv_1=(Token)match(input,24,FOLLOW_8); 
+            otherlv_1=(Token)match(input,31,FOLLOW_11); 
 
             			newLeafNode(otherlv_1, grammarAccess.getMCArrayTypeAccess().getLeftSquareBracketKeyword_1());
             		
-            otherlv_2=(Token)match(input,25,FOLLOW_2); 
+            otherlv_2=(Token)match(input,32,FOLLOW_2); 
 
             			newLeafNode(otherlv_2, grammarAccess.getMCArrayTypeAccess().getRightSquareBracketKeyword_2());
             		
@@ -611,7 +1006,7 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleExpression"
-    // InternalMCBasics.g:274:1: entryRuleExpression returns [EObject current=null] : iv_ruleExpression= ruleExpression EOF ;
+    // InternalMCBasics.g:425:1: entryRuleExpression returns [EObject current=null] : iv_ruleExpression= ruleExpression EOF ;
     public final EObject entryRuleExpression() throws RecognitionException {
         EObject current = null;
 
@@ -619,8 +1014,8 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMCBasics.g:274:51: (iv_ruleExpression= ruleExpression EOF )
-            // InternalMCBasics.g:275:2: iv_ruleExpression= ruleExpression EOF
+            // InternalMCBasics.g:425:51: (iv_ruleExpression= ruleExpression EOF )
+            // InternalMCBasics.g:426:2: iv_ruleExpression= ruleExpression EOF
             {
              newCompositeNode(grammarAccess.getExpressionRule()); 
             pushFollow(FOLLOW_1);
@@ -647,7 +1042,7 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleExpression"
-    // InternalMCBasics.g:281:1: ruleExpression returns [EObject current=null] : (this_NameExpression_0= ruleNameExpression | this_LiteralExpression_1= ruleLiteralExpression ) ;
+    // InternalMCBasics.g:432:1: ruleExpression returns [EObject current=null] : (this_NameExpression_0= ruleNameExpression | this_LiteralExpression_1= ruleLiteralExpression ) ;
     public final EObject ruleExpression() throws RecognitionException {
         EObject current = null;
 
@@ -660,28 +1055,28 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMCBasics.g:287:2: ( (this_NameExpression_0= ruleNameExpression | this_LiteralExpression_1= ruleLiteralExpression ) )
-            // InternalMCBasics.g:288:2: (this_NameExpression_0= ruleNameExpression | this_LiteralExpression_1= ruleLiteralExpression )
+            // InternalMCBasics.g:438:2: ( (this_NameExpression_0= ruleNameExpression | this_LiteralExpression_1= ruleLiteralExpression ) )
+            // InternalMCBasics.g:439:2: (this_NameExpression_0= ruleNameExpression | this_LiteralExpression_1= ruleLiteralExpression )
             {
-            // InternalMCBasics.g:288:2: (this_NameExpression_0= ruleNameExpression | this_LiteralExpression_1= ruleLiteralExpression )
-            int alt3=2;
-            int LA3_0 = input.LA(1);
+            // InternalMCBasics.g:439:2: (this_NameExpression_0= ruleNameExpression | this_LiteralExpression_1= ruleLiteralExpression )
+            int alt5=2;
+            int LA5_0 = input.LA(1);
 
-            if ( (LA3_0==RULE_ID) ) {
-                alt3=1;
+            if ( (LA5_0==RULE_ID) ) {
+                alt5=1;
             }
-            else if ( ((LA3_0>=RULE_INT && LA3_0<=RULE_STRING)) ) {
-                alt3=2;
+            else if ( ((LA5_0>=RULE_INT && LA5_0<=RULE_STRING)) ) {
+                alt5=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 3, 0, input);
+                    new NoViableAltException("", 5, 0, input);
 
                 throw nvae;
             }
-            switch (alt3) {
+            switch (alt5) {
                 case 1 :
-                    // InternalMCBasics.g:289:3: this_NameExpression_0= ruleNameExpression
+                    // InternalMCBasics.g:440:3: this_NameExpression_0= ruleNameExpression
                     {
 
                     			newCompositeNode(grammarAccess.getExpressionAccess().getNameExpressionParserRuleCall_0());
@@ -699,7 +1094,7 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalMCBasics.g:298:3: this_LiteralExpression_1= ruleLiteralExpression
+                    // InternalMCBasics.g:449:3: this_LiteralExpression_1= ruleLiteralExpression
                     {
 
                     			newCompositeNode(grammarAccess.getExpressionAccess().getLiteralExpressionParserRuleCall_1());
@@ -739,7 +1134,7 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleLiteralExpression"
-    // InternalMCBasics.g:310:1: entryRuleLiteralExpression returns [EObject current=null] : iv_ruleLiteralExpression= ruleLiteralExpression EOF ;
+    // InternalMCBasics.g:461:1: entryRuleLiteralExpression returns [EObject current=null] : iv_ruleLiteralExpression= ruleLiteralExpression EOF ;
     public final EObject entryRuleLiteralExpression() throws RecognitionException {
         EObject current = null;
 
@@ -747,8 +1142,8 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMCBasics.g:310:58: (iv_ruleLiteralExpression= ruleLiteralExpression EOF )
-            // InternalMCBasics.g:311:2: iv_ruleLiteralExpression= ruleLiteralExpression EOF
+            // InternalMCBasics.g:461:58: (iv_ruleLiteralExpression= ruleLiteralExpression EOF )
+            // InternalMCBasics.g:462:2: iv_ruleLiteralExpression= ruleLiteralExpression EOF
             {
              newCompositeNode(grammarAccess.getLiteralExpressionRule()); 
             pushFollow(FOLLOW_1);
@@ -775,7 +1170,7 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleLiteralExpression"
-    // InternalMCBasics.g:317:1: ruleLiteralExpression returns [EObject current=null] : (this_NumberLiteral_0= ruleNumberLiteral | this_StringLiteral_1= ruleStringLiteral ) ;
+    // InternalMCBasics.g:468:1: ruleLiteralExpression returns [EObject current=null] : (this_NumberLiteral_0= ruleNumberLiteral | this_StringLiteral_1= ruleStringLiteral ) ;
     public final EObject ruleLiteralExpression() throws RecognitionException {
         EObject current = null;
 
@@ -788,28 +1183,28 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMCBasics.g:323:2: ( (this_NumberLiteral_0= ruleNumberLiteral | this_StringLiteral_1= ruleStringLiteral ) )
-            // InternalMCBasics.g:324:2: (this_NumberLiteral_0= ruleNumberLiteral | this_StringLiteral_1= ruleStringLiteral )
+            // InternalMCBasics.g:474:2: ( (this_NumberLiteral_0= ruleNumberLiteral | this_StringLiteral_1= ruleStringLiteral ) )
+            // InternalMCBasics.g:475:2: (this_NumberLiteral_0= ruleNumberLiteral | this_StringLiteral_1= ruleStringLiteral )
             {
-            // InternalMCBasics.g:324:2: (this_NumberLiteral_0= ruleNumberLiteral | this_StringLiteral_1= ruleStringLiteral )
-            int alt4=2;
-            int LA4_0 = input.LA(1);
+            // InternalMCBasics.g:475:2: (this_NumberLiteral_0= ruleNumberLiteral | this_StringLiteral_1= ruleStringLiteral )
+            int alt6=2;
+            int LA6_0 = input.LA(1);
 
-            if ( (LA4_0==RULE_INT) ) {
-                alt4=1;
+            if ( (LA6_0==RULE_INT) ) {
+                alt6=1;
             }
-            else if ( (LA4_0==RULE_STRING) ) {
-                alt4=2;
+            else if ( (LA6_0==RULE_STRING) ) {
+                alt6=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 4, 0, input);
+                    new NoViableAltException("", 6, 0, input);
 
                 throw nvae;
             }
-            switch (alt4) {
+            switch (alt6) {
                 case 1 :
-                    // InternalMCBasics.g:325:3: this_NumberLiteral_0= ruleNumberLiteral
+                    // InternalMCBasics.g:476:3: this_NumberLiteral_0= ruleNumberLiteral
                     {
 
                     			newCompositeNode(grammarAccess.getLiteralExpressionAccess().getNumberLiteralParserRuleCall_0());
@@ -827,7 +1222,7 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalMCBasics.g:334:3: this_StringLiteral_1= ruleStringLiteral
+                    // InternalMCBasics.g:485:3: this_StringLiteral_1= ruleStringLiteral
                     {
 
                     			newCompositeNode(grammarAccess.getLiteralExpressionAccess().getStringLiteralParserRuleCall_1());
@@ -867,7 +1262,7 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNumberLiteral"
-    // InternalMCBasics.g:346:1: entryRuleNumberLiteral returns [EObject current=null] : iv_ruleNumberLiteral= ruleNumberLiteral EOF ;
+    // InternalMCBasics.g:497:1: entryRuleNumberLiteral returns [EObject current=null] : iv_ruleNumberLiteral= ruleNumberLiteral EOF ;
     public final EObject entryRuleNumberLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -875,8 +1270,8 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMCBasics.g:346:54: (iv_ruleNumberLiteral= ruleNumberLiteral EOF )
-            // InternalMCBasics.g:347:2: iv_ruleNumberLiteral= ruleNumberLiteral EOF
+            // InternalMCBasics.g:497:54: (iv_ruleNumberLiteral= ruleNumberLiteral EOF )
+            // InternalMCBasics.g:498:2: iv_ruleNumberLiteral= ruleNumberLiteral EOF
             {
              newCompositeNode(grammarAccess.getNumberLiteralRule()); 
             pushFollow(FOLLOW_1);
@@ -903,7 +1298,7 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNumberLiteral"
-    // InternalMCBasics.g:353:1: ruleNumberLiteral returns [EObject current=null] : ( (lv_literal_0_0= RULE_INT ) ) ;
+    // InternalMCBasics.g:504:1: ruleNumberLiteral returns [EObject current=null] : ( (lv_literal_0_0= RULE_INT ) ) ;
     public final EObject ruleNumberLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -913,14 +1308,14 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMCBasics.g:359:2: ( ( (lv_literal_0_0= RULE_INT ) ) )
-            // InternalMCBasics.g:360:2: ( (lv_literal_0_0= RULE_INT ) )
+            // InternalMCBasics.g:510:2: ( ( (lv_literal_0_0= RULE_INT ) ) )
+            // InternalMCBasics.g:511:2: ( (lv_literal_0_0= RULE_INT ) )
             {
-            // InternalMCBasics.g:360:2: ( (lv_literal_0_0= RULE_INT ) )
-            // InternalMCBasics.g:361:3: (lv_literal_0_0= RULE_INT )
+            // InternalMCBasics.g:511:2: ( (lv_literal_0_0= RULE_INT ) )
+            // InternalMCBasics.g:512:3: (lv_literal_0_0= RULE_INT )
             {
-            // InternalMCBasics.g:361:3: (lv_literal_0_0= RULE_INT )
-            // InternalMCBasics.g:362:4: lv_literal_0_0= RULE_INT
+            // InternalMCBasics.g:512:3: (lv_literal_0_0= RULE_INT )
+            // InternalMCBasics.g:513:4: lv_literal_0_0= RULE_INT
             {
             lv_literal_0_0=(Token)match(input,RULE_INT,FOLLOW_2); 
 
@@ -962,7 +1357,7 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStringLiteral"
-    // InternalMCBasics.g:381:1: entryRuleStringLiteral returns [EObject current=null] : iv_ruleStringLiteral= ruleStringLiteral EOF ;
+    // InternalMCBasics.g:532:1: entryRuleStringLiteral returns [EObject current=null] : iv_ruleStringLiteral= ruleStringLiteral EOF ;
     public final EObject entryRuleStringLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -970,8 +1365,8 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMCBasics.g:381:54: (iv_ruleStringLiteral= ruleStringLiteral EOF )
-            // InternalMCBasics.g:382:2: iv_ruleStringLiteral= ruleStringLiteral EOF
+            // InternalMCBasics.g:532:54: (iv_ruleStringLiteral= ruleStringLiteral EOF )
+            // InternalMCBasics.g:533:2: iv_ruleStringLiteral= ruleStringLiteral EOF
             {
              newCompositeNode(grammarAccess.getStringLiteralRule()); 
             pushFollow(FOLLOW_1);
@@ -998,7 +1393,7 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStringLiteral"
-    // InternalMCBasics.g:388:1: ruleStringLiteral returns [EObject current=null] : ( (lv_literal_0_0= RULE_STRING ) ) ;
+    // InternalMCBasics.g:539:1: ruleStringLiteral returns [EObject current=null] : ( (lv_literal_0_0= RULE_STRING ) ) ;
     public final EObject ruleStringLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -1008,14 +1403,14 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMCBasics.g:394:2: ( ( (lv_literal_0_0= RULE_STRING ) ) )
-            // InternalMCBasics.g:395:2: ( (lv_literal_0_0= RULE_STRING ) )
+            // InternalMCBasics.g:545:2: ( ( (lv_literal_0_0= RULE_STRING ) ) )
+            // InternalMCBasics.g:546:2: ( (lv_literal_0_0= RULE_STRING ) )
             {
-            // InternalMCBasics.g:395:2: ( (lv_literal_0_0= RULE_STRING ) )
-            // InternalMCBasics.g:396:3: (lv_literal_0_0= RULE_STRING )
+            // InternalMCBasics.g:546:2: ( (lv_literal_0_0= RULE_STRING ) )
+            // InternalMCBasics.g:547:3: (lv_literal_0_0= RULE_STRING )
             {
-            // InternalMCBasics.g:396:3: (lv_literal_0_0= RULE_STRING )
-            // InternalMCBasics.g:397:4: lv_literal_0_0= RULE_STRING
+            // InternalMCBasics.g:547:3: (lv_literal_0_0= RULE_STRING )
+            // InternalMCBasics.g:548:4: lv_literal_0_0= RULE_STRING
             {
             lv_literal_0_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
 
@@ -1057,7 +1452,7 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleNameExpression"
-    // InternalMCBasics.g:416:1: entryRuleNameExpression returns [EObject current=null] : iv_ruleNameExpression= ruleNameExpression EOF ;
+    // InternalMCBasics.g:567:1: entryRuleNameExpression returns [EObject current=null] : iv_ruleNameExpression= ruleNameExpression EOF ;
     public final EObject entryRuleNameExpression() throws RecognitionException {
         EObject current = null;
 
@@ -1065,8 +1460,8 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMCBasics.g:416:55: (iv_ruleNameExpression= ruleNameExpression EOF )
-            // InternalMCBasics.g:417:2: iv_ruleNameExpression= ruleNameExpression EOF
+            // InternalMCBasics.g:567:55: (iv_ruleNameExpression= ruleNameExpression EOF )
+            // InternalMCBasics.g:568:2: iv_ruleNameExpression= ruleNameExpression EOF
             {
              newCompositeNode(grammarAccess.getNameExpressionRule()); 
             pushFollow(FOLLOW_1);
@@ -1093,7 +1488,7 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleNameExpression"
-    // InternalMCBasics.g:423:1: ruleNameExpression returns [EObject current=null] : ( (lv_name_0_0= RULE_ID ) ) ;
+    // InternalMCBasics.g:574:1: ruleNameExpression returns [EObject current=null] : ( (lv_name_0_0= RULE_ID ) ) ;
     public final EObject ruleNameExpression() throws RecognitionException {
         EObject current = null;
 
@@ -1103,14 +1498,14 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMCBasics.g:429:2: ( ( (lv_name_0_0= RULE_ID ) ) )
-            // InternalMCBasics.g:430:2: ( (lv_name_0_0= RULE_ID ) )
+            // InternalMCBasics.g:580:2: ( ( (lv_name_0_0= RULE_ID ) ) )
+            // InternalMCBasics.g:581:2: ( (lv_name_0_0= RULE_ID ) )
             {
-            // InternalMCBasics.g:430:2: ( (lv_name_0_0= RULE_ID ) )
-            // InternalMCBasics.g:431:3: (lv_name_0_0= RULE_ID )
+            // InternalMCBasics.g:581:2: ( (lv_name_0_0= RULE_ID ) )
+            // InternalMCBasics.g:582:3: (lv_name_0_0= RULE_ID )
             {
-            // InternalMCBasics.g:431:3: (lv_name_0_0= RULE_ID )
-            // InternalMCBasics.g:432:4: lv_name_0_0= RULE_ID
+            // InternalMCBasics.g:582:3: (lv_name_0_0= RULE_ID )
+            // InternalMCBasics.g:583:4: lv_name_0_0= RULE_ID
             {
             lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
@@ -1152,7 +1547,7 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleArgument"
-    // InternalMCBasics.g:451:1: entryRuleArgument returns [EObject current=null] : iv_ruleArgument= ruleArgument EOF ;
+    // InternalMCBasics.g:602:1: entryRuleArgument returns [EObject current=null] : iv_ruleArgument= ruleArgument EOF ;
     public final EObject entryRuleArgument() throws RecognitionException {
         EObject current = null;
 
@@ -1160,8 +1555,8 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMCBasics.g:451:49: (iv_ruleArgument= ruleArgument EOF )
-            // InternalMCBasics.g:452:2: iv_ruleArgument= ruleArgument EOF
+            // InternalMCBasics.g:602:49: (iv_ruleArgument= ruleArgument EOF )
+            // InternalMCBasics.g:603:2: iv_ruleArgument= ruleArgument EOF
             {
              newCompositeNode(grammarAccess.getArgumentRule()); 
             pushFollow(FOLLOW_1);
@@ -1188,7 +1583,7 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleArgument"
-    // InternalMCBasics.g:458:1: ruleArgument returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) ( (lv_expression_1_0= ruleExpression ) ) ) ;
+    // InternalMCBasics.g:609:1: ruleArgument returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) ( (lv_expression_1_0= ruleExpression ) ) ) ;
     public final EObject ruleArgument() throws RecognitionException {
         EObject current = null;
 
@@ -1200,19 +1595,19 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMCBasics.g:464:2: ( ( ( (lv_name_0_0= RULE_ID ) ) ( (lv_expression_1_0= ruleExpression ) ) ) )
-            // InternalMCBasics.g:465:2: ( ( (lv_name_0_0= RULE_ID ) ) ( (lv_expression_1_0= ruleExpression ) ) )
+            // InternalMCBasics.g:615:2: ( ( ( (lv_name_0_0= RULE_ID ) ) ( (lv_expression_1_0= ruleExpression ) ) ) )
+            // InternalMCBasics.g:616:2: ( ( (lv_name_0_0= RULE_ID ) ) ( (lv_expression_1_0= ruleExpression ) ) )
             {
-            // InternalMCBasics.g:465:2: ( ( (lv_name_0_0= RULE_ID ) ) ( (lv_expression_1_0= ruleExpression ) ) )
-            // InternalMCBasics.g:466:3: ( (lv_name_0_0= RULE_ID ) ) ( (lv_expression_1_0= ruleExpression ) )
+            // InternalMCBasics.g:616:2: ( ( (lv_name_0_0= RULE_ID ) ) ( (lv_expression_1_0= ruleExpression ) ) )
+            // InternalMCBasics.g:617:3: ( (lv_name_0_0= RULE_ID ) ) ( (lv_expression_1_0= ruleExpression ) )
             {
-            // InternalMCBasics.g:466:3: ( (lv_name_0_0= RULE_ID ) )
-            // InternalMCBasics.g:467:4: (lv_name_0_0= RULE_ID )
+            // InternalMCBasics.g:617:3: ( (lv_name_0_0= RULE_ID ) )
+            // InternalMCBasics.g:618:4: (lv_name_0_0= RULE_ID )
             {
-            // InternalMCBasics.g:467:4: (lv_name_0_0= RULE_ID )
-            // InternalMCBasics.g:468:5: lv_name_0_0= RULE_ID
+            // InternalMCBasics.g:618:4: (lv_name_0_0= RULE_ID )
+            // InternalMCBasics.g:619:5: lv_name_0_0= RULE_ID
             {
-            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_9); 
+            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_12); 
 
             					newLeafNode(lv_name_0_0, grammarAccess.getArgumentAccess().getNameIDTerminalRuleCall_0_0());
             				
@@ -1232,11 +1627,11 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalMCBasics.g:484:3: ( (lv_expression_1_0= ruleExpression ) )
-            // InternalMCBasics.g:485:4: (lv_expression_1_0= ruleExpression )
+            // InternalMCBasics.g:635:3: ( (lv_expression_1_0= ruleExpression ) )
+            // InternalMCBasics.g:636:4: (lv_expression_1_0= ruleExpression )
             {
-            // InternalMCBasics.g:485:4: (lv_expression_1_0= ruleExpression )
-            // InternalMCBasics.g:486:5: lv_expression_1_0= ruleExpression
+            // InternalMCBasics.g:636:4: (lv_expression_1_0= ruleExpression )
+            // InternalMCBasics.g:637:5: lv_expression_1_0= ruleExpression
             {
 
             					newCompositeNode(grammarAccess.getArgumentAccess().getExpressionExpressionParserRuleCall_1_0());
@@ -1287,6 +1682,54 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
     // Delegated rules
 
 
+    protected DFA2 dfa2 = new DFA2(this);
+    static final String dfa_1s = "\15\uffff";
+    static final String dfa_2s = "\1\uffff\11\13\3\uffff";
+    static final String dfa_3s = "\1\20\11\36\3\uffff";
+    static final String dfa_4s = "\1\34\11\37\3\uffff";
+    static final String dfa_5s = "\12\uffff\1\3\1\1\1\2";
+    static final String dfa_6s = "\15\uffff}>";
+    static final String[] dfa_7s = {
+            "\1\1\1\2\1\3\1\4\1\5\1\6\1\7\1\10\1\11\4\12",
+            "\1\13\1\14",
+            "\1\13\1\14",
+            "\1\13\1\14",
+            "\1\13\1\14",
+            "\1\13\1\14",
+            "\1\13\1\14",
+            "\1\13\1\14",
+            "\1\13\1\14",
+            "\1\13\1\14",
+            "",
+            "",
+            ""
+    };
+
+    static final short[] dfa_1 = DFA.unpackEncodedString(dfa_1s);
+    static final short[] dfa_2 = DFA.unpackEncodedString(dfa_2s);
+    static final char[] dfa_3 = DFA.unpackEncodedStringToUnsignedChars(dfa_3s);
+    static final char[] dfa_4 = DFA.unpackEncodedStringToUnsignedChars(dfa_4s);
+    static final short[] dfa_5 = DFA.unpackEncodedString(dfa_5s);
+    static final short[] dfa_6 = DFA.unpackEncodedString(dfa_6s);
+    static final short[][] dfa_7 = unpackEncodedStringArray(dfa_7s);
+
+    class DFA2 extends DFA {
+
+        public DFA2(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 2;
+            this.eot = dfa_1;
+            this.eof = dfa_2;
+            this.min = dfa_3;
+            this.max = dfa_4;
+            this.accept = dfa_5;
+            this.special = dfa_6;
+            this.transition = dfa_7;
+        }
+        public String getDescription() {
+            return "143:2: (this_MCPrimitiveType_0= ruleMCPrimitiveType | this_MCArrayType_1= ruleMCArrayType | this_MCCollectionType_2= ruleMCCollectionType )";
+        }
+    }
  
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
@@ -1295,8 +1738,11 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x000000000000A000L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000004000L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x00000000000000E0L});
+    public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x000000001FFF0000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000100000000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x00000000000000E0L});
 
 }

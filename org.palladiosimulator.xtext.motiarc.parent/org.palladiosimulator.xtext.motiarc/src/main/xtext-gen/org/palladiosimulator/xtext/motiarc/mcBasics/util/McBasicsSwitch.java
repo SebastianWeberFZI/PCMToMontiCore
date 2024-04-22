@@ -14,7 +14,9 @@ import org.palladiosimulator.xtext.motiarc.mcBasics.Expression;
 import org.palladiosimulator.xtext.motiarc.mcBasics.ImportStatements;
 import org.palladiosimulator.xtext.motiarc.mcBasics.LiteralExpression;
 import org.palladiosimulator.xtext.motiarc.mcBasics.MCArrayType;
+import org.palladiosimulator.xtext.motiarc.mcBasics.MCCollectionType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.MCPrimitiveType;
+import org.palladiosimulator.xtext.motiarc.mcBasics.MCVoidType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.McBasicsPackage;
 import org.palladiosimulator.xtext.motiarc.mcBasics.NameExpression;
 import org.palladiosimulator.xtext.motiarc.mcBasics.NumberLiteral;
@@ -111,6 +113,21 @@ public class McBasicsSwitch<T> extends Switch<T>
         T result = caseMCPrimitiveType(mcPrimitiveType);
         if (result == null) result = caseMCArrayType(mcPrimitiveType);
         if (result == null) result = caseType(mcPrimitiveType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case McBasicsPackage.MC_VOID_TYPE:
+      {
+        MCVoidType mcVoidType = (MCVoidType)theEObject;
+        T result = caseMCVoidType(mcVoidType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case McBasicsPackage.MC_COLLECTION_TYPE:
+      {
+        MCCollectionType mcCollectionType = (MCCollectionType)theEObject;
+        T result = caseMCCollectionType(mcCollectionType);
+        if (result == null) result = caseType(mcCollectionType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -241,6 +258,38 @@ public class McBasicsSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseMCPrimitiveType(MCPrimitiveType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>MC Void Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>MC Void Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMCVoidType(MCVoidType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>MC Collection Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>MC Collection Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMCCollectionType(MCCollectionType object)
   {
     return null;
   }

@@ -60,6 +60,24 @@ public interface McBasicsFactory extends EFactory
   MCPrimitiveType createMCPrimitiveType();
 
   /**
+   * Returns a new object of class '<em>MC Void Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>MC Void Type</em>'.
+   * @generated
+   */
+  MCVoidType createMCVoidType();
+
+  /**
+   * Returns a new object of class '<em>MC Collection Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>MC Collection Type</em>'.
+   * @generated
+   */
+  MCCollectionType createMCCollectionType();
+
+  /**
    * Returns a new object of class '<em>MC Array Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

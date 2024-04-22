@@ -16,6 +16,7 @@ import org.palladiosimulator.xtext.motiarc.mcBasics.Type;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Port#isSync <em>Sync</em>}</li>
  *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Port#isIn <em>In</em>}</li>
  *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Port#isOut <em>Out</em>}</li>
  *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Port#getType <em>Type</em>}</li>
@@ -28,6 +29,28 @@ import org.palladiosimulator.xtext.motiarc.mcBasics.Type;
  */
 public interface Port extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Sync</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Sync</em>' attribute.
+   * @see #setSync(boolean)
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.MontiArcDSLPackage#getPort_Sync()
+   * @model
+   * @generated
+   */
+  boolean isSync();
+
+  /**
+   * Sets the value of the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Port#isSync <em>Sync</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Sync</em>' attribute.
+   * @see #isSync()
+   * @generated
+   */
+  void setSync(boolean value);
+
   /**
    * Returns the value of the '<em><b>In</b></em>' attribute.
    * <!-- begin-user-doc -->

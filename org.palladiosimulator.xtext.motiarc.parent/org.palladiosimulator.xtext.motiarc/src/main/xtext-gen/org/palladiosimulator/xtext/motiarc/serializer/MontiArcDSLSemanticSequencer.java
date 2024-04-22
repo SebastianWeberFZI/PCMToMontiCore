@@ -16,7 +16,9 @@ import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransi
 import org.palladiosimulator.xtext.motiarc.mcBasics.Argument;
 import org.palladiosimulator.xtext.motiarc.mcBasics.Arguments;
 import org.palladiosimulator.xtext.motiarc.mcBasics.ImportStatements;
+import org.palladiosimulator.xtext.motiarc.mcBasics.MCCollectionType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.MCPrimitiveType;
+import org.palladiosimulator.xtext.motiarc.mcBasics.MCVoidType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.McBasicsPackage;
 import org.palladiosimulator.xtext.motiarc.mcBasics.NameExpression;
 import org.palladiosimulator.xtext.motiarc.mcBasics.NumberLiteral;
@@ -62,8 +64,14 @@ public class MontiArcDSLSemanticSequencer extends MCBasicsSemanticSequencer {
 			case McBasicsPackage.IMPORT_STATEMENTS:
 				sequence_ImportStatements(context, (ImportStatements) semanticObject); 
 				return; 
+			case McBasicsPackage.MC_COLLECTION_TYPE:
+				sequence_MCCollectionType(context, (MCCollectionType) semanticObject); 
+				return; 
 			case McBasicsPackage.MC_PRIMITIVE_TYPE:
 				sequence_MCPrimitiveType(context, (MCPrimitiveType) semanticObject); 
+				return; 
+			case McBasicsPackage.MC_VOID_TYPE:
+				sequence_MCVoidType(context, (MCVoidType) semanticObject); 
 				return; 
 			case McBasicsPackage.NAME_EXPRESSION:
 				sequence_NameExpression(context, (NameExpression) semanticObject); 
@@ -277,7 +285,7 @@ public class MontiArcDSLSemanticSequencer extends MCBasicsSemanticSequencer {
 	 *     Port returns Port
 	 *
 	 * Constraint:
-	 *     ((in?='in' | out?='out') type=Type names?=Names?)
+	 *     (sync?=SYNC (in?='in' | out?='out') type=Type names?=Names?)
 	 * </pre>
 	 */
 	protected void sequence_Port(ISerializationContext context, Port semanticObject) {
@@ -292,7 +300,7 @@ public class MontiArcDSLSemanticSequencer extends MCBasicsSemanticSequencer {
 	 *     Ports returns Ports
 	 *
 	 * Constraint:
-	 *     (ports+=Port ports+=Port+)
+	 *     (ports+=Port ports+=Port*)
 	 * </pre>
 	 */
 	protected void sequence_Ports(ISerializationContext context, Ports semanticObject) {
