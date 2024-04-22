@@ -1,0 +1,63 @@
+grammar org.palladiosimulator.xtext.motiarc.MontiArcDSL with org.palladiosimulator.xtext.motiarc.MCBasics
+
+//r MontiArc with MCBasics
+generate montiArcDSL "http://www.palladiosimulator.org/xtext/motiarc/MontiArcDSL"
+
+MACompilationUnit:
+	package=Package importStatements+=ImportStatements*
+	component=Component;
+
+// Component Head
+Component:
+	"component" name=ID signature=Signature
+	"{" arcElements+=ArcElement* "}";
+
+Signature:
+	{Signature} parameters?=Parameters? ("extends" type?=Type)?;
+
+Parameters:
+	parameters+=Parameter ("," parameters+=Parameter)*;
+
+Parameter:
+	type=Type name=ID ("=" expression?=Expression)?;
+
+ArcElement:
+	Component | SubComponent | Connector | Ports | Variable | Automaton;
+
+// Component Body Elements
+SubComponent:
+	"component" type=Type arguments?=Arguments? instances=Names ";";
+
+Connector:
+	"connect" source=ID "->" targets=Names ";";
+
+Ports:
+	"port" ports+=Port ("," ports+=Port)+ ";";
+
+Port:
+	(in?="in" | out?="out") type=Type names?=Names?;
+
+Names:
+	names+=ID ("," names+=ID)*;
+
+// Embedded Behavior Elements
+Variable:
+	type=Type names?=Names? ";";
+
+Automaton:
+	{Automaton} "automaton" name?=ID? "{" (states+=State |
+	initialStates+=InitialState | transitions+=Transition)* "}";
+
+State:
+	"state" name=ID ";";
+
+InitialState:
+	"initial" name=ID ("/" block?=Block)? ";";
+
+Transition:
+	source=[State] ("->" target?=[State])?
+	("[" expression?=Expression "]")?("/" reaction?=Block)?";";
+
+Block:
+	"{" (name?=ID "=")? expressions+=Expression
+	("," expressions+=Expression)* "}";

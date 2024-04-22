@@ -1,0 +1,40 @@
+grammar  org.palladiosimulator.xtext.motiarc.MCBasics with org.eclipse.xtext.common.Terminals
+
+generate mcBasics "http://www.palladiosimulator.org/xtext/moticore/MCBasics"
+
+
+ImportStatements:
+	'import' importUri=MCQUALIFIEDNAME ('.' star='*')? ";" 
+;
+
+
+Package:
+	'package' name=MCQUALIFIEDNAME ';'
+;
+
+Type:
+	MCPrimitiveType | MCArrayType
+;
+
+
+
+MCPrimitiveType:
+     type = ( 'boolean' | 'byte' | 'short' | 'int' 
+                  | 'long' | 'char' |'float' | 'double' )
+;
+
+MCArrayType:
+	MCPrimitiveType'['']'
+;
+
+Expression:
+	'exp' name=ID
+;
+
+Arguments:
+	'arg' name=ID
+;
+
+terminal MCQUALIFIEDNAME:
+	ID ('.' ID)+
+;
