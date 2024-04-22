@@ -78,6 +78,42 @@ public interface McBasicsFactory extends EFactory
   Expression createExpression();
 
   /**
+   * Returns a new object of class '<em>Literal Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Literal Expression</em>'.
+   * @generated
+   */
+  LiteralExpression createLiteralExpression();
+
+  /**
+   * Returns a new object of class '<em>Number Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Number Literal</em>'.
+   * @generated
+   */
+  NumberLiteral createNumberLiteral();
+
+  /**
+   * Returns a new object of class '<em>String Literal</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>String Literal</em>'.
+   * @generated
+   */
+  StringLiteral createStringLiteral();
+
+  /**
+   * Returns a new object of class '<em>Name Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Name Expression</em>'.
+   * @generated
+   */
+  NameExpression createNameExpression();
+
+  /**
    * Returns a new object of class '<em>Arguments</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -85,6 +121,15 @@ public interface McBasicsFactory extends EFactory
    * @generated
    */
   Arguments createArguments();
+
+  /**
+   * Returns a new object of class '<em>Argument</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Argument</em>'.
+   * @generated
+   */
+  Argument createArgument();
 
   /**
    * Returns the package supported by this factory.

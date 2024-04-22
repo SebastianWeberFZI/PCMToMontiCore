@@ -6,16 +6,22 @@ package org.palladiosimulator.xtext.motiarc.mcBasics.impl;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.palladiosimulator.xtext.motiarc.mcBasics.Argument;
 import org.palladiosimulator.xtext.motiarc.mcBasics.Arguments;
 import org.palladiosimulator.xtext.motiarc.mcBasics.Expression;
 import org.palladiosimulator.xtext.motiarc.mcBasics.ImportStatements;
+import org.palladiosimulator.xtext.motiarc.mcBasics.LiteralExpression;
 import org.palladiosimulator.xtext.motiarc.mcBasics.MCArrayType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.MCPrimitiveType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.McBasicsFactory;
 import org.palladiosimulator.xtext.motiarc.mcBasics.McBasicsPackage;
+import org.palladiosimulator.xtext.motiarc.mcBasics.NameExpression;
+import org.palladiosimulator.xtext.motiarc.mcBasics.NumberLiteral;
+import org.palladiosimulator.xtext.motiarc.mcBasics.StringLiteral;
 import org.palladiosimulator.xtext.motiarc.mcBasics.Type;
 
 /**
@@ -73,7 +79,42 @@ public class McBasicsPackageImpl extends EPackageImpl implements McBasicsPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass literalExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass numberLiteralEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass stringLiteralEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass nameExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass argumentsEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass argumentEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -254,9 +295,75 @@ public class McBasicsPackageImpl extends EPackageImpl implements McBasicsPackage
    * @generated
    */
   @Override
-  public EAttribute getExpression_Name()
+  public EClass getLiteralExpression()
   {
-    return (EAttribute)expressionEClass.getEStructuralFeatures().get(0);
+    return literalExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getNumberLiteral()
+  {
+    return numberLiteralEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getNumberLiteral_Literal()
+  {
+    return (EAttribute)numberLiteralEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getStringLiteral()
+  {
+    return stringLiteralEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getStringLiteral_Literal()
+  {
+    return (EAttribute)stringLiteralEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getNameExpression()
+  {
+    return nameExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getNameExpression_Name()
+  {
+    return (EAttribute)nameExpressionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -276,9 +383,42 @@ public class McBasicsPackageImpl extends EPackageImpl implements McBasicsPackage
    * @generated
    */
   @Override
-  public EAttribute getArguments_Name()
+  public EReference getArguments_Arguments()
   {
-    return (EAttribute)argumentsEClass.getEStructuralFeatures().get(0);
+    return (EReference)argumentsEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getArgument()
+  {
+    return argumentEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getArgument_Name()
+  {
+    return (EAttribute)argumentEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getArgument_Expression()
+  {
+    return (EReference)argumentEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -327,10 +467,24 @@ public class McBasicsPackageImpl extends EPackageImpl implements McBasicsPackage
     mcArrayTypeEClass = createEClass(MC_ARRAY_TYPE);
 
     expressionEClass = createEClass(EXPRESSION);
-    createEAttribute(expressionEClass, EXPRESSION__NAME);
+
+    literalExpressionEClass = createEClass(LITERAL_EXPRESSION);
+
+    numberLiteralEClass = createEClass(NUMBER_LITERAL);
+    createEAttribute(numberLiteralEClass, NUMBER_LITERAL__LITERAL);
+
+    stringLiteralEClass = createEClass(STRING_LITERAL);
+    createEAttribute(stringLiteralEClass, STRING_LITERAL__LITERAL);
+
+    nameExpressionEClass = createEClass(NAME_EXPRESSION);
+    createEAttribute(nameExpressionEClass, NAME_EXPRESSION__NAME);
 
     argumentsEClass = createEClass(ARGUMENTS);
-    createEAttribute(argumentsEClass, ARGUMENTS__NAME);
+    createEReference(argumentsEClass, ARGUMENTS__ARGUMENTS);
+
+    argumentEClass = createEClass(ARGUMENT);
+    createEAttribute(argumentEClass, ARGUMENT__NAME);
+    createEReference(argumentEClass, ARGUMENT__EXPRESSION);
   }
 
   /**
@@ -365,6 +519,10 @@ public class McBasicsPackageImpl extends EPackageImpl implements McBasicsPackage
     mcPrimitiveTypeEClass.getESuperTypes().add(this.getType());
     mcPrimitiveTypeEClass.getESuperTypes().add(this.getMCArrayType());
     mcArrayTypeEClass.getESuperTypes().add(this.getType());
+    literalExpressionEClass.getESuperTypes().add(this.getExpression());
+    numberLiteralEClass.getESuperTypes().add(this.getLiteralExpression());
+    stringLiteralEClass.getESuperTypes().add(this.getLiteralExpression());
+    nameExpressionEClass.getESuperTypes().add(this.getExpression());
 
     // Initialize classes and features; add operations and parameters
     initEClass(importStatementsEClass, ImportStatements.class, "ImportStatements", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -382,10 +540,24 @@ public class McBasicsPackageImpl extends EPackageImpl implements McBasicsPackage
     initEClass(mcArrayTypeEClass, MCArrayType.class, "MCArrayType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(expressionEClass, Expression.class, "Expression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getExpression_Name(), ecorePackage.getEString(), "name", null, 0, 1, Expression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(literalExpressionEClass, LiteralExpression.class, "LiteralExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(numberLiteralEClass, NumberLiteral.class, "NumberLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getNumberLiteral_Literal(), ecorePackage.getEInt(), "literal", null, 0, 1, NumberLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(stringLiteralEClass, StringLiteral.class, "StringLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStringLiteral_Literal(), ecorePackage.getEString(), "literal", null, 0, 1, StringLiteral.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(nameExpressionEClass, NameExpression.class, "NameExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getNameExpression_Name(), ecorePackage.getEString(), "name", null, 0, 1, NameExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(argumentsEClass, Arguments.class, "Arguments", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getArguments_Name(), ecorePackage.getEString(), "name", null, 0, 1, Arguments.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getArguments_Arguments(), this.getArgument(), null, "arguments", null, 0, -1, Arguments.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(argumentEClass, Argument.class, "Argument", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getArgument_Name(), ecorePackage.getEBoolean(), "name", null, 0, 1, Argument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getArgument_Expression(), this.getExpression(), null, "expression", null, 0, 1, Argument.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

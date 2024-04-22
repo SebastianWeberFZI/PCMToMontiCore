@@ -8,12 +8,17 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
+import org.palladiosimulator.xtext.motiarc.mcBasics.Argument;
 import org.palladiosimulator.xtext.motiarc.mcBasics.Arguments;
 import org.palladiosimulator.xtext.motiarc.mcBasics.Expression;
 import org.palladiosimulator.xtext.motiarc.mcBasics.ImportStatements;
+import org.palladiosimulator.xtext.motiarc.mcBasics.LiteralExpression;
 import org.palladiosimulator.xtext.motiarc.mcBasics.MCArrayType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.MCPrimitiveType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.McBasicsPackage;
+import org.palladiosimulator.xtext.motiarc.mcBasics.NameExpression;
+import org.palladiosimulator.xtext.motiarc.mcBasics.NumberLiteral;
+import org.palladiosimulator.xtext.motiarc.mcBasics.StringLiteral;
 import org.palladiosimulator.xtext.motiarc.mcBasics.Type;
 
 /**
@@ -124,10 +129,51 @@ public class McBasicsSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case McBasicsPackage.LITERAL_EXPRESSION:
+      {
+        LiteralExpression literalExpression = (LiteralExpression)theEObject;
+        T result = caseLiteralExpression(literalExpression);
+        if (result == null) result = caseExpression(literalExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case McBasicsPackage.NUMBER_LITERAL:
+      {
+        NumberLiteral numberLiteral = (NumberLiteral)theEObject;
+        T result = caseNumberLiteral(numberLiteral);
+        if (result == null) result = caseLiteralExpression(numberLiteral);
+        if (result == null) result = caseExpression(numberLiteral);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case McBasicsPackage.STRING_LITERAL:
+      {
+        StringLiteral stringLiteral = (StringLiteral)theEObject;
+        T result = caseStringLiteral(stringLiteral);
+        if (result == null) result = caseLiteralExpression(stringLiteral);
+        if (result == null) result = caseExpression(stringLiteral);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case McBasicsPackage.NAME_EXPRESSION:
+      {
+        NameExpression nameExpression = (NameExpression)theEObject;
+        T result = caseNameExpression(nameExpression);
+        if (result == null) result = caseExpression(nameExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case McBasicsPackage.ARGUMENTS:
       {
         Arguments arguments = (Arguments)theEObject;
         T result = caseArguments(arguments);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case McBasicsPackage.ARGUMENT:
+      {
+        Argument argument = (Argument)theEObject;
+        T result = caseArgument(argument);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -232,6 +278,70 @@ public class McBasicsSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Literal Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Literal Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLiteralExpression(LiteralExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Number Literal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Number Literal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNumberLiteral(NumberLiteral object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>String Literal</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>String Literal</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStringLiteral(StringLiteral object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Name Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Name Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseNameExpression(NameExpression object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Arguments</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -243,6 +353,22 @@ public class McBasicsSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseArguments(Arguments object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Argument</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Argument</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseArgument(Argument object)
   {
     return null;
   }

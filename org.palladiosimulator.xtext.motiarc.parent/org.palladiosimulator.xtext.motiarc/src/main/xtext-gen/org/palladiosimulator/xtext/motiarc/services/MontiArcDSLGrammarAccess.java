@@ -1103,7 +1103,7 @@ public class MontiArcDSLGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//Expression:
-	//    'exp' name=ID
+	//    NameExpression | LiteralExpression
 	//;
 	public MCBasicsGrammarAccess.ExpressionElements getExpressionAccess() {
 		return gaMCBasics.getExpressionAccess();
@@ -1113,8 +1113,52 @@ public class MontiArcDSLGrammarAccess extends AbstractElementFinder.AbstractGram
 		return getExpressionAccess().getRule();
 	}
 	
+	//LiteralExpression:
+	//    NumberLiteral | StringLiteral
+	//;
+	public MCBasicsGrammarAccess.LiteralExpressionElements getLiteralExpressionAccess() {
+		return gaMCBasics.getLiteralExpressionAccess();
+	}
+	
+	public ParserRule getLiteralExpressionRule() {
+		return getLiteralExpressionAccess().getRule();
+	}
+	
+	//NumberLiteral:
+	//  literal=INT
+	//;
+	public MCBasicsGrammarAccess.NumberLiteralElements getNumberLiteralAccess() {
+		return gaMCBasics.getNumberLiteralAccess();
+	}
+	
+	public ParserRule getNumberLiteralRule() {
+		return getNumberLiteralAccess().getRule();
+	}
+	
+	//StringLiteral:
+	//    literal=STRING
+	//;
+	public MCBasicsGrammarAccess.StringLiteralElements getStringLiteralAccess() {
+		return gaMCBasics.getStringLiteralAccess();
+	}
+	
+	public ParserRule getStringLiteralRule() {
+		return getStringLiteralAccess().getRule();
+	}
+	
+	//NameExpression:
+	//    name=ID
+	//;
+	public MCBasicsGrammarAccess.NameExpressionElements getNameExpressionAccess() {
+		return gaMCBasics.getNameExpressionAccess();
+	}
+	
+	public ParserRule getNameExpressionRule() {
+		return getNameExpressionAccess().getRule();
+	}
+	
 	//Arguments:
-	//    'arg' name=ID
+	//    '(' arguments+=Argument (',' arguments+=Argument)* ')'
 	//;
 	public MCBasicsGrammarAccess.ArgumentsElements getArgumentsAccess() {
 		return gaMCBasics.getArgumentsAccess();
@@ -1122,6 +1166,17 @@ public class MontiArcDSLGrammarAccess extends AbstractElementFinder.AbstractGram
 	
 	public ParserRule getArgumentsRule() {
 		return getArgumentsAccess().getRule();
+	}
+	
+	//Argument:
+	//    name?=ID expression=Expression
+	//;
+	public MCBasicsGrammarAccess.ArgumentElements getArgumentAccess() {
+		return gaMCBasics.getArgumentAccess();
+	}
+	
+	public ParserRule getArgumentRule() {
+		return getArgumentAccess().getRule();
 	}
 	
 	//terminal MCQUALIFIEDNAME:

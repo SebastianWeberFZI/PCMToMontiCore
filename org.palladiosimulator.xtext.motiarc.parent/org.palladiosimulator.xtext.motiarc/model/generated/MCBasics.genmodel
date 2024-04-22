@@ -18,11 +18,23 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MCBasics.ecore#//MCPrimitiveType/type"/>
     </genClasses>
     <genClasses ecoreClass="MCBasics.ecore#//MCArrayType"/>
-    <genClasses ecoreClass="MCBasics.ecore#//Expression">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MCBasics.ecore#//Expression/name"/>
+    <genClasses ecoreClass="MCBasics.ecore#//Expression"/>
+    <genClasses ecoreClass="MCBasics.ecore#//LiteralExpression"/>
+    <genClasses ecoreClass="MCBasics.ecore#//NumberLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MCBasics.ecore#//NumberLiteral/literal"/>
+    </genClasses>
+    <genClasses ecoreClass="MCBasics.ecore#//StringLiteral">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MCBasics.ecore#//StringLiteral/literal"/>
+    </genClasses>
+    <genClasses ecoreClass="MCBasics.ecore#//NameExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MCBasics.ecore#//NameExpression/name"/>
     </genClasses>
     <genClasses ecoreClass="MCBasics.ecore#//Arguments">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MCBasics.ecore#//Arguments/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MCBasics.ecore#//Arguments/arguments"/>
+    </genClasses>
+    <genClasses ecoreClass="MCBasics.ecore#//Argument">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MCBasics.ecore#//Argument/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MCBasics.ecore#//Argument/expression"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

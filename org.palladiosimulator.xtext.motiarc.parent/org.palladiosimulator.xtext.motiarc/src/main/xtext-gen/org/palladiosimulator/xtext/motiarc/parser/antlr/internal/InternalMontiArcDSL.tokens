@@ -1,3 +1,5 @@
+'('=42
+')'=43
 '*'=32
 ','=16
 '->'=20
@@ -7,7 +9,6 @@
 '='=17
 '['=28
 ']'=29
-'arg'=43
 'automaton'=24
 'boolean'=34
 'byte'=35
@@ -15,7 +16,6 @@
 'component'=12
 'connect'=19
 'double'=41
-'exp'=42
 'extends'=15
 'float'=40
 'import'=30

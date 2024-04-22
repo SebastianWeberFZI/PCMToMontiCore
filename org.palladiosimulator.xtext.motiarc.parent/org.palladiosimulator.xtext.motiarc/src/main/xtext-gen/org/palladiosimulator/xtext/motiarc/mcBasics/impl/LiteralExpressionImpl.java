@@ -5,26 +5,24 @@ package org.palladiosimulator.xtext.motiarc.mcBasics.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.palladiosimulator.xtext.motiarc.mcBasics.Expression;
+import org.palladiosimulator.xtext.motiarc.mcBasics.LiteralExpression;
 import org.palladiosimulator.xtext.motiarc.mcBasics.McBasicsPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Expression</b></em>'.
+ * An implementation of the model object '<em><b>Literal Expression</b></em>'.
  * <!-- end-user-doc -->
  *
  * @generated
  */
-public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expression
+public class LiteralExpressionImpl extends ExpressionImpl implements LiteralExpression
 {
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ExpressionImpl()
+  protected LiteralExpressionImpl()
   {
     super();
   }
@@ -37,7 +35,7 @@ public class ExpressionImpl extends MinimalEObjectImpl.Container implements Expr
   @Override
   protected EClass eStaticClass()
   {
-    return McBasicsPackage.Literals.EXPRESSION;
+    return McBasicsPackage.Literals.LITERAL_EXPRESSION;
   }
 
-} //ExpressionImpl
+} //LiteralExpressionImpl

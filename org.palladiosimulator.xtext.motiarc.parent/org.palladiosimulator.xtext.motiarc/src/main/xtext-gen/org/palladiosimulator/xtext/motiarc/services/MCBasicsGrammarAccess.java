@@ -191,51 +191,163 @@ public class MCBasicsGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	}
 	public class ExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.xtext.motiarc.MCBasics.Expression");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cExpKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cNameExpressionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cLiteralExpressionParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//Expression:
-		//    'exp' name=ID
+		//    NameExpression | LiteralExpression
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'exp' name=ID
-		public Group getGroup() { return cGroup; }
+		//NameExpression | LiteralExpression
+		public Alternatives getAlternatives() { return cAlternatives; }
 		
-		//'exp'
-		public Keyword getExpKeyword_0() { return cExpKeyword_0; }
+		//NameExpression
+		public RuleCall getNameExpressionParserRuleCall_0() { return cNameExpressionParserRuleCall_0; }
+		
+		//LiteralExpression
+		public RuleCall getLiteralExpressionParserRuleCall_1() { return cLiteralExpressionParserRuleCall_1; }
+	}
+	public class LiteralExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.xtext.motiarc.MCBasics.LiteralExpression");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cNumberLiteralParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cStringLiteralParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//LiteralExpression:
+		//    NumberLiteral | StringLiteral
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//NumberLiteral | StringLiteral
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//NumberLiteral
+		public RuleCall getNumberLiteralParserRuleCall_0() { return cNumberLiteralParserRuleCall_0; }
+		
+		//StringLiteral
+		public RuleCall getStringLiteralParserRuleCall_1() { return cStringLiteralParserRuleCall_1; }
+	}
+	public class NumberLiteralElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.xtext.motiarc.MCBasics.NumberLiteral");
+		private final Assignment cLiteralAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cLiteralINTTerminalRuleCall_0 = (RuleCall)cLiteralAssignment.eContents().get(0);
+		
+		//NumberLiteral:
+		//  literal=INT
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//literal=INT
+		public Assignment getLiteralAssignment() { return cLiteralAssignment; }
+		
+		//INT
+		public RuleCall getLiteralINTTerminalRuleCall_0() { return cLiteralINTTerminalRuleCall_0; }
+	}
+	public class StringLiteralElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.xtext.motiarc.MCBasics.StringLiteral");
+		private final Assignment cLiteralAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cLiteralSTRINGTerminalRuleCall_0 = (RuleCall)cLiteralAssignment.eContents().get(0);
+		
+		//StringLiteral:
+		//    literal=STRING
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//literal=STRING
+		public Assignment getLiteralAssignment() { return cLiteralAssignment; }
+		
+		//STRING
+		public RuleCall getLiteralSTRINGTerminalRuleCall_0() { return cLiteralSTRINGTerminalRuleCall_0; }
+	}
+	public class NameExpressionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.xtext.motiarc.MCBasics.NameExpression");
+		private final Assignment cNameAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_0 = (RuleCall)cNameAssignment.eContents().get(0);
+		
+		//NameExpression:
+		//    name=ID
+		//;
+		@Override public ParserRule getRule() { return rule; }
 		
 		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		public Assignment getNameAssignment() { return cNameAssignment; }
 		
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_0() { return cNameIDTerminalRuleCall_0; }
 	}
 	public class ArgumentsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.xtext.motiarc.MCBasics.Arguments");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cArgKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cArgumentsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cArgumentsArgumentParserRuleCall_1_0 = (RuleCall)cArgumentsAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cArgumentsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cArgumentsArgumentParserRuleCall_2_1_0 = (RuleCall)cArgumentsAssignment_2_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//Arguments:
-		//    'arg' name=ID
+		//    '(' arguments+=Argument (',' arguments+=Argument)* ')'
 		//;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'arg' name=ID
+		//'(' arguments+=Argument (',' arguments+=Argument)* ')'
 		public Group getGroup() { return cGroup; }
 		
-		//'arg'
-		public Keyword getArgKeyword_0() { return cArgKeyword_0; }
+		//'('
+		public Keyword getLeftParenthesisKeyword_0() { return cLeftParenthesisKeyword_0; }
 		
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		//arguments+=Argument
+		public Assignment getArgumentsAssignment_1() { return cArgumentsAssignment_1; }
+		
+		//Argument
+		public RuleCall getArgumentsArgumentParserRuleCall_1_0() { return cArgumentsArgumentParserRuleCall_1_0; }
+		
+		//(',' arguments+=Argument)*
+		public Group getGroup_2() { return cGroup_2; }
+		
+		//','
+		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
+		
+		//arguments+=Argument
+		public Assignment getArgumentsAssignment_2_1() { return cArgumentsAssignment_2_1; }
+		
+		//Argument
+		public RuleCall getArgumentsArgumentParserRuleCall_2_1_0() { return cArgumentsArgumentParserRuleCall_2_1_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_3() { return cRightParenthesisKeyword_3; }
+	}
+	public class ArgumentElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.xtext.motiarc.MCBasics.Argument");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
+		private final Assignment cExpressionAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cExpressionExpressionParserRuleCall_1_0 = (RuleCall)cExpressionAssignment_1.eContents().get(0);
+		
+		//Argument:
+		//    name?=ID expression=Expression
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//name?=ID expression=Expression
+		public Group getGroup() { return cGroup; }
+		
+		//name?=ID
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 		
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
+		
+		//expression=Expression
+		public Assignment getExpressionAssignment_1() { return cExpressionAssignment_1; }
+		
+		//Expression
+		public RuleCall getExpressionExpressionParserRuleCall_1_0() { return cExpressionExpressionParserRuleCall_1_0; }
 	}
 	
 	
@@ -245,7 +357,12 @@ public class MCBasicsGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	private final MCPrimitiveTypeElements pMCPrimitiveType;
 	private final MCArrayTypeElements pMCArrayType;
 	private final ExpressionElements pExpression;
+	private final LiteralExpressionElements pLiteralExpression;
+	private final NumberLiteralElements pNumberLiteral;
+	private final StringLiteralElements pStringLiteral;
+	private final NameExpressionElements pNameExpression;
 	private final ArgumentsElements pArguments;
+	private final ArgumentElements pArgument;
 	private final TerminalRule tMCQUALIFIEDNAME;
 	
 	private final Grammar grammar;
@@ -263,7 +380,12 @@ public class MCBasicsGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		this.pMCPrimitiveType = new MCPrimitiveTypeElements();
 		this.pMCArrayType = new MCArrayTypeElements();
 		this.pExpression = new ExpressionElements();
+		this.pLiteralExpression = new LiteralExpressionElements();
+		this.pNumberLiteral = new NumberLiteralElements();
+		this.pStringLiteral = new StringLiteralElements();
+		this.pNameExpression = new NameExpressionElements();
 		this.pArguments = new ArgumentsElements();
+		this.pArgument = new ArgumentElements();
 		this.tMCQUALIFIEDNAME = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.xtext.motiarc.MCBasics.MCQUALIFIEDNAME");
 	}
 	
@@ -351,7 +473,7 @@ public class MCBasicsGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	}
 	
 	//Expression:
-	//    'exp' name=ID
+	//    NameExpression | LiteralExpression
 	//;
 	public ExpressionElements getExpressionAccess() {
 		return pExpression;
@@ -361,8 +483,52 @@ public class MCBasicsGrammarAccess extends AbstractElementFinder.AbstractGrammar
 		return getExpressionAccess().getRule();
 	}
 	
+	//LiteralExpression:
+	//    NumberLiteral | StringLiteral
+	//;
+	public LiteralExpressionElements getLiteralExpressionAccess() {
+		return pLiteralExpression;
+	}
+	
+	public ParserRule getLiteralExpressionRule() {
+		return getLiteralExpressionAccess().getRule();
+	}
+	
+	//NumberLiteral:
+	//  literal=INT
+	//;
+	public NumberLiteralElements getNumberLiteralAccess() {
+		return pNumberLiteral;
+	}
+	
+	public ParserRule getNumberLiteralRule() {
+		return getNumberLiteralAccess().getRule();
+	}
+	
+	//StringLiteral:
+	//    literal=STRING
+	//;
+	public StringLiteralElements getStringLiteralAccess() {
+		return pStringLiteral;
+	}
+	
+	public ParserRule getStringLiteralRule() {
+		return getStringLiteralAccess().getRule();
+	}
+	
+	//NameExpression:
+	//    name=ID
+	//;
+	public NameExpressionElements getNameExpressionAccess() {
+		return pNameExpression;
+	}
+	
+	public ParserRule getNameExpressionRule() {
+		return getNameExpressionAccess().getRule();
+	}
+	
 	//Arguments:
-	//    'arg' name=ID
+	//    '(' arguments+=Argument (',' arguments+=Argument)* ')'
 	//;
 	public ArgumentsElements getArgumentsAccess() {
 		return pArguments;
@@ -370,6 +536,17 @@ public class MCBasicsGrammarAccess extends AbstractElementFinder.AbstractGrammar
 	
 	public ParserRule getArgumentsRule() {
 		return getArgumentsAccess().getRule();
+	}
+	
+	//Argument:
+	//    name?=ID expression=Expression
+	//;
+	public ArgumentElements getArgumentAccess() {
+		return pArgument;
+	}
+	
+	public ParserRule getArgumentRule() {
+		return getArgumentAccess().getRule();
 	}
 	
 	//terminal MCQUALIFIEDNAME:

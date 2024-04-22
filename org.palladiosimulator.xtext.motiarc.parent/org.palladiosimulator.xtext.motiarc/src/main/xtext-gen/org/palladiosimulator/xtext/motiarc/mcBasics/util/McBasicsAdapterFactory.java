@@ -10,12 +10,17 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
+import org.palladiosimulator.xtext.motiarc.mcBasics.Argument;
 import org.palladiosimulator.xtext.motiarc.mcBasics.Arguments;
 import org.palladiosimulator.xtext.motiarc.mcBasics.Expression;
 import org.palladiosimulator.xtext.motiarc.mcBasics.ImportStatements;
+import org.palladiosimulator.xtext.motiarc.mcBasics.LiteralExpression;
 import org.palladiosimulator.xtext.motiarc.mcBasics.MCArrayType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.MCPrimitiveType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.McBasicsPackage;
+import org.palladiosimulator.xtext.motiarc.mcBasics.NameExpression;
+import org.palladiosimulator.xtext.motiarc.mcBasics.NumberLiteral;
+import org.palladiosimulator.xtext.motiarc.mcBasics.StringLiteral;
 import org.palladiosimulator.xtext.motiarc.mcBasics.Type;
 
 /**
@@ -112,9 +117,34 @@ public class McBasicsAdapterFactory extends AdapterFactoryImpl
         return createExpressionAdapter();
       }
       @Override
+      public Adapter caseLiteralExpression(LiteralExpression object)
+      {
+        return createLiteralExpressionAdapter();
+      }
+      @Override
+      public Adapter caseNumberLiteral(NumberLiteral object)
+      {
+        return createNumberLiteralAdapter();
+      }
+      @Override
+      public Adapter caseStringLiteral(StringLiteral object)
+      {
+        return createStringLiteralAdapter();
+      }
+      @Override
+      public Adapter caseNameExpression(NameExpression object)
+      {
+        return createNameExpressionAdapter();
+      }
+      @Override
       public Adapter caseArguments(Arguments object)
       {
         return createArgumentsAdapter();
+      }
+      @Override
+      public Adapter caseArgument(Argument object)
+      {
+        return createArgumentAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -229,6 +259,66 @@ public class McBasicsAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.palladiosimulator.xtext.motiarc.mcBasics.LiteralExpression <em>Literal Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.LiteralExpression
+   * @generated
+   */
+  public Adapter createLiteralExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.palladiosimulator.xtext.motiarc.mcBasics.NumberLiteral <em>Number Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.NumberLiteral
+   * @generated
+   */
+  public Adapter createNumberLiteralAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.palladiosimulator.xtext.motiarc.mcBasics.StringLiteral <em>String Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.StringLiteral
+   * @generated
+   */
+  public Adapter createStringLiteralAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.palladiosimulator.xtext.motiarc.mcBasics.NameExpression <em>Name Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.NameExpression
+   * @generated
+   */
+  public Adapter createNameExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.palladiosimulator.xtext.motiarc.mcBasics.Arguments <em>Arguments</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -239,6 +329,21 @@ public class McBasicsAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createArgumentsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.palladiosimulator.xtext.motiarc.mcBasics.Argument <em>Argument</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.Argument
+   * @generated
+   */
+  public Adapter createArgumentAdapter()
   {
     return null;
   }

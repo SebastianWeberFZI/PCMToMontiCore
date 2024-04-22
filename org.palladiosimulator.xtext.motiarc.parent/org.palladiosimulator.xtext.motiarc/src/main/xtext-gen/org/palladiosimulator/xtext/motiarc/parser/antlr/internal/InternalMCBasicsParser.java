@@ -21,9 +21,9 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_MCQUALIFIEDNAME", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'import'", "'.'", "'*'", "';'", "'boolean'", "'byte'", "'short'", "'int'", "'long'", "'char'", "'float'", "'double'", "'['", "']'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_MCQUALIFIEDNAME", "RULE_INT", "RULE_STRING", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'import'", "'.'", "'*'", "';'", "'boolean'", "'byte'", "'short'", "'int'", "'long'", "'char'", "'float'", "'double'", "'['", "']'"
     };
-    public static final int RULE_STRING=7;
+    public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=9;
     public static final int T__19=19;
     public static final int T__15=15;
@@ -34,11 +34,11 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int EOF=-1;
-    public static final int RULE_ID=5;
+    public static final int RULE_ID=7;
     public static final int RULE_WS=10;
     public static final int RULE_ANY_OTHER=11;
     public static final int RULE_MCQUALIFIEDNAME=4;
-    public static final int RULE_INT=6;
+    public static final int RULE_INT=5;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=8;
     public static final int T__23=23;
@@ -609,6 +609,681 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
     }
     // $ANTLR end "ruleMCArrayType"
 
+
+    // $ANTLR start "entryRuleExpression"
+    // InternalMCBasics.g:274:1: entryRuleExpression returns [EObject current=null] : iv_ruleExpression= ruleExpression EOF ;
+    public final EObject entryRuleExpression() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleExpression = null;
+
+
+        try {
+            // InternalMCBasics.g:274:51: (iv_ruleExpression= ruleExpression EOF )
+            // InternalMCBasics.g:275:2: iv_ruleExpression= ruleExpression EOF
+            {
+             newCompositeNode(grammarAccess.getExpressionRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleExpression=ruleExpression();
+
+            state._fsp--;
+
+             current =iv_ruleExpression; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleExpression"
+
+
+    // $ANTLR start "ruleExpression"
+    // InternalMCBasics.g:281:1: ruleExpression returns [EObject current=null] : (this_NameExpression_0= ruleNameExpression | this_LiteralExpression_1= ruleLiteralExpression ) ;
+    public final EObject ruleExpression() throws RecognitionException {
+        EObject current = null;
+
+        EObject this_NameExpression_0 = null;
+
+        EObject this_LiteralExpression_1 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalMCBasics.g:287:2: ( (this_NameExpression_0= ruleNameExpression | this_LiteralExpression_1= ruleLiteralExpression ) )
+            // InternalMCBasics.g:288:2: (this_NameExpression_0= ruleNameExpression | this_LiteralExpression_1= ruleLiteralExpression )
+            {
+            // InternalMCBasics.g:288:2: (this_NameExpression_0= ruleNameExpression | this_LiteralExpression_1= ruleLiteralExpression )
+            int alt3=2;
+            int LA3_0 = input.LA(1);
+
+            if ( (LA3_0==RULE_ID) ) {
+                alt3=1;
+            }
+            else if ( ((LA3_0>=RULE_INT && LA3_0<=RULE_STRING)) ) {
+                alt3=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 3, 0, input);
+
+                throw nvae;
+            }
+            switch (alt3) {
+                case 1 :
+                    // InternalMCBasics.g:289:3: this_NameExpression_0= ruleNameExpression
+                    {
+
+                    			newCompositeNode(grammarAccess.getExpressionAccess().getNameExpressionParserRuleCall_0());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_NameExpression_0=ruleNameExpression();
+
+                    state._fsp--;
+
+
+                    			current = this_NameExpression_0;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 2 :
+                    // InternalMCBasics.g:298:3: this_LiteralExpression_1= ruleLiteralExpression
+                    {
+
+                    			newCompositeNode(grammarAccess.getExpressionAccess().getLiteralExpressionParserRuleCall_1());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_LiteralExpression_1=ruleLiteralExpression();
+
+                    state._fsp--;
+
+
+                    			current = this_LiteralExpression_1;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleExpression"
+
+
+    // $ANTLR start "entryRuleLiteralExpression"
+    // InternalMCBasics.g:310:1: entryRuleLiteralExpression returns [EObject current=null] : iv_ruleLiteralExpression= ruleLiteralExpression EOF ;
+    public final EObject entryRuleLiteralExpression() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleLiteralExpression = null;
+
+
+        try {
+            // InternalMCBasics.g:310:58: (iv_ruleLiteralExpression= ruleLiteralExpression EOF )
+            // InternalMCBasics.g:311:2: iv_ruleLiteralExpression= ruleLiteralExpression EOF
+            {
+             newCompositeNode(grammarAccess.getLiteralExpressionRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleLiteralExpression=ruleLiteralExpression();
+
+            state._fsp--;
+
+             current =iv_ruleLiteralExpression; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleLiteralExpression"
+
+
+    // $ANTLR start "ruleLiteralExpression"
+    // InternalMCBasics.g:317:1: ruleLiteralExpression returns [EObject current=null] : (this_NumberLiteral_0= ruleNumberLiteral | this_StringLiteral_1= ruleStringLiteral ) ;
+    public final EObject ruleLiteralExpression() throws RecognitionException {
+        EObject current = null;
+
+        EObject this_NumberLiteral_0 = null;
+
+        EObject this_StringLiteral_1 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalMCBasics.g:323:2: ( (this_NumberLiteral_0= ruleNumberLiteral | this_StringLiteral_1= ruleStringLiteral ) )
+            // InternalMCBasics.g:324:2: (this_NumberLiteral_0= ruleNumberLiteral | this_StringLiteral_1= ruleStringLiteral )
+            {
+            // InternalMCBasics.g:324:2: (this_NumberLiteral_0= ruleNumberLiteral | this_StringLiteral_1= ruleStringLiteral )
+            int alt4=2;
+            int LA4_0 = input.LA(1);
+
+            if ( (LA4_0==RULE_INT) ) {
+                alt4=1;
+            }
+            else if ( (LA4_0==RULE_STRING) ) {
+                alt4=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 4, 0, input);
+
+                throw nvae;
+            }
+            switch (alt4) {
+                case 1 :
+                    // InternalMCBasics.g:325:3: this_NumberLiteral_0= ruleNumberLiteral
+                    {
+
+                    			newCompositeNode(grammarAccess.getLiteralExpressionAccess().getNumberLiteralParserRuleCall_0());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_NumberLiteral_0=ruleNumberLiteral();
+
+                    state._fsp--;
+
+
+                    			current = this_NumberLiteral_0;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+                case 2 :
+                    // InternalMCBasics.g:334:3: this_StringLiteral_1= ruleStringLiteral
+                    {
+
+                    			newCompositeNode(grammarAccess.getLiteralExpressionAccess().getStringLiteralParserRuleCall_1());
+                    		
+                    pushFollow(FOLLOW_2);
+                    this_StringLiteral_1=ruleStringLiteral();
+
+                    state._fsp--;
+
+
+                    			current = this_StringLiteral_1;
+                    			afterParserOrEnumRuleCall();
+                    		
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleLiteralExpression"
+
+
+    // $ANTLR start "entryRuleNumberLiteral"
+    // InternalMCBasics.g:346:1: entryRuleNumberLiteral returns [EObject current=null] : iv_ruleNumberLiteral= ruleNumberLiteral EOF ;
+    public final EObject entryRuleNumberLiteral() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleNumberLiteral = null;
+
+
+        try {
+            // InternalMCBasics.g:346:54: (iv_ruleNumberLiteral= ruleNumberLiteral EOF )
+            // InternalMCBasics.g:347:2: iv_ruleNumberLiteral= ruleNumberLiteral EOF
+            {
+             newCompositeNode(grammarAccess.getNumberLiteralRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleNumberLiteral=ruleNumberLiteral();
+
+            state._fsp--;
+
+             current =iv_ruleNumberLiteral; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleNumberLiteral"
+
+
+    // $ANTLR start "ruleNumberLiteral"
+    // InternalMCBasics.g:353:1: ruleNumberLiteral returns [EObject current=null] : ( (lv_literal_0_0= RULE_INT ) ) ;
+    public final EObject ruleNumberLiteral() throws RecognitionException {
+        EObject current = null;
+
+        Token lv_literal_0_0=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalMCBasics.g:359:2: ( ( (lv_literal_0_0= RULE_INT ) ) )
+            // InternalMCBasics.g:360:2: ( (lv_literal_0_0= RULE_INT ) )
+            {
+            // InternalMCBasics.g:360:2: ( (lv_literal_0_0= RULE_INT ) )
+            // InternalMCBasics.g:361:3: (lv_literal_0_0= RULE_INT )
+            {
+            // InternalMCBasics.g:361:3: (lv_literal_0_0= RULE_INT )
+            // InternalMCBasics.g:362:4: lv_literal_0_0= RULE_INT
+            {
+            lv_literal_0_0=(Token)match(input,RULE_INT,FOLLOW_2); 
+
+            				newLeafNode(lv_literal_0_0, grammarAccess.getNumberLiteralAccess().getLiteralINTTerminalRuleCall_0());
+            			
+
+            				if (current==null) {
+            					current = createModelElement(grammarAccess.getNumberLiteralRule());
+            				}
+            				setWithLastConsumed(
+            					current,
+            					"literal",
+            					lv_literal_0_0,
+            					"org.eclipse.xtext.common.Terminals.INT");
+            			
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleNumberLiteral"
+
+
+    // $ANTLR start "entryRuleStringLiteral"
+    // InternalMCBasics.g:381:1: entryRuleStringLiteral returns [EObject current=null] : iv_ruleStringLiteral= ruleStringLiteral EOF ;
+    public final EObject entryRuleStringLiteral() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleStringLiteral = null;
+
+
+        try {
+            // InternalMCBasics.g:381:54: (iv_ruleStringLiteral= ruleStringLiteral EOF )
+            // InternalMCBasics.g:382:2: iv_ruleStringLiteral= ruleStringLiteral EOF
+            {
+             newCompositeNode(grammarAccess.getStringLiteralRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleStringLiteral=ruleStringLiteral();
+
+            state._fsp--;
+
+             current =iv_ruleStringLiteral; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleStringLiteral"
+
+
+    // $ANTLR start "ruleStringLiteral"
+    // InternalMCBasics.g:388:1: ruleStringLiteral returns [EObject current=null] : ( (lv_literal_0_0= RULE_STRING ) ) ;
+    public final EObject ruleStringLiteral() throws RecognitionException {
+        EObject current = null;
+
+        Token lv_literal_0_0=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalMCBasics.g:394:2: ( ( (lv_literal_0_0= RULE_STRING ) ) )
+            // InternalMCBasics.g:395:2: ( (lv_literal_0_0= RULE_STRING ) )
+            {
+            // InternalMCBasics.g:395:2: ( (lv_literal_0_0= RULE_STRING ) )
+            // InternalMCBasics.g:396:3: (lv_literal_0_0= RULE_STRING )
+            {
+            // InternalMCBasics.g:396:3: (lv_literal_0_0= RULE_STRING )
+            // InternalMCBasics.g:397:4: lv_literal_0_0= RULE_STRING
+            {
+            lv_literal_0_0=(Token)match(input,RULE_STRING,FOLLOW_2); 
+
+            				newLeafNode(lv_literal_0_0, grammarAccess.getStringLiteralAccess().getLiteralSTRINGTerminalRuleCall_0());
+            			
+
+            				if (current==null) {
+            					current = createModelElement(grammarAccess.getStringLiteralRule());
+            				}
+            				setWithLastConsumed(
+            					current,
+            					"literal",
+            					lv_literal_0_0,
+            					"org.eclipse.xtext.common.Terminals.STRING");
+            			
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleStringLiteral"
+
+
+    // $ANTLR start "entryRuleNameExpression"
+    // InternalMCBasics.g:416:1: entryRuleNameExpression returns [EObject current=null] : iv_ruleNameExpression= ruleNameExpression EOF ;
+    public final EObject entryRuleNameExpression() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleNameExpression = null;
+
+
+        try {
+            // InternalMCBasics.g:416:55: (iv_ruleNameExpression= ruleNameExpression EOF )
+            // InternalMCBasics.g:417:2: iv_ruleNameExpression= ruleNameExpression EOF
+            {
+             newCompositeNode(grammarAccess.getNameExpressionRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleNameExpression=ruleNameExpression();
+
+            state._fsp--;
+
+             current =iv_ruleNameExpression; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleNameExpression"
+
+
+    // $ANTLR start "ruleNameExpression"
+    // InternalMCBasics.g:423:1: ruleNameExpression returns [EObject current=null] : ( (lv_name_0_0= RULE_ID ) ) ;
+    public final EObject ruleNameExpression() throws RecognitionException {
+        EObject current = null;
+
+        Token lv_name_0_0=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalMCBasics.g:429:2: ( ( (lv_name_0_0= RULE_ID ) ) )
+            // InternalMCBasics.g:430:2: ( (lv_name_0_0= RULE_ID ) )
+            {
+            // InternalMCBasics.g:430:2: ( (lv_name_0_0= RULE_ID ) )
+            // InternalMCBasics.g:431:3: (lv_name_0_0= RULE_ID )
+            {
+            // InternalMCBasics.g:431:3: (lv_name_0_0= RULE_ID )
+            // InternalMCBasics.g:432:4: lv_name_0_0= RULE_ID
+            {
+            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_2); 
+
+            				newLeafNode(lv_name_0_0, grammarAccess.getNameExpressionAccess().getNameIDTerminalRuleCall_0());
+            			
+
+            				if (current==null) {
+            					current = createModelElement(grammarAccess.getNameExpressionRule());
+            				}
+            				setWithLastConsumed(
+            					current,
+            					"name",
+            					lv_name_0_0,
+            					"org.eclipse.xtext.common.Terminals.ID");
+            			
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleNameExpression"
+
+
+    // $ANTLR start "entryRuleArgument"
+    // InternalMCBasics.g:451:1: entryRuleArgument returns [EObject current=null] : iv_ruleArgument= ruleArgument EOF ;
+    public final EObject entryRuleArgument() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleArgument = null;
+
+
+        try {
+            // InternalMCBasics.g:451:49: (iv_ruleArgument= ruleArgument EOF )
+            // InternalMCBasics.g:452:2: iv_ruleArgument= ruleArgument EOF
+            {
+             newCompositeNode(grammarAccess.getArgumentRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleArgument=ruleArgument();
+
+            state._fsp--;
+
+             current =iv_ruleArgument; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleArgument"
+
+
+    // $ANTLR start "ruleArgument"
+    // InternalMCBasics.g:458:1: ruleArgument returns [EObject current=null] : ( ( (lv_name_0_0= RULE_ID ) ) ( (lv_expression_1_0= ruleExpression ) ) ) ;
+    public final EObject ruleArgument() throws RecognitionException {
+        EObject current = null;
+
+        Token lv_name_0_0=null;
+        EObject lv_expression_1_0 = null;
+
+
+
+        	enterRule();
+
+        try {
+            // InternalMCBasics.g:464:2: ( ( ( (lv_name_0_0= RULE_ID ) ) ( (lv_expression_1_0= ruleExpression ) ) ) )
+            // InternalMCBasics.g:465:2: ( ( (lv_name_0_0= RULE_ID ) ) ( (lv_expression_1_0= ruleExpression ) ) )
+            {
+            // InternalMCBasics.g:465:2: ( ( (lv_name_0_0= RULE_ID ) ) ( (lv_expression_1_0= ruleExpression ) ) )
+            // InternalMCBasics.g:466:3: ( (lv_name_0_0= RULE_ID ) ) ( (lv_expression_1_0= ruleExpression ) )
+            {
+            // InternalMCBasics.g:466:3: ( (lv_name_0_0= RULE_ID ) )
+            // InternalMCBasics.g:467:4: (lv_name_0_0= RULE_ID )
+            {
+            // InternalMCBasics.g:467:4: (lv_name_0_0= RULE_ID )
+            // InternalMCBasics.g:468:5: lv_name_0_0= RULE_ID
+            {
+            lv_name_0_0=(Token)match(input,RULE_ID,FOLLOW_9); 
+
+            					newLeafNode(lv_name_0_0, grammarAccess.getArgumentAccess().getNameIDTerminalRuleCall_0_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getArgumentRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"name",
+            						lv_name_0_0 != null,
+            						"org.eclipse.xtext.common.Terminals.ID");
+            				
+
+            }
+
+
+            }
+
+            // InternalMCBasics.g:484:3: ( (lv_expression_1_0= ruleExpression ) )
+            // InternalMCBasics.g:485:4: (lv_expression_1_0= ruleExpression )
+            {
+            // InternalMCBasics.g:485:4: (lv_expression_1_0= ruleExpression )
+            // InternalMCBasics.g:486:5: lv_expression_1_0= ruleExpression
+            {
+
+            					newCompositeNode(grammarAccess.getArgumentAccess().getExpressionExpressionParserRuleCall_1_0());
+            				
+            pushFollow(FOLLOW_2);
+            lv_expression_1_0=ruleExpression();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getArgumentRule());
+            					}
+            					set(
+            						current,
+            						"expression",
+            						lv_expression_1_0,
+            						"org.palladiosimulator.xtext.motiarc.MCBasics.Expression");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleArgument"
+
     // Delegated rules
 
 
@@ -622,5 +1297,6 @@ public class InternalMCBasicsParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000008000L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000001000000L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x00000000000000E0L});
 
 }

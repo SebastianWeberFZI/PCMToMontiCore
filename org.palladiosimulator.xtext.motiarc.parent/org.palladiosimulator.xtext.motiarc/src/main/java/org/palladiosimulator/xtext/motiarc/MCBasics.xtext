@@ -28,11 +28,31 @@ MCArrayType:
 ;
 
 Expression:
-	'exp' name=ID
+	NameExpression | LiteralExpression
+;
+
+LiteralExpression:
+	NumberLiteral | StringLiteral
+;
+
+NumberLiteral:
+  literal=INT
+;
+
+StringLiteral:
+	literal=STRING
+; 
+
+NameExpression:
+	name=ID
 ;
 
 Arguments:
-	'arg' name=ID
+	'(' arguments+=Argument (',' arguments+=Argument)* ')'
+;
+
+Argument: 
+	name?=ID expression=Expression
 ;
 
 terminal MCQUALIFIEDNAME:

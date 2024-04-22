@@ -6,6 +6,7 @@ package org.palladiosimulator.xtext.motiarc.mcBasics;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -198,22 +199,116 @@ public interface McBasicsPackage extends EPackage
   int EXPRESSION = 5;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXPRESSION__NAME = 0;
-
-  /**
    * The number of structural features of the '<em>Expression</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPRESSION_FEATURE_COUNT = 1;
+  int EXPRESSION_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link org.palladiosimulator.xtext.motiarc.mcBasics.impl.LiteralExpressionImpl <em>Literal Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.LiteralExpressionImpl
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getLiteralExpression()
+   * @generated
+   */
+  int LITERAL_EXPRESSION = 6;
+
+  /**
+   * The number of structural features of the '<em>Literal Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.palladiosimulator.xtext.motiarc.mcBasics.impl.NumberLiteralImpl <em>Number Literal</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.NumberLiteralImpl
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getNumberLiteral()
+   * @generated
+   */
+  int NUMBER_LITERAL = 7;
+
+  /**
+   * The feature id for the '<em><b>Literal</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMBER_LITERAL__LITERAL = LITERAL_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Number Literal</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NUMBER_LITERAL_FEATURE_COUNT = LITERAL_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.palladiosimulator.xtext.motiarc.mcBasics.impl.StringLiteralImpl <em>String Literal</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.StringLiteralImpl
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getStringLiteral()
+   * @generated
+   */
+  int STRING_LITERAL = 8;
+
+  /**
+   * The feature id for the '<em><b>Literal</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_LITERAL__LITERAL = LITERAL_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>String Literal</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STRING_LITERAL_FEATURE_COUNT = LITERAL_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.palladiosimulator.xtext.motiarc.mcBasics.impl.NameExpressionImpl <em>Name Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.NameExpressionImpl
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getNameExpression()
+   * @generated
+   */
+  int NAME_EXPRESSION = 9;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAME_EXPRESSION__NAME = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Name Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAME_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.palladiosimulator.xtext.motiarc.mcBasics.impl.ArgumentsImpl <em>Arguments</em>}' class.
@@ -223,16 +318,16 @@ public interface McBasicsPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getArguments()
    * @generated
    */
-  int ARGUMENTS = 6;
+  int ARGUMENTS = 10;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ARGUMENTS__NAME = 0;
+  int ARGUMENTS__ARGUMENTS = 0;
 
   /**
    * The number of structural features of the '<em>Arguments</em>' class.
@@ -242,6 +337,43 @@ public interface McBasicsPackage extends EPackage
    * @ordered
    */
   int ARGUMENTS_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.palladiosimulator.xtext.motiarc.mcBasics.impl.ArgumentImpl <em>Argument</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.ArgumentImpl
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getArgument()
+   * @generated
+   */
+  int ARGUMENT = 11;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARGUMENT__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARGUMENT__EXPRESSION = 1;
+
+  /**
+   * The number of structural features of the '<em>Argument</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ARGUMENT_FEATURE_COUNT = 2;
 
 
   /**
@@ -349,15 +481,77 @@ public interface McBasicsPackage extends EPackage
   EClass getExpression();
 
   /**
-   * Returns the meta object for the attribute '{@link org.palladiosimulator.xtext.motiarc.mcBasics.Expression#getName <em>Name</em>}'.
+   * Returns the meta object for class '{@link org.palladiosimulator.xtext.motiarc.mcBasics.LiteralExpression <em>Literal Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Literal Expression</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.LiteralExpression
+   * @generated
+   */
+  EClass getLiteralExpression();
+
+  /**
+   * Returns the meta object for class '{@link org.palladiosimulator.xtext.motiarc.mcBasics.NumberLiteral <em>Number Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Number Literal</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.NumberLiteral
+   * @generated
+   */
+  EClass getNumberLiteral();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.palladiosimulator.xtext.motiarc.mcBasics.NumberLiteral#getLiteral <em>Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Literal</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.NumberLiteral#getLiteral()
+   * @see #getNumberLiteral()
+   * @generated
+   */
+  EAttribute getNumberLiteral_Literal();
+
+  /**
+   * Returns the meta object for class '{@link org.palladiosimulator.xtext.motiarc.mcBasics.StringLiteral <em>String Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>String Literal</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.StringLiteral
+   * @generated
+   */
+  EClass getStringLiteral();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.palladiosimulator.xtext.motiarc.mcBasics.StringLiteral#getLiteral <em>Literal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Literal</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.StringLiteral#getLiteral()
+   * @see #getStringLiteral()
+   * @generated
+   */
+  EAttribute getStringLiteral_Literal();
+
+  /**
+   * Returns the meta object for class '{@link org.palladiosimulator.xtext.motiarc.mcBasics.NameExpression <em>Name Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Name Expression</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.NameExpression
+   * @generated
+   */
+  EClass getNameExpression();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.palladiosimulator.xtext.motiarc.mcBasics.NameExpression#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.palladiosimulator.xtext.motiarc.mcBasics.Expression#getName()
-   * @see #getExpression()
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.NameExpression#getName()
+   * @see #getNameExpression()
    * @generated
    */
-  EAttribute getExpression_Name();
+  EAttribute getNameExpression_Name();
 
   /**
    * Returns the meta object for class '{@link org.palladiosimulator.xtext.motiarc.mcBasics.Arguments <em>Arguments</em>}'.
@@ -370,15 +564,47 @@ public interface McBasicsPackage extends EPackage
   EClass getArguments();
 
   /**
-   * Returns the meta object for the attribute '{@link org.palladiosimulator.xtext.motiarc.mcBasics.Arguments#getName <em>Name</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.palladiosimulator.xtext.motiarc.mcBasics.Arguments#getArguments <em>Arguments</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.palladiosimulator.xtext.motiarc.mcBasics.Arguments#getName()
+   * @return the meta object for the containment reference list '<em>Arguments</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.Arguments#getArguments()
    * @see #getArguments()
    * @generated
    */
-  EAttribute getArguments_Name();
+  EReference getArguments_Arguments();
+
+  /**
+   * Returns the meta object for class '{@link org.palladiosimulator.xtext.motiarc.mcBasics.Argument <em>Argument</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Argument</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.Argument
+   * @generated
+   */
+  EClass getArgument();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.palladiosimulator.xtext.motiarc.mcBasics.Argument#isName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.Argument#isName()
+   * @see #getArgument()
+   * @generated
+   */
+  EAttribute getArgument_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.palladiosimulator.xtext.motiarc.mcBasics.Argument#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.Argument#getExpression()
+   * @see #getArgument()
+   * @generated
+   */
+  EReference getArgument_Expression();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -496,12 +722,68 @@ public interface McBasicsPackage extends EPackage
     EClass EXPRESSION = eINSTANCE.getExpression();
 
     /**
+     * The meta object literal for the '{@link org.palladiosimulator.xtext.motiarc.mcBasics.impl.LiteralExpressionImpl <em>Literal Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.LiteralExpressionImpl
+     * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getLiteralExpression()
+     * @generated
+     */
+    EClass LITERAL_EXPRESSION = eINSTANCE.getLiteralExpression();
+
+    /**
+     * The meta object literal for the '{@link org.palladiosimulator.xtext.motiarc.mcBasics.impl.NumberLiteralImpl <em>Number Literal</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.NumberLiteralImpl
+     * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getNumberLiteral()
+     * @generated
+     */
+    EClass NUMBER_LITERAL = eINSTANCE.getNumberLiteral();
+
+    /**
+     * The meta object literal for the '<em><b>Literal</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NUMBER_LITERAL__LITERAL = eINSTANCE.getNumberLiteral_Literal();
+
+    /**
+     * The meta object literal for the '{@link org.palladiosimulator.xtext.motiarc.mcBasics.impl.StringLiteralImpl <em>String Literal</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.StringLiteralImpl
+     * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getStringLiteral()
+     * @generated
+     */
+    EClass STRING_LITERAL = eINSTANCE.getStringLiteral();
+
+    /**
+     * The meta object literal for the '<em><b>Literal</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STRING_LITERAL__LITERAL = eINSTANCE.getStringLiteral_Literal();
+
+    /**
+     * The meta object literal for the '{@link org.palladiosimulator.xtext.motiarc.mcBasics.impl.NameExpressionImpl <em>Name Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.NameExpressionImpl
+     * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getNameExpression()
+     * @generated
+     */
+    EClass NAME_EXPRESSION = eINSTANCE.getNameExpression();
+
+    /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute EXPRESSION__NAME = eINSTANCE.getExpression_Name();
+    EAttribute NAME_EXPRESSION__NAME = eINSTANCE.getNameExpression_Name();
 
     /**
      * The meta object literal for the '{@link org.palladiosimulator.xtext.motiarc.mcBasics.impl.ArgumentsImpl <em>Arguments</em>}' class.
@@ -514,12 +796,38 @@ public interface McBasicsPackage extends EPackage
     EClass ARGUMENTS = eINSTANCE.getArguments();
 
     /**
+     * The meta object literal for the '<em><b>Arguments</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ARGUMENTS__ARGUMENTS = eINSTANCE.getArguments_Arguments();
+
+    /**
+     * The meta object literal for the '{@link org.palladiosimulator.xtext.motiarc.mcBasics.impl.ArgumentImpl <em>Argument</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.ArgumentImpl
+     * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getArgument()
+     * @generated
+     */
+    EClass ARGUMENT = eINSTANCE.getArgument();
+
+    /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute ARGUMENTS__NAME = eINSTANCE.getArguments_Name();
+    EAttribute ARGUMENT__NAME = eINSTANCE.getArgument_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ARGUMENT__EXPRESSION = eINSTANCE.getArgument_Expression();
 
   }
 

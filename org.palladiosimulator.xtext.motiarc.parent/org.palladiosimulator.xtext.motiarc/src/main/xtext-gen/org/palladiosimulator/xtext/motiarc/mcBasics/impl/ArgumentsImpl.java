@@ -3,13 +3,21 @@
  */
 package org.palladiosimulator.xtext.motiarc.mcBasics.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+import org.palladiosimulator.xtext.motiarc.mcBasics.Argument;
 import org.palladiosimulator.xtext.motiarc.mcBasics.Arguments;
 import org.palladiosimulator.xtext.motiarc.mcBasics.McBasicsPackage;
 
@@ -21,7 +29,7 @@ import org.palladiosimulator.xtext.motiarc.mcBasics.McBasicsPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.palladiosimulator.xtext.motiarc.mcBasics.impl.ArgumentsImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.palladiosimulator.xtext.motiarc.mcBasics.impl.ArgumentsImpl#getArguments <em>Arguments</em>}</li>
  * </ul>
  *
  * @generated
@@ -29,24 +37,14 @@ import org.palladiosimulator.xtext.motiarc.mcBasics.McBasicsPackage;
 public class ArgumentsImpl extends MinimalEObjectImpl.Container implements Arguments
 {
   /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getArguments() <em>Arguments</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getArguments()
    * @generated
    * @ordered
    */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
+  protected EList<Argument> arguments;
 
   /**
    * <!-- begin-user-doc -->
@@ -75,9 +73,13 @@ public class ArgumentsImpl extends MinimalEObjectImpl.Container implements Argum
    * @generated
    */
   @Override
-  public String getName()
+  public EList<Argument> getArguments()
   {
-    return name;
+    if (arguments == null)
+    {
+      arguments = new EObjectContainmentEList<Argument>(Argument.class, this, McBasicsPackage.ARGUMENTS__ARGUMENTS);
+    }
+    return arguments;
   }
 
   /**
@@ -86,12 +88,14 @@ public class ArgumentsImpl extends MinimalEObjectImpl.Container implements Argum
    * @generated
    */
   @Override
-  public void setName(String newName)
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, McBasicsPackage.ARGUMENTS__NAME, oldName, name));
+    switch (featureID)
+    {
+      case McBasicsPackage.ARGUMENTS__ARGUMENTS:
+        return ((InternalEList<?>)getArguments()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -104,8 +108,8 @@ public class ArgumentsImpl extends MinimalEObjectImpl.Container implements Argum
   {
     switch (featureID)
     {
-      case McBasicsPackage.ARGUMENTS__NAME:
-        return getName();
+      case McBasicsPackage.ARGUMENTS__ARGUMENTS:
+        return getArguments();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -115,13 +119,15 @@ public class ArgumentsImpl extends MinimalEObjectImpl.Container implements Argum
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case McBasicsPackage.ARGUMENTS__NAME:
-        setName((String)newValue);
+      case McBasicsPackage.ARGUMENTS__ARGUMENTS:
+        getArguments().clear();
+        getArguments().addAll((Collection<? extends Argument>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,8 +143,8 @@ public class ArgumentsImpl extends MinimalEObjectImpl.Container implements Argum
   {
     switch (featureID)
     {
-      case McBasicsPackage.ARGUMENTS__NAME:
-        setName(NAME_EDEFAULT);
+      case McBasicsPackage.ARGUMENTS__ARGUMENTS:
+        getArguments().clear();
         return;
     }
     super.eUnset(featureID);
@@ -154,27 +160,10 @@ public class ArgumentsImpl extends MinimalEObjectImpl.Container implements Argum
   {
     switch (featureID)
     {
-      case McBasicsPackage.ARGUMENTS__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case McBasicsPackage.ARGUMENTS__ARGUMENTS:
+        return arguments != null && !arguments.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //ArgumentsImpl

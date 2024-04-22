@@ -36,6 +36,8 @@ public class MontiArcDSLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getAutomatonAccess().getAlternatives_4(), "rule__Automaton__Alternatives_4");
 			builder.put(grammarAccess.getTypeAccess().getAlternatives(), "rule__Type__Alternatives");
 			builder.put(grammarAccess.getMCPrimitiveTypeAccess().getTypeAlternatives_0(), "rule__MCPrimitiveType__TypeAlternatives_0");
+			builder.put(grammarAccess.getExpressionAccess().getAlternatives(), "rule__Expression__Alternatives");
+			builder.put(grammarAccess.getLiteralExpressionAccess().getAlternatives(), "rule__LiteralExpression__Alternatives");
 			builder.put(grammarAccess.getMACompilationUnitAccess().getGroup(), "rule__MACompilationUnit__Group__0");
 			builder.put(grammarAccess.getComponentAccess().getGroup(), "rule__Component__Group__0");
 			builder.put(grammarAccess.getSignatureAccess().getGroup(), "rule__Signature__Group__0");
@@ -67,8 +69,9 @@ public class MontiArcDSLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getImportStatementsAccess().getGroup_2(), "rule__ImportStatements__Group_2__0");
 			builder.put(grammarAccess.getPackageAccess().getGroup(), "rule__Package__Group__0");
 			builder.put(grammarAccess.getMCArrayTypeAccess().getGroup(), "rule__MCArrayType__Group__0");
-			builder.put(grammarAccess.getExpressionAccess().getGroup(), "rule__Expression__Group__0");
 			builder.put(grammarAccess.getArgumentsAccess().getGroup(), "rule__Arguments__Group__0");
+			builder.put(grammarAccess.getArgumentsAccess().getGroup_2(), "rule__Arguments__Group_2__0");
+			builder.put(grammarAccess.getArgumentAccess().getGroup(), "rule__Argument__Group__0");
 			builder.put(grammarAccess.getMACompilationUnitAccess().getPackageAssignment_0(), "rule__MACompilationUnit__PackageAssignment_0");
 			builder.put(grammarAccess.getMACompilationUnitAccess().getImportStatementsAssignment_1(), "rule__MACompilationUnit__ImportStatementsAssignment_1");
 			builder.put(grammarAccess.getMACompilationUnitAccess().getComponentAssignment_2(), "rule__MACompilationUnit__ComponentAssignment_2");
@@ -115,8 +118,13 @@ public class MontiArcDSLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getImportStatementsAccess().getStarAssignment_2_1(), "rule__ImportStatements__StarAssignment_2_1");
 			builder.put(grammarAccess.getPackageAccess().getNameAssignment_1(), "rule__Package__NameAssignment_1");
 			builder.put(grammarAccess.getMCPrimitiveTypeAccess().getTypeAssignment(), "rule__MCPrimitiveType__TypeAssignment");
-			builder.put(grammarAccess.getExpressionAccess().getNameAssignment_1(), "rule__Expression__NameAssignment_1");
-			builder.put(grammarAccess.getArgumentsAccess().getNameAssignment_1(), "rule__Arguments__NameAssignment_1");
+			builder.put(grammarAccess.getNumberLiteralAccess().getLiteralAssignment(), "rule__NumberLiteral__LiteralAssignment");
+			builder.put(grammarAccess.getStringLiteralAccess().getLiteralAssignment(), "rule__StringLiteral__LiteralAssignment");
+			builder.put(grammarAccess.getNameExpressionAccess().getNameAssignment(), "rule__NameExpression__NameAssignment");
+			builder.put(grammarAccess.getArgumentsAccess().getArgumentsAssignment_1(), "rule__Arguments__ArgumentsAssignment_1");
+			builder.put(grammarAccess.getArgumentsAccess().getArgumentsAssignment_2_1(), "rule__Arguments__ArgumentsAssignment_2_1");
+			builder.put(grammarAccess.getArgumentAccess().getNameAssignment_0(), "rule__Argument__NameAssignment_0");
+			builder.put(grammarAccess.getArgumentAccess().getExpressionAssignment_1(), "rule__Argument__ExpressionAssignment_1");
 		}
 	}
 	

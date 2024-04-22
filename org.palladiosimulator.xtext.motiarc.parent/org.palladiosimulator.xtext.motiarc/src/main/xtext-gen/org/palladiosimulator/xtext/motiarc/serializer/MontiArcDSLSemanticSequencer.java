@@ -13,11 +13,14 @@ import org.eclipse.xtext.ParserRule;
 import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
+import org.palladiosimulator.xtext.motiarc.mcBasics.Argument;
 import org.palladiosimulator.xtext.motiarc.mcBasics.Arguments;
-import org.palladiosimulator.xtext.motiarc.mcBasics.Expression;
 import org.palladiosimulator.xtext.motiarc.mcBasics.ImportStatements;
 import org.palladiosimulator.xtext.motiarc.mcBasics.MCPrimitiveType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.McBasicsPackage;
+import org.palladiosimulator.xtext.motiarc.mcBasics.NameExpression;
+import org.palladiosimulator.xtext.motiarc.mcBasics.NumberLiteral;
+import org.palladiosimulator.xtext.motiarc.mcBasics.StringLiteral;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.Automaton;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.Block;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.Component;
@@ -50,11 +53,11 @@ public class MontiArcDSLSemanticSequencer extends MCBasicsSemanticSequencer {
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == McBasicsPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case McBasicsPackage.ARGUMENT:
+				sequence_Argument(context, (Argument) semanticObject); 
+				return; 
 			case McBasicsPackage.ARGUMENTS:
 				sequence_Arguments(context, (Arguments) semanticObject); 
-				return; 
-			case McBasicsPackage.EXPRESSION:
-				sequence_Expression(context, (Expression) semanticObject); 
 				return; 
 			case McBasicsPackage.IMPORT_STATEMENTS:
 				sequence_ImportStatements(context, (ImportStatements) semanticObject); 
@@ -62,8 +65,17 @@ public class MontiArcDSLSemanticSequencer extends MCBasicsSemanticSequencer {
 			case McBasicsPackage.MC_PRIMITIVE_TYPE:
 				sequence_MCPrimitiveType(context, (MCPrimitiveType) semanticObject); 
 				return; 
+			case McBasicsPackage.NAME_EXPRESSION:
+				sequence_NameExpression(context, (NameExpression) semanticObject); 
+				return; 
+			case McBasicsPackage.NUMBER_LITERAL:
+				sequence_NumberLiteral(context, (NumberLiteral) semanticObject); 
+				return; 
 			case McBasicsPackage.PACKAGE:
 				sequence_Package(context, (org.palladiosimulator.xtext.motiarc.mcBasics.Package) semanticObject); 
+				return; 
+			case McBasicsPackage.STRING_LITERAL:
+				sequence_StringLiteral(context, (StringLiteral) semanticObject); 
 				return; 
 			}
 		else if (epackage == MontiArcDSLPackage.eINSTANCE)

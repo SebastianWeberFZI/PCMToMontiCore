@@ -22,9 +22,9 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalMCBasicsParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_MCQUALIFIEDNAME", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'boolean'", "'byte'", "'short'", "'int'", "'long'", "'char'", "'float'", "'double'", "'import'", "';'", "'.'", "'['", "']'", "'*'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_MCQUALIFIEDNAME", "RULE_INT", "RULE_STRING", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'boolean'", "'byte'", "'short'", "'int'", "'long'", "'char'", "'float'", "'double'", "'import'", "';'", "'.'", "'['", "']'", "'*'"
     };
-    public static final int RULE_STRING=7;
+    public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=9;
     public static final int T__19=19;
     public static final int T__15=15;
@@ -35,11 +35,11 @@ public class InternalMCBasicsParser extends AbstractInternalContentAssistParser 
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int EOF=-1;
-    public static final int RULE_ID=5;
+    public static final int RULE_ID=7;
     public static final int RULE_WS=10;
     public static final int RULE_ANY_OTHER=11;
     public static final int RULE_MCQUALIFIEDNAME=4;
-    public static final int RULE_INT=6;
+    public static final int RULE_INT=5;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=8;
     public static final int T__23=23;
@@ -314,14 +314,476 @@ public class InternalMCBasicsParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "ruleMCArrayType"
 
 
+    // $ANTLR start "entryRuleExpression"
+    // InternalMCBasics.g:128:1: entryRuleExpression : ruleExpression EOF ;
+    public final void entryRuleExpression() throws RecognitionException {
+        try {
+            // InternalMCBasics.g:129:1: ( ruleExpression EOF )
+            // InternalMCBasics.g:130:1: ruleExpression EOF
+            {
+             before(grammarAccess.getExpressionRule()); 
+            pushFollow(FOLLOW_1);
+            ruleExpression();
+
+            state._fsp--;
+
+             after(grammarAccess.getExpressionRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleExpression"
+
+
+    // $ANTLR start "ruleExpression"
+    // InternalMCBasics.g:137:1: ruleExpression : ( ( rule__Expression__Alternatives ) ) ;
+    public final void ruleExpression() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMCBasics.g:141:2: ( ( ( rule__Expression__Alternatives ) ) )
+            // InternalMCBasics.g:142:2: ( ( rule__Expression__Alternatives ) )
+            {
+            // InternalMCBasics.g:142:2: ( ( rule__Expression__Alternatives ) )
+            // InternalMCBasics.g:143:3: ( rule__Expression__Alternatives )
+            {
+             before(grammarAccess.getExpressionAccess().getAlternatives()); 
+            // InternalMCBasics.g:144:3: ( rule__Expression__Alternatives )
+            // InternalMCBasics.g:144:4: rule__Expression__Alternatives
+            {
+            pushFollow(FOLLOW_2);
+            rule__Expression__Alternatives();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getExpressionAccess().getAlternatives()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleExpression"
+
+
+    // $ANTLR start "entryRuleLiteralExpression"
+    // InternalMCBasics.g:153:1: entryRuleLiteralExpression : ruleLiteralExpression EOF ;
+    public final void entryRuleLiteralExpression() throws RecognitionException {
+        try {
+            // InternalMCBasics.g:154:1: ( ruleLiteralExpression EOF )
+            // InternalMCBasics.g:155:1: ruleLiteralExpression EOF
+            {
+             before(grammarAccess.getLiteralExpressionRule()); 
+            pushFollow(FOLLOW_1);
+            ruleLiteralExpression();
+
+            state._fsp--;
+
+             after(grammarAccess.getLiteralExpressionRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleLiteralExpression"
+
+
+    // $ANTLR start "ruleLiteralExpression"
+    // InternalMCBasics.g:162:1: ruleLiteralExpression : ( ( rule__LiteralExpression__Alternatives ) ) ;
+    public final void ruleLiteralExpression() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMCBasics.g:166:2: ( ( ( rule__LiteralExpression__Alternatives ) ) )
+            // InternalMCBasics.g:167:2: ( ( rule__LiteralExpression__Alternatives ) )
+            {
+            // InternalMCBasics.g:167:2: ( ( rule__LiteralExpression__Alternatives ) )
+            // InternalMCBasics.g:168:3: ( rule__LiteralExpression__Alternatives )
+            {
+             before(grammarAccess.getLiteralExpressionAccess().getAlternatives()); 
+            // InternalMCBasics.g:169:3: ( rule__LiteralExpression__Alternatives )
+            // InternalMCBasics.g:169:4: rule__LiteralExpression__Alternatives
+            {
+            pushFollow(FOLLOW_2);
+            rule__LiteralExpression__Alternatives();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getLiteralExpressionAccess().getAlternatives()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleLiteralExpression"
+
+
+    // $ANTLR start "entryRuleNumberLiteral"
+    // InternalMCBasics.g:178:1: entryRuleNumberLiteral : ruleNumberLiteral EOF ;
+    public final void entryRuleNumberLiteral() throws RecognitionException {
+        try {
+            // InternalMCBasics.g:179:1: ( ruleNumberLiteral EOF )
+            // InternalMCBasics.g:180:1: ruleNumberLiteral EOF
+            {
+             before(grammarAccess.getNumberLiteralRule()); 
+            pushFollow(FOLLOW_1);
+            ruleNumberLiteral();
+
+            state._fsp--;
+
+             after(grammarAccess.getNumberLiteralRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleNumberLiteral"
+
+
+    // $ANTLR start "ruleNumberLiteral"
+    // InternalMCBasics.g:187:1: ruleNumberLiteral : ( ( rule__NumberLiteral__LiteralAssignment ) ) ;
+    public final void ruleNumberLiteral() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMCBasics.g:191:2: ( ( ( rule__NumberLiteral__LiteralAssignment ) ) )
+            // InternalMCBasics.g:192:2: ( ( rule__NumberLiteral__LiteralAssignment ) )
+            {
+            // InternalMCBasics.g:192:2: ( ( rule__NumberLiteral__LiteralAssignment ) )
+            // InternalMCBasics.g:193:3: ( rule__NumberLiteral__LiteralAssignment )
+            {
+             before(grammarAccess.getNumberLiteralAccess().getLiteralAssignment()); 
+            // InternalMCBasics.g:194:3: ( rule__NumberLiteral__LiteralAssignment )
+            // InternalMCBasics.g:194:4: rule__NumberLiteral__LiteralAssignment
+            {
+            pushFollow(FOLLOW_2);
+            rule__NumberLiteral__LiteralAssignment();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getNumberLiteralAccess().getLiteralAssignment()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleNumberLiteral"
+
+
+    // $ANTLR start "entryRuleStringLiteral"
+    // InternalMCBasics.g:203:1: entryRuleStringLiteral : ruleStringLiteral EOF ;
+    public final void entryRuleStringLiteral() throws RecognitionException {
+        try {
+            // InternalMCBasics.g:204:1: ( ruleStringLiteral EOF )
+            // InternalMCBasics.g:205:1: ruleStringLiteral EOF
+            {
+             before(grammarAccess.getStringLiteralRule()); 
+            pushFollow(FOLLOW_1);
+            ruleStringLiteral();
+
+            state._fsp--;
+
+             after(grammarAccess.getStringLiteralRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleStringLiteral"
+
+
+    // $ANTLR start "ruleStringLiteral"
+    // InternalMCBasics.g:212:1: ruleStringLiteral : ( ( rule__StringLiteral__LiteralAssignment ) ) ;
+    public final void ruleStringLiteral() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMCBasics.g:216:2: ( ( ( rule__StringLiteral__LiteralAssignment ) ) )
+            // InternalMCBasics.g:217:2: ( ( rule__StringLiteral__LiteralAssignment ) )
+            {
+            // InternalMCBasics.g:217:2: ( ( rule__StringLiteral__LiteralAssignment ) )
+            // InternalMCBasics.g:218:3: ( rule__StringLiteral__LiteralAssignment )
+            {
+             before(grammarAccess.getStringLiteralAccess().getLiteralAssignment()); 
+            // InternalMCBasics.g:219:3: ( rule__StringLiteral__LiteralAssignment )
+            // InternalMCBasics.g:219:4: rule__StringLiteral__LiteralAssignment
+            {
+            pushFollow(FOLLOW_2);
+            rule__StringLiteral__LiteralAssignment();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getStringLiteralAccess().getLiteralAssignment()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleStringLiteral"
+
+
+    // $ANTLR start "entryRuleNameExpression"
+    // InternalMCBasics.g:228:1: entryRuleNameExpression : ruleNameExpression EOF ;
+    public final void entryRuleNameExpression() throws RecognitionException {
+        try {
+            // InternalMCBasics.g:229:1: ( ruleNameExpression EOF )
+            // InternalMCBasics.g:230:1: ruleNameExpression EOF
+            {
+             before(grammarAccess.getNameExpressionRule()); 
+            pushFollow(FOLLOW_1);
+            ruleNameExpression();
+
+            state._fsp--;
+
+             after(grammarAccess.getNameExpressionRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleNameExpression"
+
+
+    // $ANTLR start "ruleNameExpression"
+    // InternalMCBasics.g:237:1: ruleNameExpression : ( ( rule__NameExpression__NameAssignment ) ) ;
+    public final void ruleNameExpression() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMCBasics.g:241:2: ( ( ( rule__NameExpression__NameAssignment ) ) )
+            // InternalMCBasics.g:242:2: ( ( rule__NameExpression__NameAssignment ) )
+            {
+            // InternalMCBasics.g:242:2: ( ( rule__NameExpression__NameAssignment ) )
+            // InternalMCBasics.g:243:3: ( rule__NameExpression__NameAssignment )
+            {
+             before(grammarAccess.getNameExpressionAccess().getNameAssignment()); 
+            // InternalMCBasics.g:244:3: ( rule__NameExpression__NameAssignment )
+            // InternalMCBasics.g:244:4: rule__NameExpression__NameAssignment
+            {
+            pushFollow(FOLLOW_2);
+            rule__NameExpression__NameAssignment();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getNameExpressionAccess().getNameAssignment()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleNameExpression"
+
+
+    // $ANTLR start "entryRuleArgument"
+    // InternalMCBasics.g:253:1: entryRuleArgument : ruleArgument EOF ;
+    public final void entryRuleArgument() throws RecognitionException {
+        try {
+            // InternalMCBasics.g:254:1: ( ruleArgument EOF )
+            // InternalMCBasics.g:255:1: ruleArgument EOF
+            {
+             before(grammarAccess.getArgumentRule()); 
+            pushFollow(FOLLOW_1);
+            ruleArgument();
+
+            state._fsp--;
+
+             after(grammarAccess.getArgumentRule()); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleArgument"
+
+
+    // $ANTLR start "ruleArgument"
+    // InternalMCBasics.g:262:1: ruleArgument : ( ( rule__Argument__Group__0 ) ) ;
+    public final void ruleArgument() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMCBasics.g:266:2: ( ( ( rule__Argument__Group__0 ) ) )
+            // InternalMCBasics.g:267:2: ( ( rule__Argument__Group__0 ) )
+            {
+            // InternalMCBasics.g:267:2: ( ( rule__Argument__Group__0 ) )
+            // InternalMCBasics.g:268:3: ( rule__Argument__Group__0 )
+            {
+             before(grammarAccess.getArgumentAccess().getGroup()); 
+            // InternalMCBasics.g:269:3: ( rule__Argument__Group__0 )
+            // InternalMCBasics.g:269:4: rule__Argument__Group__0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Argument__Group__0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getArgumentAccess().getGroup()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleArgument"
+
+
     // $ANTLR start "rule__MCPrimitiveType__TypeAlternatives_0"
-    // InternalMCBasics.g:127:1: rule__MCPrimitiveType__TypeAlternatives_0 : ( ( 'boolean' ) | ( 'byte' ) | ( 'short' ) | ( 'int' ) | ( 'long' ) | ( 'char' ) | ( 'float' ) | ( 'double' ) );
+    // InternalMCBasics.g:277:1: rule__MCPrimitiveType__TypeAlternatives_0 : ( ( 'boolean' ) | ( 'byte' ) | ( 'short' ) | ( 'int' ) | ( 'long' ) | ( 'char' ) | ( 'float' ) | ( 'double' ) );
     public final void rule__MCPrimitiveType__TypeAlternatives_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMCBasics.g:131:1: ( ( 'boolean' ) | ( 'byte' ) | ( 'short' ) | ( 'int' ) | ( 'long' ) | ( 'char' ) | ( 'float' ) | ( 'double' ) )
+            // InternalMCBasics.g:281:1: ( ( 'boolean' ) | ( 'byte' ) | ( 'short' ) | ( 'int' ) | ( 'long' ) | ( 'char' ) | ( 'float' ) | ( 'double' ) )
             int alt1=8;
             switch ( input.LA(1) ) {
             case 12:
@@ -373,10 +835,10 @@ public class InternalMCBasicsParser extends AbstractInternalContentAssistParser 
 
             switch (alt1) {
                 case 1 :
-                    // InternalMCBasics.g:132:2: ( 'boolean' )
+                    // InternalMCBasics.g:282:2: ( 'boolean' )
                     {
-                    // InternalMCBasics.g:132:2: ( 'boolean' )
-                    // InternalMCBasics.g:133:3: 'boolean'
+                    // InternalMCBasics.g:282:2: ( 'boolean' )
+                    // InternalMCBasics.g:283:3: 'boolean'
                     {
                      before(grammarAccess.getMCPrimitiveTypeAccess().getTypeBooleanKeyword_0_0()); 
                     match(input,12,FOLLOW_2); 
@@ -388,10 +850,10 @@ public class InternalMCBasicsParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 2 :
-                    // InternalMCBasics.g:138:2: ( 'byte' )
+                    // InternalMCBasics.g:288:2: ( 'byte' )
                     {
-                    // InternalMCBasics.g:138:2: ( 'byte' )
-                    // InternalMCBasics.g:139:3: 'byte'
+                    // InternalMCBasics.g:288:2: ( 'byte' )
+                    // InternalMCBasics.g:289:3: 'byte'
                     {
                      before(grammarAccess.getMCPrimitiveTypeAccess().getTypeByteKeyword_0_1()); 
                     match(input,13,FOLLOW_2); 
@@ -403,10 +865,10 @@ public class InternalMCBasicsParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 3 :
-                    // InternalMCBasics.g:144:2: ( 'short' )
+                    // InternalMCBasics.g:294:2: ( 'short' )
                     {
-                    // InternalMCBasics.g:144:2: ( 'short' )
-                    // InternalMCBasics.g:145:3: 'short'
+                    // InternalMCBasics.g:294:2: ( 'short' )
+                    // InternalMCBasics.g:295:3: 'short'
                     {
                      before(grammarAccess.getMCPrimitiveTypeAccess().getTypeShortKeyword_0_2()); 
                     match(input,14,FOLLOW_2); 
@@ -418,10 +880,10 @@ public class InternalMCBasicsParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 4 :
-                    // InternalMCBasics.g:150:2: ( 'int' )
+                    // InternalMCBasics.g:300:2: ( 'int' )
                     {
-                    // InternalMCBasics.g:150:2: ( 'int' )
-                    // InternalMCBasics.g:151:3: 'int'
+                    // InternalMCBasics.g:300:2: ( 'int' )
+                    // InternalMCBasics.g:301:3: 'int'
                     {
                      before(grammarAccess.getMCPrimitiveTypeAccess().getTypeIntKeyword_0_3()); 
                     match(input,15,FOLLOW_2); 
@@ -433,10 +895,10 @@ public class InternalMCBasicsParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 5 :
-                    // InternalMCBasics.g:156:2: ( 'long' )
+                    // InternalMCBasics.g:306:2: ( 'long' )
                     {
-                    // InternalMCBasics.g:156:2: ( 'long' )
-                    // InternalMCBasics.g:157:3: 'long'
+                    // InternalMCBasics.g:306:2: ( 'long' )
+                    // InternalMCBasics.g:307:3: 'long'
                     {
                      before(grammarAccess.getMCPrimitiveTypeAccess().getTypeLongKeyword_0_4()); 
                     match(input,16,FOLLOW_2); 
@@ -448,10 +910,10 @@ public class InternalMCBasicsParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 6 :
-                    // InternalMCBasics.g:162:2: ( 'char' )
+                    // InternalMCBasics.g:312:2: ( 'char' )
                     {
-                    // InternalMCBasics.g:162:2: ( 'char' )
-                    // InternalMCBasics.g:163:3: 'char'
+                    // InternalMCBasics.g:312:2: ( 'char' )
+                    // InternalMCBasics.g:313:3: 'char'
                     {
                      before(grammarAccess.getMCPrimitiveTypeAccess().getTypeCharKeyword_0_5()); 
                     match(input,17,FOLLOW_2); 
@@ -463,10 +925,10 @@ public class InternalMCBasicsParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 7 :
-                    // InternalMCBasics.g:168:2: ( 'float' )
+                    // InternalMCBasics.g:318:2: ( 'float' )
                     {
-                    // InternalMCBasics.g:168:2: ( 'float' )
-                    // InternalMCBasics.g:169:3: 'float'
+                    // InternalMCBasics.g:318:2: ( 'float' )
+                    // InternalMCBasics.g:319:3: 'float'
                     {
                      before(grammarAccess.getMCPrimitiveTypeAccess().getTypeFloatKeyword_0_6()); 
                     match(input,18,FOLLOW_2); 
@@ -478,10 +940,10 @@ public class InternalMCBasicsParser extends AbstractInternalContentAssistParser 
                     }
                     break;
                 case 8 :
-                    // InternalMCBasics.g:174:2: ( 'double' )
+                    // InternalMCBasics.g:324:2: ( 'double' )
                     {
-                    // InternalMCBasics.g:174:2: ( 'double' )
-                    // InternalMCBasics.g:175:3: 'double'
+                    // InternalMCBasics.g:324:2: ( 'double' )
+                    // InternalMCBasics.g:325:3: 'double'
                     {
                      before(grammarAccess.getMCPrimitiveTypeAccess().getTypeDoubleKeyword_0_7()); 
                     match(input,19,FOLLOW_2); 
@@ -509,15 +971,173 @@ public class InternalMCBasicsParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__MCPrimitiveType__TypeAlternatives_0"
 
 
+    // $ANTLR start "rule__Expression__Alternatives"
+    // InternalMCBasics.g:334:1: rule__Expression__Alternatives : ( ( ruleNameExpression ) | ( ruleLiteralExpression ) );
+    public final void rule__Expression__Alternatives() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMCBasics.g:338:1: ( ( ruleNameExpression ) | ( ruleLiteralExpression ) )
+            int alt2=2;
+            int LA2_0 = input.LA(1);
+
+            if ( (LA2_0==RULE_ID) ) {
+                alt2=1;
+            }
+            else if ( ((LA2_0>=RULE_INT && LA2_0<=RULE_STRING)) ) {
+                alt2=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 2, 0, input);
+
+                throw nvae;
+            }
+            switch (alt2) {
+                case 1 :
+                    // InternalMCBasics.g:339:2: ( ruleNameExpression )
+                    {
+                    // InternalMCBasics.g:339:2: ( ruleNameExpression )
+                    // InternalMCBasics.g:340:3: ruleNameExpression
+                    {
+                     before(grammarAccess.getExpressionAccess().getNameExpressionParserRuleCall_0()); 
+                    pushFollow(FOLLOW_2);
+                    ruleNameExpression();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getExpressionAccess().getNameExpressionParserRuleCall_0()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalMCBasics.g:345:2: ( ruleLiteralExpression )
+                    {
+                    // InternalMCBasics.g:345:2: ( ruleLiteralExpression )
+                    // InternalMCBasics.g:346:3: ruleLiteralExpression
+                    {
+                     before(grammarAccess.getExpressionAccess().getLiteralExpressionParserRuleCall_1()); 
+                    pushFollow(FOLLOW_2);
+                    ruleLiteralExpression();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getExpressionAccess().getLiteralExpressionParserRuleCall_1()); 
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Expression__Alternatives"
+
+
+    // $ANTLR start "rule__LiteralExpression__Alternatives"
+    // InternalMCBasics.g:355:1: rule__LiteralExpression__Alternatives : ( ( ruleNumberLiteral ) | ( ruleStringLiteral ) );
+    public final void rule__LiteralExpression__Alternatives() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMCBasics.g:359:1: ( ( ruleNumberLiteral ) | ( ruleStringLiteral ) )
+            int alt3=2;
+            int LA3_0 = input.LA(1);
+
+            if ( (LA3_0==RULE_INT) ) {
+                alt3=1;
+            }
+            else if ( (LA3_0==RULE_STRING) ) {
+                alt3=2;
+            }
+            else {
+                NoViableAltException nvae =
+                    new NoViableAltException("", 3, 0, input);
+
+                throw nvae;
+            }
+            switch (alt3) {
+                case 1 :
+                    // InternalMCBasics.g:360:2: ( ruleNumberLiteral )
+                    {
+                    // InternalMCBasics.g:360:2: ( ruleNumberLiteral )
+                    // InternalMCBasics.g:361:3: ruleNumberLiteral
+                    {
+                     before(grammarAccess.getLiteralExpressionAccess().getNumberLiteralParserRuleCall_0()); 
+                    pushFollow(FOLLOW_2);
+                    ruleNumberLiteral();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getLiteralExpressionAccess().getNumberLiteralParserRuleCall_0()); 
+
+                    }
+
+
+                    }
+                    break;
+                case 2 :
+                    // InternalMCBasics.g:366:2: ( ruleStringLiteral )
+                    {
+                    // InternalMCBasics.g:366:2: ( ruleStringLiteral )
+                    // InternalMCBasics.g:367:3: ruleStringLiteral
+                    {
+                     before(grammarAccess.getLiteralExpressionAccess().getStringLiteralParserRuleCall_1()); 
+                    pushFollow(FOLLOW_2);
+                    ruleStringLiteral();
+
+                    state._fsp--;
+
+                     after(grammarAccess.getLiteralExpressionAccess().getStringLiteralParserRuleCall_1()); 
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__LiteralExpression__Alternatives"
+
+
     // $ANTLR start "rule__ImportStatements__Group__0"
-    // InternalMCBasics.g:184:1: rule__ImportStatements__Group__0 : rule__ImportStatements__Group__0__Impl rule__ImportStatements__Group__1 ;
+    // InternalMCBasics.g:376:1: rule__ImportStatements__Group__0 : rule__ImportStatements__Group__0__Impl rule__ImportStatements__Group__1 ;
     public final void rule__ImportStatements__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMCBasics.g:188:1: ( rule__ImportStatements__Group__0__Impl rule__ImportStatements__Group__1 )
-            // InternalMCBasics.g:189:2: rule__ImportStatements__Group__0__Impl rule__ImportStatements__Group__1
+            // InternalMCBasics.g:380:1: ( rule__ImportStatements__Group__0__Impl rule__ImportStatements__Group__1 )
+            // InternalMCBasics.g:381:2: rule__ImportStatements__Group__0__Impl rule__ImportStatements__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__ImportStatements__Group__0__Impl();
@@ -548,17 +1168,17 @@ public class InternalMCBasicsParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ImportStatements__Group__0__Impl"
-    // InternalMCBasics.g:196:1: rule__ImportStatements__Group__0__Impl : ( 'import' ) ;
+    // InternalMCBasics.g:388:1: rule__ImportStatements__Group__0__Impl : ( 'import' ) ;
     public final void rule__ImportStatements__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMCBasics.g:200:1: ( ( 'import' ) )
-            // InternalMCBasics.g:201:1: ( 'import' )
+            // InternalMCBasics.g:392:1: ( ( 'import' ) )
+            // InternalMCBasics.g:393:1: ( 'import' )
             {
-            // InternalMCBasics.g:201:1: ( 'import' )
-            // InternalMCBasics.g:202:2: 'import'
+            // InternalMCBasics.g:393:1: ( 'import' )
+            // InternalMCBasics.g:394:2: 'import'
             {
              before(grammarAccess.getImportStatementsAccess().getImportKeyword_0()); 
             match(input,20,FOLLOW_2); 
@@ -585,14 +1205,14 @@ public class InternalMCBasicsParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ImportStatements__Group__1"
-    // InternalMCBasics.g:211:1: rule__ImportStatements__Group__1 : rule__ImportStatements__Group__1__Impl rule__ImportStatements__Group__2 ;
+    // InternalMCBasics.g:403:1: rule__ImportStatements__Group__1 : rule__ImportStatements__Group__1__Impl rule__ImportStatements__Group__2 ;
     public final void rule__ImportStatements__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMCBasics.g:215:1: ( rule__ImportStatements__Group__1__Impl rule__ImportStatements__Group__2 )
-            // InternalMCBasics.g:216:2: rule__ImportStatements__Group__1__Impl rule__ImportStatements__Group__2
+            // InternalMCBasics.g:407:1: ( rule__ImportStatements__Group__1__Impl rule__ImportStatements__Group__2 )
+            // InternalMCBasics.g:408:2: rule__ImportStatements__Group__1__Impl rule__ImportStatements__Group__2
             {
             pushFollow(FOLLOW_4);
             rule__ImportStatements__Group__1__Impl();
@@ -623,21 +1243,21 @@ public class InternalMCBasicsParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ImportStatements__Group__1__Impl"
-    // InternalMCBasics.g:223:1: rule__ImportStatements__Group__1__Impl : ( ( rule__ImportStatements__ImportUriAssignment_1 ) ) ;
+    // InternalMCBasics.g:415:1: rule__ImportStatements__Group__1__Impl : ( ( rule__ImportStatements__ImportUriAssignment_1 ) ) ;
     public final void rule__ImportStatements__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMCBasics.g:227:1: ( ( ( rule__ImportStatements__ImportUriAssignment_1 ) ) )
-            // InternalMCBasics.g:228:1: ( ( rule__ImportStatements__ImportUriAssignment_1 ) )
+            // InternalMCBasics.g:419:1: ( ( ( rule__ImportStatements__ImportUriAssignment_1 ) ) )
+            // InternalMCBasics.g:420:1: ( ( rule__ImportStatements__ImportUriAssignment_1 ) )
             {
-            // InternalMCBasics.g:228:1: ( ( rule__ImportStatements__ImportUriAssignment_1 ) )
-            // InternalMCBasics.g:229:2: ( rule__ImportStatements__ImportUriAssignment_1 )
+            // InternalMCBasics.g:420:1: ( ( rule__ImportStatements__ImportUriAssignment_1 ) )
+            // InternalMCBasics.g:421:2: ( rule__ImportStatements__ImportUriAssignment_1 )
             {
              before(grammarAccess.getImportStatementsAccess().getImportUriAssignment_1()); 
-            // InternalMCBasics.g:230:2: ( rule__ImportStatements__ImportUriAssignment_1 )
-            // InternalMCBasics.g:230:3: rule__ImportStatements__ImportUriAssignment_1
+            // InternalMCBasics.g:422:2: ( rule__ImportStatements__ImportUriAssignment_1 )
+            // InternalMCBasics.g:422:3: rule__ImportStatements__ImportUriAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__ImportStatements__ImportUriAssignment_1();
@@ -670,14 +1290,14 @@ public class InternalMCBasicsParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ImportStatements__Group__2"
-    // InternalMCBasics.g:238:1: rule__ImportStatements__Group__2 : rule__ImportStatements__Group__2__Impl rule__ImportStatements__Group__3 ;
+    // InternalMCBasics.g:430:1: rule__ImportStatements__Group__2 : rule__ImportStatements__Group__2__Impl rule__ImportStatements__Group__3 ;
     public final void rule__ImportStatements__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMCBasics.g:242:1: ( rule__ImportStatements__Group__2__Impl rule__ImportStatements__Group__3 )
-            // InternalMCBasics.g:243:2: rule__ImportStatements__Group__2__Impl rule__ImportStatements__Group__3
+            // InternalMCBasics.g:434:1: ( rule__ImportStatements__Group__2__Impl rule__ImportStatements__Group__3 )
+            // InternalMCBasics.g:435:2: rule__ImportStatements__Group__2__Impl rule__ImportStatements__Group__3
             {
             pushFollow(FOLLOW_4);
             rule__ImportStatements__Group__2__Impl();
@@ -708,29 +1328,29 @@ public class InternalMCBasicsParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ImportStatements__Group__2__Impl"
-    // InternalMCBasics.g:250:1: rule__ImportStatements__Group__2__Impl : ( ( rule__ImportStatements__Group_2__0 )? ) ;
+    // InternalMCBasics.g:442:1: rule__ImportStatements__Group__2__Impl : ( ( rule__ImportStatements__Group_2__0 )? ) ;
     public final void rule__ImportStatements__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMCBasics.g:254:1: ( ( ( rule__ImportStatements__Group_2__0 )? ) )
-            // InternalMCBasics.g:255:1: ( ( rule__ImportStatements__Group_2__0 )? )
+            // InternalMCBasics.g:446:1: ( ( ( rule__ImportStatements__Group_2__0 )? ) )
+            // InternalMCBasics.g:447:1: ( ( rule__ImportStatements__Group_2__0 )? )
             {
-            // InternalMCBasics.g:255:1: ( ( rule__ImportStatements__Group_2__0 )? )
-            // InternalMCBasics.g:256:2: ( rule__ImportStatements__Group_2__0 )?
+            // InternalMCBasics.g:447:1: ( ( rule__ImportStatements__Group_2__0 )? )
+            // InternalMCBasics.g:448:2: ( rule__ImportStatements__Group_2__0 )?
             {
              before(grammarAccess.getImportStatementsAccess().getGroup_2()); 
-            // InternalMCBasics.g:257:2: ( rule__ImportStatements__Group_2__0 )?
-            int alt2=2;
-            int LA2_0 = input.LA(1);
+            // InternalMCBasics.g:449:2: ( rule__ImportStatements__Group_2__0 )?
+            int alt4=2;
+            int LA4_0 = input.LA(1);
 
-            if ( (LA2_0==22) ) {
-                alt2=1;
+            if ( (LA4_0==22) ) {
+                alt4=1;
             }
-            switch (alt2) {
+            switch (alt4) {
                 case 1 :
-                    // InternalMCBasics.g:257:3: rule__ImportStatements__Group_2__0
+                    // InternalMCBasics.g:449:3: rule__ImportStatements__Group_2__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__ImportStatements__Group_2__0();
@@ -766,14 +1386,14 @@ public class InternalMCBasicsParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ImportStatements__Group__3"
-    // InternalMCBasics.g:265:1: rule__ImportStatements__Group__3 : rule__ImportStatements__Group__3__Impl ;
+    // InternalMCBasics.g:457:1: rule__ImportStatements__Group__3 : rule__ImportStatements__Group__3__Impl ;
     public final void rule__ImportStatements__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMCBasics.g:269:1: ( rule__ImportStatements__Group__3__Impl )
-            // InternalMCBasics.g:270:2: rule__ImportStatements__Group__3__Impl
+            // InternalMCBasics.g:461:1: ( rule__ImportStatements__Group__3__Impl )
+            // InternalMCBasics.g:462:2: rule__ImportStatements__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ImportStatements__Group__3__Impl();
@@ -799,17 +1419,17 @@ public class InternalMCBasicsParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ImportStatements__Group__3__Impl"
-    // InternalMCBasics.g:276:1: rule__ImportStatements__Group__3__Impl : ( ';' ) ;
+    // InternalMCBasics.g:468:1: rule__ImportStatements__Group__3__Impl : ( ';' ) ;
     public final void rule__ImportStatements__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMCBasics.g:280:1: ( ( ';' ) )
-            // InternalMCBasics.g:281:1: ( ';' )
+            // InternalMCBasics.g:472:1: ( ( ';' ) )
+            // InternalMCBasics.g:473:1: ( ';' )
             {
-            // InternalMCBasics.g:281:1: ( ';' )
-            // InternalMCBasics.g:282:2: ';'
+            // InternalMCBasics.g:473:1: ( ';' )
+            // InternalMCBasics.g:474:2: ';'
             {
              before(grammarAccess.getImportStatementsAccess().getSemicolonKeyword_3()); 
             match(input,21,FOLLOW_2); 
@@ -836,14 +1456,14 @@ public class InternalMCBasicsParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ImportStatements__Group_2__0"
-    // InternalMCBasics.g:292:1: rule__ImportStatements__Group_2__0 : rule__ImportStatements__Group_2__0__Impl rule__ImportStatements__Group_2__1 ;
+    // InternalMCBasics.g:484:1: rule__ImportStatements__Group_2__0 : rule__ImportStatements__Group_2__0__Impl rule__ImportStatements__Group_2__1 ;
     public final void rule__ImportStatements__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMCBasics.g:296:1: ( rule__ImportStatements__Group_2__0__Impl rule__ImportStatements__Group_2__1 )
-            // InternalMCBasics.g:297:2: rule__ImportStatements__Group_2__0__Impl rule__ImportStatements__Group_2__1
+            // InternalMCBasics.g:488:1: ( rule__ImportStatements__Group_2__0__Impl rule__ImportStatements__Group_2__1 )
+            // InternalMCBasics.g:489:2: rule__ImportStatements__Group_2__0__Impl rule__ImportStatements__Group_2__1
             {
             pushFollow(FOLLOW_5);
             rule__ImportStatements__Group_2__0__Impl();
@@ -874,17 +1494,17 @@ public class InternalMCBasicsParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ImportStatements__Group_2__0__Impl"
-    // InternalMCBasics.g:304:1: rule__ImportStatements__Group_2__0__Impl : ( '.' ) ;
+    // InternalMCBasics.g:496:1: rule__ImportStatements__Group_2__0__Impl : ( '.' ) ;
     public final void rule__ImportStatements__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMCBasics.g:308:1: ( ( '.' ) )
-            // InternalMCBasics.g:309:1: ( '.' )
+            // InternalMCBasics.g:500:1: ( ( '.' ) )
+            // InternalMCBasics.g:501:1: ( '.' )
             {
-            // InternalMCBasics.g:309:1: ( '.' )
-            // InternalMCBasics.g:310:2: '.'
+            // InternalMCBasics.g:501:1: ( '.' )
+            // InternalMCBasics.g:502:2: '.'
             {
              before(grammarAccess.getImportStatementsAccess().getFullStopKeyword_2_0()); 
             match(input,22,FOLLOW_2); 
@@ -911,14 +1531,14 @@ public class InternalMCBasicsParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ImportStatements__Group_2__1"
-    // InternalMCBasics.g:319:1: rule__ImportStatements__Group_2__1 : rule__ImportStatements__Group_2__1__Impl ;
+    // InternalMCBasics.g:511:1: rule__ImportStatements__Group_2__1 : rule__ImportStatements__Group_2__1__Impl ;
     public final void rule__ImportStatements__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMCBasics.g:323:1: ( rule__ImportStatements__Group_2__1__Impl )
-            // InternalMCBasics.g:324:2: rule__ImportStatements__Group_2__1__Impl
+            // InternalMCBasics.g:515:1: ( rule__ImportStatements__Group_2__1__Impl )
+            // InternalMCBasics.g:516:2: rule__ImportStatements__Group_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ImportStatements__Group_2__1__Impl();
@@ -944,21 +1564,21 @@ public class InternalMCBasicsParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ImportStatements__Group_2__1__Impl"
-    // InternalMCBasics.g:330:1: rule__ImportStatements__Group_2__1__Impl : ( ( rule__ImportStatements__StarAssignment_2_1 ) ) ;
+    // InternalMCBasics.g:522:1: rule__ImportStatements__Group_2__1__Impl : ( ( rule__ImportStatements__StarAssignment_2_1 ) ) ;
     public final void rule__ImportStatements__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMCBasics.g:334:1: ( ( ( rule__ImportStatements__StarAssignment_2_1 ) ) )
-            // InternalMCBasics.g:335:1: ( ( rule__ImportStatements__StarAssignment_2_1 ) )
+            // InternalMCBasics.g:526:1: ( ( ( rule__ImportStatements__StarAssignment_2_1 ) ) )
+            // InternalMCBasics.g:527:1: ( ( rule__ImportStatements__StarAssignment_2_1 ) )
             {
-            // InternalMCBasics.g:335:1: ( ( rule__ImportStatements__StarAssignment_2_1 ) )
-            // InternalMCBasics.g:336:2: ( rule__ImportStatements__StarAssignment_2_1 )
+            // InternalMCBasics.g:527:1: ( ( rule__ImportStatements__StarAssignment_2_1 ) )
+            // InternalMCBasics.g:528:2: ( rule__ImportStatements__StarAssignment_2_1 )
             {
              before(grammarAccess.getImportStatementsAccess().getStarAssignment_2_1()); 
-            // InternalMCBasics.g:337:2: ( rule__ImportStatements__StarAssignment_2_1 )
-            // InternalMCBasics.g:337:3: rule__ImportStatements__StarAssignment_2_1
+            // InternalMCBasics.g:529:2: ( rule__ImportStatements__StarAssignment_2_1 )
+            // InternalMCBasics.g:529:3: rule__ImportStatements__StarAssignment_2_1
             {
             pushFollow(FOLLOW_2);
             rule__ImportStatements__StarAssignment_2_1();
@@ -991,14 +1611,14 @@ public class InternalMCBasicsParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__MCArrayType__Group__0"
-    // InternalMCBasics.g:346:1: rule__MCArrayType__Group__0 : rule__MCArrayType__Group__0__Impl rule__MCArrayType__Group__1 ;
+    // InternalMCBasics.g:538:1: rule__MCArrayType__Group__0 : rule__MCArrayType__Group__0__Impl rule__MCArrayType__Group__1 ;
     public final void rule__MCArrayType__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMCBasics.g:350:1: ( rule__MCArrayType__Group__0__Impl rule__MCArrayType__Group__1 )
-            // InternalMCBasics.g:351:2: rule__MCArrayType__Group__0__Impl rule__MCArrayType__Group__1
+            // InternalMCBasics.g:542:1: ( rule__MCArrayType__Group__0__Impl rule__MCArrayType__Group__1 )
+            // InternalMCBasics.g:543:2: rule__MCArrayType__Group__0__Impl rule__MCArrayType__Group__1
             {
             pushFollow(FOLLOW_6);
             rule__MCArrayType__Group__0__Impl();
@@ -1029,17 +1649,17 @@ public class InternalMCBasicsParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__MCArrayType__Group__0__Impl"
-    // InternalMCBasics.g:358:1: rule__MCArrayType__Group__0__Impl : ( ruleMCPrimitiveType ) ;
+    // InternalMCBasics.g:550:1: rule__MCArrayType__Group__0__Impl : ( ruleMCPrimitiveType ) ;
     public final void rule__MCArrayType__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMCBasics.g:362:1: ( ( ruleMCPrimitiveType ) )
-            // InternalMCBasics.g:363:1: ( ruleMCPrimitiveType )
+            // InternalMCBasics.g:554:1: ( ( ruleMCPrimitiveType ) )
+            // InternalMCBasics.g:555:1: ( ruleMCPrimitiveType )
             {
-            // InternalMCBasics.g:363:1: ( ruleMCPrimitiveType )
-            // InternalMCBasics.g:364:2: ruleMCPrimitiveType
+            // InternalMCBasics.g:555:1: ( ruleMCPrimitiveType )
+            // InternalMCBasics.g:556:2: ruleMCPrimitiveType
             {
              before(grammarAccess.getMCArrayTypeAccess().getMCPrimitiveTypeParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -1070,14 +1690,14 @@ public class InternalMCBasicsParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__MCArrayType__Group__1"
-    // InternalMCBasics.g:373:1: rule__MCArrayType__Group__1 : rule__MCArrayType__Group__1__Impl rule__MCArrayType__Group__2 ;
+    // InternalMCBasics.g:565:1: rule__MCArrayType__Group__1 : rule__MCArrayType__Group__1__Impl rule__MCArrayType__Group__2 ;
     public final void rule__MCArrayType__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMCBasics.g:377:1: ( rule__MCArrayType__Group__1__Impl rule__MCArrayType__Group__2 )
-            // InternalMCBasics.g:378:2: rule__MCArrayType__Group__1__Impl rule__MCArrayType__Group__2
+            // InternalMCBasics.g:569:1: ( rule__MCArrayType__Group__1__Impl rule__MCArrayType__Group__2 )
+            // InternalMCBasics.g:570:2: rule__MCArrayType__Group__1__Impl rule__MCArrayType__Group__2
             {
             pushFollow(FOLLOW_7);
             rule__MCArrayType__Group__1__Impl();
@@ -1108,17 +1728,17 @@ public class InternalMCBasicsParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__MCArrayType__Group__1__Impl"
-    // InternalMCBasics.g:385:1: rule__MCArrayType__Group__1__Impl : ( '[' ) ;
+    // InternalMCBasics.g:577:1: rule__MCArrayType__Group__1__Impl : ( '[' ) ;
     public final void rule__MCArrayType__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMCBasics.g:389:1: ( ( '[' ) )
-            // InternalMCBasics.g:390:1: ( '[' )
+            // InternalMCBasics.g:581:1: ( ( '[' ) )
+            // InternalMCBasics.g:582:1: ( '[' )
             {
-            // InternalMCBasics.g:390:1: ( '[' )
-            // InternalMCBasics.g:391:2: '['
+            // InternalMCBasics.g:582:1: ( '[' )
+            // InternalMCBasics.g:583:2: '['
             {
              before(grammarAccess.getMCArrayTypeAccess().getLeftSquareBracketKeyword_1()); 
             match(input,23,FOLLOW_2); 
@@ -1145,14 +1765,14 @@ public class InternalMCBasicsParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__MCArrayType__Group__2"
-    // InternalMCBasics.g:400:1: rule__MCArrayType__Group__2 : rule__MCArrayType__Group__2__Impl ;
+    // InternalMCBasics.g:592:1: rule__MCArrayType__Group__2 : rule__MCArrayType__Group__2__Impl ;
     public final void rule__MCArrayType__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMCBasics.g:404:1: ( rule__MCArrayType__Group__2__Impl )
-            // InternalMCBasics.g:405:2: rule__MCArrayType__Group__2__Impl
+            // InternalMCBasics.g:596:1: ( rule__MCArrayType__Group__2__Impl )
+            // InternalMCBasics.g:597:2: rule__MCArrayType__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__MCArrayType__Group__2__Impl();
@@ -1178,17 +1798,17 @@ public class InternalMCBasicsParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__MCArrayType__Group__2__Impl"
-    // InternalMCBasics.g:411:1: rule__MCArrayType__Group__2__Impl : ( ']' ) ;
+    // InternalMCBasics.g:603:1: rule__MCArrayType__Group__2__Impl : ( ']' ) ;
     public final void rule__MCArrayType__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMCBasics.g:415:1: ( ( ']' ) )
-            // InternalMCBasics.g:416:1: ( ']' )
+            // InternalMCBasics.g:607:1: ( ( ']' ) )
+            // InternalMCBasics.g:608:1: ( ']' )
             {
-            // InternalMCBasics.g:416:1: ( ']' )
-            // InternalMCBasics.g:417:2: ']'
+            // InternalMCBasics.g:608:1: ( ']' )
+            // InternalMCBasics.g:609:2: ']'
             {
              before(grammarAccess.getMCArrayTypeAccess().getRightSquareBracketKeyword_2()); 
             match(input,24,FOLLOW_2); 
@@ -1214,18 +1834,183 @@ public class InternalMCBasicsParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__MCArrayType__Group__2__Impl"
 
 
+    // $ANTLR start "rule__Argument__Group__0"
+    // InternalMCBasics.g:619:1: rule__Argument__Group__0 : rule__Argument__Group__0__Impl rule__Argument__Group__1 ;
+    public final void rule__Argument__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMCBasics.g:623:1: ( rule__Argument__Group__0__Impl rule__Argument__Group__1 )
+            // InternalMCBasics.g:624:2: rule__Argument__Group__0__Impl rule__Argument__Group__1
+            {
+            pushFollow(FOLLOW_8);
+            rule__Argument__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__Argument__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Argument__Group__0"
+
+
+    // $ANTLR start "rule__Argument__Group__0__Impl"
+    // InternalMCBasics.g:631:1: rule__Argument__Group__0__Impl : ( ( rule__Argument__NameAssignment_0 ) ) ;
+    public final void rule__Argument__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMCBasics.g:635:1: ( ( ( rule__Argument__NameAssignment_0 ) ) )
+            // InternalMCBasics.g:636:1: ( ( rule__Argument__NameAssignment_0 ) )
+            {
+            // InternalMCBasics.g:636:1: ( ( rule__Argument__NameAssignment_0 ) )
+            // InternalMCBasics.g:637:2: ( rule__Argument__NameAssignment_0 )
+            {
+             before(grammarAccess.getArgumentAccess().getNameAssignment_0()); 
+            // InternalMCBasics.g:638:2: ( rule__Argument__NameAssignment_0 )
+            // InternalMCBasics.g:638:3: rule__Argument__NameAssignment_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__Argument__NameAssignment_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getArgumentAccess().getNameAssignment_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Argument__Group__0__Impl"
+
+
+    // $ANTLR start "rule__Argument__Group__1"
+    // InternalMCBasics.g:646:1: rule__Argument__Group__1 : rule__Argument__Group__1__Impl ;
+    public final void rule__Argument__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMCBasics.g:650:1: ( rule__Argument__Group__1__Impl )
+            // InternalMCBasics.g:651:2: rule__Argument__Group__1__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__Argument__Group__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Argument__Group__1"
+
+
+    // $ANTLR start "rule__Argument__Group__1__Impl"
+    // InternalMCBasics.g:657:1: rule__Argument__Group__1__Impl : ( ( rule__Argument__ExpressionAssignment_1 ) ) ;
+    public final void rule__Argument__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMCBasics.g:661:1: ( ( ( rule__Argument__ExpressionAssignment_1 ) ) )
+            // InternalMCBasics.g:662:1: ( ( rule__Argument__ExpressionAssignment_1 ) )
+            {
+            // InternalMCBasics.g:662:1: ( ( rule__Argument__ExpressionAssignment_1 ) )
+            // InternalMCBasics.g:663:2: ( rule__Argument__ExpressionAssignment_1 )
+            {
+             before(grammarAccess.getArgumentAccess().getExpressionAssignment_1()); 
+            // InternalMCBasics.g:664:2: ( rule__Argument__ExpressionAssignment_1 )
+            // InternalMCBasics.g:664:3: rule__Argument__ExpressionAssignment_1
+            {
+            pushFollow(FOLLOW_2);
+            rule__Argument__ExpressionAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getArgumentAccess().getExpressionAssignment_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Argument__Group__1__Impl"
+
+
     // $ANTLR start "rule__ImportStatements__ImportUriAssignment_1"
-    // InternalMCBasics.g:427:1: rule__ImportStatements__ImportUriAssignment_1 : ( RULE_MCQUALIFIEDNAME ) ;
+    // InternalMCBasics.g:673:1: rule__ImportStatements__ImportUriAssignment_1 : ( RULE_MCQUALIFIEDNAME ) ;
     public final void rule__ImportStatements__ImportUriAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMCBasics.g:431:1: ( ( RULE_MCQUALIFIEDNAME ) )
-            // InternalMCBasics.g:432:2: ( RULE_MCQUALIFIEDNAME )
+            // InternalMCBasics.g:677:1: ( ( RULE_MCQUALIFIEDNAME ) )
+            // InternalMCBasics.g:678:2: ( RULE_MCQUALIFIEDNAME )
             {
-            // InternalMCBasics.g:432:2: ( RULE_MCQUALIFIEDNAME )
-            // InternalMCBasics.g:433:3: RULE_MCQUALIFIEDNAME
+            // InternalMCBasics.g:678:2: ( RULE_MCQUALIFIEDNAME )
+            // InternalMCBasics.g:679:3: RULE_MCQUALIFIEDNAME
             {
              before(grammarAccess.getImportStatementsAccess().getImportUriMCQUALIFIEDNAMETerminalRuleCall_1_0()); 
             match(input,RULE_MCQUALIFIEDNAME,FOLLOW_2); 
@@ -1252,21 +2037,21 @@ public class InternalMCBasicsParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__ImportStatements__StarAssignment_2_1"
-    // InternalMCBasics.g:442:1: rule__ImportStatements__StarAssignment_2_1 : ( ( '*' ) ) ;
+    // InternalMCBasics.g:688:1: rule__ImportStatements__StarAssignment_2_1 : ( ( '*' ) ) ;
     public final void rule__ImportStatements__StarAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMCBasics.g:446:1: ( ( ( '*' ) ) )
-            // InternalMCBasics.g:447:2: ( ( '*' ) )
+            // InternalMCBasics.g:692:1: ( ( ( '*' ) ) )
+            // InternalMCBasics.g:693:2: ( ( '*' ) )
             {
-            // InternalMCBasics.g:447:2: ( ( '*' ) )
-            // InternalMCBasics.g:448:3: ( '*' )
+            // InternalMCBasics.g:693:2: ( ( '*' ) )
+            // InternalMCBasics.g:694:3: ( '*' )
             {
              before(grammarAccess.getImportStatementsAccess().getStarAsteriskKeyword_2_1_0()); 
-            // InternalMCBasics.g:449:3: ( '*' )
-            // InternalMCBasics.g:450:4: '*'
+            // InternalMCBasics.g:695:3: ( '*' )
+            // InternalMCBasics.g:696:4: '*'
             {
              before(grammarAccess.getImportStatementsAccess().getStarAsteriskKeyword_2_1_0()); 
             match(input,25,FOLLOW_2); 
@@ -1297,21 +2082,21 @@ public class InternalMCBasicsParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__MCPrimitiveType__TypeAssignment"
-    // InternalMCBasics.g:461:1: rule__MCPrimitiveType__TypeAssignment : ( ( rule__MCPrimitiveType__TypeAlternatives_0 ) ) ;
+    // InternalMCBasics.g:707:1: rule__MCPrimitiveType__TypeAssignment : ( ( rule__MCPrimitiveType__TypeAlternatives_0 ) ) ;
     public final void rule__MCPrimitiveType__TypeAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMCBasics.g:465:1: ( ( ( rule__MCPrimitiveType__TypeAlternatives_0 ) ) )
-            // InternalMCBasics.g:466:2: ( ( rule__MCPrimitiveType__TypeAlternatives_0 ) )
+            // InternalMCBasics.g:711:1: ( ( ( rule__MCPrimitiveType__TypeAlternatives_0 ) ) )
+            // InternalMCBasics.g:712:2: ( ( rule__MCPrimitiveType__TypeAlternatives_0 ) )
             {
-            // InternalMCBasics.g:466:2: ( ( rule__MCPrimitiveType__TypeAlternatives_0 ) )
-            // InternalMCBasics.g:467:3: ( rule__MCPrimitiveType__TypeAlternatives_0 )
+            // InternalMCBasics.g:712:2: ( ( rule__MCPrimitiveType__TypeAlternatives_0 ) )
+            // InternalMCBasics.g:713:3: ( rule__MCPrimitiveType__TypeAlternatives_0 )
             {
              before(grammarAccess.getMCPrimitiveTypeAccess().getTypeAlternatives_0()); 
-            // InternalMCBasics.g:468:3: ( rule__MCPrimitiveType__TypeAlternatives_0 )
-            // InternalMCBasics.g:468:4: rule__MCPrimitiveType__TypeAlternatives_0
+            // InternalMCBasics.g:714:3: ( rule__MCPrimitiveType__TypeAlternatives_0 )
+            // InternalMCBasics.g:714:4: rule__MCPrimitiveType__TypeAlternatives_0
             {
             pushFollow(FOLLOW_2);
             rule__MCPrimitiveType__TypeAlternatives_0();
@@ -1342,6 +2127,195 @@ public class InternalMCBasicsParser extends AbstractInternalContentAssistParser 
     }
     // $ANTLR end "rule__MCPrimitiveType__TypeAssignment"
 
+
+    // $ANTLR start "rule__NumberLiteral__LiteralAssignment"
+    // InternalMCBasics.g:722:1: rule__NumberLiteral__LiteralAssignment : ( RULE_INT ) ;
+    public final void rule__NumberLiteral__LiteralAssignment() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMCBasics.g:726:1: ( ( RULE_INT ) )
+            // InternalMCBasics.g:727:2: ( RULE_INT )
+            {
+            // InternalMCBasics.g:727:2: ( RULE_INT )
+            // InternalMCBasics.g:728:3: RULE_INT
+            {
+             before(grammarAccess.getNumberLiteralAccess().getLiteralINTTerminalRuleCall_0()); 
+            match(input,RULE_INT,FOLLOW_2); 
+             after(grammarAccess.getNumberLiteralAccess().getLiteralINTTerminalRuleCall_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NumberLiteral__LiteralAssignment"
+
+
+    // $ANTLR start "rule__StringLiteral__LiteralAssignment"
+    // InternalMCBasics.g:737:1: rule__StringLiteral__LiteralAssignment : ( RULE_STRING ) ;
+    public final void rule__StringLiteral__LiteralAssignment() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMCBasics.g:741:1: ( ( RULE_STRING ) )
+            // InternalMCBasics.g:742:2: ( RULE_STRING )
+            {
+            // InternalMCBasics.g:742:2: ( RULE_STRING )
+            // InternalMCBasics.g:743:3: RULE_STRING
+            {
+             before(grammarAccess.getStringLiteralAccess().getLiteralSTRINGTerminalRuleCall_0()); 
+            match(input,RULE_STRING,FOLLOW_2); 
+             after(grammarAccess.getStringLiteralAccess().getLiteralSTRINGTerminalRuleCall_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__StringLiteral__LiteralAssignment"
+
+
+    // $ANTLR start "rule__NameExpression__NameAssignment"
+    // InternalMCBasics.g:752:1: rule__NameExpression__NameAssignment : ( RULE_ID ) ;
+    public final void rule__NameExpression__NameAssignment() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMCBasics.g:756:1: ( ( RULE_ID ) )
+            // InternalMCBasics.g:757:2: ( RULE_ID )
+            {
+            // InternalMCBasics.g:757:2: ( RULE_ID )
+            // InternalMCBasics.g:758:3: RULE_ID
+            {
+             before(grammarAccess.getNameExpressionAccess().getNameIDTerminalRuleCall_0()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getNameExpressionAccess().getNameIDTerminalRuleCall_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__NameExpression__NameAssignment"
+
+
+    // $ANTLR start "rule__Argument__NameAssignment_0"
+    // InternalMCBasics.g:767:1: rule__Argument__NameAssignment_0 : ( RULE_ID ) ;
+    public final void rule__Argument__NameAssignment_0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMCBasics.g:771:1: ( ( RULE_ID ) )
+            // InternalMCBasics.g:772:2: ( RULE_ID )
+            {
+            // InternalMCBasics.g:772:2: ( RULE_ID )
+            // InternalMCBasics.g:773:3: RULE_ID
+            {
+             before(grammarAccess.getArgumentAccess().getNameIDTerminalRuleCall_0_0()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getArgumentAccess().getNameIDTerminalRuleCall_0_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Argument__NameAssignment_0"
+
+
+    // $ANTLR start "rule__Argument__ExpressionAssignment_1"
+    // InternalMCBasics.g:782:1: rule__Argument__ExpressionAssignment_1 : ( ruleExpression ) ;
+    public final void rule__Argument__ExpressionAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMCBasics.g:786:1: ( ( ruleExpression ) )
+            // InternalMCBasics.g:787:2: ( ruleExpression )
+            {
+            // InternalMCBasics.g:787:2: ( ruleExpression )
+            // InternalMCBasics.g:788:3: ruleExpression
+            {
+             before(grammarAccess.getArgumentAccess().getExpressionExpressionParserRuleCall_1_0()); 
+            pushFollow(FOLLOW_2);
+            ruleExpression();
+
+            state._fsp--;
+
+             after(grammarAccess.getArgumentAccess().getExpressionExpressionParserRuleCall_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Argument__ExpressionAssignment_1"
+
     // Delegated rules
 
 
@@ -1354,5 +2328,6 @@ public class InternalMCBasicsParser extends AbstractInternalContentAssistParser 
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000002000000L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000800000L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x00000000000000E0L});
 
 }

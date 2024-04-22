@@ -11,13 +11,18 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
+import org.palladiosimulator.xtext.motiarc.mcBasics.Argument;
 import org.palladiosimulator.xtext.motiarc.mcBasics.Arguments;
 import org.palladiosimulator.xtext.motiarc.mcBasics.Expression;
 import org.palladiosimulator.xtext.motiarc.mcBasics.ImportStatements;
+import org.palladiosimulator.xtext.motiarc.mcBasics.LiteralExpression;
 import org.palladiosimulator.xtext.motiarc.mcBasics.MCArrayType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.MCPrimitiveType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.McBasicsFactory;
 import org.palladiosimulator.xtext.motiarc.mcBasics.McBasicsPackage;
+import org.palladiosimulator.xtext.motiarc.mcBasics.NameExpression;
+import org.palladiosimulator.xtext.motiarc.mcBasics.NumberLiteral;
+import org.palladiosimulator.xtext.motiarc.mcBasics.StringLiteral;
 import org.palladiosimulator.xtext.motiarc.mcBasics.Type;
 
 /**
@@ -78,7 +83,12 @@ public class McBasicsFactoryImpl extends EFactoryImpl implements McBasicsFactory
       case McBasicsPackage.MC_PRIMITIVE_TYPE: return createMCPrimitiveType();
       case McBasicsPackage.MC_ARRAY_TYPE: return createMCArrayType();
       case McBasicsPackage.EXPRESSION: return createExpression();
+      case McBasicsPackage.LITERAL_EXPRESSION: return createLiteralExpression();
+      case McBasicsPackage.NUMBER_LITERAL: return createNumberLiteral();
+      case McBasicsPackage.STRING_LITERAL: return createStringLiteral();
+      case McBasicsPackage.NAME_EXPRESSION: return createNameExpression();
       case McBasicsPackage.ARGUMENTS: return createArguments();
+      case McBasicsPackage.ARGUMENT: return createArgument();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -162,10 +172,70 @@ public class McBasicsFactoryImpl extends EFactoryImpl implements McBasicsFactory
    * @generated
    */
   @Override
+  public LiteralExpression createLiteralExpression()
+  {
+    LiteralExpressionImpl literalExpression = new LiteralExpressionImpl();
+    return literalExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NumberLiteral createNumberLiteral()
+  {
+    NumberLiteralImpl numberLiteral = new NumberLiteralImpl();
+    return numberLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public StringLiteral createStringLiteral()
+  {
+    StringLiteralImpl stringLiteral = new StringLiteralImpl();
+    return stringLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NameExpression createNameExpression()
+  {
+    NameExpressionImpl nameExpression = new NameExpressionImpl();
+    return nameExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Arguments createArguments()
   {
     ArgumentsImpl arguments = new ArgumentsImpl();
     return arguments;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Argument createArgument()
+  {
+    ArgumentImpl argument = new ArgumentImpl();
+    return argument;
   }
 
   /**

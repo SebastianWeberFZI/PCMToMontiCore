@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalMCBasicsLexer extends Lexer {
-    public static final int RULE_STRING=7;
+    public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=9;
     public static final int T__19=19;
     public static final int T__15=15;
@@ -23,11 +23,11 @@ public class InternalMCBasicsLexer extends Lexer {
     public static final int T__13=13;
     public static final int T__14=14;
     public static final int EOF=-1;
-    public static final int RULE_ID=5;
+    public static final int RULE_ID=7;
     public static final int RULE_WS=10;
     public static final int RULE_ANY_OTHER=11;
     public static final int RULE_MCQUALIFIEDNAME=4;
-    public static final int RULE_INT=6;
+    public static final int RULE_INT=5;
     public static final int T__22=22;
     public static final int RULE_ML_COMMENT=8;
     public static final int T__23=23;
@@ -343,11 +343,11 @@ public class InternalMCBasicsLexer extends Lexer {
         try {
             int _type = RULE_MCQUALIFIEDNAME;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMCBasics.g:476:22: ( RULE_ID ( '.' RULE_ID )+ )
-            // InternalMCBasics.g:476:24: RULE_ID ( '.' RULE_ID )+
+            // InternalMCBasics.g:797:22: ( RULE_ID ( '.' RULE_ID )+ )
+            // InternalMCBasics.g:797:24: RULE_ID ( '.' RULE_ID )+
             {
             mRULE_ID(); 
-            // InternalMCBasics.g:476:32: ( '.' RULE_ID )+
+            // InternalMCBasics.g:797:32: ( '.' RULE_ID )+
             int cnt1=0;
             loop1:
             do {
@@ -361,7 +361,7 @@ public class InternalMCBasicsLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // InternalMCBasics.g:476:33: '.' RULE_ID
+            	    // InternalMCBasics.g:797:33: '.' RULE_ID
             	    {
             	    match('.'); 
             	    mRULE_ID(); 
@@ -394,10 +394,10 @@ public class InternalMCBasicsLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMCBasics.g:478:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalMCBasics.g:478:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalMCBasics.g:799:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalMCBasics.g:799:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalMCBasics.g:478:11: ( '^' )?
+            // InternalMCBasics.g:799:11: ( '^' )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -406,7 +406,7 @@ public class InternalMCBasicsLexer extends Lexer {
             }
             switch (alt2) {
                 case 1 :
-                    // InternalMCBasics.g:478:11: '^'
+                    // InternalMCBasics.g:799:11: '^'
                     {
                     match('^'); 
 
@@ -424,7 +424,7 @@ public class InternalMCBasicsLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalMCBasics.g:478:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalMCBasics.g:799:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop3:
             do {
                 int alt3=2;
@@ -473,10 +473,10 @@ public class InternalMCBasicsLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMCBasics.g:480:10: ( ( '0' .. '9' )+ )
-            // InternalMCBasics.g:480:12: ( '0' .. '9' )+
+            // InternalMCBasics.g:801:10: ( ( '0' .. '9' )+ )
+            // InternalMCBasics.g:801:12: ( '0' .. '9' )+
             {
-            // InternalMCBasics.g:480:12: ( '0' .. '9' )+
+            // InternalMCBasics.g:801:12: ( '0' .. '9' )+
             int cnt4=0;
             loop4:
             do {
@@ -490,7 +490,7 @@ public class InternalMCBasicsLexer extends Lexer {
 
                 switch (alt4) {
             	case 1 :
-            	    // InternalMCBasics.g:480:13: '0' .. '9'
+            	    // InternalMCBasics.g:801:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -522,10 +522,10 @@ public class InternalMCBasicsLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMCBasics.g:482:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalMCBasics.g:482:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalMCBasics.g:803:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalMCBasics.g:803:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalMCBasics.g:482:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalMCBasics.g:803:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -543,10 +543,10 @@ public class InternalMCBasicsLexer extends Lexer {
             }
             switch (alt7) {
                 case 1 :
-                    // InternalMCBasics.g:482:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalMCBasics.g:803:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalMCBasics.g:482:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalMCBasics.g:803:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -562,7 +562,7 @@ public class InternalMCBasicsLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalMCBasics.g:482:21: '\\\\' .
+                    	    // InternalMCBasics.g:803:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -570,7 +570,7 @@ public class InternalMCBasicsLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalMCBasics.g:482:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalMCBasics.g:803:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -595,10 +595,10 @@ public class InternalMCBasicsLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalMCBasics.g:482:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalMCBasics.g:803:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalMCBasics.g:482:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalMCBasics.g:803:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop6:
                     do {
                         int alt6=3;
@@ -614,7 +614,7 @@ public class InternalMCBasicsLexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // InternalMCBasics.g:482:54: '\\\\' .
+                    	    // InternalMCBasics.g:803:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -622,7 +622,7 @@ public class InternalMCBasicsLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalMCBasics.g:482:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalMCBasics.g:803:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -665,12 +665,12 @@ public class InternalMCBasicsLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMCBasics.g:484:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalMCBasics.g:484:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalMCBasics.g:805:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalMCBasics.g:805:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalMCBasics.g:484:24: ( options {greedy=false; } : . )*
+            // InternalMCBasics.g:805:24: ( options {greedy=false; } : . )*
             loop8:
             do {
                 int alt8=2;
@@ -695,7 +695,7 @@ public class InternalMCBasicsLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalMCBasics.g:484:52: .
+            	    // InternalMCBasics.g:805:52: .
             	    {
             	    matchAny(); 
 
@@ -725,12 +725,12 @@ public class InternalMCBasicsLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMCBasics.g:486:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalMCBasics.g:486:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalMCBasics.g:807:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalMCBasics.g:807:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalMCBasics.g:486:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalMCBasics.g:807:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop9:
             do {
                 int alt9=2;
@@ -743,7 +743,7 @@ public class InternalMCBasicsLexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // InternalMCBasics.g:486:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalMCBasics.g:807:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -763,7 +763,7 @@ public class InternalMCBasicsLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalMCBasics.g:486:40: ( ( '\\r' )? '\\n' )?
+            // InternalMCBasics.g:807:40: ( ( '\\r' )? '\\n' )?
             int alt11=2;
             int LA11_0 = input.LA(1);
 
@@ -772,9 +772,9 @@ public class InternalMCBasicsLexer extends Lexer {
             }
             switch (alt11) {
                 case 1 :
-                    // InternalMCBasics.g:486:41: ( '\\r' )? '\\n'
+                    // InternalMCBasics.g:807:41: ( '\\r' )? '\\n'
                     {
-                    // InternalMCBasics.g:486:41: ( '\\r' )?
+                    // InternalMCBasics.g:807:41: ( '\\r' )?
                     int alt10=2;
                     int LA10_0 = input.LA(1);
 
@@ -783,7 +783,7 @@ public class InternalMCBasicsLexer extends Lexer {
                     }
                     switch (alt10) {
                         case 1 :
-                            // InternalMCBasics.g:486:41: '\\r'
+                            // InternalMCBasics.g:807:41: '\\r'
                             {
                             match('\r'); 
 
@@ -815,10 +815,10 @@ public class InternalMCBasicsLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMCBasics.g:488:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalMCBasics.g:488:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalMCBasics.g:809:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalMCBasics.g:809:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalMCBasics.g:488:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalMCBasics.g:809:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt12=0;
             loop12:
             do {
@@ -872,8 +872,8 @@ public class InternalMCBasicsLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalMCBasics.g:490:16: ( . )
-            // InternalMCBasics.g:490:18: .
+            // InternalMCBasics.g:811:16: ( . )
+            // InternalMCBasics.g:811:18: .
             {
             matchAny(); 
 
