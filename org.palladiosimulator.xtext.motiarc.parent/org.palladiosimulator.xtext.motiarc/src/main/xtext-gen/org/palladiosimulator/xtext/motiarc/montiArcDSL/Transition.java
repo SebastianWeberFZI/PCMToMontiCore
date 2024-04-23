@@ -5,6 +5,8 @@ package org.palladiosimulator.xtext.motiarc.montiArcDSL;
 
 import org.eclipse.emf.ecore.EObject;
 
+import org.palladiosimulator.xtext.motiarc.mcBasics.Expression;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Transition</b></em>'.
@@ -15,9 +17,9 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Transition#getSource <em>Source</em>}</li>
- *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Transition#isTarget <em>Target</em>}</li>
- *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Transition#isExpression <em>Expression</em>}</li>
- *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Transition#isReaction <em>Reaction</em>}</li>
+ *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Transition#getTarget <em>Target</em>}</li>
+ *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Transition#getExpression <em>Expression</em>}</li>
+ *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Transition#getReaction <em>Reaction</em>}</li>
  * </ul>
  *
  * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.MontiArcDSLPackage#getTransition()
@@ -49,69 +51,69 @@ public interface Transition extends EObject
   void setSource(State value);
 
   /**
-   * Returns the value of the '<em><b>Target</b></em>' attribute.
+   * Returns the value of the '<em><b>Target</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Target</em>' attribute.
-   * @see #setTarget(boolean)
+   * @return the value of the '<em>Target</em>' reference.
+   * @see #setTarget(State)
    * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.MontiArcDSLPackage#getTransition_Target()
    * @model
    * @generated
    */
-  boolean isTarget();
+  State getTarget();
 
   /**
-   * Sets the value of the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Transition#isTarget <em>Target</em>}' attribute.
+   * Sets the value of the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Transition#getTarget <em>Target</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Target</em>' attribute.
-   * @see #isTarget()
+   * @param value the new value of the '<em>Target</em>' reference.
+   * @see #getTarget()
    * @generated
    */
-  void setTarget(boolean value);
+  void setTarget(State value);
 
   /**
-   * Returns the value of the '<em><b>Expression</b></em>' attribute.
+   * Returns the value of the '<em><b>Expression</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Expression</em>' attribute.
-   * @see #setExpression(boolean)
+   * @return the value of the '<em>Expression</em>' containment reference.
+   * @see #setExpression(Expression)
    * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.MontiArcDSLPackage#getTransition_Expression()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  boolean isExpression();
+  Expression getExpression();
 
   /**
-   * Sets the value of the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Transition#isExpression <em>Expression</em>}' attribute.
+   * Sets the value of the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Transition#getExpression <em>Expression</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Expression</em>' attribute.
-   * @see #isExpression()
+   * @param value the new value of the '<em>Expression</em>' containment reference.
+   * @see #getExpression()
    * @generated
    */
-  void setExpression(boolean value);
+  void setExpression(Expression value);
 
   /**
-   * Returns the value of the '<em><b>Reaction</b></em>' attribute.
+   * Returns the value of the '<em><b>Reaction</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Reaction</em>' attribute.
-   * @see #setReaction(boolean)
+   * @return the value of the '<em>Reaction</em>' containment reference.
+   * @see #setReaction(Block)
    * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.MontiArcDSLPackage#getTransition_Reaction()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  boolean isReaction();
+  Block getReaction();
 
   /**
-   * Sets the value of the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Transition#isReaction <em>Reaction</em>}' attribute.
+   * Sets the value of the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Transition#getReaction <em>Reaction</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Reaction</em>' attribute.
-   * @see #isReaction()
+   * @param value the new value of the '<em>Reaction</em>' containment reference.
+   * @see #getReaction()
    * @generated
    */
-  void setReaction(boolean value);
+  void setReaction(Block value);
 
 } // Transition

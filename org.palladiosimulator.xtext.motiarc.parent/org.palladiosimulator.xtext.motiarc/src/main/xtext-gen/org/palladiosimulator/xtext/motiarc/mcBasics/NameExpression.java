@@ -14,6 +14,7 @@ package org.palladiosimulator.xtext.motiarc.mcBasics;
  * </p>
  * <ul>
  *   <li>{@link org.palladiosimulator.xtext.motiarc.mcBasics.NameExpression#getName <em>Name</em>}</li>
+ *   <li>{@link org.palladiosimulator.xtext.motiarc.mcBasics.NameExpression#getQualifiedname <em>Qualifiedname</em>}</li>
  * </ul>
  *
  * @see org.palladiosimulator.xtext.motiarc.mcBasics.McBasicsPackage#getNameExpression()
@@ -43,5 +44,27 @@ public interface NameExpression extends Expression
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Qualifiedname</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Qualifiedname</em>' attribute.
+   * @see #setQualifiedname(String)
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.McBasicsPackage#getNameExpression_Qualifiedname()
+   * @model
+   * @generated
+   */
+  String getQualifiedname();
+
+  /**
+   * Sets the value of the '{@link org.palladiosimulator.xtext.motiarc.mcBasics.NameExpression#getQualifiedname <em>Qualifiedname</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Qualifiedname</em>' attribute.
+   * @see #getQualifiedname()
+   * @generated
+   */
+  void setQualifiedname(String value);
 
 } // NameExpression

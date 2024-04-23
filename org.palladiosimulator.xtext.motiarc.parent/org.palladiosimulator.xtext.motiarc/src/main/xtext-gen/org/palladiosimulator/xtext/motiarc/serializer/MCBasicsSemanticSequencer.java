@@ -16,8 +16,10 @@ import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequence
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.palladiosimulator.xtext.motiarc.mcBasics.Argument;
 import org.palladiosimulator.xtext.motiarc.mcBasics.Arguments;
+import org.palladiosimulator.xtext.motiarc.mcBasics.BinaryExpression;
 import org.palladiosimulator.xtext.motiarc.mcBasics.ImportStatements;
 import org.palladiosimulator.xtext.motiarc.mcBasics.MCCollectionType;
+import org.palladiosimulator.xtext.motiarc.mcBasics.MCObjectType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.MCPrimitiveType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.MCVoidType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.McBasicsPackage;
@@ -46,11 +48,17 @@ public class MCBasicsSemanticSequencer extends AbstractDelegatingSemanticSequenc
 			case McBasicsPackage.ARGUMENTS:
 				sequence_Arguments(context, (Arguments) semanticObject); 
 				return; 
+			case McBasicsPackage.BINARY_EXPRESSION:
+				sequence_BinaryExpression(context, (BinaryExpression) semanticObject); 
+				return; 
 			case McBasicsPackage.IMPORT_STATEMENTS:
 				sequence_ImportStatements(context, (ImportStatements) semanticObject); 
 				return; 
 			case McBasicsPackage.MC_COLLECTION_TYPE:
 				sequence_MCCollectionType(context, (MCCollectionType) semanticObject); 
+				return; 
+			case McBasicsPackage.MC_OBJECT_TYPE:
+				sequence_MCObjectType(context, (MCObjectType) semanticObject); 
 				return; 
 			case McBasicsPackage.MC_PRIMITIVE_TYPE:
 				sequence_MCPrimitiveType(context, (MCPrimitiveType) semanticObject); 
@@ -115,10 +123,25 @@ public class MCBasicsSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     Expression returns BinaryExpression
+	 *     BinaryExpression returns BinaryExpression
+	 *
+	 * Constraint:
+	 *     ((literal1=LiteralExpression | literal1=NameExpression) op=Operator (literal2=LiteralExpression | literal2=NameExpression))
+	 * </pre>
+	 */
+	protected void sequence_BinaryExpression(ISerializationContext context, BinaryExpression semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     ImportStatements returns ImportStatements
 	 *
 	 * Constraint:
-	 *     (importUri=MCQUALIFIEDNAME star='*'?)
+	 *     (importUri=MCQUALIFIEDNAME star?=DOTSTAR?)
 	 * </pre>
 	 */
 	protected void sequence_ImportStatements(ISerializationContext context, ImportStatements semanticObject) {
@@ -144,6 +167,29 @@ public class MCBasicsSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     Type returns MCObjectType
+	 *     MCObjectType returns MCObjectType
+	 *
+	 * Constraint:
+	 *     (
+	 *         type='Boolean' | 
+	 *         type='Byte' | 
+	 *         type='Integer' | 
+	 *         type='Long' | 
+	 *         type='Char' | 
+	 *         type='Double' | 
+	 *         type='String'
+	 *     )
+	 * </pre>
+	 */
+	protected void sequence_MCObjectType(ISerializationContext context, MCObjectType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     Type returns MCPrimitiveType
 	 *     MCPrimitiveType returns MCPrimitiveType
 	 *     MCArrayType returns MCPrimitiveType
@@ -157,8 +203,7 @@ public class MCBasicsSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *         type='long' | 
 	 *         type='char' | 
 	 *         type='float' | 
-	 *         type='double' | 
-	 *         type='String'
+	 *         type='double'
 	 *     )
 	 * </pre>
 	 */
@@ -194,17 +239,11 @@ public class MCBasicsSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     NameExpression returns NameExpression
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     (name=ID | qualifiedname=MCQUALIFIEDNAME)
 	 * </pre>
 	 */
 	protected void sequence_NameExpression(ISerializationContext context, NameExpression semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, McBasicsPackage.Literals.NAME_EXPRESSION__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, McBasicsPackage.Literals.NAME_EXPRESSION__NAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getNameExpressionAccess().getNameIDTerminalRuleCall_0(), semanticObject.getName());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

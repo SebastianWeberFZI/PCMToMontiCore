@@ -68,4 +68,23 @@ public class MontiArcDSLParsingTest {
       throw Exceptions.sneakyThrow(_e);
     }
   }
+
+  @Test
+  public void parseBumpControl() {
+    try {
+      final ResourceSet rs = this.rsp.get();
+      FileInputStream _fileInputStream = new FileInputStream("src/test/resources/BumpControl.arc");
+      final MACompilationUnit result = this.parseHelper.parse(_fileInputStream, URI.createFileURI("src/test/resources/BumpControl.arc"), null, rs);
+      Assertions.assertNotNull(result);
+      final EList<Resource.Diagnostic> errors = result.eResource().getErrors();
+      boolean _isEmpty = errors.isEmpty();
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("Unexpected errors: ");
+      String _join = IterableExtensions.join(errors, ", ");
+      _builder.append(_join);
+      Assertions.assertTrue(_isEmpty, _builder.toString());
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
 }

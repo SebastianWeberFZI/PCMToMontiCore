@@ -3,6 +3,10 @@
  */
 package org.palladiosimulator.xtext.motiarc;
 
+import org.eclipse.xtext.resource.IResourceServiceProvider;
+import org.eclipse.xtext.resource.generic.GenericResourceServiceProvider;
+
+import com.google.inject.Injector;
 
 /**
  * Initialization support for running Xtext languages without Equinox extension registry.
@@ -12,4 +16,5 @@ public class MontiArcDSLStandaloneSetup extends MontiArcDSLStandaloneSetupGenera
 	public static void doSetup() {
 		new MontiArcDSLStandaloneSetup().createInjectorAndDoEMFRegistration();
 	}
+	
 }

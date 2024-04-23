@@ -3,6 +3,8 @@
  */
 package org.palladiosimulator.xtext.motiarc.montiArcDSL;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.State#getModifier <em>Modifier</em>}</li>
  *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.State#getName <em>Name</em>}</li>
  * </ul>
  *
@@ -23,6 +26,20 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface State extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Modifier</b></em>' attribute list.
+   * The list contents are of type {@link org.palladiosimulator.xtext.motiarc.montiArcDSL.SCModifier}.
+   * The literals are from the enumeration {@link org.palladiosimulator.xtext.motiarc.montiArcDSL.SCModifier}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Modifier</em>' attribute list.
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.SCModifier
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.MontiArcDSLPackage#getState_Modifier()
+   * @model unique="false"
+   * @generated
+   */
+  EList<SCModifier> getModifier();
+
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->

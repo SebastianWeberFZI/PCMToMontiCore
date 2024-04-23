@@ -5,6 +5,7 @@ package org.palladiosimulator.xtext.motiarc.montiArcDSL;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -111,7 +112,7 @@ public interface MontiArcDSLPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getArcElement()
    * @generated
    */
-  int ARC_ELEMENT = 5;
+  int ARC_ELEMENT = 6;
 
   /**
    * The number of structural features of the '<em>Arc Element</em>' class.
@@ -234,6 +235,34 @@ public interface MontiArcDSLPackage extends EPackage
   int PARAMETERS_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.ComponentTypeImpl <em>Component Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.ComponentTypeImpl
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getComponentType()
+   * @generated
+   */
+  int COMPONENT_TYPE = 4;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_TYPE__TYPE = 0;
+
+  /**
+   * The number of structural features of the '<em>Component Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int COMPONENT_TYPE_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.ParameterImpl <em>Parameter</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -241,7 +270,7 @@ public interface MontiArcDSLPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getParameter()
    * @generated
    */
-  int PARAMETER = 4;
+  int PARAMETER = 5;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -287,7 +316,7 @@ public interface MontiArcDSLPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getSubComponent()
    * @generated
    */
-  int SUB_COMPONENT = 6;
+  int SUB_COMPONENT = 7;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -333,7 +362,7 @@ public interface MontiArcDSLPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getConnector()
    * @generated
    */
-  int CONNECTOR = 7;
+  int CONNECTOR = 8;
 
   /**
    * The feature id for the '<em><b>Source</b></em>' attribute.
@@ -370,7 +399,7 @@ public interface MontiArcDSLPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getPorts()
    * @generated
    */
-  int PORTS = 8;
+  int PORTS = 9;
 
   /**
    * The feature id for the '<em><b>Ports</b></em>' containment reference list.
@@ -398,7 +427,7 @@ public interface MontiArcDSLPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getPort()
    * @generated
    */
-  int PORT = 9;
+  int PORT = 10;
 
   /**
    * The feature id for the '<em><b>Sync</b></em>' attribute.
@@ -437,13 +466,22 @@ public interface MontiArcDSLPackage extends EPackage
   int PORT__TYPE = 3;
 
   /**
+   * The feature id for the '<em><b>Datatype</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PORT__DATATYPE = 4;
+
+  /**
    * The feature id for the '<em><b>Names</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PORT__NAMES = 4;
+  int PORT__NAMES = 5;
 
   /**
    * The number of structural features of the '<em>Port</em>' class.
@@ -452,7 +490,7 @@ public interface MontiArcDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_FEATURE_COUNT = 5;
+  int PORT_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.NamesImpl <em>Names</em>}' class.
@@ -462,7 +500,7 @@ public interface MontiArcDSLPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getNames()
    * @generated
    */
-  int NAMES = 10;
+  int NAMES = 11;
 
   /**
    * The feature id for the '<em><b>Names</b></em>' attribute list.
@@ -490,7 +528,7 @@ public interface MontiArcDSLPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getVariable()
    * @generated
    */
-  int VARIABLE = 11;
+  int VARIABLE = 12;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -511,13 +549,22 @@ public interface MontiArcDSLPackage extends EPackage
   int VARIABLE__NAMES = ARC_ELEMENT_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE__PARAMETERS = ARC_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
    * The number of structural features of the '<em>Variable</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VARIABLE_FEATURE_COUNT = ARC_ELEMENT_FEATURE_COUNT + 2;
+  int VARIABLE_FEATURE_COUNT = ARC_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.AutomatonImpl <em>Automaton</em>}' class.
@@ -527,7 +574,16 @@ public interface MontiArcDSLPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getAutomaton()
    * @generated
    */
-  int AUTOMATON = 12;
+  int AUTOMATON = 13;
+
+  /**
+   * The feature id for the '<em><b>Sync</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AUTOMATON__SYNC = ARC_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -536,7 +592,7 @@ public interface MontiArcDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int AUTOMATON__NAME = ARC_ELEMENT_FEATURE_COUNT + 0;
+  int AUTOMATON__NAME = ARC_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>States</b></em>' containment reference list.
@@ -545,16 +601,7 @@ public interface MontiArcDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int AUTOMATON__STATES = ARC_ELEMENT_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Initial States</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AUTOMATON__INITIAL_STATES = ARC_ELEMENT_FEATURE_COUNT + 2;
+  int AUTOMATON__STATES = ARC_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Transitions</b></em>' containment reference list.
@@ -582,7 +629,16 @@ public interface MontiArcDSLPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getState()
    * @generated
    */
-  int STATE = 13;
+  int STATE = 14;
+
+  /**
+   * The feature id for the '<em><b>Modifier</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STATE__MODIFIER = 0;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -591,7 +647,7 @@ public interface MontiArcDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE__NAME = 0;
+  int STATE__NAME = 1;
 
   /**
    * The number of structural features of the '<em>State</em>' class.
@@ -600,17 +656,26 @@ public interface MontiArcDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STATE_FEATURE_COUNT = 1;
+  int STATE_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.InitialStateImpl <em>Initial State</em>}' class.
+   * The meta object id for the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.SCStateImpl <em>SC State</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.InitialStateImpl
-   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getInitialState()
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.SCStateImpl
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getSCState()
    * @generated
    */
-  int INITIAL_STATE = 14;
+  int SC_STATE = 15;
+
+  /**
+   * The feature id for the '<em><b>Modifier</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SC_STATE__MODIFIER = STATE__MODIFIER;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -619,25 +684,99 @@ public interface MontiArcDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INITIAL_STATE__NAME = 0;
+  int SC_STATE__NAME = STATE__NAME;
 
   /**
-   * The feature id for the '<em><b>Block</b></em>' attribute.
+   * The feature id for the '<em><b>Ante</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INITIAL_STATE__BLOCK = 1;
+  int SC_STATE__ANTE = STATE_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Initial State</em>' class.
+   * The number of structural features of the '<em>SC State</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INITIAL_STATE_FEATURE_COUNT = 2;
+  int SC_STATE_FEATURE_COUNT = STATE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.InvStateImpl <em>Inv State</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.InvStateImpl
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getInvState()
+   * @generated
+   */
+  int INV_STATE = 16;
+
+  /**
+   * The feature id for the '<em><b>Modifier</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INV_STATE__MODIFIER = STATE__MODIFIER;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INV_STATE__NAME = STATE__NAME;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INV_STATE__EXPRESSION = STATE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Inv State</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INV_STATE_FEATURE_COUNT = STATE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.SCSAnteImpl <em>SCS Ante</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.SCSAnteImpl
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getSCSAnte()
+   * @generated
+   */
+  int SCS_ANTE = 17;
+
+  /**
+   * The feature id for the '<em><b>Block</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCS_ANTE__BLOCK = 0;
+
+  /**
+   * The number of structural features of the '<em>SCS Ante</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SCS_ANTE_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.TransitionImpl <em>Transition</em>}' class.
@@ -647,7 +786,7 @@ public interface MontiArcDSLPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getTransition()
    * @generated
    */
-  int TRANSITION = 15;
+  int TRANSITION = 18;
 
   /**
    * The feature id for the '<em><b>Source</b></em>' reference.
@@ -659,7 +798,7 @@ public interface MontiArcDSLPackage extends EPackage
   int TRANSITION__SOURCE = 0;
 
   /**
-   * The feature id for the '<em><b>Target</b></em>' attribute.
+   * The feature id for the '<em><b>Target</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -668,7 +807,7 @@ public interface MontiArcDSLPackage extends EPackage
   int TRANSITION__TARGET = 1;
 
   /**
-   * The feature id for the '<em><b>Expression</b></em>' attribute.
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -677,7 +816,7 @@ public interface MontiArcDSLPackage extends EPackage
   int TRANSITION__EXPRESSION = 2;
 
   /**
-   * The feature id for the '<em><b>Reaction</b></em>' attribute.
+   * The feature id for the '<em><b>Reaction</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -702,25 +841,16 @@ public interface MontiArcDSLPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getBlock()
    * @generated
    */
-  int BLOCK = 16;
+  int BLOCK = 19;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * The feature id for the '<em><b>Blocks</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BLOCK__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BLOCK__EXPRESSIONS = 1;
+  int BLOCK__BLOCKS = 0;
 
   /**
    * The number of structural features of the '<em>Block</em>' class.
@@ -729,7 +859,101 @@ public interface MontiArcDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BLOCK_FEATURE_COUNT = 2;
+  int BLOCK_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.BlockStatementImpl <em>Block Statement</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.BlockStatementImpl
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getBlockStatement()
+   * @generated
+   */
+  int BLOCK_STATEMENT = 20;
+
+  /**
+   * The number of structural features of the '<em>Block Statement</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BLOCK_STATEMENT_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.SimpleExpressionImpl <em>Simple Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.SimpleExpressionImpl
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getSimpleExpression()
+   * @generated
+   */
+  int SIMPLE_EXPRESSION = 21;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_EXPRESSION__EXPRESSION = BLOCK_STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Simple Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_EXPRESSION_FEATURE_COUNT = BLOCK_STATEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.SimpleInitImpl <em>Simple Init</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.SimpleInitImpl
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getSimpleInit()
+   * @generated
+   */
+  int SIMPLE_INIT = 22;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_INIT__NAME = BLOCK_STATEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_INIT__EXPRESSIONS = BLOCK_STATEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Simple Init</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIMPLE_INIT_FEATURE_COUNT = BLOCK_STATEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.SCModifier <em>SC Modifier</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.SCModifier
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getSCModifier()
+   * @generated
+   */
+  int SC_MODIFIER = 23;
 
 
   /**
@@ -870,6 +1094,27 @@ public interface MontiArcDSLPackage extends EPackage
    * @generated
    */
   EReference getParameters_Parameters();
+
+  /**
+   * Returns the meta object for class '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.ComponentType <em>Component Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Component Type</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.ComponentType
+   * @generated
+   */
+  EClass getComponentType();
+
+  /**
+   * Returns the meta object for the reference '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.ComponentType#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Type</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.ComponentType#getType()
+   * @see #getComponentType()
+   * @generated
+   */
+  EReference getComponentType_Type();
 
   /**
    * Returns the meta object for class '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Parameter <em>Parameter</em>}'.
@@ -1075,6 +1320,17 @@ public interface MontiArcDSLPackage extends EPackage
   EReference getPort_Type();
 
   /**
+   * Returns the meta object for the reference '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Port#getDatatype <em>Datatype</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Datatype</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.Port#getDatatype()
+   * @see #getPort()
+   * @generated
+   */
+  EReference getPort_Datatype();
+
+  /**
    * Returns the meta object for the attribute '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Port#isNames <em>Names</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1139,6 +1395,17 @@ public interface MontiArcDSLPackage extends EPackage
   EAttribute getVariable_Names();
 
   /**
+   * Returns the meta object for the containment reference list '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Variable#getParameters <em>Parameters</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Parameters</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.Variable#getParameters()
+   * @see #getVariable()
+   * @generated
+   */
+  EReference getVariable_Parameters();
+
+  /**
    * Returns the meta object for class '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Automaton <em>Automaton</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1147,6 +1414,17 @@ public interface MontiArcDSLPackage extends EPackage
    * @generated
    */
   EClass getAutomaton();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Automaton#isSync <em>Sync</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Sync</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.Automaton#isSync()
+   * @see #getAutomaton()
+   * @generated
+   */
+  EAttribute getAutomaton_Sync();
 
   /**
    * Returns the meta object for the attribute '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Automaton#isName <em>Name</em>}'.
@@ -1171,17 +1449,6 @@ public interface MontiArcDSLPackage extends EPackage
   EReference getAutomaton_States();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Automaton#getInitialStates <em>Initial States</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Initial States</em>'.
-   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.Automaton#getInitialStates()
-   * @see #getAutomaton()
-   * @generated
-   */
-  EReference getAutomaton_InitialStates();
-
-  /**
    * Returns the meta object for the containment reference list '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Automaton#getTransitions <em>Transitions</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1203,6 +1470,17 @@ public interface MontiArcDSLPackage extends EPackage
   EClass getState();
 
   /**
+   * Returns the meta object for the attribute list '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.State#getModifier <em>Modifier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Modifier</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.State#getModifier()
+   * @see #getState()
+   * @generated
+   */
+  EAttribute getState_Modifier();
+
+  /**
    * Returns the meta object for the attribute '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.State#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1214,36 +1492,67 @@ public interface MontiArcDSLPackage extends EPackage
   EAttribute getState_Name();
 
   /**
-   * Returns the meta object for class '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.InitialState <em>Initial State</em>}'.
+   * Returns the meta object for class '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.SCState <em>SC State</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Initial State</em>'.
-   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.InitialState
+   * @return the meta object for class '<em>SC State</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.SCState
    * @generated
    */
-  EClass getInitialState();
+  EClass getSCState();
 
   /**
-   * Returns the meta object for the attribute '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.InitialState#getName <em>Name</em>}'.
+   * Returns the meta object for the containment reference '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.SCState#getAnte <em>Ante</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.InitialState#getName()
-   * @see #getInitialState()
+   * @return the meta object for the containment reference '<em>Ante</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.SCState#getAnte()
+   * @see #getSCState()
    * @generated
    */
-  EAttribute getInitialState_Name();
+  EReference getSCState_Ante();
 
   /**
-   * Returns the meta object for the attribute '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.InitialState#isBlock <em>Block</em>}'.
+   * Returns the meta object for class '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.InvState <em>Inv State</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Block</em>'.
-   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.InitialState#isBlock()
-   * @see #getInitialState()
+   * @return the meta object for class '<em>Inv State</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.InvState
    * @generated
    */
-  EAttribute getInitialState_Block();
+  EClass getInvState();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.InvState#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.InvState#getExpression()
+   * @see #getInvState()
+   * @generated
+   */
+  EReference getInvState_Expression();
+
+  /**
+   * Returns the meta object for class '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.SCSAnte <em>SCS Ante</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>SCS Ante</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.SCSAnte
+   * @generated
+   */
+  EClass getSCSAnte();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.SCSAnte#getBlock <em>Block</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Block</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.SCSAnte#getBlock()
+   * @see #getSCSAnte()
+   * @generated
+   */
+  EReference getSCSAnte_Block();
 
   /**
    * Returns the meta object for class '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Transition <em>Transition</em>}'.
@@ -1267,37 +1576,37 @@ public interface MontiArcDSLPackage extends EPackage
   EReference getTransition_Source();
 
   /**
-   * Returns the meta object for the attribute '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Transition#isTarget <em>Target</em>}'.
+   * Returns the meta object for the reference '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Transition#getTarget <em>Target</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Target</em>'.
-   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.Transition#isTarget()
+   * @return the meta object for the reference '<em>Target</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.Transition#getTarget()
    * @see #getTransition()
    * @generated
    */
-  EAttribute getTransition_Target();
+  EReference getTransition_Target();
 
   /**
-   * Returns the meta object for the attribute '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Transition#isExpression <em>Expression</em>}'.
+   * Returns the meta object for the containment reference '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Transition#getExpression <em>Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Expression</em>'.
-   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.Transition#isExpression()
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.Transition#getExpression()
    * @see #getTransition()
    * @generated
    */
-  EAttribute getTransition_Expression();
+  EReference getTransition_Expression();
 
   /**
-   * Returns the meta object for the attribute '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Transition#isReaction <em>Reaction</em>}'.
+   * Returns the meta object for the containment reference '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Transition#getReaction <em>Reaction</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Reaction</em>'.
-   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.Transition#isReaction()
+   * @return the meta object for the containment reference '<em>Reaction</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.Transition#getReaction()
    * @see #getTransition()
    * @generated
    */
-  EAttribute getTransition_Reaction();
+  EReference getTransition_Reaction();
 
   /**
    * Returns the meta object for class '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Block <em>Block</em>}'.
@@ -1310,26 +1619,88 @@ public interface MontiArcDSLPackage extends EPackage
   EClass getBlock();
 
   /**
-   * Returns the meta object for the attribute '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Block#isName <em>Name</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Block#getBlocks <em>Blocks</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Blocks</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.Block#getBlocks()
+   * @see #getBlock()
+   * @generated
+   */
+  EReference getBlock_Blocks();
+
+  /**
+   * Returns the meta object for class '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.BlockStatement <em>Block Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Block Statement</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.BlockStatement
+   * @generated
+   */
+  EClass getBlockStatement();
+
+  /**
+   * Returns the meta object for class '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.SimpleExpression <em>Simple Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Simple Expression</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.SimpleExpression
+   * @generated
+   */
+  EClass getSimpleExpression();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.SimpleExpression#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.SimpleExpression#getExpression()
+   * @see #getSimpleExpression()
+   * @generated
+   */
+  EReference getSimpleExpression_Expression();
+
+  /**
+   * Returns the meta object for class '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.SimpleInit <em>Simple Init</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Simple Init</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.SimpleInit
+   * @generated
+   */
+  EClass getSimpleInit();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.SimpleInit#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.Block#isName()
-   * @see #getBlock()
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.SimpleInit#getName()
+   * @see #getSimpleInit()
    * @generated
    */
-  EAttribute getBlock_Name();
+  EAttribute getSimpleInit_Name();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Block#getExpressions <em>Expressions</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.SimpleInit#getExpressions <em>Expressions</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Expressions</em>'.
-   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.Block#getExpressions()
-   * @see #getBlock()
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.SimpleInit#getExpressions()
+   * @see #getSimpleInit()
    * @generated
    */
-  EReference getBlock_Expressions();
+  EReference getSimpleInit_Expressions();
+
+  /**
+   * Returns the meta object for enum '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.SCModifier <em>SC Modifier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>SC Modifier</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.SCModifier
+   * @generated
+   */
+  EEnum getSCModifier();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1465,6 +1836,24 @@ public interface MontiArcDSLPackage extends EPackage
      * @generated
      */
     EReference PARAMETERS__PARAMETERS = eINSTANCE.getParameters_Parameters();
+
+    /**
+     * The meta object literal for the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.ComponentTypeImpl <em>Component Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.ComponentTypeImpl
+     * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getComponentType()
+     * @generated
+     */
+    EClass COMPONENT_TYPE = eINSTANCE.getComponentType();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference COMPONENT_TYPE__TYPE = eINSTANCE.getComponentType_Type();
 
     /**
      * The meta object literal for the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.ParameterImpl <em>Parameter</em>}' class.
@@ -1631,6 +2020,14 @@ public interface MontiArcDSLPackage extends EPackage
     EReference PORT__TYPE = eINSTANCE.getPort_Type();
 
     /**
+     * The meta object literal for the '<em><b>Datatype</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PORT__DATATYPE = eINSTANCE.getPort_Datatype();
+
+    /**
      * The meta object literal for the '<em><b>Names</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1683,6 +2080,14 @@ public interface MontiArcDSLPackage extends EPackage
     EAttribute VARIABLE__NAMES = eINSTANCE.getVariable_Names();
 
     /**
+     * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VARIABLE__PARAMETERS = eINSTANCE.getVariable_Parameters();
+
+    /**
      * The meta object literal for the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.AutomatonImpl <em>Automaton</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1691,6 +2096,14 @@ public interface MontiArcDSLPackage extends EPackage
      * @generated
      */
     EClass AUTOMATON = eINSTANCE.getAutomaton();
+
+    /**
+     * The meta object literal for the '<em><b>Sync</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute AUTOMATON__SYNC = eINSTANCE.getAutomaton_Sync();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1707,14 +2120,6 @@ public interface MontiArcDSLPackage extends EPackage
      * @generated
      */
     EReference AUTOMATON__STATES = eINSTANCE.getAutomaton_States();
-
-    /**
-     * The meta object literal for the '<em><b>Initial States</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference AUTOMATON__INITIAL_STATES = eINSTANCE.getAutomaton_InitialStates();
 
     /**
      * The meta object literal for the '<em><b>Transitions</b></em>' containment reference list feature.
@@ -1735,6 +2140,14 @@ public interface MontiArcDSLPackage extends EPackage
     EClass STATE = eINSTANCE.getState();
 
     /**
+     * The meta object literal for the '<em><b>Modifier</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STATE__MODIFIER = eINSTANCE.getState_Modifier();
+
+    /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1743,30 +2156,58 @@ public interface MontiArcDSLPackage extends EPackage
     EAttribute STATE__NAME = eINSTANCE.getState_Name();
 
     /**
-     * The meta object literal for the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.InitialStateImpl <em>Initial State</em>}' class.
+     * The meta object literal for the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.SCStateImpl <em>SC State</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.InitialStateImpl
-     * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getInitialState()
+     * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.SCStateImpl
+     * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getSCState()
      * @generated
      */
-    EClass INITIAL_STATE = eINSTANCE.getInitialState();
+    EClass SC_STATE = eINSTANCE.getSCState();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Ante</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute INITIAL_STATE__NAME = eINSTANCE.getInitialState_Name();
+    EReference SC_STATE__ANTE = eINSTANCE.getSCState_Ante();
 
     /**
-     * The meta object literal for the '<em><b>Block</b></em>' attribute feature.
+     * The meta object literal for the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.InvStateImpl <em>Inv State</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.InvStateImpl
+     * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getInvState()
+     * @generated
+     */
+    EClass INV_STATE = eINSTANCE.getInvState();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute INITIAL_STATE__BLOCK = eINSTANCE.getInitialState_Block();
+    EReference INV_STATE__EXPRESSION = eINSTANCE.getInvState_Expression();
+
+    /**
+     * The meta object literal for the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.SCSAnteImpl <em>SCS Ante</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.SCSAnteImpl
+     * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getSCSAnte()
+     * @generated
+     */
+    EClass SCS_ANTE = eINSTANCE.getSCSAnte();
+
+    /**
+     * The meta object literal for the '<em><b>Block</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SCS_ANTE__BLOCK = eINSTANCE.getSCSAnte_Block();
 
     /**
      * The meta object literal for the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.TransitionImpl <em>Transition</em>}' class.
@@ -1787,28 +2228,28 @@ public interface MontiArcDSLPackage extends EPackage
     EReference TRANSITION__SOURCE = eINSTANCE.getTransition_Source();
 
     /**
-     * The meta object literal for the '<em><b>Target</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Target</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TRANSITION__TARGET = eINSTANCE.getTransition_Target();
+    EReference TRANSITION__TARGET = eINSTANCE.getTransition_Target();
 
     /**
-     * The meta object literal for the '<em><b>Expression</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TRANSITION__EXPRESSION = eINSTANCE.getTransition_Expression();
+    EReference TRANSITION__EXPRESSION = eINSTANCE.getTransition_Expression();
 
     /**
-     * The meta object literal for the '<em><b>Reaction</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Reaction</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TRANSITION__REACTION = eINSTANCE.getTransition_Reaction();
+    EReference TRANSITION__REACTION = eINSTANCE.getTransition_Reaction();
 
     /**
      * The meta object literal for the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.BlockImpl <em>Block</em>}' class.
@@ -1821,12 +2262,58 @@ public interface MontiArcDSLPackage extends EPackage
     EClass BLOCK = eINSTANCE.getBlock();
 
     /**
+     * The meta object literal for the '<em><b>Blocks</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BLOCK__BLOCKS = eINSTANCE.getBlock_Blocks();
+
+    /**
+     * The meta object literal for the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.BlockStatementImpl <em>Block Statement</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.BlockStatementImpl
+     * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getBlockStatement()
+     * @generated
+     */
+    EClass BLOCK_STATEMENT = eINSTANCE.getBlockStatement();
+
+    /**
+     * The meta object literal for the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.SimpleExpressionImpl <em>Simple Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.SimpleExpressionImpl
+     * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getSimpleExpression()
+     * @generated
+     */
+    EClass SIMPLE_EXPRESSION = eINSTANCE.getSimpleExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SIMPLE_EXPRESSION__EXPRESSION = eINSTANCE.getSimpleExpression_Expression();
+
+    /**
+     * The meta object literal for the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.SimpleInitImpl <em>Simple Init</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.SimpleInitImpl
+     * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getSimpleInit()
+     * @generated
+     */
+    EClass SIMPLE_INIT = eINSTANCE.getSimpleInit();
+
+    /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute BLOCK__NAME = eINSTANCE.getBlock_Name();
+    EAttribute SIMPLE_INIT__NAME = eINSTANCE.getSimpleInit_Name();
 
     /**
      * The meta object literal for the '<em><b>Expressions</b></em>' containment reference list feature.
@@ -1834,7 +2321,17 @@ public interface MontiArcDSLPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference BLOCK__EXPRESSIONS = eINSTANCE.getBlock_Expressions();
+    EReference SIMPLE_INIT__EXPRESSIONS = eINSTANCE.getSimpleInit_Expressions();
+
+    /**
+     * The meta object literal for the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.SCModifier <em>SC Modifier</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.SCModifier
+     * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getSCModifier()
+     * @generated
+     */
+    EEnum SC_MODIFIER = eINSTANCE.getSCModifier();
 
   }
 

@@ -1,2 +1,3 @@
 org.palladiosimulator.xtext.motiarc.ide.MCBasicsIdeSetup
+org.palladiosimulator.xtext.motiarc.ide.MontiCoreClassDiagramIdeSetup
 org.palladiosimulator.xtext.motiarc.ide.MontiArcDSLIdeSetup

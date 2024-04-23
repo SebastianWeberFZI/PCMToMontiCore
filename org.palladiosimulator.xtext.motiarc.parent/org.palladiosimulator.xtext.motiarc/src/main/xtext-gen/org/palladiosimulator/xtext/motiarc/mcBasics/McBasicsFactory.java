@@ -60,6 +60,15 @@ public interface McBasicsFactory extends EFactory
   MCPrimitiveType createMCPrimitiveType();
 
   /**
+   * Returns a new object of class '<em>MC Object Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>MC Object Type</em>'.
+   * @generated
+   */
+  MCObjectType createMCObjectType();
+
+  /**
    * Returns a new object of class '<em>MC Void Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -130,6 +139,15 @@ public interface McBasicsFactory extends EFactory
    * @generated
    */
   NameExpression createNameExpression();
+
+  /**
+   * Returns a new object of class '<em>Binary Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Binary Expression</em>'.
+   * @generated
+   */
+  BinaryExpression createBinaryExpression();
 
   /**
    * Returns a new object of class '<em>Arguments</em>'.

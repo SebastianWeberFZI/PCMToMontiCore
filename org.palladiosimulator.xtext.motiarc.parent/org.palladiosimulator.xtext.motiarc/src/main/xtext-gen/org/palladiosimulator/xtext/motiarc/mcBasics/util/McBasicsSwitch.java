@@ -10,11 +10,13 @@ import org.eclipse.emf.ecore.util.Switch;
 
 import org.palladiosimulator.xtext.motiarc.mcBasics.Argument;
 import org.palladiosimulator.xtext.motiarc.mcBasics.Arguments;
+import org.palladiosimulator.xtext.motiarc.mcBasics.BinaryExpression;
 import org.palladiosimulator.xtext.motiarc.mcBasics.Expression;
 import org.palladiosimulator.xtext.motiarc.mcBasics.ImportStatements;
 import org.palladiosimulator.xtext.motiarc.mcBasics.LiteralExpression;
 import org.palladiosimulator.xtext.motiarc.mcBasics.MCArrayType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.MCCollectionType;
+import org.palladiosimulator.xtext.motiarc.mcBasics.MCObjectType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.MCPrimitiveType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.MCVoidType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.McBasicsPackage;
@@ -116,6 +118,14 @@ public class McBasicsSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case McBasicsPackage.MC_OBJECT_TYPE:
+      {
+        MCObjectType mcObjectType = (MCObjectType)theEObject;
+        T result = caseMCObjectType(mcObjectType);
+        if (result == null) result = caseType(mcObjectType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case McBasicsPackage.MC_VOID_TYPE:
       {
         MCVoidType mcVoidType = (MCVoidType)theEObject;
@@ -177,6 +187,14 @@ public class McBasicsSwitch<T> extends Switch<T>
         NameExpression nameExpression = (NameExpression)theEObject;
         T result = caseNameExpression(nameExpression);
         if (result == null) result = caseExpression(nameExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case McBasicsPackage.BINARY_EXPRESSION:
+      {
+        BinaryExpression binaryExpression = (BinaryExpression)theEObject;
+        T result = caseBinaryExpression(binaryExpression);
+        if (result == null) result = caseExpression(binaryExpression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -258,6 +276,22 @@ public class McBasicsSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseMCPrimitiveType(MCPrimitiveType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>MC Object Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>MC Object Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseMCObjectType(MCObjectType object)
   {
     return null;
   }
@@ -386,6 +420,22 @@ public class McBasicsSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseNameExpression(NameExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Binary Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Binary Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBinaryExpression(BinaryExpression object)
   {
     return null;
   }

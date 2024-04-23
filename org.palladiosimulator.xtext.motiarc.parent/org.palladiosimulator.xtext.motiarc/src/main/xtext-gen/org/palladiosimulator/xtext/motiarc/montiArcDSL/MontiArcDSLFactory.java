@@ -60,6 +60,15 @@ public interface MontiArcDSLFactory extends EFactory
   Parameters createParameters();
 
   /**
+   * Returns a new object of class '<em>Component Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Component Type</em>'.
+   * @generated
+   */
+  ComponentType createComponentType();
+
+  /**
    * Returns a new object of class '<em>Parameter</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -150,13 +159,31 @@ public interface MontiArcDSLFactory extends EFactory
   State createState();
 
   /**
-   * Returns a new object of class '<em>Initial State</em>'.
+   * Returns a new object of class '<em>SC State</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Initial State</em>'.
+   * @return a new object of class '<em>SC State</em>'.
    * @generated
    */
-  InitialState createInitialState();
+  SCState createSCState();
+
+  /**
+   * Returns a new object of class '<em>Inv State</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Inv State</em>'.
+   * @generated
+   */
+  InvState createInvState();
+
+  /**
+   * Returns a new object of class '<em>SCS Ante</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>SCS Ante</em>'.
+   * @generated
+   */
+  SCSAnte createSCSAnte();
 
   /**
    * Returns a new object of class '<em>Transition</em>'.
@@ -175,6 +202,33 @@ public interface MontiArcDSLFactory extends EFactory
    * @generated
    */
   Block createBlock();
+
+  /**
+   * Returns a new object of class '<em>Block Statement</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Block Statement</em>'.
+   * @generated
+   */
+  BlockStatement createBlockStatement();
+
+  /**
+   * Returns a new object of class '<em>Simple Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Simple Expression</em>'.
+   * @generated
+   */
+  SimpleExpression createSimpleExpression();
+
+  /**
+   * Returns a new object of class '<em>Simple Init</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Simple Init</em>'.
+   * @generated
+   */
+  SimpleInit createSimpleInit();
 
   /**
    * Returns the package supported by this factory.

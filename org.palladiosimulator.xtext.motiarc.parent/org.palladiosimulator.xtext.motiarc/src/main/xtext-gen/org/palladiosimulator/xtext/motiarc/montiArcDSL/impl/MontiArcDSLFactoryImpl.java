@@ -4,6 +4,7 @@
 package org.palladiosimulator.xtext.motiarc.montiArcDSL.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -69,6 +70,7 @@ public class MontiArcDSLFactoryImpl extends EFactoryImpl implements MontiArcDSLF
       case MontiArcDSLPackage.COMPONENT: return createComponent();
       case MontiArcDSLPackage.SIGNATURE: return createSignature();
       case MontiArcDSLPackage.PARAMETERS: return createParameters();
+      case MontiArcDSLPackage.COMPONENT_TYPE: return createComponentType();
       case MontiArcDSLPackage.PARAMETER: return createParameter();
       case MontiArcDSLPackage.ARC_ELEMENT: return createArcElement();
       case MontiArcDSLPackage.SUB_COMPONENT: return createSubComponent();
@@ -79,11 +81,50 @@ public class MontiArcDSLFactoryImpl extends EFactoryImpl implements MontiArcDSLF
       case MontiArcDSLPackage.VARIABLE: return createVariable();
       case MontiArcDSLPackage.AUTOMATON: return createAutomaton();
       case MontiArcDSLPackage.STATE: return createState();
-      case MontiArcDSLPackage.INITIAL_STATE: return createInitialState();
+      case MontiArcDSLPackage.SC_STATE: return createSCState();
+      case MontiArcDSLPackage.INV_STATE: return createInvState();
+      case MontiArcDSLPackage.SCS_ANTE: return createSCSAnte();
       case MontiArcDSLPackage.TRANSITION: return createTransition();
       case MontiArcDSLPackage.BLOCK: return createBlock();
+      case MontiArcDSLPackage.BLOCK_STATEMENT: return createBlockStatement();
+      case MontiArcDSLPackage.SIMPLE_EXPRESSION: return createSimpleExpression();
+      case MontiArcDSLPackage.SIMPLE_INIT: return createSimpleInit();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object createFromString(EDataType eDataType, String initialValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case MontiArcDSLPackage.SC_MODIFIER:
+        return createSCModifierFromString(eDataType, initialValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String convertToString(EDataType eDataType, Object instanceValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case MontiArcDSLPackage.SC_MODIFIER:
+        return convertSCModifierToString(eDataType, instanceValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
   }
 
@@ -133,6 +174,18 @@ public class MontiArcDSLFactoryImpl extends EFactoryImpl implements MontiArcDSLF
   {
     ParametersImpl parameters = new ParametersImpl();
     return parameters;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public ComponentType createComponentType()
+  {
+    ComponentTypeImpl componentType = new ComponentTypeImpl();
+    return componentType;
   }
 
   /**
@@ -261,10 +314,34 @@ public class MontiArcDSLFactoryImpl extends EFactoryImpl implements MontiArcDSLF
    * @generated
    */
   @Override
-  public InitialState createInitialState()
+  public SCState createSCState()
   {
-    InitialStateImpl initialState = new InitialStateImpl();
-    return initialState;
+    SCStateImpl scState = new SCStateImpl();
+    return scState;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public InvState createInvState()
+  {
+    InvStateImpl invState = new InvStateImpl();
+    return invState;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SCSAnte createSCSAnte()
+  {
+    SCSAnteImpl scsAnte = new SCSAnteImpl();
+    return scsAnte;
   }
 
   /**
@@ -289,6 +366,64 @@ public class MontiArcDSLFactoryImpl extends EFactoryImpl implements MontiArcDSLF
   {
     BlockImpl block = new BlockImpl();
     return block;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public BlockStatement createBlockStatement()
+  {
+    BlockStatementImpl blockStatement = new BlockStatementImpl();
+    return blockStatement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SimpleExpression createSimpleExpression()
+  {
+    SimpleExpressionImpl simpleExpression = new SimpleExpressionImpl();
+    return simpleExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public SimpleInit createSimpleInit()
+  {
+    SimpleInitImpl simpleInit = new SimpleInitImpl();
+    return simpleInit;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SCModifier createSCModifierFromString(EDataType eDataType, String initialValue)
+  {
+    SCModifier result = SCModifier.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertSCModifierToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
   }
 
   /**

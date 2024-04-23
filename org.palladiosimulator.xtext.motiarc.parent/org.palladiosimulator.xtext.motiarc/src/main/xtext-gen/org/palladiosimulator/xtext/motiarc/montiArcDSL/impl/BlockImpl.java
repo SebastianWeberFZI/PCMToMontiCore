@@ -5,7 +5,6 @@ package org.palladiosimulator.xtext.motiarc.montiArcDSL.impl;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -13,15 +12,13 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.palladiosimulator.xtext.motiarc.mcBasics.Expression;
-
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.Block;
+import org.palladiosimulator.xtext.motiarc.montiArcDSL.BlockStatement;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.MontiArcDSLPackage;
 
 /**
@@ -32,8 +29,7 @@ import org.palladiosimulator.xtext.motiarc.montiArcDSL.MontiArcDSLPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.BlockImpl#isName <em>Name</em>}</li>
- *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.BlockImpl#getExpressions <em>Expressions</em>}</li>
+ *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.BlockImpl#getBlocks <em>Blocks</em>}</li>
  * </ul>
  *
  * @generated
@@ -41,34 +37,14 @@ import org.palladiosimulator.xtext.motiarc.montiArcDSL.MontiArcDSLPackage;
 public class BlockImpl extends MinimalEObjectImpl.Container implements Block
 {
   /**
-   * The default value of the '{@link #isName() <em>Name</em>}' attribute.
+   * The cached value of the '{@link #getBlocks() <em>Blocks</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isName()
+   * @see #getBlocks()
    * @generated
    * @ordered
    */
-  protected static final boolean NAME_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isName()
-   * @generated
-   * @ordered
-   */
-  protected boolean name = NAME_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getExpressions() <em>Expressions</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getExpressions()
-   * @generated
-   * @ordered
-   */
-  protected EList<Expression> expressions;
+  protected EList<BlockStatement> blocks;
 
   /**
    * <!-- begin-user-doc -->
@@ -97,38 +73,13 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block
    * @generated
    */
   @Override
-  public boolean isName()
+  public EList<BlockStatement> getBlocks()
   {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setName(boolean newName)
-  {
-    boolean oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MontiArcDSLPackage.BLOCK__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EList<Expression> getExpressions()
-  {
-    if (expressions == null)
+    if (blocks == null)
     {
-      expressions = new EObjectContainmentEList<Expression>(Expression.class, this, MontiArcDSLPackage.BLOCK__EXPRESSIONS);
+      blocks = new EObjectContainmentEList<BlockStatement>(BlockStatement.class, this, MontiArcDSLPackage.BLOCK__BLOCKS);
     }
-    return expressions;
+    return blocks;
   }
 
   /**
@@ -141,8 +92,8 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block
   {
     switch (featureID)
     {
-      case MontiArcDSLPackage.BLOCK__EXPRESSIONS:
-        return ((InternalEList<?>)getExpressions()).basicRemove(otherEnd, msgs);
+      case MontiArcDSLPackage.BLOCK__BLOCKS:
+        return ((InternalEList<?>)getBlocks()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -157,10 +108,8 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block
   {
     switch (featureID)
     {
-      case MontiArcDSLPackage.BLOCK__NAME:
-        return isName();
-      case MontiArcDSLPackage.BLOCK__EXPRESSIONS:
-        return getExpressions();
+      case MontiArcDSLPackage.BLOCK__BLOCKS:
+        return getBlocks();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -176,12 +125,9 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block
   {
     switch (featureID)
     {
-      case MontiArcDSLPackage.BLOCK__NAME:
-        setName((Boolean)newValue);
-        return;
-      case MontiArcDSLPackage.BLOCK__EXPRESSIONS:
-        getExpressions().clear();
-        getExpressions().addAll((Collection<? extends Expression>)newValue);
+      case MontiArcDSLPackage.BLOCK__BLOCKS:
+        getBlocks().clear();
+        getBlocks().addAll((Collection<? extends BlockStatement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -197,11 +143,8 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block
   {
     switch (featureID)
     {
-      case MontiArcDSLPackage.BLOCK__NAME:
-        setName(NAME_EDEFAULT);
-        return;
-      case MontiArcDSLPackage.BLOCK__EXPRESSIONS:
-        getExpressions().clear();
+      case MontiArcDSLPackage.BLOCK__BLOCKS:
+        getBlocks().clear();
         return;
     }
     super.eUnset(featureID);
@@ -217,29 +160,10 @@ public class BlockImpl extends MinimalEObjectImpl.Container implements Block
   {
     switch (featureID)
     {
-      case MontiArcDSLPackage.BLOCK__NAME:
-        return name != NAME_EDEFAULT;
-      case MontiArcDSLPackage.BLOCK__EXPRESSIONS:
-        return expressions != null && !expressions.isEmpty();
+      case MontiArcDSLPackage.BLOCK__BLOCKS:
+        return blocks != null && !blocks.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(')');
-    return result.toString();
   }
 
 } //BlockImpl

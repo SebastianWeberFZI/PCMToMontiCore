@@ -4,6 +4,7 @@
 package org.palladiosimulator.xtext.motiarc.montiArcDSL.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -11,6 +12,9 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.palladiosimulator.xtext.motiarc.mcBasics.Expression;
+
+import org.palladiosimulator.xtext.motiarc.montiArcDSL.Block;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.MontiArcDSLPackage;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.State;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.Transition;
@@ -24,9 +28,9 @@ import org.palladiosimulator.xtext.motiarc.montiArcDSL.Transition;
  * </p>
  * <ul>
  *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.TransitionImpl#getSource <em>Source</em>}</li>
- *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.TransitionImpl#isTarget <em>Target</em>}</li>
- *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.TransitionImpl#isExpression <em>Expression</em>}</li>
- *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.TransitionImpl#isReaction <em>Reaction</em>}</li>
+ *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.TransitionImpl#getTarget <em>Target</em>}</li>
+ *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.TransitionImpl#getExpression <em>Expression</em>}</li>
+ *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.TransitionImpl#getReaction <em>Reaction</em>}</li>
  * </ul>
  *
  * @generated
@@ -44,64 +48,34 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
   protected State source;
 
   /**
-   * The default value of the '{@link #isTarget() <em>Target</em>}' attribute.
+   * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isTarget()
+   * @see #getTarget()
    * @generated
    * @ordered
    */
-  protected static final boolean TARGET_EDEFAULT = false;
+  protected State target;
 
   /**
-   * The cached value of the '{@link #isTarget() <em>Target</em>}' attribute.
+   * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isTarget()
+   * @see #getExpression()
    * @generated
    * @ordered
    */
-  protected boolean target = TARGET_EDEFAULT;
+  protected Expression expression;
 
   /**
-   * The default value of the '{@link #isExpression() <em>Expression</em>}' attribute.
+   * The cached value of the '{@link #getReaction() <em>Reaction</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isExpression()
+   * @see #getReaction()
    * @generated
    * @ordered
    */
-  protected static final boolean EXPRESSION_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isExpression() <em>Expression</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isExpression()
-   * @generated
-   * @ordered
-   */
-  protected boolean expression = EXPRESSION_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #isReaction() <em>Reaction</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isReaction()
-   * @generated
-   * @ordered
-   */
-  protected static final boolean REACTION_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isReaction() <em>Reaction</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isReaction()
-   * @generated
-   * @ordered
-   */
-  protected boolean reaction = REACTION_EDEFAULT;
+  protected Block reaction;
 
   /**
    * <!-- begin-user-doc -->
@@ -175,7 +149,27 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
    * @generated
    */
   @Override
-  public boolean isTarget()
+  public State getTarget()
+  {
+    if (target != null && target.eIsProxy())
+    {
+      InternalEObject oldTarget = (InternalEObject)target;
+      target = (State)eResolveProxy(oldTarget);
+      if (target != oldTarget)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, MontiArcDSLPackage.TRANSITION__TARGET, oldTarget, target));
+      }
+    }
+    return target;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public State basicGetTarget()
   {
     return target;
   }
@@ -186,9 +180,9 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
    * @generated
    */
   @Override
-  public void setTarget(boolean newTarget)
+  public void setTarget(State newTarget)
   {
-    boolean oldTarget = target;
+    State oldTarget = target;
     target = newTarget;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, MontiArcDSLPackage.TRANSITION__TARGET, oldTarget, target));
@@ -200,7 +194,7 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
    * @generated
    */
   @Override
-  public boolean isExpression()
+  public Expression getExpression()
   {
     return expression;
   }
@@ -210,13 +204,16 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setExpression(boolean newExpression)
+  public NotificationChain basicSetExpression(Expression newExpression, NotificationChain msgs)
   {
-    boolean oldExpression = expression;
+    Expression oldExpression = expression;
     expression = newExpression;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MontiArcDSLPackage.TRANSITION__EXPRESSION, oldExpression, expression));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MontiArcDSLPackage.TRANSITION__EXPRESSION, oldExpression, newExpression);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -225,7 +222,29 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
    * @generated
    */
   @Override
-  public boolean isReaction()
+  public void setExpression(Expression newExpression)
+  {
+    if (newExpression != expression)
+    {
+      NotificationChain msgs = null;
+      if (expression != null)
+        msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MontiArcDSLPackage.TRANSITION__EXPRESSION, null, msgs);
+      if (newExpression != null)
+        msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MontiArcDSLPackage.TRANSITION__EXPRESSION, null, msgs);
+      msgs = basicSetExpression(newExpression, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MontiArcDSLPackage.TRANSITION__EXPRESSION, newExpression, newExpression));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Block getReaction()
   {
     return reaction;
   }
@@ -235,13 +254,56 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public void setReaction(boolean newReaction)
+  public NotificationChain basicSetReaction(Block newReaction, NotificationChain msgs)
   {
-    boolean oldReaction = reaction;
+    Block oldReaction = reaction;
     reaction = newReaction;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MontiArcDSLPackage.TRANSITION__REACTION, oldReaction, reaction));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MontiArcDSLPackage.TRANSITION__REACTION, oldReaction, newReaction);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setReaction(Block newReaction)
+  {
+    if (newReaction != reaction)
+    {
+      NotificationChain msgs = null;
+      if (reaction != null)
+        msgs = ((InternalEObject)reaction).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MontiArcDSLPackage.TRANSITION__REACTION, null, msgs);
+      if (newReaction != null)
+        msgs = ((InternalEObject)newReaction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MontiArcDSLPackage.TRANSITION__REACTION, null, msgs);
+      msgs = basicSetReaction(newReaction, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MontiArcDSLPackage.TRANSITION__REACTION, newReaction, newReaction));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case MontiArcDSLPackage.TRANSITION__EXPRESSION:
+        return basicSetExpression(null, msgs);
+      case MontiArcDSLPackage.TRANSITION__REACTION:
+        return basicSetReaction(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -258,11 +320,12 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
         if (resolve) return getSource();
         return basicGetSource();
       case MontiArcDSLPackage.TRANSITION__TARGET:
-        return isTarget();
+        if (resolve) return getTarget();
+        return basicGetTarget();
       case MontiArcDSLPackage.TRANSITION__EXPRESSION:
-        return isExpression();
+        return getExpression();
       case MontiArcDSLPackage.TRANSITION__REACTION:
-        return isReaction();
+        return getReaction();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -281,13 +344,13 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
         setSource((State)newValue);
         return;
       case MontiArcDSLPackage.TRANSITION__TARGET:
-        setTarget((Boolean)newValue);
+        setTarget((State)newValue);
         return;
       case MontiArcDSLPackage.TRANSITION__EXPRESSION:
-        setExpression((Boolean)newValue);
+        setExpression((Expression)newValue);
         return;
       case MontiArcDSLPackage.TRANSITION__REACTION:
-        setReaction((Boolean)newValue);
+        setReaction((Block)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -307,13 +370,13 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
         setSource((State)null);
         return;
       case MontiArcDSLPackage.TRANSITION__TARGET:
-        setTarget(TARGET_EDEFAULT);
+        setTarget((State)null);
         return;
       case MontiArcDSLPackage.TRANSITION__EXPRESSION:
-        setExpression(EXPRESSION_EDEFAULT);
+        setExpression((Expression)null);
         return;
       case MontiArcDSLPackage.TRANSITION__REACTION:
-        setReaction(REACTION_EDEFAULT);
+        setReaction((Block)null);
         return;
     }
     super.eUnset(featureID);
@@ -332,34 +395,13 @@ public class TransitionImpl extends MinimalEObjectImpl.Container implements Tran
       case MontiArcDSLPackage.TRANSITION__SOURCE:
         return source != null;
       case MontiArcDSLPackage.TRANSITION__TARGET:
-        return target != TARGET_EDEFAULT;
+        return target != null;
       case MontiArcDSLPackage.TRANSITION__EXPRESSION:
-        return expression != EXPRESSION_EDEFAULT;
+        return expression != null;
       case MontiArcDSLPackage.TRANSITION__REACTION:
-        return reaction != REACTION_EDEFAULT;
+        return reaction != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (target: ");
-    result.append(target);
-    result.append(", expression: ");
-    result.append(expression);
-    result.append(", reaction: ");
-    result.append(reaction);
-    result.append(')');
-    return result.toString();
   }
 
 } //TransitionImpl

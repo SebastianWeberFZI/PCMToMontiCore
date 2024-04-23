@@ -6,7 +6,6 @@ import org.eclipse.xtext.xtext.generator.model.project.*
 var rootPath = ".."
 
 Workflow {
-	
 	component = XtextGenerator {
 		configuration = {
 			project = StandardProjectConfig {
@@ -46,9 +45,28 @@ Workflow {
 			}
 		}
 		language = StandardLanguage {
+			name = "org.palladiosimulator.xtext.motiarc.MontiCoreClassDiagram"
+			fileExtensions = "cd"
+			
+			serializer = {
+				generateStub = false
+			}
+			validator = {
+				// composedCheck = "org.eclipse.xtext.validation.NamesAreUniqueValidator"
+				// Generates checks for @Deprecated grammar annotations, an IssueProvider and a corresponding PropertyPage
+				generateDeprecationValidation = true
+			}
+			generator = {
+				generateXtendStub = true
+			}
+			junitSupport = {
+				junitVersion = "5"
+			}
+		}
+		language = StandardLanguage {
 			name = "org.palladiosimulator.xtext.motiarc.MontiArcDSL"
 			fileExtensions = "arc"
-
+			referencedResource = "platform:/resource/org.palladiosimulator.xtext.motiarc/model/generated/MontiCoreClassDiagram.genmodel"
 			serializer = {
 				generateStub = false
 			}

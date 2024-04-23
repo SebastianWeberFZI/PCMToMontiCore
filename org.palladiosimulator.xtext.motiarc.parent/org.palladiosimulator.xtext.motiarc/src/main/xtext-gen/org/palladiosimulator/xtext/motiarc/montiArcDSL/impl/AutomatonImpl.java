@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.Automaton;
-import org.palladiosimulator.xtext.motiarc.montiArcDSL.InitialState;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.MontiArcDSLPackage;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.State;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.Transition;
@@ -32,9 +31,9 @@ import org.palladiosimulator.xtext.motiarc.montiArcDSL.Transition;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.AutomatonImpl#isSync <em>Sync</em>}</li>
  *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.AutomatonImpl#isName <em>Name</em>}</li>
  *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.AutomatonImpl#getStates <em>States</em>}</li>
- *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.AutomatonImpl#getInitialStates <em>Initial States</em>}</li>
  *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.AutomatonImpl#getTransitions <em>Transitions</em>}</li>
  * </ul>
  *
@@ -42,6 +41,26 @@ import org.palladiosimulator.xtext.motiarc.montiArcDSL.Transition;
  */
 public class AutomatonImpl extends ArcElementImpl implements Automaton
 {
+  /**
+   * The default value of the '{@link #isSync() <em>Sync</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isSync()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean SYNC_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isSync() <em>Sync</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isSync()
+   * @generated
+   * @ordered
+   */
+  protected boolean sync = SYNC_EDEFAULT;
+
   /**
    * The default value of the '{@link #isName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -73,16 +92,6 @@ public class AutomatonImpl extends ArcElementImpl implements Automaton
   protected EList<State> states;
 
   /**
-   * The cached value of the '{@link #getInitialStates() <em>Initial States</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getInitialStates()
-   * @generated
-   * @ordered
-   */
-  protected EList<InitialState> initialStates;
-
-  /**
    * The cached value of the '{@link #getTransitions() <em>Transitions</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -111,6 +120,31 @@ public class AutomatonImpl extends ArcElementImpl implements Automaton
   protected EClass eStaticClass()
   {
     return MontiArcDSLPackage.Literals.AUTOMATON;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public boolean isSync()
+  {
+    return sync;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setSync(boolean newSync)
+  {
+    boolean oldSync = sync;
+    sync = newSync;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MontiArcDSLPackage.AUTOMATON__SYNC, oldSync, sync));
   }
 
   /**
@@ -159,21 +193,6 @@ public class AutomatonImpl extends ArcElementImpl implements Automaton
    * @generated
    */
   @Override
-  public EList<InitialState> getInitialStates()
-  {
-    if (initialStates == null)
-    {
-      initialStates = new EObjectContainmentEList<InitialState>(InitialState.class, this, MontiArcDSLPackage.AUTOMATON__INITIAL_STATES);
-    }
-    return initialStates;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EList<Transition> getTransitions()
   {
     if (transitions == null)
@@ -195,8 +214,6 @@ public class AutomatonImpl extends ArcElementImpl implements Automaton
     {
       case MontiArcDSLPackage.AUTOMATON__STATES:
         return ((InternalEList<?>)getStates()).basicRemove(otherEnd, msgs);
-      case MontiArcDSLPackage.AUTOMATON__INITIAL_STATES:
-        return ((InternalEList<?>)getInitialStates()).basicRemove(otherEnd, msgs);
       case MontiArcDSLPackage.AUTOMATON__TRANSITIONS:
         return ((InternalEList<?>)getTransitions()).basicRemove(otherEnd, msgs);
     }
@@ -213,12 +230,12 @@ public class AutomatonImpl extends ArcElementImpl implements Automaton
   {
     switch (featureID)
     {
+      case MontiArcDSLPackage.AUTOMATON__SYNC:
+        return isSync();
       case MontiArcDSLPackage.AUTOMATON__NAME:
         return isName();
       case MontiArcDSLPackage.AUTOMATON__STATES:
         return getStates();
-      case MontiArcDSLPackage.AUTOMATON__INITIAL_STATES:
-        return getInitialStates();
       case MontiArcDSLPackage.AUTOMATON__TRANSITIONS:
         return getTransitions();
     }
@@ -236,16 +253,15 @@ public class AutomatonImpl extends ArcElementImpl implements Automaton
   {
     switch (featureID)
     {
+      case MontiArcDSLPackage.AUTOMATON__SYNC:
+        setSync((Boolean)newValue);
+        return;
       case MontiArcDSLPackage.AUTOMATON__NAME:
         setName((Boolean)newValue);
         return;
       case MontiArcDSLPackage.AUTOMATON__STATES:
         getStates().clear();
         getStates().addAll((Collection<? extends State>)newValue);
-        return;
-      case MontiArcDSLPackage.AUTOMATON__INITIAL_STATES:
-        getInitialStates().clear();
-        getInitialStates().addAll((Collection<? extends InitialState>)newValue);
         return;
       case MontiArcDSLPackage.AUTOMATON__TRANSITIONS:
         getTransitions().clear();
@@ -265,14 +281,14 @@ public class AutomatonImpl extends ArcElementImpl implements Automaton
   {
     switch (featureID)
     {
+      case MontiArcDSLPackage.AUTOMATON__SYNC:
+        setSync(SYNC_EDEFAULT);
+        return;
       case MontiArcDSLPackage.AUTOMATON__NAME:
         setName(NAME_EDEFAULT);
         return;
       case MontiArcDSLPackage.AUTOMATON__STATES:
         getStates().clear();
-        return;
-      case MontiArcDSLPackage.AUTOMATON__INITIAL_STATES:
-        getInitialStates().clear();
         return;
       case MontiArcDSLPackage.AUTOMATON__TRANSITIONS:
         getTransitions().clear();
@@ -291,12 +307,12 @@ public class AutomatonImpl extends ArcElementImpl implements Automaton
   {
     switch (featureID)
     {
+      case MontiArcDSLPackage.AUTOMATON__SYNC:
+        return sync != SYNC_EDEFAULT;
       case MontiArcDSLPackage.AUTOMATON__NAME:
         return name != NAME_EDEFAULT;
       case MontiArcDSLPackage.AUTOMATON__STATES:
         return states != null && !states.isEmpty();
-      case MontiArcDSLPackage.AUTOMATON__INITIAL_STATES:
-        return initialStates != null && !initialStates.isEmpty();
       case MontiArcDSLPackage.AUTOMATON__TRANSITIONS:
         return transitions != null && !transitions.isEmpty();
     }
@@ -314,7 +330,9 @@ public class AutomatonImpl extends ArcElementImpl implements Automaton
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
+    result.append(" (sync: ");
+    result.append(sync);
+    result.append(", name: ");
     result.append(name);
     result.append(')');
     return result.toString();

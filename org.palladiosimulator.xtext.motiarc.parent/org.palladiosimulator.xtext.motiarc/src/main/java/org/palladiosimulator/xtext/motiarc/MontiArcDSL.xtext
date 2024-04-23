@@ -3,6 +3,8 @@ grammar org.palladiosimulator.xtext.motiarc.MontiArcDSL with org.palladiosimulat
 //r MontiArc with MCBasics
 generate montiArcDSL "http://www.palladiosimulator.org/xtext/motiarc/MontiArcDSL"
 
+import "http://www.palladiosimulator.org/xtext/monticore/classdiagram" as cd
+
 MACompilationUnit:
 	package=Package importStatements+=ImportStatements*
 	component=Component;
@@ -18,6 +20,10 @@ Signature:
 
 Parameters:
 	parameters+=Parameter ("," parameters+=Parameter)*;
+	
+ComponentType:
+	type = ([Component])
+;
 
 Parameter:
 	type=Type name=ID ("=" expression?=Expression)?;
@@ -30,38 +36,64 @@ SubComponent:
 	"component" type=Type arguments?=Arguments? instances=Names ";";
 
 Connector:
-	"connect" source=ID "->" targets=Names ";";
+	source=(ID|MCQUALIFIEDNAME) "->" targets=Names ";";
 
 Ports:
 	"port" ports+=Port ("," ports+=Port)* ";";
 
 Port:
-	(sync?=SYNC)(in?="in" | out?="out") type=Type names?=Names? ;
+	(sync?=SYNC)?(in?="in" | out?="out") (type=Type|datatype=([cd::CDDefinition])) names?=Names? ;
 
 Names:
-	names+=ID ("," names+=ID)*;
+	names+=(ID|MCQUALIFIEDNAME) ("," names+=(ID|MCQUALIFIEDNAME))*;
 
 // Embedded Behavior Elements
 Variable:
-	type=Type names?=Names? ";";
+	type=(Type|ComponentType) names?=Names? ('('parameters+=Expression(','parameters+=Expression)*')')?";";
 
 Automaton:
-	{Automaton} "automaton" name?=ID? "{" (states+=State |
-	initialStates+=InitialState | transitions+=Transition)* "}";
+	{Automaton} (sync?=SYNC)? "automaton" name?=ID? "{" (states+=State |
+	transitions+=Transition)* "}";
 
 State:
-	"state" name=ID ";";
+	SCState | InvState
+;
 
-InitialState:
-	"initial" name=ID ("/" block?=Block)? ";";
+SCState:
+	(modifier+=SCModifier)* (ante=SCSAnte)? "state" name=ID ";";
+
+InvState:
+	(modifier+=SCModifier)* "state" name=ID '[' expression=Expression ']'";";
+
+
+SCSAnte:
+	{SCSAnte} (block=Block)
+;
+
+enum SCModifier:
+	INITIAL='initial' | FINAL='final'	
+;
+
 
 Transition:
-	source=[State] ("->" target?=[State])?
-	("[" expression?=Expression "]")?("/" reaction?=Block)?";";
+	source=[State] ("->" target=[State])?
+	("[" expression=Expression "]")?("/" reaction=Block)?";";
 
 Block:
-	"{" (name?=ID "=")? expressions+=Expression
-	("," expressions+=Expression)* "}";
+	{Block} '{' blocks+=BlockStatement* '}';
+	
+BlockStatement:
+	SimpleInit | SimpleExpression
+;
+
+SimpleExpression:
+	expression=Expression ';'
+;
+
+SimpleInit:
+	name=ID "=" expressions+=Expression';'
+;
+	
 	
 terminal SYNC:
 	"<<sync>>"

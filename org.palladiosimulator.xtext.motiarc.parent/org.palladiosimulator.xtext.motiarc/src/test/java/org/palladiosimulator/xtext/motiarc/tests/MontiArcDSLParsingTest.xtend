@@ -49,7 +49,18 @@ class MontiArcDSLParsingTest {
 		Assertions.assertNotNull(result)
 		val errors = result.eResource.errors
 		Assertions.assertTrue(errors.isEmpty, '''Unexpected errors: «errors.join(", ")»''')
-		
-		
 	}
+
+		@Test
+	def void parseBumpControl() {
+		val rs = rsp.get
+		// better use a file uri, but your question lacks context
+		//val r = rs.getResource(URI.createFileURI("Logger.arc"), true)
+		val result = parseHelper.parse(new FileInputStream("src/test/resources/BumpControl.arc"), URI.createFileURI("src/test/resources/BumpControl.arc"),null, rs)
+		Assertions.assertNotNull(result)
+		val errors = result.eResource.errors
+		Assertions.assertTrue(errors.isEmpty, '''Unexpected errors: «errors.join(", ")»''')
+	}
+	
+
 }

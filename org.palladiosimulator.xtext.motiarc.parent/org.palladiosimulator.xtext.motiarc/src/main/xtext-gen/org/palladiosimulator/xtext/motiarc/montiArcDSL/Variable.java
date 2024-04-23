@@ -3,7 +3,11 @@
  */
 package org.palladiosimulator.xtext.motiarc.montiArcDSL;
 
-import org.palladiosimulator.xtext.motiarc.mcBasics.Type;
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EObject;
+
+import org.palladiosimulator.xtext.motiarc.mcBasics.Expression;
 
 /**
  * <!-- begin-user-doc -->
@@ -16,6 +20,7 @@ import org.palladiosimulator.xtext.motiarc.mcBasics.Type;
  * <ul>
  *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Variable#getType <em>Type</em>}</li>
  *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Variable#isNames <em>Names</em>}</li>
+ *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Variable#getParameters <em>Parameters</em>}</li>
  * </ul>
  *
  * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.MontiArcDSLPackage#getVariable()
@@ -29,12 +34,12 @@ public interface Variable extends ArcElement
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Type</em>' containment reference.
-   * @see #setType(Type)
+   * @see #setType(EObject)
    * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.MontiArcDSLPackage#getVariable_Type()
    * @model containment="true"
    * @generated
    */
-  Type getType();
+  EObject getType();
 
   /**
    * Sets the value of the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Variable#getType <em>Type</em>}' containment reference.
@@ -44,7 +49,7 @@ public interface Variable extends ArcElement
    * @see #getType()
    * @generated
    */
-  void setType(Type value);
+  void setType(EObject value);
 
   /**
    * Returns the value of the '<em><b>Names</b></em>' attribute.
@@ -67,5 +72,17 @@ public interface Variable extends ArcElement
    * @generated
    */
   void setNames(boolean value);
+
+  /**
+   * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
+   * The list contents are of type {@link org.palladiosimulator.xtext.motiarc.mcBasics.Expression}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Parameters</em>' containment reference list.
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.MontiArcDSLPackage#getVariable_Parameters()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Expression> getParameters();
 
 } // Variable

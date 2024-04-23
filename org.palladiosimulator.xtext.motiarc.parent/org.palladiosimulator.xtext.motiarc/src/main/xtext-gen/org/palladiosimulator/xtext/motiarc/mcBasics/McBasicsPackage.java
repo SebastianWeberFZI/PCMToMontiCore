@@ -5,6 +5,7 @@ package org.palladiosimulator.xtext.motiarc.mcBasics;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -170,6 +171,34 @@ public interface McBasicsPackage extends EPackage
   int MC_PRIMITIVE_TYPE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link org.palladiosimulator.xtext.motiarc.mcBasics.impl.MCObjectTypeImpl <em>MC Object Type</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.MCObjectTypeImpl
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getMCObjectType()
+   * @generated
+   */
+  int MC_OBJECT_TYPE = 4;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MC_OBJECT_TYPE__TYPE = TYPE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>MC Object Type</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MC_OBJECT_TYPE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link org.palladiosimulator.xtext.motiarc.mcBasics.impl.MCVoidTypeImpl <em>MC Void Type</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -177,7 +206,7 @@ public interface McBasicsPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getMCVoidType()
    * @generated
    */
-  int MC_VOID_TYPE = 4;
+  int MC_VOID_TYPE = 5;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -205,7 +234,7 @@ public interface McBasicsPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getMCCollectionType()
    * @generated
    */
-  int MC_COLLECTION_TYPE = 5;
+  int MC_COLLECTION_TYPE = 6;
 
   /**
    * The feature id for the '<em><b>Collection</b></em>' attribute.
@@ -242,7 +271,7 @@ public interface McBasicsPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getMCArrayType()
    * @generated
    */
-  int MC_ARRAY_TYPE = 6;
+  int MC_ARRAY_TYPE = 7;
 
   /**
    * The number of structural features of the '<em>MC Array Type</em>' class.
@@ -261,7 +290,7 @@ public interface McBasicsPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getExpression()
    * @generated
    */
-  int EXPRESSION = 7;
+  int EXPRESSION = 8;
 
   /**
    * The number of structural features of the '<em>Expression</em>' class.
@@ -280,7 +309,7 @@ public interface McBasicsPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getLiteralExpression()
    * @generated
    */
-  int LITERAL_EXPRESSION = 8;
+  int LITERAL_EXPRESSION = 9;
 
   /**
    * The number of structural features of the '<em>Literal Expression</em>' class.
@@ -299,7 +328,7 @@ public interface McBasicsPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getNumberLiteral()
    * @generated
    */
-  int NUMBER_LITERAL = 9;
+  int NUMBER_LITERAL = 10;
 
   /**
    * The feature id for the '<em><b>Literal</b></em>' attribute.
@@ -327,7 +356,7 @@ public interface McBasicsPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getStringLiteral()
    * @generated
    */
-  int STRING_LITERAL = 10;
+  int STRING_LITERAL = 11;
 
   /**
    * The feature id for the '<em><b>Literal</b></em>' attribute.
@@ -355,7 +384,7 @@ public interface McBasicsPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getNameExpression()
    * @generated
    */
-  int NAME_EXPRESSION = 11;
+  int NAME_EXPRESSION = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -367,13 +396,68 @@ public interface McBasicsPackage extends EPackage
   int NAME_EXPRESSION__NAME = EXPRESSION_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Qualifiedname</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAME_EXPRESSION__QUALIFIEDNAME = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
    * The number of structural features of the '<em>Name Expression</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int NAME_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
+  int NAME_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link org.palladiosimulator.xtext.motiarc.mcBasics.impl.BinaryExpressionImpl <em>Binary Expression</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.BinaryExpressionImpl
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getBinaryExpression()
+   * @generated
+   */
+  int BINARY_EXPRESSION = 13;
+
+  /**
+   * The feature id for the '<em><b>Literal1</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINARY_EXPRESSION__LITERAL1 = EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINARY_EXPRESSION__OP = EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Literal2</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINARY_EXPRESSION__LITERAL2 = EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Binary Expression</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BINARY_EXPRESSION_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link org.palladiosimulator.xtext.motiarc.mcBasics.impl.ArgumentsImpl <em>Arguments</em>}' class.
@@ -383,7 +467,7 @@ public interface McBasicsPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getArguments()
    * @generated
    */
-  int ARGUMENTS = 12;
+  int ARGUMENTS = 14;
 
   /**
    * The feature id for the '<em><b>Arguments</b></em>' containment reference list.
@@ -411,7 +495,7 @@ public interface McBasicsPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getArgument()
    * @generated
    */
-  int ARGUMENT = 13;
+  int ARGUMENT = 15;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -440,6 +524,16 @@ public interface McBasicsPackage extends EPackage
    */
   int ARGUMENT_FEATURE_COUNT = 2;
 
+  /**
+   * The meta object id for the '{@link org.palladiosimulator.xtext.motiarc.mcBasics.Operator <em>Operator</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.Operator
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getOperator()
+   * @generated
+   */
+  int OPERATOR = 16;
+
 
   /**
    * Returns the meta object for class '{@link org.palladiosimulator.xtext.motiarc.mcBasics.ImportStatements <em>Import Statements</em>}'.
@@ -463,11 +557,11 @@ public interface McBasicsPackage extends EPackage
   EAttribute getImportStatements_ImportUri();
 
   /**
-   * Returns the meta object for the attribute '{@link org.palladiosimulator.xtext.motiarc.mcBasics.ImportStatements#getStar <em>Star</em>}'.
+   * Returns the meta object for the attribute '{@link org.palladiosimulator.xtext.motiarc.mcBasics.ImportStatements#isStar <em>Star</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Star</em>'.
-   * @see org.palladiosimulator.xtext.motiarc.mcBasics.ImportStatements#getStar()
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.ImportStatements#isStar()
    * @see #getImportStatements()
    * @generated
    */
@@ -524,6 +618,27 @@ public interface McBasicsPackage extends EPackage
    * @generated
    */
   EAttribute getMCPrimitiveType_Type();
+
+  /**
+   * Returns the meta object for class '{@link org.palladiosimulator.xtext.motiarc.mcBasics.MCObjectType <em>MC Object Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>MC Object Type</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.MCObjectType
+   * @generated
+   */
+  EClass getMCObjectType();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.palladiosimulator.xtext.motiarc.mcBasics.MCObjectType#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.MCObjectType#getType()
+   * @see #getMCObjectType()
+   * @generated
+   */
+  EAttribute getMCObjectType_Type();
 
   /**
    * Returns the meta object for class '{@link org.palladiosimulator.xtext.motiarc.mcBasics.MCVoidType <em>MC Void Type</em>}'.
@@ -672,6 +787,60 @@ public interface McBasicsPackage extends EPackage
   EAttribute getNameExpression_Name();
 
   /**
+   * Returns the meta object for the attribute '{@link org.palladiosimulator.xtext.motiarc.mcBasics.NameExpression#getQualifiedname <em>Qualifiedname</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Qualifiedname</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.NameExpression#getQualifiedname()
+   * @see #getNameExpression()
+   * @generated
+   */
+  EAttribute getNameExpression_Qualifiedname();
+
+  /**
+   * Returns the meta object for class '{@link org.palladiosimulator.xtext.motiarc.mcBasics.BinaryExpression <em>Binary Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Binary Expression</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.BinaryExpression
+   * @generated
+   */
+  EClass getBinaryExpression();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.palladiosimulator.xtext.motiarc.mcBasics.BinaryExpression#getLiteral1 <em>Literal1</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Literal1</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.BinaryExpression#getLiteral1()
+   * @see #getBinaryExpression()
+   * @generated
+   */
+  EReference getBinaryExpression_Literal1();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.palladiosimulator.xtext.motiarc.mcBasics.BinaryExpression#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.BinaryExpression#getOp()
+   * @see #getBinaryExpression()
+   * @generated
+   */
+  EAttribute getBinaryExpression_Op();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.palladiosimulator.xtext.motiarc.mcBasics.BinaryExpression#getLiteral2 <em>Literal2</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Literal2</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.BinaryExpression#getLiteral2()
+   * @see #getBinaryExpression()
+   * @generated
+   */
+  EReference getBinaryExpression_Literal2();
+
+  /**
    * Returns the meta object for class '{@link org.palladiosimulator.xtext.motiarc.mcBasics.Arguments <em>Arguments</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -723,6 +892,16 @@ public interface McBasicsPackage extends EPackage
    * @generated
    */
   EReference getArgument_Expression();
+
+  /**
+   * Returns the meta object for enum '{@link org.palladiosimulator.xtext.motiarc.mcBasics.Operator <em>Operator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Operator</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.Operator
+   * @generated
+   */
+  EEnum getOperator();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -818,6 +997,24 @@ public interface McBasicsPackage extends EPackage
      * @generated
      */
     EAttribute MC_PRIMITIVE_TYPE__TYPE = eINSTANCE.getMCPrimitiveType_Type();
+
+    /**
+     * The meta object literal for the '{@link org.palladiosimulator.xtext.motiarc.mcBasics.impl.MCObjectTypeImpl <em>MC Object Type</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.MCObjectTypeImpl
+     * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getMCObjectType()
+     * @generated
+     */
+    EClass MC_OBJECT_TYPE = eINSTANCE.getMCObjectType();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MC_OBJECT_TYPE__TYPE = eINSTANCE.getMCObjectType_Type();
 
     /**
      * The meta object literal for the '{@link org.palladiosimulator.xtext.motiarc.mcBasics.impl.MCVoidTypeImpl <em>MC Void Type</em>}' class.
@@ -948,6 +1145,48 @@ public interface McBasicsPackage extends EPackage
     EAttribute NAME_EXPRESSION__NAME = eINSTANCE.getNameExpression_Name();
 
     /**
+     * The meta object literal for the '<em><b>Qualifiedname</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NAME_EXPRESSION__QUALIFIEDNAME = eINSTANCE.getNameExpression_Qualifiedname();
+
+    /**
+     * The meta object literal for the '{@link org.palladiosimulator.xtext.motiarc.mcBasics.impl.BinaryExpressionImpl <em>Binary Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.BinaryExpressionImpl
+     * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getBinaryExpression()
+     * @generated
+     */
+    EClass BINARY_EXPRESSION = eINSTANCE.getBinaryExpression();
+
+    /**
+     * The meta object literal for the '<em><b>Literal1</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BINARY_EXPRESSION__LITERAL1 = eINSTANCE.getBinaryExpression_Literal1();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BINARY_EXPRESSION__OP = eINSTANCE.getBinaryExpression_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Literal2</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BINARY_EXPRESSION__LITERAL2 = eINSTANCE.getBinaryExpression_Literal2();
+
+    /**
      * The meta object literal for the '{@link org.palladiosimulator.xtext.motiarc.mcBasics.impl.ArgumentsImpl <em>Arguments</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -990,6 +1229,16 @@ public interface McBasicsPackage extends EPackage
      * @generated
      */
     EReference ARGUMENT__EXPRESSION = eINSTANCE.getArgument_Expression();
+
+    /**
+     * The meta object literal for the '{@link org.palladiosimulator.xtext.motiarc.mcBasics.Operator <em>Operator</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.palladiosimulator.xtext.motiarc.mcBasics.Operator
+     * @see org.palladiosimulator.xtext.motiarc.mcBasics.impl.McBasicsPackageImpl#getOperator()
+     * @generated
+     */
+    EEnum OPERATOR = eINSTANCE.getOperator();
 
   }
 

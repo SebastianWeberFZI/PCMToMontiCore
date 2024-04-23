@@ -12,11 +12,13 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.palladiosimulator.xtext.motiarc.mcBasics.Argument;
 import org.palladiosimulator.xtext.motiarc.mcBasics.Arguments;
+import org.palladiosimulator.xtext.motiarc.mcBasics.BinaryExpression;
 import org.palladiosimulator.xtext.motiarc.mcBasics.Expression;
 import org.palladiosimulator.xtext.motiarc.mcBasics.ImportStatements;
 import org.palladiosimulator.xtext.motiarc.mcBasics.LiteralExpression;
 import org.palladiosimulator.xtext.motiarc.mcBasics.MCArrayType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.MCCollectionType;
+import org.palladiosimulator.xtext.motiarc.mcBasics.MCObjectType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.MCPrimitiveType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.MCVoidType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.McBasicsPackage;
@@ -109,6 +111,11 @@ public class McBasicsAdapterFactory extends AdapterFactoryImpl
         return createMCPrimitiveTypeAdapter();
       }
       @Override
+      public Adapter caseMCObjectType(MCObjectType object)
+      {
+        return createMCObjectTypeAdapter();
+      }
+      @Override
       public Adapter caseMCVoidType(MCVoidType object)
       {
         return createMCVoidTypeAdapter();
@@ -147,6 +154,11 @@ public class McBasicsAdapterFactory extends AdapterFactoryImpl
       public Adapter caseNameExpression(NameExpression object)
       {
         return createNameExpressionAdapter();
+      }
+      @Override
+      public Adapter caseBinaryExpression(BinaryExpression object)
+      {
+        return createBinaryExpressionAdapter();
       }
       @Override
       public Adapter caseArguments(Arguments object)
@@ -236,6 +248,21 @@ public class McBasicsAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createMCPrimitiveTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.palladiosimulator.xtext.motiarc.mcBasics.MCObjectType <em>MC Object Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.MCObjectType
+   * @generated
+   */
+  public Adapter createMCObjectTypeAdapter()
   {
     return null;
   }
@@ -356,6 +383,21 @@ public class McBasicsAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createNameExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.palladiosimulator.xtext.motiarc.mcBasics.BinaryExpression <em>Binary Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.palladiosimulator.xtext.motiarc.mcBasics.BinaryExpression
+   * @generated
+   */
+  public Adapter createBinaryExpressionAdapter()
   {
     return null;
   }

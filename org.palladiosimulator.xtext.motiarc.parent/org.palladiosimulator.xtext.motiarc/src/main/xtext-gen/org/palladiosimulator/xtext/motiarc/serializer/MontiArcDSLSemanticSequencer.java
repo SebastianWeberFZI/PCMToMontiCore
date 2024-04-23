@@ -15,8 +15,10 @@ import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.palladiosimulator.xtext.motiarc.mcBasics.Argument;
 import org.palladiosimulator.xtext.motiarc.mcBasics.Arguments;
+import org.palladiosimulator.xtext.motiarc.mcBasics.BinaryExpression;
 import org.palladiosimulator.xtext.motiarc.mcBasics.ImportStatements;
 import org.palladiosimulator.xtext.motiarc.mcBasics.MCCollectionType;
+import org.palladiosimulator.xtext.motiarc.mcBasics.MCObjectType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.MCPrimitiveType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.MCVoidType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.McBasicsPackage;
@@ -26,16 +28,20 @@ import org.palladiosimulator.xtext.motiarc.mcBasics.StringLiteral;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.Automaton;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.Block;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.Component;
+import org.palladiosimulator.xtext.motiarc.montiArcDSL.ComponentType;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.Connector;
-import org.palladiosimulator.xtext.motiarc.montiArcDSL.InitialState;
+import org.palladiosimulator.xtext.motiarc.montiArcDSL.InvState;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.MACompilationUnit;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.MontiArcDSLPackage;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.Names;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.Parameters;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.Port;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.Ports;
+import org.palladiosimulator.xtext.motiarc.montiArcDSL.SCSAnte;
+import org.palladiosimulator.xtext.motiarc.montiArcDSL.SCState;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.Signature;
-import org.palladiosimulator.xtext.motiarc.montiArcDSL.State;
+import org.palladiosimulator.xtext.motiarc.montiArcDSL.SimpleExpression;
+import org.palladiosimulator.xtext.motiarc.montiArcDSL.SimpleInit;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.SubComponent;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.Transition;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.Variable;
@@ -61,11 +67,17 @@ public class MontiArcDSLSemanticSequencer extends MCBasicsSemanticSequencer {
 			case McBasicsPackage.ARGUMENTS:
 				sequence_Arguments(context, (Arguments) semanticObject); 
 				return; 
+			case McBasicsPackage.BINARY_EXPRESSION:
+				sequence_BinaryExpression(context, (BinaryExpression) semanticObject); 
+				return; 
 			case McBasicsPackage.IMPORT_STATEMENTS:
 				sequence_ImportStatements(context, (ImportStatements) semanticObject); 
 				return; 
 			case McBasicsPackage.MC_COLLECTION_TYPE:
 				sequence_MCCollectionType(context, (MCCollectionType) semanticObject); 
+				return; 
+			case McBasicsPackage.MC_OBJECT_TYPE:
+				sequence_MCObjectType(context, (MCObjectType) semanticObject); 
 				return; 
 			case McBasicsPackage.MC_PRIMITIVE_TYPE:
 				sequence_MCPrimitiveType(context, (MCPrimitiveType) semanticObject); 
@@ -97,11 +109,14 @@ public class MontiArcDSLSemanticSequencer extends MCBasicsSemanticSequencer {
 			case MontiArcDSLPackage.COMPONENT:
 				sequence_Component(context, (Component) semanticObject); 
 				return; 
+			case MontiArcDSLPackage.COMPONENT_TYPE:
+				sequence_ComponentType(context, (ComponentType) semanticObject); 
+				return; 
 			case MontiArcDSLPackage.CONNECTOR:
 				sequence_Connector(context, (Connector) semanticObject); 
 				return; 
-			case MontiArcDSLPackage.INITIAL_STATE:
-				sequence_InitialState(context, (InitialState) semanticObject); 
+			case MontiArcDSLPackage.INV_STATE:
+				sequence_InvState(context, (InvState) semanticObject); 
 				return; 
 			case MontiArcDSLPackage.MA_COMPILATION_UNIT:
 				sequence_MACompilationUnit(context, (MACompilationUnit) semanticObject); 
@@ -121,11 +136,20 @@ public class MontiArcDSLSemanticSequencer extends MCBasicsSemanticSequencer {
 			case MontiArcDSLPackage.PORTS:
 				sequence_Ports(context, (Ports) semanticObject); 
 				return; 
+			case MontiArcDSLPackage.SCS_ANTE:
+				sequence_SCSAnte(context, (SCSAnte) semanticObject); 
+				return; 
+			case MontiArcDSLPackage.SC_STATE:
+				sequence_SCState(context, (SCState) semanticObject); 
+				return; 
 			case MontiArcDSLPackage.SIGNATURE:
 				sequence_Signature(context, (Signature) semanticObject); 
 				return; 
-			case MontiArcDSLPackage.STATE:
-				sequence_State(context, (State) semanticObject); 
+			case MontiArcDSLPackage.SIMPLE_EXPRESSION:
+				sequence_SimpleExpression(context, (SimpleExpression) semanticObject); 
+				return; 
+			case MontiArcDSLPackage.SIMPLE_INIT:
+				sequence_SimpleInit(context, (SimpleInit) semanticObject); 
 				return; 
 			case MontiArcDSLPackage.SUB_COMPONENT:
 				sequence_SubComponent(context, (SubComponent) semanticObject); 
@@ -148,7 +172,7 @@ public class MontiArcDSLSemanticSequencer extends MCBasicsSemanticSequencer {
 	 *     Automaton returns Automaton
 	 *
 	 * Constraint:
-	 *     (name?=ID? (states+=State | initialStates+=InitialState | transitions+=Transition)*)
+	 *     (sync?=SYNC? name?=ID? (states+=State | transitions+=Transition)*)
 	 * </pre>
 	 */
 	protected void sequence_Automaton(ISerializationContext context, Automaton semanticObject) {
@@ -162,11 +186,31 @@ public class MontiArcDSLSemanticSequencer extends MCBasicsSemanticSequencer {
 	 *     Block returns Block
 	 *
 	 * Constraint:
-	 *     (name?=ID? expressions+=Expression expressions+=Expression*)
+	 *     blocks+=BlockStatement*
 	 * </pre>
 	 */
 	protected void sequence_Block(ISerializationContext context, Block semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     ComponentType returns ComponentType
+	 *
+	 * Constraint:
+	 *     type=[Component|ID]
+	 * </pre>
+	 */
+	protected void sequence_ComponentType(ISerializationContext context, ComponentType semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, MontiArcDSLPackage.Literals.COMPONENT_TYPE__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MontiArcDSLPackage.Literals.COMPONENT_TYPE__TYPE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getComponentTypeAccess().getTypeComponentIDTerminalRuleCall_0_1(), semanticObject.eGet(MontiArcDSLPackage.Literals.COMPONENT_TYPE__TYPE, false));
+		feeder.finish();
 	}
 	
 	
@@ -192,33 +236,25 @@ public class MontiArcDSLSemanticSequencer extends MCBasicsSemanticSequencer {
 	 *     Connector returns Connector
 	 *
 	 * Constraint:
-	 *     (source=ID targets=Names)
+	 *     ((source=ID | source=MCQUALIFIEDNAME) targets=Names)
 	 * </pre>
 	 */
 	protected void sequence_Connector(ISerializationContext context, Connector semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MontiArcDSLPackage.Literals.CONNECTOR__SOURCE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MontiArcDSLPackage.Literals.CONNECTOR__SOURCE));
-			if (transientValues.isValueTransient(semanticObject, MontiArcDSLPackage.Literals.CONNECTOR__TARGETS) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MontiArcDSLPackage.Literals.CONNECTOR__TARGETS));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getConnectorAccess().getSourceIDTerminalRuleCall_1_0(), semanticObject.getSource());
-		feeder.accept(grammarAccess.getConnectorAccess().getTargetsNamesParserRuleCall_3_0(), semanticObject.getTargets());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     InitialState returns InitialState
+	 *     State returns InvState
+	 *     InvState returns InvState
 	 *
 	 * Constraint:
-	 *     (name=ID block?=Block?)
+	 *     (modifier+=SCModifier* name=ID expression=Expression)
 	 * </pre>
 	 */
-	protected void sequence_InitialState(ISerializationContext context, InitialState semanticObject) {
+	protected void sequence_InvState(ISerializationContext context, InvState semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -243,7 +279,7 @@ public class MontiArcDSLSemanticSequencer extends MCBasicsSemanticSequencer {
 	 *     Names returns Names
 	 *
 	 * Constraint:
-	 *     (names+=ID names+=ID*)
+	 *     ((names+=ID | names+=MCQUALIFIEDNAME) names+=ID? (names+=MCQUALIFIEDNAME? names+=ID?)*)
 	 * </pre>
 	 */
 	protected void sequence_Names(ISerializationContext context, Names semanticObject) {
@@ -285,7 +321,7 @@ public class MontiArcDSLSemanticSequencer extends MCBasicsSemanticSequencer {
 	 *     Port returns Port
 	 *
 	 * Constraint:
-	 *     (sync?=SYNC (in?='in' | out?='out') type=Type names?=Names?)
+	 *     (sync?=SYNC? (in?='in' | out?='out') (type=Type | datatype=[CDDefinition|ID]) names?=Names?)
 	 * </pre>
 	 */
 	protected void sequence_Port(ISerializationContext context, Port semanticObject) {
@@ -311,6 +347,41 @@ public class MontiArcDSLSemanticSequencer extends MCBasicsSemanticSequencer {
 	/**
 	 * <pre>
 	 * Contexts:
+	 *     SCSAnte returns SCSAnte
+	 *
+	 * Constraint:
+	 *     block=Block
+	 * </pre>
+	 */
+	protected void sequence_SCSAnte(ISerializationContext context, SCSAnte semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, MontiArcDSLPackage.Literals.SCS_ANTE__BLOCK) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MontiArcDSLPackage.Literals.SCS_ANTE__BLOCK));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getSCSAnteAccess().getBlockBlockParserRuleCall_1_0(), semanticObject.getBlock());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     State returns SCState
+	 *     SCState returns SCState
+	 *
+	 * Constraint:
+	 *     (modifier+=SCModifier* ante=SCSAnte? name=ID)
+	 * </pre>
+	 */
+	protected void sequence_SCState(ISerializationContext context, SCState semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
 	 *     Signature returns Signature
 	 *
 	 * Constraint:
@@ -325,20 +396,36 @@ public class MontiArcDSLSemanticSequencer extends MCBasicsSemanticSequencer {
 	/**
 	 * <pre>
 	 * Contexts:
-	 *     State returns State
+	 *     BlockStatement returns SimpleExpression
+	 *     SimpleExpression returns SimpleExpression
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     expression=Expression
 	 * </pre>
 	 */
-	protected void sequence_State(ISerializationContext context, State semanticObject) {
+	protected void sequence_SimpleExpression(ISerializationContext context, SimpleExpression semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MontiArcDSLPackage.Literals.STATE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MontiArcDSLPackage.Literals.STATE__NAME));
+			if (transientValues.isValueTransient(semanticObject, MontiArcDSLPackage.Literals.SIMPLE_EXPRESSION__EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MontiArcDSLPackage.Literals.SIMPLE_EXPRESSION__EXPRESSION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getStateAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getSimpleExpressionAccess().getExpressionExpressionParserRuleCall_0_0(), semanticObject.getExpression());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     BlockStatement returns SimpleInit
+	 *     SimpleInit returns SimpleInit
+	 *
+	 * Constraint:
+	 *     (name=ID expressions+=Expression)
+	 * </pre>
+	 */
+	protected void sequence_SimpleInit(ISerializationContext context, SimpleInit semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -363,7 +450,7 @@ public class MontiArcDSLSemanticSequencer extends MCBasicsSemanticSequencer {
 	 *     Transition returns Transition
 	 *
 	 * Constraint:
-	 *     (source=[State|ID] target?=[null|ID]? expression?=Expression? reaction?=Block?)
+	 *     (source=[State|ID] target=[State|ID]? expression=Expression? reaction=Block?)
 	 * </pre>
 	 */
 	protected void sequence_Transition(ISerializationContext context, Transition semanticObject) {
@@ -378,7 +465,7 @@ public class MontiArcDSLSemanticSequencer extends MCBasicsSemanticSequencer {
 	 *     Variable returns Variable
 	 *
 	 * Constraint:
-	 *     (type=Type names?=Names?)
+	 *     ((type=Type | type=ComponentType) names?=Names? (parameters+=Expression parameters+=Expression*)?)
 	 * </pre>
 	 */
 	protected void sequence_Variable(ISerializationContext context, Variable semanticObject) {

@@ -14,9 +14,9 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Automaton#isSync <em>Sync</em>}</li>
  *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Automaton#isName <em>Name</em>}</li>
  *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Automaton#getStates <em>States</em>}</li>
- *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Automaton#getInitialStates <em>Initial States</em>}</li>
  *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Automaton#getTransitions <em>Transitions</em>}</li>
  * </ul>
  *
@@ -26,6 +26,28 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Automaton extends ArcElement
 {
+  /**
+   * Returns the value of the '<em><b>Sync</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Sync</em>' attribute.
+   * @see #setSync(boolean)
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.MontiArcDSLPackage#getAutomaton_Sync()
+   * @model
+   * @generated
+   */
+  boolean isSync();
+
+  /**
+   * Sets the value of the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Automaton#isSync <em>Sync</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Sync</em>' attribute.
+   * @see #isSync()
+   * @generated
+   */
+  void setSync(boolean value);
+
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
@@ -59,18 +81,6 @@ public interface Automaton extends ArcElement
    * @generated
    */
   EList<State> getStates();
-
-  /**
-   * Returns the value of the '<em><b>Initial States</b></em>' containment reference list.
-   * The list contents are of type {@link org.palladiosimulator.xtext.motiarc.montiArcDSL.InitialState}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Initial States</em>' containment reference list.
-   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.MontiArcDSLPackage#getAutomaton_InitialStates()
-   * @model containment="true"
-   * @generated
-   */
-  EList<InitialState> getInitialStates();
 
   /**
    * Returns the value of the '<em><b>Transitions</b></em>' containment reference list.

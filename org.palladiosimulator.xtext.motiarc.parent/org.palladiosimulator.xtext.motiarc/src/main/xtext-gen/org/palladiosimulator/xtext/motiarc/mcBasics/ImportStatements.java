@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.palladiosimulator.xtext.motiarc.mcBasics.ImportStatements#getImportUri <em>Import Uri</em>}</li>
- *   <li>{@link org.palladiosimulator.xtext.motiarc.mcBasics.ImportStatements#getStar <em>Star</em>}</li>
+ *   <li>{@link org.palladiosimulator.xtext.motiarc.mcBasics.ImportStatements#isStar <em>Star</em>}</li>
  * </ul>
  *
  * @see org.palladiosimulator.xtext.motiarc.mcBasics.McBasicsPackage#getImportStatements()
@@ -51,21 +51,21 @@ public interface ImportStatements extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Star</em>' attribute.
-   * @see #setStar(String)
+   * @see #setStar(boolean)
    * @see org.palladiosimulator.xtext.motiarc.mcBasics.McBasicsPackage#getImportStatements_Star()
    * @model
    * @generated
    */
-  String getStar();
+  boolean isStar();
 
   /**
-   * Sets the value of the '{@link org.palladiosimulator.xtext.motiarc.mcBasics.ImportStatements#getStar <em>Star</em>}' attribute.
+   * Sets the value of the '{@link org.palladiosimulator.xtext.motiarc.mcBasics.ImportStatements#isStar <em>Star</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Star</em>' attribute.
-   * @see #getStar()
+   * @see #isStar()
    * @generated
    */
-  void setStar(String value);
+  void setStar(boolean value);
 
 } // ImportStatements

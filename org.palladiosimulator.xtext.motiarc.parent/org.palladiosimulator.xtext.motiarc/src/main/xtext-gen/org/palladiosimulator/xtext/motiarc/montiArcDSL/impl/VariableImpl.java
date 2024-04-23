@@ -3,15 +3,23 @@
  */
 package org.palladiosimulator.xtext.motiarc.montiArcDSL.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.palladiosimulator.xtext.motiarc.mcBasics.Type;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+import org.palladiosimulator.xtext.motiarc.mcBasics.Expression;
 
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.MontiArcDSLPackage;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.Variable;
@@ -26,6 +34,7 @@ import org.palladiosimulator.xtext.motiarc.montiArcDSL.Variable;
  * <ul>
  *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.VariableImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.VariableImpl#isNames <em>Names</em>}</li>
+ *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.VariableImpl#getParameters <em>Parameters</em>}</li>
  * </ul>
  *
  * @generated
@@ -40,7 +49,7 @@ public class VariableImpl extends ArcElementImpl implements Variable
    * @generated
    * @ordered
    */
-  protected Type type;
+  protected EObject type;
 
   /**
    * The default value of the '{@link #isNames() <em>Names</em>}' attribute.
@@ -61,6 +70,16 @@ public class VariableImpl extends ArcElementImpl implements Variable
    * @ordered
    */
   protected boolean names = NAMES_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getParameters()
+   * @generated
+   * @ordered
+   */
+  protected EList<Expression> parameters;
 
   /**
    * <!-- begin-user-doc -->
@@ -89,7 +108,7 @@ public class VariableImpl extends ArcElementImpl implements Variable
    * @generated
    */
   @Override
-  public Type getType()
+  public EObject getType()
   {
     return type;
   }
@@ -99,9 +118,9 @@ public class VariableImpl extends ArcElementImpl implements Variable
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetType(Type newType, NotificationChain msgs)
+  public NotificationChain basicSetType(EObject newType, NotificationChain msgs)
   {
-    Type oldType = type;
+    EObject oldType = type;
     type = newType;
     if (eNotificationRequired())
     {
@@ -117,7 +136,7 @@ public class VariableImpl extends ArcElementImpl implements Variable
    * @generated
    */
   @Override
-  public void setType(Type newType)
+  public void setType(EObject newType)
   {
     if (newType != type)
     {
@@ -164,12 +183,29 @@ public class VariableImpl extends ArcElementImpl implements Variable
    * @generated
    */
   @Override
+  public EList<Expression> getParameters()
+  {
+    if (parameters == null)
+    {
+      parameters = new EObjectContainmentEList<Expression>(Expression.class, this, MontiArcDSLPackage.VARIABLE__PARAMETERS);
+    }
+    return parameters;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
       case MontiArcDSLPackage.VARIABLE__TYPE:
         return basicSetType(null, msgs);
+      case MontiArcDSLPackage.VARIABLE__PARAMETERS:
+        return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -188,6 +224,8 @@ public class VariableImpl extends ArcElementImpl implements Variable
         return getType();
       case MontiArcDSLPackage.VARIABLE__NAMES:
         return isNames();
+      case MontiArcDSLPackage.VARIABLE__PARAMETERS:
+        return getParameters();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -197,16 +235,21 @@ public class VariableImpl extends ArcElementImpl implements Variable
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
       case MontiArcDSLPackage.VARIABLE__TYPE:
-        setType((Type)newValue);
+        setType((EObject)newValue);
         return;
       case MontiArcDSLPackage.VARIABLE__NAMES:
         setNames((Boolean)newValue);
+        return;
+      case MontiArcDSLPackage.VARIABLE__PARAMETERS:
+        getParameters().clear();
+        getParameters().addAll((Collection<? extends Expression>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -223,10 +266,13 @@ public class VariableImpl extends ArcElementImpl implements Variable
     switch (featureID)
     {
       case MontiArcDSLPackage.VARIABLE__TYPE:
-        setType((Type)null);
+        setType((EObject)null);
         return;
       case MontiArcDSLPackage.VARIABLE__NAMES:
         setNames(NAMES_EDEFAULT);
+        return;
+      case MontiArcDSLPackage.VARIABLE__PARAMETERS:
+        getParameters().clear();
         return;
     }
     super.eUnset(featureID);
@@ -246,6 +292,8 @@ public class VariableImpl extends ArcElementImpl implements Variable
         return type != null;
       case MontiArcDSLPackage.VARIABLE__NAMES:
         return names != NAMES_EDEFAULT;
+      case MontiArcDSLPackage.VARIABLE__PARAMETERS:
+        return parameters != null && !parameters.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -96,6 +96,11 @@ public class MontiArcDSLAdapterFactory extends AdapterFactoryImpl
         return createParametersAdapter();
       }
       @Override
+      public Adapter caseComponentType(ComponentType object)
+      {
+        return createComponentTypeAdapter();
+      }
+      @Override
       public Adapter caseParameter(Parameter object)
       {
         return createParameterAdapter();
@@ -146,9 +151,19 @@ public class MontiArcDSLAdapterFactory extends AdapterFactoryImpl
         return createStateAdapter();
       }
       @Override
-      public Adapter caseInitialState(InitialState object)
+      public Adapter caseSCState(SCState object)
       {
-        return createInitialStateAdapter();
+        return createSCStateAdapter();
+      }
+      @Override
+      public Adapter caseInvState(InvState object)
+      {
+        return createInvStateAdapter();
+      }
+      @Override
+      public Adapter caseSCSAnte(SCSAnte object)
+      {
+        return createSCSAnteAdapter();
       }
       @Override
       public Adapter caseTransition(Transition object)
@@ -159,6 +174,21 @@ public class MontiArcDSLAdapterFactory extends AdapterFactoryImpl
       public Adapter caseBlock(Block object)
       {
         return createBlockAdapter();
+      }
+      @Override
+      public Adapter caseBlockStatement(BlockStatement object)
+      {
+        return createBlockStatementAdapter();
+      }
+      @Override
+      public Adapter caseSimpleExpression(SimpleExpression object)
+      {
+        return createSimpleExpressionAdapter();
+      }
+      @Override
+      public Adapter caseSimpleInit(SimpleInit object)
+      {
+        return createSimpleInitAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -238,6 +268,21 @@ public class MontiArcDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createParametersAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.ComponentType <em>Component Type</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.ComponentType
+   * @generated
+   */
+  public Adapter createComponentTypeAdapter()
   {
     return null;
   }
@@ -393,16 +438,46 @@ public class MontiArcDSLAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.InitialState <em>Initial State</em>}'.
+   * Creates a new adapter for an object of class '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.SCState <em>SC State</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.InitialState
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.SCState
    * @generated
    */
-  public Adapter createInitialStateAdapter()
+  public Adapter createSCStateAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.InvState <em>Inv State</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.InvState
+   * @generated
+   */
+  public Adapter createInvStateAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.SCSAnte <em>SCS Ante</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.SCSAnte
+   * @generated
+   */
+  public Adapter createSCSAnteAdapter()
   {
     return null;
   }
@@ -433,6 +508,51 @@ public class MontiArcDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createBlockAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.BlockStatement <em>Block Statement</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.BlockStatement
+   * @generated
+   */
+  public Adapter createBlockStatementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.SimpleExpression <em>Simple Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.SimpleExpression
+   * @generated
+   */
+  public Adapter createSimpleExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.SimpleInit <em>Simple Init</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.SimpleInit
+   * @generated
+   */
+  public Adapter createSimpleInitAdapter()
   {
     return null;
   }

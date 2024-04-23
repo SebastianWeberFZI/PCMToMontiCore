@@ -22,7 +22,7 @@ import org.palladiosimulator.xtext.motiarc.mcBasics.McBasicsPackage;
  * </p>
  * <ul>
  *   <li>{@link org.palladiosimulator.xtext.motiarc.mcBasics.impl.ImportStatementsImpl#getImportUri <em>Import Uri</em>}</li>
- *   <li>{@link org.palladiosimulator.xtext.motiarc.mcBasics.impl.ImportStatementsImpl#getStar <em>Star</em>}</li>
+ *   <li>{@link org.palladiosimulator.xtext.motiarc.mcBasics.impl.ImportStatementsImpl#isStar <em>Star</em>}</li>
  * </ul>
  *
  * @generated
@@ -50,24 +50,24 @@ public class ImportStatementsImpl extends MinimalEObjectImpl.Container implement
   protected String importUri = IMPORT_URI_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getStar() <em>Star</em>}' attribute.
+   * The default value of the '{@link #isStar() <em>Star</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStar()
+   * @see #isStar()
    * @generated
    * @ordered
    */
-  protected static final String STAR_EDEFAULT = null;
+  protected static final boolean STAR_EDEFAULT = false;
 
   /**
-   * The cached value of the '{@link #getStar() <em>Star</em>}' attribute.
+   * The cached value of the '{@link #isStar() <em>Star</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStar()
+   * @see #isStar()
    * @generated
    * @ordered
    */
-  protected String star = STAR_EDEFAULT;
+  protected boolean star = STAR_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -121,7 +121,7 @@ public class ImportStatementsImpl extends MinimalEObjectImpl.Container implement
    * @generated
    */
   @Override
-  public String getStar()
+  public boolean isStar()
   {
     return star;
   }
@@ -132,9 +132,9 @@ public class ImportStatementsImpl extends MinimalEObjectImpl.Container implement
    * @generated
    */
   @Override
-  public void setStar(String newStar)
+  public void setStar(boolean newStar)
   {
-    String oldStar = star;
+    boolean oldStar = star;
     star = newStar;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, McBasicsPackage.IMPORT_STATEMENTS__STAR, oldStar, star));
@@ -153,7 +153,7 @@ public class ImportStatementsImpl extends MinimalEObjectImpl.Container implement
       case McBasicsPackage.IMPORT_STATEMENTS__IMPORT_URI:
         return getImportUri();
       case McBasicsPackage.IMPORT_STATEMENTS__STAR:
-        return getStar();
+        return isStar();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -172,7 +172,7 @@ public class ImportStatementsImpl extends MinimalEObjectImpl.Container implement
         setImportUri((String)newValue);
         return;
       case McBasicsPackage.IMPORT_STATEMENTS__STAR:
-        setStar((String)newValue);
+        setStar((Boolean)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -211,7 +211,7 @@ public class ImportStatementsImpl extends MinimalEObjectImpl.Container implement
       case McBasicsPackage.IMPORT_STATEMENTS__IMPORT_URI:
         return IMPORT_URI_EDEFAULT == null ? importUri != null : !IMPORT_URI_EDEFAULT.equals(importUri);
       case McBasicsPackage.IMPORT_STATEMENTS__STAR:
-        return STAR_EDEFAULT == null ? star != null : !STAR_EDEFAULT.equals(star);
+        return star != STAR_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }

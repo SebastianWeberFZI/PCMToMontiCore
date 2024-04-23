@@ -102,6 +102,13 @@ public class MontiArcDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case MontiArcDSLPackage.COMPONENT_TYPE:
+      {
+        ComponentType componentType = (ComponentType)theEObject;
+        T result = caseComponentType(componentType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case MontiArcDSLPackage.PARAMETER:
       {
         Parameter parameter = (Parameter)theEObject;
@@ -177,10 +184,26 @@ public class MontiArcDSLSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MontiArcDSLPackage.INITIAL_STATE:
+      case MontiArcDSLPackage.SC_STATE:
       {
-        InitialState initialState = (InitialState)theEObject;
-        T result = caseInitialState(initialState);
+        SCState scState = (SCState)theEObject;
+        T result = caseSCState(scState);
+        if (result == null) result = caseState(scState);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MontiArcDSLPackage.INV_STATE:
+      {
+        InvState invState = (InvState)theEObject;
+        T result = caseInvState(invState);
+        if (result == null) result = caseState(invState);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MontiArcDSLPackage.SCS_ANTE:
+      {
+        SCSAnte scsAnte = (SCSAnte)theEObject;
+        T result = caseSCSAnte(scsAnte);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -195,6 +218,29 @@ public class MontiArcDSLSwitch<T> extends Switch<T>
       {
         Block block = (Block)theEObject;
         T result = caseBlock(block);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MontiArcDSLPackage.BLOCK_STATEMENT:
+      {
+        BlockStatement blockStatement = (BlockStatement)theEObject;
+        T result = caseBlockStatement(blockStatement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MontiArcDSLPackage.SIMPLE_EXPRESSION:
+      {
+        SimpleExpression simpleExpression = (SimpleExpression)theEObject;
+        T result = caseSimpleExpression(simpleExpression);
+        if (result == null) result = caseBlockStatement(simpleExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MontiArcDSLPackage.SIMPLE_INIT:
+      {
+        SimpleInit simpleInit = (SimpleInit)theEObject;
+        T result = caseSimpleInit(simpleInit);
+        if (result == null) result = caseBlockStatement(simpleInit);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -262,6 +308,22 @@ public class MontiArcDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseParameters(Parameters object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Component Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Component Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseComponentType(ComponentType object)
   {
     return null;
   }
@@ -427,17 +489,49 @@ public class MontiArcDSLSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Initial State</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>SC State</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Initial State</em>'.
+   * @return the result of interpreting the object as an instance of '<em>SC State</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseInitialState(InitialState object)
+  public T caseSCState(SCState object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Inv State</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Inv State</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInvState(InvState object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>SCS Ante</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>SCS Ante</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSCSAnte(SCSAnte object)
   {
     return null;
   }
@@ -470,6 +564,54 @@ public class MontiArcDSLSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseBlock(Block object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Block Statement</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Block Statement</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBlockStatement(BlockStatement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Simple Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Simple Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSimpleExpression(SimpleExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Simple Init</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Simple Init</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSimpleInit(SimpleInit object)
   {
     return null;
   }

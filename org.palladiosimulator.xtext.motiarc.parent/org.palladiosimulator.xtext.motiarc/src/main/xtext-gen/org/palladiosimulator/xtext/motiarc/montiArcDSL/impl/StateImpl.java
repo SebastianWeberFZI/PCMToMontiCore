@@ -3,14 +3,21 @@
  */
 package org.palladiosimulator.xtext.motiarc.montiArcDSL.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeEList;
+
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.MontiArcDSLPackage;
+import org.palladiosimulator.xtext.motiarc.montiArcDSL.SCModifier;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.State;
 
 /**
@@ -21,6 +28,7 @@ import org.palladiosimulator.xtext.motiarc.montiArcDSL.State;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.StateImpl#getModifier <em>Modifier</em>}</li>
  *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.StateImpl#getName <em>Name</em>}</li>
  * </ul>
  *
@@ -28,6 +36,16 @@ import org.palladiosimulator.xtext.motiarc.montiArcDSL.State;
  */
 public class StateImpl extends MinimalEObjectImpl.Container implements State
 {
+  /**
+   * The cached value of the '{@link #getModifier() <em>Modifier</em>}' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getModifier()
+   * @generated
+   * @ordered
+   */
+  protected EList<SCModifier> modifier;
+
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -75,6 +93,21 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State
    * @generated
    */
   @Override
+  public EList<SCModifier> getModifier()
+  {
+    if (modifier == null)
+    {
+      modifier = new EDataTypeEList<SCModifier>(SCModifier.class, this, MontiArcDSLPackage.STATE__MODIFIER);
+    }
+    return modifier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public String getName()
   {
     return name;
@@ -104,6 +137,8 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State
   {
     switch (featureID)
     {
+      case MontiArcDSLPackage.STATE__MODIFIER:
+        return getModifier();
       case MontiArcDSLPackage.STATE__NAME:
         return getName();
     }
@@ -115,11 +150,16 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
+      case MontiArcDSLPackage.STATE__MODIFIER:
+        getModifier().clear();
+        getModifier().addAll((Collection<? extends SCModifier>)newValue);
+        return;
       case MontiArcDSLPackage.STATE__NAME:
         setName((String)newValue);
         return;
@@ -137,6 +177,9 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State
   {
     switch (featureID)
     {
+      case MontiArcDSLPackage.STATE__MODIFIER:
+        getModifier().clear();
+        return;
       case MontiArcDSLPackage.STATE__NAME:
         setName(NAME_EDEFAULT);
         return;
@@ -154,6 +197,8 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State
   {
     switch (featureID)
     {
+      case MontiArcDSLPackage.STATE__MODIFIER:
+        return modifier != null && !modifier.isEmpty();
       case MontiArcDSLPackage.STATE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
@@ -171,7 +216,9 @@ public class StateImpl extends MinimalEObjectImpl.Container implements State
     if (eIsProxy()) return super.toString();
 
     StringBuilder result = new StringBuilder(super.toString());
-    result.append(" (name: ");
+    result.append(" (modifier: ");
+    result.append(modifier);
+    result.append(", name: ");
     result.append(name);
     result.append(')');
     return result.toString();

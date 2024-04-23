@@ -1,0 +1,35 @@
+grammar org.palladiosimulator.xtext.motiarc.MontiCoreClassDiagram with org.palladiosimulator.xtext.motiarc.MCBasics
+
+//r MontiArc with MCBasics
+generate montiCoreCD "http://www.palladiosimulator.org/xtext/monticore/classdiagram"
+
+ClassDiagramCompilationUnit:
+	package=Package importStatements+=ImportStatements*
+	diagram=ClassDiagram;
+
+// ClassDiagram Head
+ClassDiagram:
+	"classdiagram" name=ID
+	"{" cdElements+=CDDefinition* "}"
+;
+
+CDDefinition:
+	CDClass | CDEnum;
+
+// Class Diagram Body Elements
+CDClass:
+	(public?='public')? 'class' name=ID ('extends' extends=ID)? ('implements' implements+=ID (','implements+=ID)*)?'{'
+		members+=Member
+	'}'
+;
+
+CDEnum:
+	(public?='public')? 'enum' name=ID '{'
+		values+=ID
+	'}'
+;
+
+
+Member:
+	type=(Type|CDDefinition) name=ID ';'	
+;

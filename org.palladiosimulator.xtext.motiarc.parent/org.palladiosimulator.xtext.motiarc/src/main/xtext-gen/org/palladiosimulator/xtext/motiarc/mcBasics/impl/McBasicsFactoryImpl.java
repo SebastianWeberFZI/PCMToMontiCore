@@ -4,6 +4,7 @@
 package org.palladiosimulator.xtext.motiarc.mcBasics.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -13,17 +14,20 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import org.palladiosimulator.xtext.motiarc.mcBasics.Argument;
 import org.palladiosimulator.xtext.motiarc.mcBasics.Arguments;
+import org.palladiosimulator.xtext.motiarc.mcBasics.BinaryExpression;
 import org.palladiosimulator.xtext.motiarc.mcBasics.Expression;
 import org.palladiosimulator.xtext.motiarc.mcBasics.ImportStatements;
 import org.palladiosimulator.xtext.motiarc.mcBasics.LiteralExpression;
 import org.palladiosimulator.xtext.motiarc.mcBasics.MCArrayType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.MCCollectionType;
+import org.palladiosimulator.xtext.motiarc.mcBasics.MCObjectType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.MCPrimitiveType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.MCVoidType;
 import org.palladiosimulator.xtext.motiarc.mcBasics.McBasicsFactory;
 import org.palladiosimulator.xtext.motiarc.mcBasics.McBasicsPackage;
 import org.palladiosimulator.xtext.motiarc.mcBasics.NameExpression;
 import org.palladiosimulator.xtext.motiarc.mcBasics.NumberLiteral;
+import org.palladiosimulator.xtext.motiarc.mcBasics.Operator;
 import org.palladiosimulator.xtext.motiarc.mcBasics.StringLiteral;
 import org.palladiosimulator.xtext.motiarc.mcBasics.Type;
 
@@ -83,6 +87,7 @@ public class McBasicsFactoryImpl extends EFactoryImpl implements McBasicsFactory
       case McBasicsPackage.PACKAGE: return createPackage();
       case McBasicsPackage.TYPE: return createType();
       case McBasicsPackage.MC_PRIMITIVE_TYPE: return createMCPrimitiveType();
+      case McBasicsPackage.MC_OBJECT_TYPE: return createMCObjectType();
       case McBasicsPackage.MC_VOID_TYPE: return createMCVoidType();
       case McBasicsPackage.MC_COLLECTION_TYPE: return createMCCollectionType();
       case McBasicsPackage.MC_ARRAY_TYPE: return createMCArrayType();
@@ -91,10 +96,45 @@ public class McBasicsFactoryImpl extends EFactoryImpl implements McBasicsFactory
       case McBasicsPackage.NUMBER_LITERAL: return createNumberLiteral();
       case McBasicsPackage.STRING_LITERAL: return createStringLiteral();
       case McBasicsPackage.NAME_EXPRESSION: return createNameExpression();
+      case McBasicsPackage.BINARY_EXPRESSION: return createBinaryExpression();
       case McBasicsPackage.ARGUMENTS: return createArguments();
       case McBasicsPackage.ARGUMENT: return createArgument();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object createFromString(EDataType eDataType, String initialValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case McBasicsPackage.OPERATOR:
+        return createOperatorFromString(eDataType, initialValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String convertToString(EDataType eDataType, Object instanceValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case McBasicsPackage.OPERATOR:
+        return convertOperatorToString(eDataType, instanceValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
   }
 
@@ -144,6 +184,18 @@ public class McBasicsFactoryImpl extends EFactoryImpl implements McBasicsFactory
   {
     MCPrimitiveTypeImpl mcPrimitiveType = new MCPrimitiveTypeImpl();
     return mcPrimitiveType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public MCObjectType createMCObjectType()
+  {
+    MCObjectTypeImpl mcObjectType = new MCObjectTypeImpl();
+    return mcObjectType;
   }
 
   /**
@@ -248,6 +300,18 @@ public class McBasicsFactoryImpl extends EFactoryImpl implements McBasicsFactory
    * @generated
    */
   @Override
+  public BinaryExpression createBinaryExpression()
+  {
+    BinaryExpressionImpl binaryExpression = new BinaryExpressionImpl();
+    return binaryExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Arguments createArguments()
   {
     ArgumentsImpl arguments = new ArgumentsImpl();
@@ -264,6 +328,28 @@ public class McBasicsFactoryImpl extends EFactoryImpl implements McBasicsFactory
   {
     ArgumentImpl argument = new ArgumentImpl();
     return argument;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Operator createOperatorFromString(EDataType eDataType, String initialValue)
+  {
+    Operator result = Operator.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertOperatorToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
   }
 
   /**

@@ -21,6 +21,7 @@ import org.palladiosimulator.xtext.motiarc.mcBasics.NameExpression;
  * </p>
  * <ul>
  *   <li>{@link org.palladiosimulator.xtext.motiarc.mcBasics.impl.NameExpressionImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.palladiosimulator.xtext.motiarc.mcBasics.impl.NameExpressionImpl#getQualifiedname <em>Qualifiedname</em>}</li>
  * </ul>
  *
  * @generated
@@ -46,6 +47,26 @@ public class NameExpressionImpl extends ExpressionImpl implements NameExpression
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getQualifiedname() <em>Qualifiedname</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getQualifiedname()
+   * @generated
+   * @ordered
+   */
+  protected static final String QUALIFIEDNAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getQualifiedname() <em>Qualifiedname</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getQualifiedname()
+   * @generated
+   * @ordered
+   */
+  protected String qualifiedname = QUALIFIEDNAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -99,12 +120,39 @@ public class NameExpressionImpl extends ExpressionImpl implements NameExpression
    * @generated
    */
   @Override
+  public String getQualifiedname()
+  {
+    return qualifiedname;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setQualifiedname(String newQualifiedname)
+  {
+    String oldQualifiedname = qualifiedname;
+    qualifiedname = newQualifiedname;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, McBasicsPackage.NAME_EXPRESSION__QUALIFIEDNAME, oldQualifiedname, qualifiedname));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
       case McBasicsPackage.NAME_EXPRESSION__NAME:
         return getName();
+      case McBasicsPackage.NAME_EXPRESSION__QUALIFIEDNAME:
+        return getQualifiedname();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -121,6 +169,9 @@ public class NameExpressionImpl extends ExpressionImpl implements NameExpression
     {
       case McBasicsPackage.NAME_EXPRESSION__NAME:
         setName((String)newValue);
+        return;
+      case McBasicsPackage.NAME_EXPRESSION__QUALIFIEDNAME:
+        setQualifiedname((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -139,6 +190,9 @@ public class NameExpressionImpl extends ExpressionImpl implements NameExpression
       case McBasicsPackage.NAME_EXPRESSION__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case McBasicsPackage.NAME_EXPRESSION__QUALIFIEDNAME:
+        setQualifiedname(QUALIFIEDNAME_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -155,6 +209,8 @@ public class NameExpressionImpl extends ExpressionImpl implements NameExpression
     {
       case McBasicsPackage.NAME_EXPRESSION__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case McBasicsPackage.NAME_EXPRESSION__QUALIFIEDNAME:
+        return QUALIFIEDNAME_EDEFAULT == null ? qualifiedname != null : !QUALIFIEDNAME_EDEFAULT.equals(qualifiedname);
     }
     return super.eIsSet(featureID);
   }
@@ -172,6 +228,8 @@ public class NameExpressionImpl extends ExpressionImpl implements NameExpression
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", qualifiedname: ");
+    result.append(qualifiedname);
     result.append(')');
     return result.toString();
   }

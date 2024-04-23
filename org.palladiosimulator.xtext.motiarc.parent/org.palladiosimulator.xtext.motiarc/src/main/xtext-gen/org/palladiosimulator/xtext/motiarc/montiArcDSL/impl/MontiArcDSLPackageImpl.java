@@ -5,6 +5,7 @@ package org.palladiosimulator.xtext.motiarc.montiArcDSL.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -15,9 +16,11 @@ import org.palladiosimulator.xtext.motiarc.mcBasics.McBasicsPackage;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.ArcElement;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.Automaton;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.Block;
+import org.palladiosimulator.xtext.motiarc.montiArcDSL.BlockStatement;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.Component;
+import org.palladiosimulator.xtext.motiarc.montiArcDSL.ComponentType;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.Connector;
-import org.palladiosimulator.xtext.motiarc.montiArcDSL.InitialState;
+import org.palladiosimulator.xtext.motiarc.montiArcDSL.InvState;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.MACompilationUnit;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.MontiArcDSLFactory;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.MontiArcDSLPackage;
@@ -26,11 +29,18 @@ import org.palladiosimulator.xtext.motiarc.montiArcDSL.Parameter;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.Parameters;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.Port;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.Ports;
+import org.palladiosimulator.xtext.motiarc.montiArcDSL.SCModifier;
+import org.palladiosimulator.xtext.motiarc.montiArcDSL.SCSAnte;
+import org.palladiosimulator.xtext.motiarc.montiArcDSL.SCState;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.Signature;
+import org.palladiosimulator.xtext.motiarc.montiArcDSL.SimpleExpression;
+import org.palladiosimulator.xtext.motiarc.montiArcDSL.SimpleInit;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.State;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.SubComponent;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.Transition;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.Variable;
+
+import org.palladiosimulator.xtext.motiarc.montiCoreCD.MontiCoreCDPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -67,6 +77,13 @@ public class MontiArcDSLPackageImpl extends EPackageImpl implements MontiArcDSLP
    * @generated
    */
   private EClass parametersEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass componentTypeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -143,7 +160,21 @@ public class MontiArcDSLPackageImpl extends EPackageImpl implements MontiArcDSLP
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass initialStateEClass = null;
+  private EClass scStateEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass invStateEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass scsAnteEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -158,6 +189,34 @@ public class MontiArcDSLPackageImpl extends EPackageImpl implements MontiArcDSLP
    * @generated
    */
   private EClass blockEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass blockStatementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass simpleExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass simpleInitEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum scModifierEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -210,6 +269,7 @@ public class MontiArcDSLPackageImpl extends EPackageImpl implements MontiArcDSLP
 
     // Initialize simple dependencies
     McBasicsPackage.eINSTANCE.eClass();
+    MontiCoreCDPackage.eINSTANCE.eClass();
 
     // Create package meta-data objects
     theMontiArcDSLPackage.createPackageContents();
@@ -366,6 +426,28 @@ public class MontiArcDSLPackageImpl extends EPackageImpl implements MontiArcDSLP
   public EReference getParameters_Parameters()
   {
     return (EReference)parametersEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getComponentType()
+  {
+    return componentTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getComponentType_Type()
+  {
+    return (EReference)componentTypeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -583,9 +665,20 @@ public class MontiArcDSLPackageImpl extends EPackageImpl implements MontiArcDSLP
    * @generated
    */
   @Override
+  public EReference getPort_Datatype()
+  {
+    return (EReference)portEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EAttribute getPort_Names()
   {
-    return (EAttribute)portEClass.getEStructuralFeatures().get(4);
+    return (EAttribute)portEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -649,6 +742,17 @@ public class MontiArcDSLPackageImpl extends EPackageImpl implements MontiArcDSLP
    * @generated
    */
   @Override
+  public EReference getVariable_Parameters()
+  {
+    return (EReference)variableEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getAutomaton()
   {
     return automatonEClass;
@@ -660,7 +764,7 @@ public class MontiArcDSLPackageImpl extends EPackageImpl implements MontiArcDSLP
    * @generated
    */
   @Override
-  public EAttribute getAutomaton_Name()
+  public EAttribute getAutomaton_Sync()
   {
     return (EAttribute)automatonEClass.getEStructuralFeatures().get(0);
   }
@@ -671,9 +775,9 @@ public class MontiArcDSLPackageImpl extends EPackageImpl implements MontiArcDSLP
    * @generated
    */
   @Override
-  public EReference getAutomaton_States()
+  public EAttribute getAutomaton_Name()
   {
-    return (EReference)automatonEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)automatonEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -682,7 +786,7 @@ public class MontiArcDSLPackageImpl extends EPackageImpl implements MontiArcDSLP
    * @generated
    */
   @Override
-  public EReference getAutomaton_InitialStates()
+  public EReference getAutomaton_States()
   {
     return (EReference)automatonEClass.getEStructuralFeatures().get(2);
   }
@@ -715,7 +819,7 @@ public class MontiArcDSLPackageImpl extends EPackageImpl implements MontiArcDSLP
    * @generated
    */
   @Override
-  public EAttribute getState_Name()
+  public EAttribute getState_Modifier()
   {
     return (EAttribute)stateEClass.getEStructuralFeatures().get(0);
   }
@@ -726,9 +830,9 @@ public class MontiArcDSLPackageImpl extends EPackageImpl implements MontiArcDSLP
    * @generated
    */
   @Override
-  public EClass getInitialState()
+  public EAttribute getState_Name()
   {
-    return initialStateEClass;
+    return (EAttribute)stateEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -737,9 +841,9 @@ public class MontiArcDSLPackageImpl extends EPackageImpl implements MontiArcDSLP
    * @generated
    */
   @Override
-  public EAttribute getInitialState_Name()
+  public EClass getSCState()
   {
-    return (EAttribute)initialStateEClass.getEStructuralFeatures().get(0);
+    return scStateEClass;
   }
 
   /**
@@ -748,9 +852,53 @@ public class MontiArcDSLPackageImpl extends EPackageImpl implements MontiArcDSLP
    * @generated
    */
   @Override
-  public EAttribute getInitialState_Block()
+  public EReference getSCState_Ante()
   {
-    return (EAttribute)initialStateEClass.getEStructuralFeatures().get(1);
+    return (EReference)scStateEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getInvState()
+  {
+    return invStateEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getInvState_Expression()
+  {
+    return (EReference)invStateEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSCSAnte()
+  {
+    return scsAnteEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSCSAnte_Block()
+  {
+    return (EReference)scsAnteEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -781,9 +929,9 @@ public class MontiArcDSLPackageImpl extends EPackageImpl implements MontiArcDSLP
    * @generated
    */
   @Override
-  public EAttribute getTransition_Target()
+  public EReference getTransition_Target()
   {
-    return (EAttribute)transitionEClass.getEStructuralFeatures().get(1);
+    return (EReference)transitionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -792,9 +940,9 @@ public class MontiArcDSLPackageImpl extends EPackageImpl implements MontiArcDSLP
    * @generated
    */
   @Override
-  public EAttribute getTransition_Expression()
+  public EReference getTransition_Expression()
   {
-    return (EAttribute)transitionEClass.getEStructuralFeatures().get(2);
+    return (EReference)transitionEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -803,9 +951,9 @@ public class MontiArcDSLPackageImpl extends EPackageImpl implements MontiArcDSLP
    * @generated
    */
   @Override
-  public EAttribute getTransition_Reaction()
+  public EReference getTransition_Reaction()
   {
-    return (EAttribute)transitionEClass.getEStructuralFeatures().get(3);
+    return (EReference)transitionEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -825,9 +973,9 @@ public class MontiArcDSLPackageImpl extends EPackageImpl implements MontiArcDSLP
    * @generated
    */
   @Override
-  public EAttribute getBlock_Name()
+  public EReference getBlock_Blocks()
   {
-    return (EAttribute)blockEClass.getEStructuralFeatures().get(0);
+    return (EReference)blockEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -836,9 +984,75 @@ public class MontiArcDSLPackageImpl extends EPackageImpl implements MontiArcDSLP
    * @generated
    */
   @Override
-  public EReference getBlock_Expressions()
+  public EClass getBlockStatement()
   {
-    return (EReference)blockEClass.getEStructuralFeatures().get(1);
+    return blockStatementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSimpleExpression()
+  {
+    return simpleExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSimpleExpression_Expression()
+  {
+    return (EReference)simpleExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getSimpleInit()
+  {
+    return simpleInitEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getSimpleInit_Name()
+  {
+    return (EAttribute)simpleInitEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getSimpleInit_Expressions()
+  {
+    return (EReference)simpleInitEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EEnum getSCModifier()
+  {
+    return scModifierEEnum;
   }
 
   /**
@@ -889,6 +1103,9 @@ public class MontiArcDSLPackageImpl extends EPackageImpl implements MontiArcDSLP
     parametersEClass = createEClass(PARAMETERS);
     createEReference(parametersEClass, PARAMETERS__PARAMETERS);
 
+    componentTypeEClass = createEClass(COMPONENT_TYPE);
+    createEReference(componentTypeEClass, COMPONENT_TYPE__TYPE);
+
     parameterEClass = createEClass(PARAMETER);
     createEReference(parameterEClass, PARAMETER__TYPE);
     createEAttribute(parameterEClass, PARAMETER__NAME);
@@ -913,6 +1130,7 @@ public class MontiArcDSLPackageImpl extends EPackageImpl implements MontiArcDSLP
     createEAttribute(portEClass, PORT__IN);
     createEAttribute(portEClass, PORT__OUT);
     createEReference(portEClass, PORT__TYPE);
+    createEReference(portEClass, PORT__DATATYPE);
     createEAttribute(portEClass, PORT__NAMES);
 
     namesEClass = createEClass(NAMES);
@@ -921,29 +1139,47 @@ public class MontiArcDSLPackageImpl extends EPackageImpl implements MontiArcDSLP
     variableEClass = createEClass(VARIABLE);
     createEReference(variableEClass, VARIABLE__TYPE);
     createEAttribute(variableEClass, VARIABLE__NAMES);
+    createEReference(variableEClass, VARIABLE__PARAMETERS);
 
     automatonEClass = createEClass(AUTOMATON);
+    createEAttribute(automatonEClass, AUTOMATON__SYNC);
     createEAttribute(automatonEClass, AUTOMATON__NAME);
     createEReference(automatonEClass, AUTOMATON__STATES);
-    createEReference(automatonEClass, AUTOMATON__INITIAL_STATES);
     createEReference(automatonEClass, AUTOMATON__TRANSITIONS);
 
     stateEClass = createEClass(STATE);
+    createEAttribute(stateEClass, STATE__MODIFIER);
     createEAttribute(stateEClass, STATE__NAME);
 
-    initialStateEClass = createEClass(INITIAL_STATE);
-    createEAttribute(initialStateEClass, INITIAL_STATE__NAME);
-    createEAttribute(initialStateEClass, INITIAL_STATE__BLOCK);
+    scStateEClass = createEClass(SC_STATE);
+    createEReference(scStateEClass, SC_STATE__ANTE);
+
+    invStateEClass = createEClass(INV_STATE);
+    createEReference(invStateEClass, INV_STATE__EXPRESSION);
+
+    scsAnteEClass = createEClass(SCS_ANTE);
+    createEReference(scsAnteEClass, SCS_ANTE__BLOCK);
 
     transitionEClass = createEClass(TRANSITION);
     createEReference(transitionEClass, TRANSITION__SOURCE);
-    createEAttribute(transitionEClass, TRANSITION__TARGET);
-    createEAttribute(transitionEClass, TRANSITION__EXPRESSION);
-    createEAttribute(transitionEClass, TRANSITION__REACTION);
+    createEReference(transitionEClass, TRANSITION__TARGET);
+    createEReference(transitionEClass, TRANSITION__EXPRESSION);
+    createEReference(transitionEClass, TRANSITION__REACTION);
 
     blockEClass = createEClass(BLOCK);
-    createEAttribute(blockEClass, BLOCK__NAME);
-    createEReference(blockEClass, BLOCK__EXPRESSIONS);
+    createEReference(blockEClass, BLOCK__BLOCKS);
+
+    blockStatementEClass = createEClass(BLOCK_STATEMENT);
+
+    simpleExpressionEClass = createEClass(SIMPLE_EXPRESSION);
+    createEReference(simpleExpressionEClass, SIMPLE_EXPRESSION__EXPRESSION);
+
+    simpleInitEClass = createEClass(SIMPLE_INIT);
+    createEAttribute(simpleInitEClass, SIMPLE_INIT__NAME);
+    createEReference(simpleInitEClass, SIMPLE_INIT__EXPRESSIONS);
+
+    // Create enums
+    scModifierEEnum = createEEnum(SC_MODIFIER);
   }
 
   /**
@@ -972,6 +1208,7 @@ public class MontiArcDSLPackageImpl extends EPackageImpl implements MontiArcDSLP
 
     // Obtain other dependent packages
     McBasicsPackage theMcBasicsPackage = (McBasicsPackage)EPackage.Registry.INSTANCE.getEPackage(McBasicsPackage.eNS_URI);
+    MontiCoreCDPackage theMontiCoreCDPackage = (MontiCoreCDPackage)EPackage.Registry.INSTANCE.getEPackage(MontiCoreCDPackage.eNS_URI);
 
     // Create type parameters
 
@@ -984,6 +1221,10 @@ public class MontiArcDSLPackageImpl extends EPackageImpl implements MontiArcDSLP
     portsEClass.getESuperTypes().add(this.getArcElement());
     variableEClass.getESuperTypes().add(this.getArcElement());
     automatonEClass.getESuperTypes().add(this.getArcElement());
+    scStateEClass.getESuperTypes().add(this.getState());
+    invStateEClass.getESuperTypes().add(this.getState());
+    simpleExpressionEClass.getESuperTypes().add(this.getBlockStatement());
+    simpleInitEClass.getESuperTypes().add(this.getBlockStatement());
 
     // Initialize classes and features; add operations and parameters
     initEClass(maCompilationUnitEClass, MACompilationUnit.class, "MACompilationUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1002,6 +1243,9 @@ public class MontiArcDSLPackageImpl extends EPackageImpl implements MontiArcDSLP
 
     initEClass(parametersEClass, Parameters.class, "Parameters", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getParameters_Parameters(), this.getParameter(), null, "parameters", null, 0, -1, Parameters.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(componentTypeEClass, ComponentType.class, "ComponentType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getComponentType_Type(), this.getComponent(), null, "type", null, 0, 1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getParameter_Type(), theMcBasicsPackage.getType(), null, "type", null, 0, 1, Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1027,37 +1271,58 @@ public class MontiArcDSLPackageImpl extends EPackageImpl implements MontiArcDSLP
     initEAttribute(getPort_In(), ecorePackage.getEBoolean(), "in", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getPort_Out(), ecorePackage.getEBoolean(), "out", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getPort_Type(), theMcBasicsPackage.getType(), null, "type", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPort_Datatype(), theMontiCoreCDPackage.getCDDefinition(), null, "datatype", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getPort_Names(), ecorePackage.getEBoolean(), "names", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(namesEClass, Names.class, "Names", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getNames_Names(), ecorePackage.getEString(), "names", null, 0, -1, Names.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getVariable_Type(), theMcBasicsPackage.getType(), null, "type", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVariable_Type(), ecorePackage.getEObject(), null, "type", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getVariable_Names(), ecorePackage.getEBoolean(), "names", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getVariable_Parameters(), theMcBasicsPackage.getExpression(), null, "parameters", null, 0, -1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(automatonEClass, Automaton.class, "Automaton", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAutomaton_Sync(), ecorePackage.getEBoolean(), "sync", null, 0, 1, Automaton.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAutomaton_Name(), ecorePackage.getEBoolean(), "name", null, 0, 1, Automaton.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAutomaton_States(), this.getState(), null, "states", null, 0, -1, Automaton.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAutomaton_InitialStates(), this.getInitialState(), null, "initialStates", null, 0, -1, Automaton.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAutomaton_Transitions(), this.getTransition(), null, "transitions", null, 0, -1, Automaton.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(stateEClass, State.class, "State", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getState_Modifier(), this.getSCModifier(), "modifier", null, 0, -1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getState_Name(), ecorePackage.getEString(), "name", null, 0, 1, State.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(initialStateEClass, InitialState.class, "InitialState", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getInitialState_Name(), ecorePackage.getEString(), "name", null, 0, 1, InitialState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getInitialState_Block(), ecorePackage.getEBoolean(), "block", null, 0, 1, InitialState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(scStateEClass, SCState.class, "SCState", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSCState_Ante(), this.getSCSAnte(), null, "ante", null, 0, 1, SCState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(invStateEClass, InvState.class, "InvState", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getInvState_Expression(), theMcBasicsPackage.getExpression(), null, "expression", null, 0, 1, InvState.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(scsAnteEClass, SCSAnte.class, "SCSAnte", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSCSAnte_Block(), this.getBlock(), null, "block", null, 0, 1, SCSAnte.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(transitionEClass, Transition.class, "Transition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getTransition_Source(), this.getState(), null, "source", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTransition_Target(), ecorePackage.getEBoolean(), "target", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTransition_Expression(), ecorePackage.getEBoolean(), "expression", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTransition_Reaction(), ecorePackage.getEBoolean(), "reaction", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTransition_Target(), this.getState(), null, "target", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTransition_Expression(), theMcBasicsPackage.getExpression(), null, "expression", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTransition_Reaction(), this.getBlock(), null, "reaction", null, 0, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(blockEClass, Block.class, "Block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getBlock_Name(), ecorePackage.getEBoolean(), "name", null, 0, 1, Block.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getBlock_Expressions(), theMcBasicsPackage.getExpression(), null, "expressions", null, 0, -1, Block.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getBlock_Blocks(), this.getBlockStatement(), null, "blocks", null, 0, -1, Block.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(blockStatementEClass, BlockStatement.class, "BlockStatement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(simpleExpressionEClass, SimpleExpression.class, "SimpleExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSimpleExpression_Expression(), theMcBasicsPackage.getExpression(), null, "expression", null, 0, 1, SimpleExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(simpleInitEClass, SimpleInit.class, "SimpleInit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSimpleInit_Name(), ecorePackage.getEString(), "name", null, 0, 1, SimpleInit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSimpleInit_Expressions(), theMcBasicsPackage.getExpression(), null, "expressions", null, 0, -1, SimpleInit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    // Initialize enums and add enum literals
+    initEEnum(scModifierEEnum, SCModifier.class, "SCModifier");
+    addEEnumLiteral(scModifierEEnum, SCModifier.INITIAL);
+    addEEnumLiteral(scModifierEEnum, SCModifier.FINAL);
 
     // Create resource
     createResource(eNS_URI);

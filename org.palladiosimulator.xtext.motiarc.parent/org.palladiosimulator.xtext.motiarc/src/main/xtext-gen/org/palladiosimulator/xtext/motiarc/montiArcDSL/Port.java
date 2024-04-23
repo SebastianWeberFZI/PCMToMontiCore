@@ -7,6 +7,8 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.palladiosimulator.xtext.motiarc.mcBasics.Type;
 
+import org.palladiosimulator.xtext.motiarc.montiCoreCD.CDDefinition;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Port</b></em>'.
@@ -20,6 +22,7 @@ import org.palladiosimulator.xtext.motiarc.mcBasics.Type;
  *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Port#isIn <em>In</em>}</li>
  *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Port#isOut <em>Out</em>}</li>
  *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Port#getType <em>Type</em>}</li>
+ *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Port#getDatatype <em>Datatype</em>}</li>
  *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Port#isNames <em>Names</em>}</li>
  * </ul>
  *
@@ -116,6 +119,28 @@ public interface Port extends EObject
    * @generated
    */
   void setType(Type value);
+
+  /**
+   * Returns the value of the '<em><b>Datatype</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Datatype</em>' reference.
+   * @see #setDatatype(CDDefinition)
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.MontiArcDSLPackage#getPort_Datatype()
+   * @model
+   * @generated
+   */
+  CDDefinition getDatatype();
+
+  /**
+   * Sets the value of the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Port#getDatatype <em>Datatype</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Datatype</em>' reference.
+   * @see #getDatatype()
+   * @generated
+   */
+  void setDatatype(CDDefinition value);
 
   /**
    * Returns the value of the '<em><b>Names</b></em>' attribute.

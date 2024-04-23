@@ -17,6 +17,8 @@ import org.palladiosimulator.xtext.motiarc.mcBasics.Type;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.MontiArcDSLPackage;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.Port;
 
+import org.palladiosimulator.xtext.motiarc.montiCoreCD.CDDefinition;
+
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Port</b></em>'.
@@ -29,6 +31,7 @@ import org.palladiosimulator.xtext.motiarc.montiArcDSL.Port;
  *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.PortImpl#isIn <em>In</em>}</li>
  *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.PortImpl#isOut <em>Out</em>}</li>
  *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.PortImpl#getType <em>Type</em>}</li>
+ *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.PortImpl#getDatatype <em>Datatype</em>}</li>
  *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.PortImpl#isNames <em>Names</em>}</li>
  * </ul>
  *
@@ -105,6 +108,16 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port
    * @ordered
    */
   protected Type type;
+
+  /**
+   * The cached value of the '{@link #getDatatype() <em>Datatype</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDatatype()
+   * @generated
+   * @ordered
+   */
+  protected CDDefinition datatype;
 
   /**
    * The default value of the '{@link #isNames() <em>Names</em>}' attribute.
@@ -278,6 +291,51 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port
    * @generated
    */
   @Override
+  public CDDefinition getDatatype()
+  {
+    if (datatype != null && datatype.eIsProxy())
+    {
+      InternalEObject oldDatatype = (InternalEObject)datatype;
+      datatype = (CDDefinition)eResolveProxy(oldDatatype);
+      if (datatype != oldDatatype)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, MontiArcDSLPackage.PORT__DATATYPE, oldDatatype, datatype));
+      }
+    }
+    return datatype;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CDDefinition basicGetDatatype()
+  {
+    return datatype;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setDatatype(CDDefinition newDatatype)
+  {
+    CDDefinition oldDatatype = datatype;
+    datatype = newDatatype;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MontiArcDSLPackage.PORT__DATATYPE, oldDatatype, datatype));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public boolean isNames()
   {
     return names;
@@ -331,6 +389,9 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port
         return isOut();
       case MontiArcDSLPackage.PORT__TYPE:
         return getType();
+      case MontiArcDSLPackage.PORT__DATATYPE:
+        if (resolve) return getDatatype();
+        return basicGetDatatype();
       case MontiArcDSLPackage.PORT__NAMES:
         return isNames();
     }
@@ -358,6 +419,9 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port
         return;
       case MontiArcDSLPackage.PORT__TYPE:
         setType((Type)newValue);
+        return;
+      case MontiArcDSLPackage.PORT__DATATYPE:
+        setDatatype((CDDefinition)newValue);
         return;
       case MontiArcDSLPackage.PORT__NAMES:
         setNames((Boolean)newValue);
@@ -388,6 +452,9 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port
       case MontiArcDSLPackage.PORT__TYPE:
         setType((Type)null);
         return;
+      case MontiArcDSLPackage.PORT__DATATYPE:
+        setDatatype((CDDefinition)null);
+        return;
       case MontiArcDSLPackage.PORT__NAMES:
         setNames(NAMES_EDEFAULT);
         return;
@@ -413,6 +480,8 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port
         return out != OUT_EDEFAULT;
       case MontiArcDSLPackage.PORT__TYPE:
         return type != null;
+      case MontiArcDSLPackage.PORT__DATATYPE:
+        return datatype != null;
       case MontiArcDSLPackage.PORT__NAMES:
         return names != NAMES_EDEFAULT;
     }

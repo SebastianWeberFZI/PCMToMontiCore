@@ -26,9 +26,22 @@ public class MCBasicsSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
-		if (ruleCall.getRule() == grammarAccess.getIDRule())
+		if (ruleCall.getRule() == grammarAccess.getDOTSTARRule())
+			return getDOTSTARToken(semanticObject, ruleCall, node);
+		else if (ruleCall.getRule() == grammarAccess.getIDRule())
 			return getIDToken(semanticObject, ruleCall, node);
 		return "";
+	}
+	
+	/**
+	 * terminal DOTSTAR:
+	 * 	'.*'
+	 * ;
+	 */
+	protected String getDOTSTARToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return ".*";
 	}
 	
 	/**

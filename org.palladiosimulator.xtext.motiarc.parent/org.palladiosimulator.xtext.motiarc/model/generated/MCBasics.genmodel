@@ -6,6 +6,16 @@
     complianceLevel="11.0" copyrightFields="false" runtimeVersion="2.29">
   <genPackages prefix="McBasics" basePackage="org.palladiosimulator.xtext.motiarc"
       disposableProviderFactory="true" fileExtensions="mcbasics" ecorePackage="MCBasics.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="MCBasics.ecore#//Operator">
+      <genEnumLiterals ecoreEnumLiteral="MCBasics.ecore#//Operator/GT"/>
+      <genEnumLiterals ecoreEnumLiteral="MCBasics.ecore#//Operator/LT"/>
+      <genEnumLiterals ecoreEnumLiteral="MCBasics.ecore#//Operator/EQ"/>
+      <genEnumLiterals ecoreEnumLiteral="MCBasics.ecore#//Operator/BA"/>
+      <genEnumLiterals ecoreEnumLiteral="MCBasics.ecore#//Operator/PLUS"/>
+      <genEnumLiterals ecoreEnumLiteral="MCBasics.ecore#//Operator/MINUS"/>
+      <genEnumLiterals ecoreEnumLiteral="MCBasics.ecore#//Operator/DIV"/>
+      <genEnumLiterals ecoreEnumLiteral="MCBasics.ecore#//Operator/MULT"/>
+    </genEnums>
     <genClasses ecoreClass="MCBasics.ecore#//ImportStatements">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MCBasics.ecore#//ImportStatements/importUri"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MCBasics.ecore#//ImportStatements/star"/>
@@ -16,6 +26,9 @@
     <genClasses ecoreClass="MCBasics.ecore#//Type"/>
     <genClasses ecoreClass="MCBasics.ecore#//MCPrimitiveType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MCBasics.ecore#//MCPrimitiveType/type"/>
+    </genClasses>
+    <genClasses ecoreClass="MCBasics.ecore#//MCObjectType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MCBasics.ecore#//MCObjectType/type"/>
     </genClasses>
     <genClasses ecoreClass="MCBasics.ecore#//MCVoidType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MCBasics.ecore#//MCVoidType/type"/>
@@ -35,6 +48,12 @@
     </genClasses>
     <genClasses ecoreClass="MCBasics.ecore#//NameExpression">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MCBasics.ecore#//NameExpression/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MCBasics.ecore#//NameExpression/qualifiedname"/>
+    </genClasses>
+    <genClasses ecoreClass="MCBasics.ecore#//BinaryExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MCBasics.ecore#//BinaryExpression/literal1"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MCBasics.ecore#//BinaryExpression/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MCBasics.ecore#//BinaryExpression/literal2"/>
     </genClasses>
     <genClasses ecoreClass="MCBasics.ecore#//Arguments">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MCBasics.ecore#//Arguments/arguments"/>

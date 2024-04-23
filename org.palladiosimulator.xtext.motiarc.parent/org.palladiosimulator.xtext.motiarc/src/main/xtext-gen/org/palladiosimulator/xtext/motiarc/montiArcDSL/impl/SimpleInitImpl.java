@@ -3,31 +3,41 @@
  */
 package org.palladiosimulator.xtext.motiarc.montiArcDSL.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.palladiosimulator.xtext.motiarc.montiArcDSL.InitialState;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+import org.palladiosimulator.xtext.motiarc.mcBasics.Expression;
+
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.MontiArcDSLPackage;
+import org.palladiosimulator.xtext.motiarc.montiArcDSL.SimpleInit;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Initial State</b></em>'.
+ * An implementation of the model object '<em><b>Simple Init</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.InitialStateImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.InitialStateImpl#isBlock <em>Block</em>}</li>
+ *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.SimpleInitImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.SimpleInitImpl#getExpressions <em>Expressions</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class InitialStateImpl extends MinimalEObjectImpl.Container implements InitialState
+public class SimpleInitImpl extends BlockStatementImpl implements SimpleInit
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -50,31 +60,21 @@ public class InitialStateImpl extends MinimalEObjectImpl.Container implements In
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The default value of the '{@link #isBlock() <em>Block</em>}' attribute.
+   * The cached value of the '{@link #getExpressions() <em>Expressions</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #isBlock()
+   * @see #getExpressions()
    * @generated
    * @ordered
    */
-  protected static final boolean BLOCK_EDEFAULT = false;
-
-  /**
-   * The cached value of the '{@link #isBlock() <em>Block</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #isBlock()
-   * @generated
-   * @ordered
-   */
-  protected boolean block = BLOCK_EDEFAULT;
+  protected EList<Expression> expressions;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected InitialStateImpl()
+  protected SimpleInitImpl()
   {
     super();
   }
@@ -87,7 +87,7 @@ public class InitialStateImpl extends MinimalEObjectImpl.Container implements In
   @Override
   protected EClass eStaticClass()
   {
-    return MontiArcDSLPackage.Literals.INITIAL_STATE;
+    return MontiArcDSLPackage.Literals.SIMPLE_INIT;
   }
 
   /**
@@ -112,7 +112,7 @@ public class InitialStateImpl extends MinimalEObjectImpl.Container implements In
     String oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MontiArcDSLPackage.INITIAL_STATE__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, MontiArcDSLPackage.SIMPLE_INIT__NAME, oldName, name));
   }
 
   /**
@@ -121,9 +121,13 @@ public class InitialStateImpl extends MinimalEObjectImpl.Container implements In
    * @generated
    */
   @Override
-  public boolean isBlock()
+  public EList<Expression> getExpressions()
   {
-    return block;
+    if (expressions == null)
+    {
+      expressions = new EObjectContainmentEList<Expression>(Expression.class, this, MontiArcDSLPackage.SIMPLE_INIT__EXPRESSIONS);
+    }
+    return expressions;
   }
 
   /**
@@ -132,12 +136,14 @@ public class InitialStateImpl extends MinimalEObjectImpl.Container implements In
    * @generated
    */
   @Override
-  public void setBlock(boolean newBlock)
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
-    boolean oldBlock = block;
-    block = newBlock;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MontiArcDSLPackage.INITIAL_STATE__BLOCK, oldBlock, block));
+    switch (featureID)
+    {
+      case MontiArcDSLPackage.SIMPLE_INIT__EXPRESSIONS:
+        return ((InternalEList<?>)getExpressions()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -150,10 +156,10 @@ public class InitialStateImpl extends MinimalEObjectImpl.Container implements In
   {
     switch (featureID)
     {
-      case MontiArcDSLPackage.INITIAL_STATE__NAME:
+      case MontiArcDSLPackage.SIMPLE_INIT__NAME:
         return getName();
-      case MontiArcDSLPackage.INITIAL_STATE__BLOCK:
-        return isBlock();
+      case MontiArcDSLPackage.SIMPLE_INIT__EXPRESSIONS:
+        return getExpressions();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -163,16 +169,18 @@ public class InitialStateImpl extends MinimalEObjectImpl.Container implements In
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case MontiArcDSLPackage.INITIAL_STATE__NAME:
+      case MontiArcDSLPackage.SIMPLE_INIT__NAME:
         setName((String)newValue);
         return;
-      case MontiArcDSLPackage.INITIAL_STATE__BLOCK:
-        setBlock((Boolean)newValue);
+      case MontiArcDSLPackage.SIMPLE_INIT__EXPRESSIONS:
+        getExpressions().clear();
+        getExpressions().addAll((Collection<? extends Expression>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -188,11 +196,11 @@ public class InitialStateImpl extends MinimalEObjectImpl.Container implements In
   {
     switch (featureID)
     {
-      case MontiArcDSLPackage.INITIAL_STATE__NAME:
+      case MontiArcDSLPackage.SIMPLE_INIT__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case MontiArcDSLPackage.INITIAL_STATE__BLOCK:
-        setBlock(BLOCK_EDEFAULT);
+      case MontiArcDSLPackage.SIMPLE_INIT__EXPRESSIONS:
+        getExpressions().clear();
         return;
     }
     super.eUnset(featureID);
@@ -208,10 +216,10 @@ public class InitialStateImpl extends MinimalEObjectImpl.Container implements In
   {
     switch (featureID)
     {
-      case MontiArcDSLPackage.INITIAL_STATE__NAME:
+      case MontiArcDSLPackage.SIMPLE_INIT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case MontiArcDSLPackage.INITIAL_STATE__BLOCK:
-        return block != BLOCK_EDEFAULT;
+      case MontiArcDSLPackage.SIMPLE_INIT__EXPRESSIONS:
+        return expressions != null && !expressions.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -229,10 +237,8 @@ public class InitialStateImpl extends MinimalEObjectImpl.Container implements In
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (name: ");
     result.append(name);
-    result.append(", block: ");
-    result.append(block);
     result.append(')');
     return result.toString();
   }
 
-} //InitialStateImpl
+} //SimpleInitImpl
