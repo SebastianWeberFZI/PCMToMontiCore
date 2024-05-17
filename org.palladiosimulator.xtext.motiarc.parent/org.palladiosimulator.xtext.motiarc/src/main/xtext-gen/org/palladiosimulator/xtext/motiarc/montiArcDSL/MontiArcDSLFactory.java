@@ -123,6 +123,15 @@ public interface MontiArcDSLFactory extends EFactory
   Port createPort();
 
   /**
+   * Returns a new object of class '<em>Assume</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Assume</em>'.
+   * @generated
+   */
+  Assume createAssume();
+
+  /**
    * Returns a new object of class '<em>Names</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

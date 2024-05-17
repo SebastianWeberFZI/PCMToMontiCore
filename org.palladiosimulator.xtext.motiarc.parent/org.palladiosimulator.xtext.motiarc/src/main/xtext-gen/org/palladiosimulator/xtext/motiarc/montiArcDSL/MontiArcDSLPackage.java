@@ -430,13 +430,22 @@ public interface MontiArcDSLPackage extends EPackage
   int PORT = 10;
 
   /**
+   * The feature id for the '<em><b>Assume</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PORT__ASSUME = 0;
+
+  /**
    * The feature id for the '<em><b>Sync</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PORT__SYNC = 0;
+  int PORT__SYNC = 1;
 
   /**
    * The feature id for the '<em><b>In</b></em>' attribute.
@@ -445,7 +454,7 @@ public interface MontiArcDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT__IN = 1;
+  int PORT__IN = 2;
 
   /**
    * The feature id for the '<em><b>Out</b></em>' attribute.
@@ -454,7 +463,7 @@ public interface MontiArcDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT__OUT = 2;
+  int PORT__OUT = 3;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -463,7 +472,7 @@ public interface MontiArcDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT__TYPE = 3;
+  int PORT__TYPE = 4;
 
   /**
    * The feature id for the '<em><b>Datatype</b></em>' reference.
@@ -472,7 +481,7 @@ public interface MontiArcDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT__DATATYPE = 4;
+  int PORT__DATATYPE = 5;
 
   /**
    * The feature id for the '<em><b>Names</b></em>' attribute.
@@ -481,7 +490,7 @@ public interface MontiArcDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT__NAMES = 5;
+  int PORT__NAMES = 6;
 
   /**
    * The number of structural features of the '<em>Port</em>' class.
@@ -490,7 +499,35 @@ public interface MontiArcDSLPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PORT_FEATURE_COUNT = 6;
+  int PORT_FEATURE_COUNT = 7;
+
+  /**
+   * The meta object id for the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.AssumeImpl <em>Assume</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.AssumeImpl
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getAssume()
+   * @generated
+   */
+  int ASSUME = 11;
+
+  /**
+   * The feature id for the '<em><b>Condition</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSUME__CONDITION = 0;
+
+  /**
+   * The number of structural features of the '<em>Assume</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ASSUME_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.NamesImpl <em>Names</em>}' class.
@@ -500,7 +537,7 @@ public interface MontiArcDSLPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getNames()
    * @generated
    */
-  int NAMES = 11;
+  int NAMES = 12;
 
   /**
    * The feature id for the '<em><b>Names</b></em>' attribute list.
@@ -528,7 +565,7 @@ public interface MontiArcDSLPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getVariable()
    * @generated
    */
-  int VARIABLE = 12;
+  int VARIABLE = 13;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference.
@@ -574,7 +611,7 @@ public interface MontiArcDSLPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getAutomaton()
    * @generated
    */
-  int AUTOMATON = 13;
+  int AUTOMATON = 14;
 
   /**
    * The feature id for the '<em><b>Sync</b></em>' attribute.
@@ -629,7 +666,7 @@ public interface MontiArcDSLPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getState()
    * @generated
    */
-  int STATE = 14;
+  int STATE = 15;
 
   /**
    * The feature id for the '<em><b>Modifier</b></em>' attribute list.
@@ -666,7 +703,7 @@ public interface MontiArcDSLPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getSCState()
    * @generated
    */
-  int SC_STATE = 15;
+  int SC_STATE = 16;
 
   /**
    * The feature id for the '<em><b>Modifier</b></em>' attribute list.
@@ -712,7 +749,7 @@ public interface MontiArcDSLPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getInvState()
    * @generated
    */
-  int INV_STATE = 16;
+  int INV_STATE = 17;
 
   /**
    * The feature id for the '<em><b>Modifier</b></em>' attribute list.
@@ -758,7 +795,7 @@ public interface MontiArcDSLPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getSCSAnte()
    * @generated
    */
-  int SCS_ANTE = 17;
+  int SCS_ANTE = 18;
 
   /**
    * The feature id for the '<em><b>Block</b></em>' containment reference.
@@ -786,7 +823,7 @@ public interface MontiArcDSLPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getTransition()
    * @generated
    */
-  int TRANSITION = 18;
+  int TRANSITION = 19;
 
   /**
    * The feature id for the '<em><b>Source</b></em>' reference.
@@ -841,7 +878,7 @@ public interface MontiArcDSLPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getBlock()
    * @generated
    */
-  int BLOCK = 19;
+  int BLOCK = 20;
 
   /**
    * The feature id for the '<em><b>Blocks</b></em>' containment reference list.
@@ -869,7 +906,7 @@ public interface MontiArcDSLPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getBlockStatement()
    * @generated
    */
-  int BLOCK_STATEMENT = 20;
+  int BLOCK_STATEMENT = 21;
 
   /**
    * The number of structural features of the '<em>Block Statement</em>' class.
@@ -888,7 +925,7 @@ public interface MontiArcDSLPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getSimpleExpression()
    * @generated
    */
-  int SIMPLE_EXPRESSION = 21;
+  int SIMPLE_EXPRESSION = 22;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -916,7 +953,7 @@ public interface MontiArcDSLPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getSimpleInit()
    * @generated
    */
-  int SIMPLE_INIT = 22;
+  int SIMPLE_INIT = 23;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -953,7 +990,7 @@ public interface MontiArcDSLPackage extends EPackage
    * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getSCModifier()
    * @generated
    */
-  int SC_MODIFIER = 23;
+  int SC_MODIFIER = 24;
 
 
   /**
@@ -1276,6 +1313,17 @@ public interface MontiArcDSLPackage extends EPackage
   EClass getPort();
 
   /**
+   * Returns the meta object for the containment reference '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Port#getAssume <em>Assume</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Assume</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.Port#getAssume()
+   * @see #getPort()
+   * @generated
+   */
+  EReference getPort_Assume();
+
+  /**
    * Returns the meta object for the attribute '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Port#isSync <em>Sync</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1340,6 +1388,27 @@ public interface MontiArcDSLPackage extends EPackage
    * @generated
    */
   EAttribute getPort_Names();
+
+  /**
+   * Returns the meta object for class '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Assume <em>Assume</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Assume</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.Assume
+   * @generated
+   */
+  EClass getAssume();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Assume#getCondition <em>Condition</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Condition</em>'.
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.Assume#getCondition()
+   * @see #getAssume()
+   * @generated
+   */
+  EAttribute getAssume_Condition();
 
   /**
    * Returns the meta object for class '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Names <em>Names</em>}'.
@@ -1988,6 +2057,14 @@ public interface MontiArcDSLPackage extends EPackage
     EClass PORT = eINSTANCE.getPort();
 
     /**
+     * The meta object literal for the '<em><b>Assume</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PORT__ASSUME = eINSTANCE.getPort_Assume();
+
+    /**
      * The meta object literal for the '<em><b>Sync</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2034,6 +2111,24 @@ public interface MontiArcDSLPackage extends EPackage
      * @generated
      */
     EAttribute PORT__NAMES = eINSTANCE.getPort_Names();
+
+    /**
+     * The meta object literal for the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.AssumeImpl <em>Assume</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.AssumeImpl
+     * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.MontiArcDSLPackageImpl#getAssume()
+     * @generated
+     */
+    EClass ASSUME = eINSTANCE.getAssume();
+
+    /**
+     * The meta object literal for the '<em><b>Condition</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ASSUME__CONDITION = eINSTANCE.getAssume_Condition();
 
     /**
      * The meta object literal for the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.NamesImpl <em>Names</em>}' class.

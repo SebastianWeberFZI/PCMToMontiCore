@@ -419,73 +419,117 @@ public class MontiArcDSLGrammarAccess extends AbstractElementFinder.AbstractGram
 	public class PortElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.xtext.motiarc.MontiArcDSL.Port");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cSyncAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cSyncSYNCTerminalRuleCall_0_0 = (RuleCall)cSyncAssignment_0.eContents().get(0);
-		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
-		private final Assignment cInAssignment_1_0 = (Assignment)cAlternatives_1.eContents().get(0);
-		private final Keyword cInInKeyword_1_0_0 = (Keyword)cInAssignment_1_0.eContents().get(0);
-		private final Assignment cOutAssignment_1_1 = (Assignment)cAlternatives_1.eContents().get(1);
-		private final Keyword cOutOutKeyword_1_1_0 = (Keyword)cOutAssignment_1_1.eContents().get(0);
+		private final Assignment cAssumeAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cAssumeAssumeParserRuleCall_0_0 = (RuleCall)cAssumeAssignment_0.eContents().get(0);
+		private final Assignment cSyncAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cSyncSYNCTerminalRuleCall_1_0 = (RuleCall)cSyncAssignment_1.eContents().get(0);
 		private final Alternatives cAlternatives_2 = (Alternatives)cGroup.eContents().get(2);
-		private final Assignment cTypeAssignment_2_0 = (Assignment)cAlternatives_2.eContents().get(0);
-		private final RuleCall cTypeTypeParserRuleCall_2_0_0 = (RuleCall)cTypeAssignment_2_0.eContents().get(0);
-		private final Assignment cDatatypeAssignment_2_1 = (Assignment)cAlternatives_2.eContents().get(1);
-		private final CrossReference cDatatypeCDDefinitionCrossReference_2_1_0 = (CrossReference)cDatatypeAssignment_2_1.eContents().get(0);
-		private final RuleCall cDatatypeCDDefinitionIDTerminalRuleCall_2_1_0_1 = (RuleCall)cDatatypeCDDefinitionCrossReference_2_1_0.eContents().get(1);
-		private final Assignment cNamesAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cNamesNamesParserRuleCall_3_0 = (RuleCall)cNamesAssignment_3.eContents().get(0);
+		private final Assignment cInAssignment_2_0 = (Assignment)cAlternatives_2.eContents().get(0);
+		private final Keyword cInInKeyword_2_0_0 = (Keyword)cInAssignment_2_0.eContents().get(0);
+		private final Assignment cOutAssignment_2_1 = (Assignment)cAlternatives_2.eContents().get(1);
+		private final Keyword cOutOutKeyword_2_1_0 = (Keyword)cOutAssignment_2_1.eContents().get(0);
+		private final Alternatives cAlternatives_3 = (Alternatives)cGroup.eContents().get(3);
+		private final Assignment cTypeAssignment_3_0 = (Assignment)cAlternatives_3.eContents().get(0);
+		private final RuleCall cTypeTypeParserRuleCall_3_0_0 = (RuleCall)cTypeAssignment_3_0.eContents().get(0);
+		private final Assignment cDatatypeAssignment_3_1 = (Assignment)cAlternatives_3.eContents().get(1);
+		private final CrossReference cDatatypeCDDefinitionCrossReference_3_1_0 = (CrossReference)cDatatypeAssignment_3_1.eContents().get(0);
+		private final RuleCall cDatatypeCDDefinitionIDTerminalRuleCall_3_1_0_1 = (RuleCall)cDatatypeCDDefinitionCrossReference_3_1_0.eContents().get(1);
+		private final Assignment cNamesAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cNamesNamesParserRuleCall_4_0 = (RuleCall)cNamesAssignment_4.eContents().get(0);
 		
 		//Port:
-		//    (sync?=SYNC)?(in?="in" | out?="out") (type=Type|datatype=([cd::CDDefinition])) names?=Names? ;
+		//    (assume=Assume)?(sync?=SYNC)?(in?="in" | out?="out") (type=Type|datatype=([cd::CDDefinition])) names?=Names? ;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//(sync?=SYNC)?(in?="in" | out?="out") (type=Type|datatype=([cd::CDDefinition])) names?=Names?
+		//(assume=Assume)?(sync?=SYNC)?(in?="in" | out?="out") (type=Type|datatype=([cd::CDDefinition])) names?=Names?
 		public Group getGroup() { return cGroup; }
 		
+		//(assume=Assume)?
+		public Assignment getAssumeAssignment_0() { return cAssumeAssignment_0; }
+		
+		//Assume
+		public RuleCall getAssumeAssumeParserRuleCall_0_0() { return cAssumeAssumeParserRuleCall_0_0; }
+		
 		//(sync?=SYNC)?
-		public Assignment getSyncAssignment_0() { return cSyncAssignment_0; }
+		public Assignment getSyncAssignment_1() { return cSyncAssignment_1; }
 		
 		//SYNC
-		public RuleCall getSyncSYNCTerminalRuleCall_0_0() { return cSyncSYNCTerminalRuleCall_0_0; }
+		public RuleCall getSyncSYNCTerminalRuleCall_1_0() { return cSyncSYNCTerminalRuleCall_1_0; }
 		
 		//(in?="in" | out?="out")
-		public Alternatives getAlternatives_1() { return cAlternatives_1; }
-		
-		//in?="in"
-		public Assignment getInAssignment_1_0() { return cInAssignment_1_0; }
-		
-		//"in"
-		public Keyword getInInKeyword_1_0_0() { return cInInKeyword_1_0_0; }
-		
-		//out?="out"
-		public Assignment getOutAssignment_1_1() { return cOutAssignment_1_1; }
-		
-		//"out"
-		public Keyword getOutOutKeyword_1_1_0() { return cOutOutKeyword_1_1_0; }
-		
-		//(type=Type|datatype=([cd::CDDefinition]))
 		public Alternatives getAlternatives_2() { return cAlternatives_2; }
 		
+		//in?="in"
+		public Assignment getInAssignment_2_0() { return cInAssignment_2_0; }
+		
+		//"in"
+		public Keyword getInInKeyword_2_0_0() { return cInInKeyword_2_0_0; }
+		
+		//out?="out"
+		public Assignment getOutAssignment_2_1() { return cOutAssignment_2_1; }
+		
+		//"out"
+		public Keyword getOutOutKeyword_2_1_0() { return cOutOutKeyword_2_1_0; }
+		
+		//(type=Type|datatype=([cd::CDDefinition]))
+		public Alternatives getAlternatives_3() { return cAlternatives_3; }
+		
 		//type=Type
-		public Assignment getTypeAssignment_2_0() { return cTypeAssignment_2_0; }
+		public Assignment getTypeAssignment_3_0() { return cTypeAssignment_3_0; }
 		
 		//Type
-		public RuleCall getTypeTypeParserRuleCall_2_0_0() { return cTypeTypeParserRuleCall_2_0_0; }
+		public RuleCall getTypeTypeParserRuleCall_3_0_0() { return cTypeTypeParserRuleCall_3_0_0; }
 		
 		//datatype=([cd::CDDefinition])
-		public Assignment getDatatypeAssignment_2_1() { return cDatatypeAssignment_2_1; }
+		public Assignment getDatatypeAssignment_3_1() { return cDatatypeAssignment_3_1; }
 		
 		//([cd::CDDefinition])
-		public CrossReference getDatatypeCDDefinitionCrossReference_2_1_0() { return cDatatypeCDDefinitionCrossReference_2_1_0; }
+		public CrossReference getDatatypeCDDefinitionCrossReference_3_1_0() { return cDatatypeCDDefinitionCrossReference_3_1_0; }
 		
 		//ID
-		public RuleCall getDatatypeCDDefinitionIDTerminalRuleCall_2_1_0_1() { return cDatatypeCDDefinitionIDTerminalRuleCall_2_1_0_1; }
+		public RuleCall getDatatypeCDDefinitionIDTerminalRuleCall_3_1_0_1() { return cDatatypeCDDefinitionIDTerminalRuleCall_3_1_0_1; }
 		
 		//names?=Names?
-		public Assignment getNamesAssignment_3() { return cNamesAssignment_3; }
+		public Assignment getNamesAssignment_4() { return cNamesAssignment_4; }
 		
 		//Names
-		public RuleCall getNamesNamesParserRuleCall_3_0() { return cNamesNamesParserRuleCall_3_0; }
+		public RuleCall getNamesNamesParserRuleCall_4_0() { return cNamesNamesParserRuleCall_4_0; }
+	}
+	public class AssumeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.xtext.motiarc.MontiArcDSL.Assume");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLessThanSignLessThanSignKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cAssumeKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Keyword cEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cConditionAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cConditionSTRINGTerminalRuleCall_3_0 = (RuleCall)cConditionAssignment_3.eContents().get(0);
+		private final Keyword cGreaterThanSignGreaterThanSignKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//Assume:
+		//    '<<''assume' '=' condition=STRING '>>'
+		//;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'<<''assume' '=' condition=STRING '>>'
+		public Group getGroup() { return cGroup; }
+		
+		//'<<'
+		public Keyword getLessThanSignLessThanSignKeyword_0() { return cLessThanSignLessThanSignKeyword_0; }
+		
+		//'assume'
+		public Keyword getAssumeKeyword_1() { return cAssumeKeyword_1; }
+		
+		//'='
+		public Keyword getEqualsSignKeyword_2() { return cEqualsSignKeyword_2; }
+		
+		//condition=STRING
+		public Assignment getConditionAssignment_3() { return cConditionAssignment_3; }
+		
+		//STRING
+		public RuleCall getConditionSTRINGTerminalRuleCall_3_0() { return cConditionSTRINGTerminalRuleCall_3_0; }
+		
+		//'>>'
+		public Keyword getGreaterThanSignGreaterThanSignKeyword_4() { return cGreaterThanSignGreaterThanSignKeyword_4; }
 	}
 	public class NamesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.palladiosimulator.xtext.motiarc.MontiArcDSL.Names");
@@ -1055,6 +1099,7 @@ public class MontiArcDSLGrammarAccess extends AbstractElementFinder.AbstractGram
 	private final ConnectorElements pConnector;
 	private final PortsElements pPorts;
 	private final PortElements pPort;
+	private final AssumeElements pAssume;
 	private final NamesElements pNames;
 	private final VariableElements pVariable;
 	private final AutomatonElements pAutomaton;
@@ -1094,6 +1139,7 @@ public class MontiArcDSLGrammarAccess extends AbstractElementFinder.AbstractGram
 		this.pConnector = new ConnectorElements();
 		this.pPorts = new PortsElements();
 		this.pPort = new PortElements();
+		this.pAssume = new AssumeElements();
 		this.pNames = new NamesElements();
 		this.pVariable = new VariableElements();
 		this.pAutomaton = new AutomatonElements();
@@ -1248,13 +1294,24 @@ public class MontiArcDSLGrammarAccess extends AbstractElementFinder.AbstractGram
 	}
 	
 	//Port:
-	//    (sync?=SYNC)?(in?="in" | out?="out") (type=Type|datatype=([cd::CDDefinition])) names?=Names? ;
+	//    (assume=Assume)?(sync?=SYNC)?(in?="in" | out?="out") (type=Type|datatype=([cd::CDDefinition])) names?=Names? ;
 	public PortElements getPortAccess() {
 		return pPort;
 	}
 	
 	public ParserRule getPortRule() {
 		return getPortAccess().getRule();
+	}
+	
+	//Assume:
+	//    '<<''assume' '=' condition=STRING '>>'
+	//;
+	public AssumeElements getAssumeAccess() {
+		return pAssume;
+	}
+	
+	public ParserRule getAssumeRule() {
+		return getAssumeAccess().getRule();
 	}
 	
 	//Names:

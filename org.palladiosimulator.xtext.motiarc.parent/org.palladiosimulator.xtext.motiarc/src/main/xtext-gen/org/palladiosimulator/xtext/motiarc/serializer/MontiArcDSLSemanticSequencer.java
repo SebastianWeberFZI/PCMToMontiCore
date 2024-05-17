@@ -25,6 +25,7 @@ import org.palladiosimulator.xtext.motiarc.mcBasics.McBasicsPackage;
 import org.palladiosimulator.xtext.motiarc.mcBasics.NameExpression;
 import org.palladiosimulator.xtext.motiarc.mcBasics.NumberLiteral;
 import org.palladiosimulator.xtext.motiarc.mcBasics.StringLiteral;
+import org.palladiosimulator.xtext.motiarc.montiArcDSL.Assume;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.Automaton;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.Block;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.Component;
@@ -100,6 +101,9 @@ public class MontiArcDSLSemanticSequencer extends MCBasicsSemanticSequencer {
 			}
 		else if (epackage == MontiArcDSLPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
+			case MontiArcDSLPackage.ASSUME:
+				sequence_Assume(context, (Assume) semanticObject); 
+				return; 
 			case MontiArcDSLPackage.AUTOMATON:
 				sequence_Automaton(context, (Automaton) semanticObject); 
 				return; 
@@ -164,6 +168,26 @@ public class MontiArcDSLSemanticSequencer extends MCBasicsSemanticSequencer {
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
+	
+	/**
+	 * <pre>
+	 * Contexts:
+	 *     Assume returns Assume
+	 *
+	 * Constraint:
+	 *     condition=STRING
+	 * </pre>
+	 */
+	protected void sequence_Assume(ISerializationContext context, Assume semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, MontiArcDSLPackage.Literals.ASSUME__CONDITION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MontiArcDSLPackage.Literals.ASSUME__CONDITION));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getAssumeAccess().getConditionSTRINGTerminalRuleCall_3_0(), semanticObject.getCondition());
+		feeder.finish();
+	}
+	
 	
 	/**
 	 * <pre>
@@ -321,7 +345,7 @@ public class MontiArcDSLSemanticSequencer extends MCBasicsSemanticSequencer {
 	 *     Port returns Port
 	 *
 	 * Constraint:
-	 *     (sync?=SYNC? (in?='in' | out?='out') (type=Type | datatype=[CDDefinition|ID]) names?=Names?)
+	 *     (assume=Assume? sync?=SYNC? (in?='in' | out?='out') (type=Type | datatype=[CDDefinition|ID]) names?=Names?)
 	 * </pre>
 	 */
 	protected void sequence_Port(ISerializationContext context, Port semanticObject) {

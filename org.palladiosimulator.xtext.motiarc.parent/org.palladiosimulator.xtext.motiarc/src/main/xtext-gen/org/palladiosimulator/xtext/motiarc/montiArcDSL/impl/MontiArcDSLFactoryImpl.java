@@ -77,6 +77,7 @@ public class MontiArcDSLFactoryImpl extends EFactoryImpl implements MontiArcDSLF
       case MontiArcDSLPackage.CONNECTOR: return createConnector();
       case MontiArcDSLPackage.PORTS: return createPorts();
       case MontiArcDSLPackage.PORT: return createPort();
+      case MontiArcDSLPackage.ASSUME: return createAssume();
       case MontiArcDSLPackage.NAMES: return createNames();
       case MontiArcDSLPackage.VARIABLE: return createVariable();
       case MontiArcDSLPackage.AUTOMATON: return createAutomaton();
@@ -258,6 +259,18 @@ public class MontiArcDSLFactoryImpl extends EFactoryImpl implements MontiArcDSLF
   {
     PortImpl port = new PortImpl();
     return port;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Assume createAssume()
+  {
+    AssumeImpl assume = new AssumeImpl();
+    return assume;
   }
 
   /**

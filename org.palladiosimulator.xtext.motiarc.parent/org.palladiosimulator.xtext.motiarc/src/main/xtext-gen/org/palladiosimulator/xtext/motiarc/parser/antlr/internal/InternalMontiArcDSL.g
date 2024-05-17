@@ -794,9 +794,28 @@ rulePort returns [EObject current=null]
 	(
 		(
 			(
-				lv_sync_0_0=RULE_SYNC
 				{
-					newLeafNode(lv_sync_0_0, grammarAccess.getPortAccess().getSyncSYNCTerminalRuleCall_0_0());
+					newCompositeNode(grammarAccess.getPortAccess().getAssumeAssumeParserRuleCall_0_0());
+				}
+				lv_assume_0_0=ruleAssume
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getPortRule());
+					}
+					set(
+						$current,
+						"assume",
+						lv_assume_0_0,
+						"org.palladiosimulator.xtext.motiarc.MontiArcDSL.Assume");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)?
+		(
+			(
+				lv_sync_1_0=RULE_SYNC
+				{
+					newLeafNode(lv_sync_1_0, grammarAccess.getPortAccess().getSyncSYNCTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
@@ -805,7 +824,7 @@ rulePort returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"sync",
-						lv_sync_0_0 != null,
+						lv_sync_1_0 != null,
 						"org.palladiosimulator.xtext.motiarc.MontiArcDSL.SYNC");
 				}
 			)
@@ -813,30 +832,30 @@ rulePort returns [EObject current=null]
 		(
 			(
 				(
-					lv_in_1_0='in'
+					lv_in_2_0='in'
 					{
-						newLeafNode(lv_in_1_0, grammarAccess.getPortAccess().getInInKeyword_1_0_0());
+						newLeafNode(lv_in_2_0, grammarAccess.getPortAccess().getInInKeyword_2_0_0());
 					}
 					{
 						if ($current==null) {
 							$current = createModelElement(grammarAccess.getPortRule());
 						}
-						setWithLastConsumed($current, "in", lv_in_1_0 != null, "in");
+						setWithLastConsumed($current, "in", lv_in_2_0 != null, "in");
 					}
 				)
 			)
 			    |
 			(
 				(
-					lv_out_2_0='out'
+					lv_out_3_0='out'
 					{
-						newLeafNode(lv_out_2_0, grammarAccess.getPortAccess().getOutOutKeyword_1_1_0());
+						newLeafNode(lv_out_3_0, grammarAccess.getPortAccess().getOutOutKeyword_2_1_0());
 					}
 					{
 						if ($current==null) {
 							$current = createModelElement(grammarAccess.getPortRule());
 						}
-						setWithLastConsumed($current, "out", lv_out_2_0 != null, "out");
+						setWithLastConsumed($current, "out", lv_out_3_0 != null, "out");
 					}
 				)
 			)
@@ -845,9 +864,9 @@ rulePort returns [EObject current=null]
 			(
 				(
 					{
-						newCompositeNode(grammarAccess.getPortAccess().getTypeTypeParserRuleCall_2_0_0());
+						newCompositeNode(grammarAccess.getPortAccess().getTypeTypeParserRuleCall_3_0_0());
 					}
-					lv_type_3_0=ruleType
+					lv_type_4_0=ruleType
 					{
 						if ($current==null) {
 							$current = createModelElementForParent(grammarAccess.getPortRule());
@@ -855,7 +874,7 @@ rulePort returns [EObject current=null]
 						set(
 							$current,
 							"type",
-							lv_type_3_0,
+							lv_type_4_0,
 							"org.palladiosimulator.xtext.motiarc.MCBasics.Type");
 						afterParserOrEnumRuleCall();
 					}
@@ -869,9 +888,9 @@ rulePort returns [EObject current=null]
 							$current = createModelElement(grammarAccess.getPortRule());
 						}
 					}
-					otherlv_4=RULE_ID
+					otherlv_5=RULE_ID
 					{
-						newLeafNode(otherlv_4, grammarAccess.getPortAccess().getDatatypeCDDefinitionCrossReference_2_1_0());
+						newLeafNode(otherlv_5, grammarAccess.getPortAccess().getDatatypeCDDefinitionCrossReference_3_1_0());
 					}
 				)
 			)
@@ -879,9 +898,9 @@ rulePort returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getPortAccess().getNamesNamesParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getPortAccess().getNamesNamesParserRuleCall_4_0());
 				}
-				lv_names_5_0=ruleNames
+				lv_names_6_0=ruleNames
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getPortRule());
@@ -889,12 +908,65 @@ rulePort returns [EObject current=null]
 					set(
 						$current,
 						"names",
-						lv_names_5_0 != null,
+						lv_names_6_0 != null,
 						"org.palladiosimulator.xtext.motiarc.MontiArcDSL.Names");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)?
+	)
+;
+
+// Entry rule entryRuleAssume
+entryRuleAssume returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getAssumeRule()); }
+	iv_ruleAssume=ruleAssume
+	{ $current=$iv_ruleAssume.current; }
+	EOF;
+
+// Rule Assume
+ruleAssume returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='<<'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getAssumeAccess().getLessThanSignLessThanSignKeyword_0());
+		}
+		otherlv_1='assume'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getAssumeAccess().getAssumeKeyword_1());
+		}
+		otherlv_2='='
+		{
+			newLeafNode(otherlv_2, grammarAccess.getAssumeAccess().getEqualsSignKeyword_2());
+		}
+		(
+			(
+				lv_condition_3_0=RULE_STRING
+				{
+					newLeafNode(lv_condition_3_0, grammarAccess.getAssumeAccess().getConditionSTRINGTerminalRuleCall_3_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getAssumeRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"condition",
+						lv_condition_3_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_4='>>'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getAssumeAccess().getGreaterThanSignGreaterThanSignKeyword_4());
+		}
 	)
 ;
 

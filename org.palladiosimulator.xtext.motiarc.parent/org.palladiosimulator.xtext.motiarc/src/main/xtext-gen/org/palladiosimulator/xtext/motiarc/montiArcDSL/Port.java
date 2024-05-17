@@ -18,6 +18,7 @@ import org.palladiosimulator.xtext.motiarc.montiCoreCD.CDDefinition;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Port#getAssume <em>Assume</em>}</li>
  *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Port#isSync <em>Sync</em>}</li>
  *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Port#isIn <em>In</em>}</li>
  *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Port#isOut <em>Out</em>}</li>
@@ -32,6 +33,28 @@ import org.palladiosimulator.xtext.motiarc.montiCoreCD.CDDefinition;
  */
 public interface Port extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Assume</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Assume</em>' containment reference.
+   * @see #setAssume(Assume)
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.MontiArcDSLPackage#getPort_Assume()
+   * @model containment="true"
+   * @generated
+   */
+  Assume getAssume();
+
+  /**
+   * Sets the value of the '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Port#getAssume <em>Assume</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Assume</em>' containment reference.
+   * @see #getAssume()
+   * @generated
+   */
+  void setAssume(Assume value);
+
   /**
    * Returns the value of the '<em><b>Sync</b></em>' attribute.
    * <!-- begin-user-doc -->

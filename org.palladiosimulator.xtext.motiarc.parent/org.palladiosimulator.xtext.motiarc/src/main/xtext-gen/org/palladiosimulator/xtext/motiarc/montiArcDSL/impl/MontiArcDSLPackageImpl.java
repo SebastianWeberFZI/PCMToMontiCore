@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.palladiosimulator.xtext.motiarc.mcBasics.McBasicsPackage;
 
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.ArcElement;
+import org.palladiosimulator.xtext.motiarc.montiArcDSL.Assume;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.Automaton;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.Block;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.BlockStatement;
@@ -126,6 +127,13 @@ public class MontiArcDSLPackageImpl extends EPackageImpl implements MontiArcDSLP
    * @generated
    */
   private EClass portEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass assumeEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -621,9 +629,9 @@ public class MontiArcDSLPackageImpl extends EPackageImpl implements MontiArcDSLP
    * @generated
    */
   @Override
-  public EAttribute getPort_Sync()
+  public EReference getPort_Assume()
   {
-    return (EAttribute)portEClass.getEStructuralFeatures().get(0);
+    return (EReference)portEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -632,7 +640,7 @@ public class MontiArcDSLPackageImpl extends EPackageImpl implements MontiArcDSLP
    * @generated
    */
   @Override
-  public EAttribute getPort_In()
+  public EAttribute getPort_Sync()
   {
     return (EAttribute)portEClass.getEStructuralFeatures().get(1);
   }
@@ -643,7 +651,7 @@ public class MontiArcDSLPackageImpl extends EPackageImpl implements MontiArcDSLP
    * @generated
    */
   @Override
-  public EAttribute getPort_Out()
+  public EAttribute getPort_In()
   {
     return (EAttribute)portEClass.getEStructuralFeatures().get(2);
   }
@@ -654,9 +662,9 @@ public class MontiArcDSLPackageImpl extends EPackageImpl implements MontiArcDSLP
    * @generated
    */
   @Override
-  public EReference getPort_Type()
+  public EAttribute getPort_Out()
   {
-    return (EReference)portEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)portEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -665,7 +673,7 @@ public class MontiArcDSLPackageImpl extends EPackageImpl implements MontiArcDSLP
    * @generated
    */
   @Override
-  public EReference getPort_Datatype()
+  public EReference getPort_Type()
   {
     return (EReference)portEClass.getEStructuralFeatures().get(4);
   }
@@ -676,9 +684,42 @@ public class MontiArcDSLPackageImpl extends EPackageImpl implements MontiArcDSLP
    * @generated
    */
   @Override
+  public EReference getPort_Datatype()
+  {
+    return (EReference)portEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EAttribute getPort_Names()
   {
-    return (EAttribute)portEClass.getEStructuralFeatures().get(5);
+    return (EAttribute)portEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getAssume()
+  {
+    return assumeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getAssume_Condition()
+  {
+    return (EAttribute)assumeEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1126,12 +1167,16 @@ public class MontiArcDSLPackageImpl extends EPackageImpl implements MontiArcDSLP
     createEReference(portsEClass, PORTS__PORTS);
 
     portEClass = createEClass(PORT);
+    createEReference(portEClass, PORT__ASSUME);
     createEAttribute(portEClass, PORT__SYNC);
     createEAttribute(portEClass, PORT__IN);
     createEAttribute(portEClass, PORT__OUT);
     createEReference(portEClass, PORT__TYPE);
     createEReference(portEClass, PORT__DATATYPE);
     createEAttribute(portEClass, PORT__NAMES);
+
+    assumeEClass = createEClass(ASSUME);
+    createEAttribute(assumeEClass, ASSUME__CONDITION);
 
     namesEClass = createEClass(NAMES);
     createEAttribute(namesEClass, NAMES__NAMES);
@@ -1267,12 +1312,16 @@ public class MontiArcDSLPackageImpl extends EPackageImpl implements MontiArcDSLP
     initEReference(getPorts_Ports(), this.getPort(), null, "ports", null, 0, -1, Ports.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(portEClass, Port.class, "Port", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPort_Assume(), this.getAssume(), null, "assume", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getPort_Sync(), ecorePackage.getEBoolean(), "sync", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getPort_In(), ecorePackage.getEBoolean(), "in", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getPort_Out(), ecorePackage.getEBoolean(), "out", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getPort_Type(), theMcBasicsPackage.getType(), null, "type", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getPort_Datatype(), theMontiCoreCDPackage.getCDDefinition(), null, "datatype", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getPort_Names(), ecorePackage.getEBoolean(), "names", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(assumeEClass, Assume.class, "Assume", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getAssume_Condition(), ecorePackage.getEString(), "condition", null, 0, 1, Assume.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(namesEClass, Names.class, "Names", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getNames_Names(), ecorePackage.getEString(), "names", null, 0, -1, Names.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

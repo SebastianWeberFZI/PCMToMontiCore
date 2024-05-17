@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.palladiosimulator.xtext.motiarc.mcBasics.Type;
 
+import org.palladiosimulator.xtext.motiarc.montiArcDSL.Assume;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.MontiArcDSLPackage;
 import org.palladiosimulator.xtext.motiarc.montiArcDSL.Port;
 
@@ -27,6 +28,7 @@ import org.palladiosimulator.xtext.motiarc.montiCoreCD.CDDefinition;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.PortImpl#getAssume <em>Assume</em>}</li>
  *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.PortImpl#isSync <em>Sync</em>}</li>
  *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.PortImpl#isIn <em>In</em>}</li>
  *   <li>{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.impl.PortImpl#isOut <em>Out</em>}</li>
@@ -39,6 +41,16 @@ import org.palladiosimulator.xtext.motiarc.montiCoreCD.CDDefinition;
  */
 public class PortImpl extends MinimalEObjectImpl.Container implements Port
 {
+  /**
+   * The cached value of the '{@link #getAssume() <em>Assume</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAssume()
+   * @generated
+   * @ordered
+   */
+  protected Assume assume;
+
   /**
    * The default value of the '{@link #isSync() <em>Sync</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -158,6 +170,56 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port
   protected EClass eStaticClass()
   {
     return MontiArcDSLPackage.Literals.PORT;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Assume getAssume()
+  {
+    return assume;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetAssume(Assume newAssume, NotificationChain msgs)
+  {
+    Assume oldAssume = assume;
+    assume = newAssume;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MontiArcDSLPackage.PORT__ASSUME, oldAssume, newAssume);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setAssume(Assume newAssume)
+  {
+    if (newAssume != assume)
+    {
+      NotificationChain msgs = null;
+      if (assume != null)
+        msgs = ((InternalEObject)assume).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MontiArcDSLPackage.PORT__ASSUME, null, msgs);
+      if (newAssume != null)
+        msgs = ((InternalEObject)newAssume).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MontiArcDSLPackage.PORT__ASSUME, null, msgs);
+      msgs = basicSetAssume(newAssume, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MontiArcDSLPackage.PORT__ASSUME, newAssume, newAssume));
   }
 
   /**
@@ -365,6 +427,8 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port
   {
     switch (featureID)
     {
+      case MontiArcDSLPackage.PORT__ASSUME:
+        return basicSetAssume(null, msgs);
       case MontiArcDSLPackage.PORT__TYPE:
         return basicSetType(null, msgs);
     }
@@ -381,6 +445,8 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port
   {
     switch (featureID)
     {
+      case MontiArcDSLPackage.PORT__ASSUME:
+        return getAssume();
       case MontiArcDSLPackage.PORT__SYNC:
         return isSync();
       case MontiArcDSLPackage.PORT__IN:
@@ -408,6 +474,9 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port
   {
     switch (featureID)
     {
+      case MontiArcDSLPackage.PORT__ASSUME:
+        setAssume((Assume)newValue);
+        return;
       case MontiArcDSLPackage.PORT__SYNC:
         setSync((Boolean)newValue);
         return;
@@ -440,6 +509,9 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port
   {
     switch (featureID)
     {
+      case MontiArcDSLPackage.PORT__ASSUME:
+        setAssume((Assume)null);
+        return;
       case MontiArcDSLPackage.PORT__SYNC:
         setSync(SYNC_EDEFAULT);
         return;
@@ -472,6 +544,8 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port
   {
     switch (featureID)
     {
+      case MontiArcDSLPackage.PORT__ASSUME:
+        return assume != null;
       case MontiArcDSLPackage.PORT__SYNC:
         return sync != SYNC_EDEFAULT;
       case MontiArcDSLPackage.PORT__IN:

@@ -33,8 +33,8 @@ public class MontiArcDSLParser extends AbstractContentAssistParser {
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, MontiArcDSLGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getArcElementAccess().getAlternatives(), "rule__ArcElement__Alternatives");
 			builder.put(grammarAccess.getConnectorAccess().getSourceAlternatives_0_0(), "rule__Connector__SourceAlternatives_0_0");
-			builder.put(grammarAccess.getPortAccess().getAlternatives_1(), "rule__Port__Alternatives_1");
 			builder.put(grammarAccess.getPortAccess().getAlternatives_2(), "rule__Port__Alternatives_2");
+			builder.put(grammarAccess.getPortAccess().getAlternatives_3(), "rule__Port__Alternatives_3");
 			builder.put(grammarAccess.getNamesAccess().getNamesAlternatives_0_0(), "rule__Names__NamesAlternatives_0_0");
 			builder.put(grammarAccess.getNamesAccess().getNamesAlternatives_1_1_0(), "rule__Names__NamesAlternatives_1_1_0");
 			builder.put(grammarAccess.getVariableAccess().getTypeAlternatives_0_0(), "rule__Variable__TypeAlternatives_0_0");
@@ -66,6 +66,7 @@ public class MontiArcDSLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getPortsAccess().getGroup(), "rule__Ports__Group__0");
 			builder.put(grammarAccess.getPortsAccess().getGroup_2(), "rule__Ports__Group_2__0");
 			builder.put(grammarAccess.getPortAccess().getGroup(), "rule__Port__Group__0");
+			builder.put(grammarAccess.getAssumeAccess().getGroup(), "rule__Assume__Group__0");
 			builder.put(grammarAccess.getNamesAccess().getGroup(), "rule__Names__Group__0");
 			builder.put(grammarAccess.getNamesAccess().getGroup_1(), "rule__Names__Group_1__0");
 			builder.put(grammarAccess.getVariableAccess().getGroup(), "rule__Variable__Group__0");
@@ -111,12 +112,14 @@ public class MontiArcDSLParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getConnectorAccess().getTargetsAssignment_2(), "rule__Connector__TargetsAssignment_2");
 			builder.put(grammarAccess.getPortsAccess().getPortsAssignment_1(), "rule__Ports__PortsAssignment_1");
 			builder.put(grammarAccess.getPortsAccess().getPortsAssignment_2_1(), "rule__Ports__PortsAssignment_2_1");
-			builder.put(grammarAccess.getPortAccess().getSyncAssignment_0(), "rule__Port__SyncAssignment_0");
-			builder.put(grammarAccess.getPortAccess().getInAssignment_1_0(), "rule__Port__InAssignment_1_0");
-			builder.put(grammarAccess.getPortAccess().getOutAssignment_1_1(), "rule__Port__OutAssignment_1_1");
-			builder.put(grammarAccess.getPortAccess().getTypeAssignment_2_0(), "rule__Port__TypeAssignment_2_0");
-			builder.put(grammarAccess.getPortAccess().getDatatypeAssignment_2_1(), "rule__Port__DatatypeAssignment_2_1");
-			builder.put(grammarAccess.getPortAccess().getNamesAssignment_3(), "rule__Port__NamesAssignment_3");
+			builder.put(grammarAccess.getPortAccess().getAssumeAssignment_0(), "rule__Port__AssumeAssignment_0");
+			builder.put(grammarAccess.getPortAccess().getSyncAssignment_1(), "rule__Port__SyncAssignment_1");
+			builder.put(grammarAccess.getPortAccess().getInAssignment_2_0(), "rule__Port__InAssignment_2_0");
+			builder.put(grammarAccess.getPortAccess().getOutAssignment_2_1(), "rule__Port__OutAssignment_2_1");
+			builder.put(grammarAccess.getPortAccess().getTypeAssignment_3_0(), "rule__Port__TypeAssignment_3_0");
+			builder.put(grammarAccess.getPortAccess().getDatatypeAssignment_3_1(), "rule__Port__DatatypeAssignment_3_1");
+			builder.put(grammarAccess.getPortAccess().getNamesAssignment_4(), "rule__Port__NamesAssignment_4");
+			builder.put(grammarAccess.getAssumeAccess().getConditionAssignment_3(), "rule__Assume__ConditionAssignment_3");
 			builder.put(grammarAccess.getNamesAccess().getNamesAssignment_0(), "rule__Names__NamesAssignment_0");
 			builder.put(grammarAccess.getNamesAccess().getNamesAssignment_1_1(), "rule__Names__NamesAssignment_1_1");
 			builder.put(grammarAccess.getVariableAccess().getTypeAssignment_0(), "rule__Variable__TypeAssignment_0");

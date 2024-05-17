@@ -131,6 +131,11 @@ public class MontiArcDSLAdapterFactory extends AdapterFactoryImpl
         return createPortAdapter();
       }
       @Override
+      public Adapter caseAssume(Assume object)
+      {
+        return createAssumeAdapter();
+      }
+      @Override
       public Adapter caseNames(Names object)
       {
         return createNamesAdapter();
@@ -373,6 +378,21 @@ public class MontiArcDSLAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createPortAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.palladiosimulator.xtext.motiarc.montiArcDSL.Assume <em>Assume</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.palladiosimulator.xtext.motiarc.montiArcDSL.Assume
+   * @generated
+   */
+  public Adapter createAssumeAdapter()
   {
     return null;
   }
