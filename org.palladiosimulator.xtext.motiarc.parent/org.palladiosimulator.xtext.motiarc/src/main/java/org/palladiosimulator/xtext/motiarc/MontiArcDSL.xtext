@@ -42,8 +42,12 @@ Ports:
 	"port" ports+=Port ("," ports+=Port)* ";";
 
 Port:
-	(sync?=SYNC)?(in?="in" | out?="out") (type=Type|datatype=([cd::CDDefinition])) names?=Names? ;
+	(assume=Assume)?(sync?=SYNC)?(in?="in" | out?="out") (type=Type|datatype=([cd::CDDefinition])) names?=Names? ;
 
+
+Assume:
+	'<<''assume' '=' condition=STRING '>>'
+;
 Names:
 	names+=(ID|MCQUALIFIEDNAME) ("," names+=(ID|MCQUALIFIEDNAME))*;
 
